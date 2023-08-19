@@ -1,0 +1,58 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Select month, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: select_month_lbl
+    layout_properties: {grid_position: 'JESDLO,IRNSZZ'}
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: month_db_lbl
+    layout_properties: {grid_position: 'JESDLO,ERTJPE BRQFXD,RMLBCI'}
+  - type: DropDown
+    properties: {}
+    name: month_select_dp
+    layout_properties: {grid_position: 'JESDLO,ERTJPE SHVZDH,FTGPXN'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Select year, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: select_year_lbl
+    layout_properties: {grid_position: 'ZBBXOL,XMMZRS'}
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: year_db_lbl
+    layout_properties: {grid_position: 'ZBBXOL,TUTETG OCIJWD,QTXUMR'}
+  - type: DropDown
+    properties: {}
+    name: year_select_dp
+    layout_properties: {grid_position: 'ZBBXOL,TUTETG JFCGHI,PPQANL'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: submit_btn
+    layout_properties: {grid_position: 'IJBXUS,ZWMPYX'}
+    event_bindings: {click: submit_btn_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
