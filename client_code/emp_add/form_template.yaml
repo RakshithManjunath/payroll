@@ -1,0 +1,100 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "<!DOCTYPE html>\n<html>\n<head>\n    <title>Employee Information</title>\n\
+      \    <style>\n        body {\n            font-family: Arial, sans-serif;\n\
+      \        }\n        \n        .container {\n            max-width: 600px;\n\
+      \            margin: 0 auto;\n            padding: 20px;\n            border:\
+      \ 1px solid #ccc;\n            border-radius: 5px;\n            box-shadow:\
+      \ 0 2px 5px rgba(0, 0, 0, 0.1);\n        }\n        \n        label {\n    \
+      \        font-weight: bold;\n        }\n        \n        input[type=\"text\"\
+      ],\n        input[type=\"email\"],\n        input[type=\"radio\"] {\n      \
+      \      width: 100%;\n            padding: 8px;\n            margin-bottom: 10px;\n\
+      \            border: 1px solid #ccc;\n            border-radius: 3px;\n    \
+      \    }\n        \n        .radio-group label {\n            margin-right: 15px;\n\
+      \        }\n        \n        .tab-buttons {\n            display: flex;\n \
+      \       }\n        \n        .tab-button {\n            background-color: #f2f2f2;\n\
+      \            border: none;\n            padding: 10px 15px;\n            border-radius:\
+      \ 5px 5px 0 0;\n            cursor: pointer;\n            transition: background-color\
+      \ 0.3s;\n        }\n        \n        .tab-button:hover {\n            background-color:\
+      \ #ddd;\n        }\n        \n        .tab-content {\n            display: none;\n\
+      \            padding: 20px;\n            border: 1px solid #ddd;\n         \
+      \   border-radius: 0 0 5px 5px;\n        }\n        \n        .active {\n  \
+      \          background-color: #ddd;\n        }\n        \n        .radio-group\
+      \ {\n            display: flex;\n            align-items: center; /* Vertical\
+      \ center alignment */\n            margin-bottom: 10px;\n        }\n\n     \
+      \   .radio-group label {\n            margin-right: 1px;\n        }\n\n    \
+      \    .radio-group input[type=\"radio\"] {\n            margin-right: 5px;\n\
+      \        }\n        \n        .form-row {\n            display: flex;\n    \
+      \        align-items: center;\n            margin-bottom: 10px;\n        }\n\
+      \n        .form-row label {\n            width: 100px;\n            margin-right:\
+      \ 10px;\n        }\n\n        .form-row input[type=\"text\"],\n        .form-row\
+      \ input[type=\"email\"],\n        .radio-group input[type=\"radio\"] {\n   \
+      \         padding: 8px;\n            border: 1px solid #ccc;\n            border-radius:\
+      \ 3px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\"\
+      >\n        <h1>Employee Details</h1>\n        \n        <!-- First Part: Basic\
+      \ Information -->\n        <div class=\"form-row\">\n            <label for=\"\
+      empcode\">Empcode</label>\n            <input type=\"text\" id=\"empcode\" name=\"\
+      empcode\">\n            \n            <label for=\"name\">Name</label>\n   \
+      \         <input type=\"text\" id=\"name\" name=\"name\">\n        </div>\n\
+      \        \n        <div class=\"form-row\">\n            <label for=\"fa_hus_name\"\
+      >Father/Husband Name</label>\n            <input type=\"text\" id=\"fa_hus_name\"\
+      \ name=\"fa_hus_name\">\n            \n        </div>\n        \n        <div\
+      \ class=\"form-row\">\n            <label for=\"dob\">Date of birth</label>\n\
+      \            <input type=\"date\" id=\"dob\" name=\"dob\">\n            \n \
+      \       </div>\n        \n        <div class=\"form-row\">\n            <label\
+      \ for=\"dob\">Joining Date</label>\n            <input type=\"date\" id=\"doj\"\
+      \ name=\"doj\">\n            \n        </div>\n        \n        \n        <div\
+      \ class=\"radio-group\">\n            <label>Sex</label>\n            <input\
+      \ type=\"radio\" id=\"male\" name=\"gender\" value=\"male\">\n            <label\
+      \ for=\"male\">Male</label>\n            <input type=\"radio\" id=\"female\"\
+      \ name=\"gender\" value=\"female\">\n            <label for=\"female\">Female</label><br>\n\
+      \        </div>\n        \n        <div class=\"radio-group\">\n           \
+      \ <label>Role</label>\n            <input type=\"radio\" id=\"staff\" name=\"\
+      role\" value=\"staff\">\n            <label for=\"staff\">Staff</label>\n  \
+      \          <input type=\"radio\" id=\"worker\" name=\"role\" value=\"worker\"\
+      >\n            <label for=\"worker\">Worker</label><br>\n        </div>\n  \
+      \      \n        <!-- Second Part: Tab Layout -->\n        <div class=\"tab-buttons\"\
+      >\n            <div class=\"tab-button\" onclick=\"openTab(event, 'dept')\"\
+      >Department</div>\n            <div class=\"tab-button\" onclick=\"openTab(event,\
+      \ 'designation')\">Designation</div>\n            \n         </div>\n      \
+      \      \n        \n        <div id=\"dept\" class=\"tab-content\">\n       \
+      \     \n            \n            <label for=\"dept_dp\">Select Department</label>\n\
+      \            <select id=\"dept_dp\" name=\"dept_dp\">\n                <option\
+      \ value=\"hr\">HR</option>\n                <option value=\"it\">IT</option>\n\
+      \                <option value=\"finance\">Finance</option>\n              \
+      \  <!-- Add more options as needed -->\n            </select>\n        </div>\n\
+      \        \n        <div id=\"designation\" class=\"tab-content\">\n        \
+      \    <label for=\"designation\">Designation:</label>\n            <input type=\"\
+      text\" id=\"designation\" name=\"designation\"><br>\n        </div>\n      \
+      \  \n        \n        <!-- Third Part: Earnings Tab Layout -->\n        <div\
+      \ class=\"tab-buttons\">\n            <div class=\"tab-button\" onclick=\"openTab(event,\
+      \ 'pf')\">PF</div>\n            <div class=\"tab-button\" onclick=\"openTab(event,\
+      \ 'esi')\">ESI</div>\n            <div class=\"tab-button\" onclick=\"openTab(event,\
+      \ 'pt')\">PT</div>\n        </div>\n        \n        <div id=\"pf\" class=\"\
+      tab-content\">\n            <label for=\"pf\">PF:</label>\n            <input\
+      \ type=\"text\" id=\"pf\" name=\"pf\"><br>\n        </div>\n        \n     \
+      \   <div id=\"esi\" class=\"tab-content\">\n            <label for=\"esi\">ESI:</label>\n\
+      \            <input type=\"text\" id=\"esi\" name=\"esi\"><br>\n        </div>\n\
+      \        \n        <div id=\"pt\" class=\"tab-content\">\n            <label\
+      \ for=\"pt\">PT:</label>\n            <input type=\"text\" id=\"pt\" name=\"\
+      pt\"><br>\n        </div>\n    </div>\n    \n    <script>\n        function\
+      \ openTab(evt, tabName) {\n            var i, tabContent, tabButtons;\n    \
+      \        tabContent = document.getElementsByClassName(\"tab-content\");\n  \
+      \          for (i = 0; i < tabContent.length; i++) {\n                tabContent[i].style.display\
+      \ = \"none\";\n            }\n            tabButtons = document.getElementsByClassName(\"\
+      tab-button\");\n            for (i = 0; i < tabButtons.length; i++) {\n    \
+      \            tabButtons[i].classList.remove(\"active\");\n            }\n  \
+      \          document.getElementById(tabName).style.display = \"block\";\n   \
+      \         evt.currentTarget.classList.add(\"active\");\n        }\n    </script>\n\
+      </body>\n</html>\n"}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
