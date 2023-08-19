@@ -18,3 +18,6 @@ class menu(menuTemplate):
 
   def open_update_page(self, **kwargs):
     open_form('update_trans_date')
+
+  def open_emp_add(self, **kwargs):
+    open_form('emp_add')
