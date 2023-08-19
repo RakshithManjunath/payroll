@@ -17,4 +17,4 @@ class menu(menuTemplate):
     open_form('company_select')
 
   def open_update_page(self, **kwargs):
-    open_form('update')
+    open_form('update_trans_date')
