@@ -12,3 +12,6 @@ class emp_add(emp_addTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def call_dept_names(self, **kwargs):
+    return anvil.server.call('get_dept_names')

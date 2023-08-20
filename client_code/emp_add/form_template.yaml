@@ -127,9 +127,10 @@ container:
       active\");\n            }\n            document.getElementById(tabName).style.display\
       \ = \"block\";\n            evt.currentTarget.classList.add(\"active\");\n \
       \       }\n\n      $('#dept').on('click', function(e) {\n        var linkElement\
-      \ = this;\n        anvil.call(linkElement, \"get_dept_names\");\n        e.preventDefault();\n\
-      \      });\n\n      // anvil.call('get_dept_names')\n      // .then(function(data)\
-      \ {\n      //   data.forEach(item => {\n      //     const option = document.createElement('option');\n\
+      \ = this;\n        const data = anvil.call(linkElement, \"call_dept_names\"\
+      );\n        console.log(data)\n        e.preventDefault();\n      });\n\n  \
+      \    // anvil.call('get_dept_names')\n      // .then(function(data) {\n    \
+      \  //   data.forEach(item => {\n      //     const option = document.createElement('option');\n\
       \      //     option.value = item.value;\n      //     option.text = item.text;\n\
       \      //     dept_dropdown.appendChild(option);\n      //   });\n      // });\n\
       \n    //   async function populateDropdown() {\n    //     const dept_dropdown\
