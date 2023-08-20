@@ -35,12 +35,13 @@ container:
       \ 3px;\n        }\n        \n        /* Grid-based layout for tab content */\n\
       \        .tab-content-grid {\n            display: grid;\n            grid-template-columns:\
       \ 1fr 1fr;\n            gap: 20px; /* Adjust the gap as needed */\n        }\n\
-      \    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Employee\
-      \ Details</h1>\n        \n        <!-- First Part: Basic Information -->\n \
-      \       <div class=\"form-row\">\n            <label for=\"empcode\">Empcode</label>\n\
-      \            <input type=\"text\" id=\"empcode\" name=\"empcode\">\n       \
-      \     \n            <label for=\"name\">Name</label>\n            <input type=\"\
-      text\" id=\"name\" name=\"name\">\n        </div>\n        \n        <div class=\"\
+      \    </style>\n  <script src=\"https://anvil.works/embed.js\"></script>\n</head>\n\
+      <body>\n    <div class=\"container\">\n        <h1>Employee Details</h1>\n \
+      \       \n        <!-- First Part: Basic Information -->\n        <div class=\"\
+      form-row\">\n            <label for=\"empcode\">Empcode</label>\n          \
+      \  <input type=\"text\" id=\"empcode\" name=\"empcode\">\n            \n   \
+      \         <label for=\"name\">Name</label>\n            <input type=\"text\"\
+      \ id=\"name\" name=\"name\">\n        </div>\n        \n        <div class=\"\
       form-row\">\n            <label for=\"fa_hus_name\">Father/Husband Name</label>\n\
       \            <input type=\"text\" id=\"fa_hus_name\" name=\"fa_hus_name\">\n\
       \            \n        </div>\n        \n        <div class=\"form-row\">\n\
@@ -118,9 +119,8 @@ container:
       \ type=\"radio\" id=\"yes\" name=\"role\" value=\"yes\">\n            <label\
       \ for=\"yes\">Yes</label>\n            <input type=\"radio\" id=\"no\" name=\"\
       role\" value=\"no\">\n            <label for=\"no\">No</label><br>\n       \
-      \ </div>\n    </div>\n    <script src=\"https://anvil.works/embed.js\"></script>\n\
-      \    <script>\n        function openTab(evt, tabName) {\n            var i,\
-      \ tabContent, tabButtons;\n            tabContent = document.getElementsByClassName(\"\
+      \ </div>\n    </div>\n  \n    <script>\n        function openTab(evt, tabName)\
+      \ {\n            var i, tabContent, tabButtons;\n            tabContent = document.getElementsByClassName(\"\
       tab-content\");\n            for (i = 0; i < tabContent.length; i++) {\n   \
       \             tabContent[i].style.display = \"none\";\n            }\n     \
       \       tabButtons = document.getElementsByClassName(\"tab-button\");\n    \
