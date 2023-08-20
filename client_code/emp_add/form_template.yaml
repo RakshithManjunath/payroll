@@ -118,8 +118,9 @@ container:
       \ type=\"radio\" id=\"yes\" name=\"role\" value=\"yes\">\n            <label\
       \ for=\"yes\">Yes</label>\n            <input type=\"radio\" id=\"no\" name=\"\
       role\" value=\"no\">\n            <label for=\"no\">No</label><br>\n       \
-      \ </div>\n    </div>\n    \n    <script>\n        function openTab(evt, tabName)\
-      \ {\n            var i, tabContent, tabButtons;\n            tabContent = document.getElementsByClassName(\"\
+      \ </div>\n    </div>\n    <script src=\"https://anvil.works/embed.js\"></script>\n\
+      \    <script>\n        function openTab(evt, tabName) {\n            var i,\
+      \ tabContent, tabButtons;\n            tabContent = document.getElementsByClassName(\"\
       tab-content\");\n            for (i = 0; i < tabContent.length; i++) {\n   \
       \             tabContent[i].style.display = \"none\";\n            }\n     \
       \       tabButtons = document.getElementsByClassName(\"tab-button\");\n    \
