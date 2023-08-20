@@ -33,6 +33,10 @@ components:
       bold: true, group_name: pfc, underline: false}
     name: radio_button_2
     layout_properties: {grid_position: 'BTBOLS,JHAQPF'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'GEESBU,HHIQPL'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: PF Number,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,

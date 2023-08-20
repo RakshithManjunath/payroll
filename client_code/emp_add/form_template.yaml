@@ -17,14 +17,14 @@ components:
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: text_box_1
-    layout_properties: {grid_position: 'VVEOPN,KEOTTZ'}
+    layout_properties: {grid_position: 'EBXBVF,FOOELQ'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: employee name,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: text_box_2
-    layout_properties: {grid_position: 'VVEOPN,GRTBTZ'}
+    layout_properties: {grid_position: 'EBXBVF,AUWLTA', width: 334.4}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: father/husband name,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,

@@ -30,6 +30,10 @@ components:
       bold: true, group_name: ptc, underline: false}
     name: radio_button_2
     layout_properties: {grid_position: 'ZUEWAY,BCRNTQ'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'UZWMOU,HPLJML'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: IT Contribution, font_size: null, font: '', spacing_above: small,
@@ -51,6 +55,10 @@ components:
       bold: true, group_name: itc, underline: false}
     name: radio_button_4
     layout_properties: {grid_position: 'AEGVYO,GHQUQG'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {grid_position: 'BIIHPD,QZTWAL'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: PAN Number,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
