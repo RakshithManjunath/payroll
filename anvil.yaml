@@ -7,7 +7,7 @@ services:
   client_config: {allow_signup: true, enable_automatically: true, use_email: true,
     confirm_email: true}
   server_config: {user_table: users}
-startup: {type: form, module: test}
+startup: {type: form, module: company_select}
 package_name: Payroll
 allow_embedding: false
 name: Payroll

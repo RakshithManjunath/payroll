@@ -13,9 +13,17 @@ class emp_add(emp_addTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def call_dept_names(self, **kwargs):
-    data = anvil.server.call('get_dept_names')
-    self.dept_dp.items = data
+  def link_1_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = not self.custom_1.visible
 
-  def save_to_database(self, db_val, **kwargs):
-    anvil.server.call('save_data', db_val)
+  def link_2_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_2.visible = not self.custom_2.visible
+
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_3.visible = not self.custom_3.visible
+
+
+
