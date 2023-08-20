@@ -132,8 +132,8 @@ container:
       \      //     option.value = item.value;\n      //     option.text = item.text;\n\
       \      //     dept_dropdown.appendChild(option);\n      //   });\n      // });\n\
       \n      async function populateDropdown() {\n      try {\n        const data\
-      \ = await anvil.server.call('get_dept_names');\n        console.log(data)\n\
-      \        // ... rest of your code to populate dropdown\n        data.forEach(item\
+      \ = await anvil.call(this,'get_dept_names');\n        console.log(data)\n  \
+      \      // ... rest of your code to populate dropdown\n        data.forEach(item\
       \ => {\n          const option = document.createElement('option');\n       \
       \   option.value = item.value;\n          option.text = item.text;\n       \
       \   dept_dropdown.appendChild(option);\n        });\n      } catch (error) {\n\
