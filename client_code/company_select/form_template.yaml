@@ -40,6 +40,7 @@ components:
       underline: false, icon: ''}
     name: button_1
     layout_properties: {grid_position: 'ERKYXD,LHAPII'}
+    event_bindings: {click: button_1_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
