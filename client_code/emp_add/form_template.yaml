@@ -5,7 +5,9 @@ container:
     role: null, html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: never, col_spacing: medium, spacing_above: small, col_widths: '{}', spacing_below: none,
+    background: ''}
   name: content_panel
   layout_properties: {slot: default}
   components:
@@ -38,7 +40,7 @@ components:
     name: radio_button_1
     layout_properties: {grid_position: 'GOSFHT,VUXTWY'}
   - type: RadioButton
-    properties: {role: null, selected: false, align: left, tooltip: '', border: '',
+    properties: {role: null, selected: true, align: left, tooltip: '', border: '',
       enabled: true, foreground: '', value: '', visible: true, text: Female, font_size: null,
       font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
       bold: false, group_name: gender, underline: false}
@@ -66,7 +68,7 @@ components:
     name: radio_button_3
     layout_properties: {grid_position: 'PGLMSR,XRRQHM'}
   - type: RadioButton
-    properties: {role: null, selected: false, align: left, tooltip: '', border: '',
+    properties: {role: null, selected: true, align: left, tooltip: '', border: '',
       enabled: true, foreground: '', value: '', visible: true, text: Worker, font_size: null,
       font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
       bold: false, group_name: emp_type, underline: false}
@@ -127,7 +129,7 @@ components:
         spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
         italic: false, background: '', bold: false, underline: false, icon: ''}
       name: link_1
-      layout_properties: {grid_position: 'YWKZXW,ROOSSF'}
+      layout_properties: {grid_position: 'YWKZXW,ROOSSF', full_width_row: false}
       event_bindings: {click: link_1_click}
   - type: ColumnPanel
     properties: {col_widths: '{}'}
@@ -156,22 +158,40 @@ components:
       layout_properties: {grid_position: 'HBACPU,LTZWFA'}
       event_bindings: {click: link_3_click}
   - type: ColumnPanel
-    properties: {col_widths: '{}'}
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: small, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: ''}
     name: column_panel_3
     layout_properties: {grid_position: 'ZBWUKQ,VDCLVO'}
     components:
     - type: form:pt_and_it_form
       properties: {}
       name: custom_3
-      layout_properties: {grid_position: 'MSKPWJ,EBGSNI'}
+      layout_properties: {grid_position: 'FOQXLM,BUGISW'}
     - type: form:esi_form
       properties: {}
       name: custom_2
-      layout_properties: {grid_position: 'LDHHHR,AUTXSL'}
+      layout_properties: {grid_position: 'HBCNTM,BHLHAV'}
     - type: form:pf_form
       properties: {}
       name: custom_1
-      layout_properties: {grid_position: 'BKTDNN,AKHRQU'}
+      layout_properties: {grid_position: 'LEVLAH,PQZLKG'}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'DYTTUC,JLETEK'}
+    event_bindings: {click: button_1_click}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'DYTTUC,POAOLL'}
+    event_bindings: {click: button_2_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links

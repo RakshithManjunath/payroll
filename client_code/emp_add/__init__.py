@@ -25,5 +25,12 @@ class emp_add(emp_addTemplate):
     """This method is called when the link is clicked"""
     self.custom_3.visible = not self.custom_3.visible
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
 
 

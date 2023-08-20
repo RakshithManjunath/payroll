@@ -2,7 +2,7 @@ is_package: false
 container:
   type: HtmlTemplate
   properties: {tooltip: '', background: '', foreground: '', border: '', visible: false,
-    role: null, html: '@theme:standard-page.html'}
+    role: form_height, html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
