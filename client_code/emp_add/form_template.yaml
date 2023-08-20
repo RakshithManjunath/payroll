@@ -35,13 +35,12 @@ container:
       \ 3px;\n        }\n        \n        /* Grid-based layout for tab content */\n\
       \        .tab-content-grid {\n            display: grid;\n            grid-template-columns:\
       \ 1fr 1fr;\n            gap: 20px; /* Adjust the gap as needed */\n        }\n\
-      \    </style>\n  <script src=\"https://anvil.works/embed.js\"></script>\n</head>\n\
-      <body>\n    <div class=\"container\">\n        <h1>Employee Details</h1>\n \
-      \       \n        <!-- First Part: Basic Information -->\n        <div class=\"\
-      form-row\">\n            <label for=\"empcode\">Empcode</label>\n          \
-      \  <input type=\"text\" id=\"empcode\" name=\"empcode\">\n            \n   \
-      \         <label for=\"name\">Name</label>\n            <input type=\"text\"\
-      \ id=\"name\" name=\"name\">\n        </div>\n        \n        <div class=\"\
+      \    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Employee\
+      \ Details</h1>\n        \n        <!-- First Part: Basic Information -->\n \
+      \       <div class=\"form-row\">\n            <label for=\"empcode\">Empcode</label>\n\
+      \            <input type=\"text\" id=\"empcode\" name=\"empcode\">\n       \
+      \     \n            <label for=\"name\">Name</label>\n            <input type=\"\
+      text\" id=\"name\" name=\"name\">\n        </div>\n        \n        <div class=\"\
       form-row\">\n            <label for=\"fa_hus_name\">Father/Husband Name</label>\n\
       \            <input type=\"text\" id=\"fa_hus_name\" name=\"fa_hus_name\">\n\
       \            \n        </div>\n        \n        <div class=\"form-row\">\n\
@@ -127,18 +126,22 @@ container:
       \        for (i = 0; i < tabButtons.length; i++) {\n                tabButtons[i].classList.remove(\"\
       active\");\n            }\n            document.getElementById(tabName).style.display\
       \ = \"block\";\n            evt.currentTarget.classList.add(\"active\");\n \
-      \       }\n\n      // anvil.call('get_dept_names')\n      // .then(function(data)\
+      \       }\n\n      $('#dept').on('click', function(e) {\n        var linkElement\
+      \ = this;\n        anvil.call(linkElement, \"get_dept_names\");\n        e.preventDefault();\n\
+      \      });\n\n      // anvil.call('get_dept_names')\n      // .then(function(data)\
       \ {\n      //   data.forEach(item => {\n      //     const option = document.createElement('option');\n\
       \      //     option.value = item.value;\n      //     option.text = item.text;\n\
       \      //     dept_dropdown.appendChild(option);\n      //   });\n      // });\n\
-      \n      async function populateDropdown() {\n        const dept_dropdown = document.getElementById('dept_dp');\n\
-      \      try {\n        var linkElement = this;\n        const data = await anvil.call(linkElement,'get_dept_names');\n\
-      \        e.preventDefault();\n        console.log(data)\n        // ... rest\
-      \ of your code to populate dropdown\n        data.forEach(item => {\n      \
-      \    const option = document.createElement('option');\n          option.value\
-      \ = item.value;\n          option.text = item.text;\n          dept_dropdown.appendChild(option);\n\
-      \        });\n      } catch (error) {\n        console.error(error);\n     \
-      \ }\n    }\n    populateDropdown();\n    </script>\n</body>\n</html>\n"}
+      \n    //   async function populateDropdown() {\n    //     const dept_dropdown\
+      \ = document.getElementById('dept_dp');\n    //   try {\n    //     var linkElement\
+      \ = this;\n    //     const data = await anvil.call(linkElement,'get_dept_names');\n\
+      \    //     e.preventDefault();\n    //     console.log(data)\n    //     //\
+      \ ... rest of your code to populate dropdown\n    //     data.forEach(item =>\
+      \ {\n    //       const option = document.createElement('option');\n    // \
+      \      option.value = item.value;\n    //       option.text = item.text;\n \
+      \   //       dept_dropdown.appendChild(option);\n    //     });\n    //   }\
+      \ catch (error) {\n    //     console.error(error);\n    //   }\n    // }\n\
+      \    // populateDropdown();\n    </script>\n</body>\n</html>\n"}
 components:
 - type: ColumnPanel
   properties: {}
