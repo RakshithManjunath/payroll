@@ -9,6 +9,9 @@ unique_ids:
   modules: {}
   server_modules:
     company: '1692422714551854233889328.5577'
+    department: '1692508532346584369059534.1473'
+    designation: '1692508559274183949028170.01068'
+    employee: '1692508082724477037720631.1476'
     month_and_year: '1692425659219989537253459.2606'
   assets:
     standard-page.html: RDJ3YY2EDCMJPPJZNFPOFZPJD6SR4WZH
