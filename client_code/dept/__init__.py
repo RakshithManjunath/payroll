@@ -23,4 +23,9 @@ class dept(deptTemplate):
     self.custom_1.visible = False
     self.custom_2.visible = not self.custom_2.visible
 
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+
   

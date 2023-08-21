@@ -52,6 +52,7 @@ components:
       underline: false, icon: ''}
     name: outlined_button_1
     layout_properties: {}
+    event_bindings: {click: outlined_button_1_click}
 - type: Label
   properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
     visible: true, text: Department, font_size: null, font: '', spacing_above: small,
