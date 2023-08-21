@@ -12,3 +12,5 @@ class desi_change(desi_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.drop_down_1.items = anvil.server.call('desi_change_name_and_code')
+

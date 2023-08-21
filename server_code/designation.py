@@ -49,6 +49,10 @@ def desi_add(desi_id,desicode,desiname):
   app_tables.designation.add_row(desi_id=desi_id,desi_code=desicode,
                           desi_name=desiname)
 
+#################### Designation Change #################################
 @anvil.server.callable
-def get_desi_names():
-  return [(r["desi_name"]) for r in app_tables.designation.search()]
+def desi_change_name_and_code():
+  dept_details = []
+  for r in app_tables.designation.search(tables.order_by("desi_code")):
+    dept_details.append(r['desi_code'] + " | "  +r['desi_name'])
+  return dept_details
