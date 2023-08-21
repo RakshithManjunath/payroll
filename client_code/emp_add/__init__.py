@@ -37,4 +37,15 @@ class emp_add(emp_addTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    if self.radio_button_1.selected == True:
+      emp_sex = "Male"
+    else:
+      emp_sex = "Female"
+
+    if self.radio_button_3.selected == True:
+      emp_type = "Staff"
+    else:
+      emp_type = "Worker"
+    
+    emp_id= anvil.server.call('emp_get_next_id_value')
+    anvil.server.call('emp_add',emp_id,self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,self.date_picker_1.date,self.date_picker_2.date,emp_sex, emp_type)
