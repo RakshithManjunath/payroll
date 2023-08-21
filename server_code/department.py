@@ -31,9 +31,6 @@ def next_dept_id_value():
     next_value == '0000000001'
   return next_value
 
-
-
-
 @anvil.server.callable
 def dept_get_next_string_value():
   # Get the last row of the data table
@@ -51,13 +48,6 @@ def dept_get_next_string_value():
 def dept_add(dept_id,deptcode,deptname):
   app_tables.department.add_row(dept_id=dept_id,dept_code=deptcode,
                           dept_name=deptname)
-
-
-
-
-
-
-
 
 @anvil.server.callable
 def get_dept_names():

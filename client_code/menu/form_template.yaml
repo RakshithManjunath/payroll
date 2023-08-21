@@ -149,7 +149,7 @@ container:
       // });\n    \n\n\n\n   $('#dept_add_and_change').on('click', function(e) {\n\
       \  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\");\n  e.preventDefault();\
       \   \n}); \n\n$('#desi_add_and_change').on('click', function(e) {\n  var linkElement\
-      \ = this;\n  anvil.call(linkElement, \"open_dept\");\n  e.preventDefault();\n\
+      \ = this;\n  anvil.call(linkElement, \"open_desi\");\n  e.preventDefault();\n\
       }); \n    \n//     $('#dept_chg').on('click', function(e) {\n//   var linkElement\
       \ = this;\n//   anvil.call(linkElement, \"open_dept_chg\");\n//   e.preventDefault();\n\
       // });    \n \n\n//    $('#desi_add').on('click', function(e) {\n//   var linkElement\
