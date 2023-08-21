@@ -49,6 +49,11 @@ def dept_add(dept_id,deptcode,deptname):
   app_tables.department.add_row(dept_id=dept_id,dept_code=deptcode,
                           dept_name=deptname)
 
+#################### Department Change #################################
 @anvil.server.callable
-def get_dept_names():
-  return [(r["dept_name"]) for r in app_tables.department.search()]
+def dept_change_name_and_code():
+  dept_details = []
+  for r in app_tables.department.search(tables.order_by("dept_code")):
+    dept_details.append(r['dept_code'] + " | "  +r['dept_name'])
+  return dept_details
+
