@@ -115,12 +115,12 @@ container:
       \              <li><a href=\"#\" id=\"dept\">Add</a></li>\n                \
       \    <li><a href=\"#\" id=\"dept_chg\">Change</a></li>\n                  </ul>\
       \ -->\n                </li>\n                \n                <li>\n     \
-      \             <a href=\"#\" class=\"sub-sub-drop\">Designation <span class=\"\
-      arrow-right\">\u276f</span></a>\n                  <ul class=\"sub-sub-menu\"\
-      >\n                    <li><a href=\"#\" id=\"desi_add\">Add</a></li>\n    \
-      \                <li><a href=\"#\" id=\"desi_chg\">Change</a></li>\n       \
-      \           </ul>\n                </li>\n\n                <li>\n         \
-      \         <a href=\"#\" class=\"sub-sub-drop\">Bank <span class=\"arrow-right\"\
+      \             <a href=\"#\" class=\"sub-sub-drop\" id=\"desi_add_and_change\"\
+      >Designation</a>\n<!--                   <ul class=\"sub-sub-menu\">\n     \
+      \               <li><a href=\"#\" id=\"desi_add\">Add</a></li>\n           \
+      \         <li><a href=\"#\" id=\"desi_chg\">Change</a></li>\n              \
+      \    </ul> -->\n                </li>\n\n                <li>\n            \
+      \      <a href=\"#\" class=\"sub-sub-drop\">Bank <span class=\"arrow-right\"\
       >\u276f</span></a>\n                  <ul class=\"sub-sub-menu\">\n        \
       \            <li><a href=\"#\" id=\"bank_add\">Add</a></li>\n              \
       \      <li><a href=\"#\" id=\"bank_chg\">Change</a></li>\n                 \
@@ -147,28 +147,31 @@ container:
       // });\n//     $('#oper_chg').on('click', function(e) {\n//   var linkElement\
       \ = this;\n//   anvil.call(linkElement, \"open_oper_chg\");\n//   e.preventDefault();\n\
       // });\n    \n\n\n\n   $('#dept_add_and_change').on('click', function(e) {\n\
-      \  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\");\n  e.preventDefault();\n\
-      }); \n//     $('#dept_chg').on('click', function(e) {\n//   var linkElement\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\");\n  e.preventDefault();\
+      \   \n}); \n\n$('#desi_add_and_change').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_dept\");\n  e.preventDefault();\n\
+      }); \n    \n//     $('#dept_chg').on('click', function(e) {\n//   var linkElement\
       \ = this;\n//   anvil.call(linkElement, \"open_dept_chg\");\n//   e.preventDefault();\n\
-      // });    \n \n\n   $('#desi_add').on('click', function(e) {\n  var linkElement\
-      \ = this;\n  anvil.call(linkElement, \"open_desi_add\");\n  e.preventDefault();\n\
-      });    $('#desi_chg').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_desi_chg\");\n  e.preventDefault();\n}); \
-      \    \n\n\n  $('#bank_add').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_bank_add\");\n  e.preventDefault();\n}); \n\
-      \  $('#bank_chg').on('click', function(e) {\n  var linkElement = this;\n  anvil.call(linkElement,\
-      \ \"open_bank_chg\");\n  e.preventDefault();\n});     \n\n\n  $('#emp_add').on('click',\
-      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_emp_add\"\
-      );\n  e.preventDefault();\n});      \n  $('#emp_chg').on('click', function(e)\
-      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_emp_chg\");\n\
-      \  e.preventDefault();\n});   \n  $('#TabLayout').on('click', function(e) {\n\
-      \  var linkElement = this;\n  anvil.call(linkElement, \"open_TabLayout\");\n\
-      \  e.preventDefault();\n});           \n\n\n\n  $('#trans_add').on('click',\
-      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_trans_add\"\
-      );\n  e.preventDefault();\n});    \n    \n  \n\n\n  $('.const_page').on('click',\
-      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_const_page\"\
-      );\n  e.preventDefault();\n});\n    \n\n                     \n\n $('#login_page').on('click',\
-      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_login_page\"\
+      // });    \n \n\n//    $('#desi_add').on('click', function(e) {\n//   var linkElement\
+      \ = this;\n//   anvil.call(linkElement, \"open_desi_add\");\n//   e.preventDefault();\n\
+      // });    $('#desi_chg').on('click', function(e) {\n//   var linkElement = this;\n\
+      //   anvil.call(linkElement, \"open_desi_chg\");\n//   e.preventDefault();\n\
+      // });     \n\n\n  $('#bank_add').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_bank_add\");\n  e.preventDefault();\n\
+      }); \n  $('#bank_chg').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_bank_chg\");\n  e.preventDefault();\n}); \
+      \    \n\n\n  $('#emp_add').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_emp_add\");\n  e.preventDefault();\n});  \
+      \    \n  $('#emp_chg').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_emp_chg\");\n  e.preventDefault();\n});  \
+      \ \n  $('#TabLayout').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_TabLayout\");\n  e.preventDefault();\n});\
+      \           \n\n\n\n  $('#trans_add').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_trans_add\");\n  e.preventDefault();\n\
+      });    \n    \n  \n\n\n  $('.const_page').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_const_page\");\n  e.preventDefault();\n\
+      });\n    \n\n                     \n\n $('#login_page').on('click', function(e)\
+      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_login_page\"\
       );\n  e.preventDefault();\n});    \n\n$('#update_form').on('click', function(e)\
       \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_update_page\"\
       );\n  e.preventDefault();\n});\n\n\n// anvil.call('get_session_var').then(function(value)\

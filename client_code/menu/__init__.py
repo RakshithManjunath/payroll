@@ -24,3 +24,6 @@ class menu(menuTemplate):
 
   def open_dept(self, **kwargs):
     open_form('dept')
+
+  def open_desi(self, **kwargs):
+    open_form('desi')

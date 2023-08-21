@@ -37,10 +37,17 @@ components:
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ESI Number,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
       background: '', bold: true, underline: false}
     name: text_box_1
     layout_properties: {grid_position: 'BLPMPQ,VZQDCK'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: true, foreground: '', visible: true, text: ESI Dispensary,
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: true, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'DVOCGQ,NZSBZR'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
