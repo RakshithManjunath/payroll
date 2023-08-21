@@ -17,6 +17,7 @@ class dept_add(dept_addTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-  anvil.server.call('dept_add',self.value, self.text_box_1.text)
+    dept_id= anvil.server.call('next_dept_id_value')
+    anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text)
 
   
