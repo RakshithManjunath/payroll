@@ -26,15 +26,15 @@ components:
     layout_properties: {grid_position: 'ERKYXD,IVRMCA'}
     components:
     - type: Button
-      properties: {role: outlined-button, align: center, tooltip: '', border: '',
-        enabled: true, foreground: '', visible: true, text: Select, font_size: null,
-        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false, icon: ''}
+      properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Select, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
       name: submit_btn
       layout_properties: {grid_position: 'NDBBZT,YZOVDT', width: 425.2375}
       event_bindings: {click: submit_btn_click}
   - type: Button
-    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
@@ -45,6 +45,7 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  components: []
 - type: Label
   properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
     visible: true, text: Select company, font_size: null, font: '', spacing_above: small,
