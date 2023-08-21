@@ -21,3 +21,6 @@ class menu(menuTemplate):
 
   def open_emp_add(self, **kwargs):
     open_form('emp_add')
+
+  def open_dept(self, **kwargs):
+    open_form('dept')
