@@ -58,3 +58,7 @@ def dept_change_name_and_code():
     dept_details.append(r['dept_code'] + " | "  +r['dept_name'])
   return dept_details
 
+@anvil.server.callable
+def dept_update_row(deptcode,deptname):
+  row = app_tables.department.get(dept_code=deptcode)
+  row.update(dept_name=deptname)
