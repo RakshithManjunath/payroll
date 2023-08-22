@@ -57,3 +57,8 @@ def desi_change_name_and_code():
   for r in app_tables.designation.search(tables.order_by("desi_code")):
     dept_details.append(r['desi_code'] + " | "  +r['desi_name'])
   return dept_details
+
+@anvil.server.callable
+def desi_update_row(desicode,desiname):
+  row = app_tables.designation.get(desi_code=desicode)
+  row.update(desi_name=desiname)
