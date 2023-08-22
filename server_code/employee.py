@@ -65,3 +65,23 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
                              )
 
 ######## change employee #########
+@anvil.server.callable
+def emp_update_row(empcode,empname):
+  row = app_tables.employee.get(emp_code=empcode)
+  row.update(emp_name=empname)
+
+
+####### concatenating emp name and code #########
+@anvil.server.callable
+def emp_name_and_code():
+  emp_details = []
+  for r in app_tables.employee.search(tables.order_by("emp_code")):
+    emp_details.append(r['emp_code'] + " | "  +r['emp_name'])
+  return emp_details
+
+
+@anvil.server.callable
+def emp_get_details():
+  for r in app_tables.employee.:
+    print(r)
+  # return [r for r in app_tables.trans_date.search()]
