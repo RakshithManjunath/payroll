@@ -63,3 +63,5 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
                               emp_desi_code=emp_desi_code,
                               emp_desi_name=emp_desi_name
                              )
+
+######## change employee #########
