@@ -32,5 +32,13 @@ class dept_change(dept_changeTemplate):
     else:
       self.button_1.enabled = False
 
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('dept_update_row', self.cur_deptcode, 
+                                       self.text_box_1.text)
+    
+    Notification(self.text_box_1.text + " data modified successfully").show()
+
+
 
 
