@@ -81,7 +81,6 @@ def emp_name_and_code():
 
 
 @anvil.server.callable
-def emp_get_details():
-  for r in app_tables.employee.:
-    print(r)
-  # return [r for r in app_tables.trans_date.search()]
+def emp_get_details(empcode):
+  row = app_tables.employee.get(emp_code=empcode)
+  return row
