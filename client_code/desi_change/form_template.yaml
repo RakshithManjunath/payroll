@@ -26,6 +26,7 @@ components:
     background: '', bold: false, underline: false}
   name: text_box_1
   layout_properties: {grid_position: 'WTVLOJ,XJRILF SCLPHF,VOUBZL'}
+  event_bindings: {lost_focus: text_box_1_lost_focus}
 - type: Spacer
   properties: {height: 32}
   name: spacer_2

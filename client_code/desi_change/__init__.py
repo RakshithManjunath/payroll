@@ -14,3 +14,9 @@ class desi_change(desi_changeTemplate):
     # Any code you write here will run before the form opens.
     self.drop_down_1.items = anvil.server.call('desi_change_name_and_code')
 
+  def text_box_1_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.drop_down_1.visible=True
+    self.text_box_1.visible=False
+
+
