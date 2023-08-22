@@ -19,4 +19,18 @@ class desi_change(desi_changeTemplate):
     self.drop_down_1.visible=True
     self.text_box_1.visible=False
 
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    #self.button_1.enabled=True
+    self.text_box_1.visible = True
+    if self.drop_down_1.selected_value is not None:
+      self.cur_desiname_and_code = self.drop_down_1.selected_value
+      desiname_and_code = self.cur_desiname_and_code.split("|")
+      self.text_box_1.text = desiname_and_code[1].strip()
+      self.cur_deptcode = desiname_and_code[0].strip()
+      self.drop_down_1.visible = False
+    else:
+      self.button_1.enabled = False
+
+
 
