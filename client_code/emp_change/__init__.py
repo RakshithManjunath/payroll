@@ -59,8 +59,36 @@ class emp_change(emp_changeTemplate):
 
     self.custom_1.text_box_1.text = row['emp_pf_number']
     self.custom_1.text_box_2.text = row['emp_pf_uan']
-    
 
+    emp_esic = row['emp_esi_contribution']
+    if emp_esic == "Yes":
+      self.custom_2.radio_button_1.selected = True
+      self.custom_2.radio_button_2.selected = False
+    else:
+      self.custom_2.radio_button_2.selected = True
+      self.custom_2.radio_button_1.selected = False
+
+    self.custom_2.text_box_1.text = row['emp_esi_number']
+    self.custom_2.text_box_2.text = row['emp_esi_dispensary']
+
+    emp_ptc = row['emp_pt_contribution']
+    if emp_ptc == "Yes":
+      self.custom_3.radio_button_1.selected = True
+      self.custom_3.radio_button_2.selected = False
+    else:
+      self.custom_3.radio_button_2.selected = True
+      self.custom_3.radio_button_1.selected = False
+
+    emp_itc = row['emp_it_contribution']
+    if emp_itc == "Yes":
+      self.custom_3.radio_button_3.selected = True
+      self.custom_3.radio_button_4.selected = False
+    else:
+      self.custom_3.radio_button_4.selected = True
+      self.custom_3.radio_button_3.selected = False
+      
+    self.custom_3.text_box_1.text = row['emp_pan_number']
+  
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('emp_update_row', self.emp_code, 
