@@ -50,6 +50,7 @@ def dept_add(dept_id,deptcode,deptname):
                           dept_name=deptname)
 
 #################### Department Change #################################
+#################### same function is used also in emp_add #############
 @anvil.server.callable
 def dept_change_name_and_code():
   dept_details = []

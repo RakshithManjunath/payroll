@@ -35,8 +35,12 @@ def emp_get_next_id_value():
 
 ######## add employee #########
 @anvil.server.callable
-def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,emp_sex,emp_type,emp_pf_contribution,emp_pf_number,emp_pf_uan,emp_esi_contribution,emp_esi_number, emp_esi_dispensary,emp_pt_contribution,emp_it_contribution,emp_pan_number):
-# def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,emp_sex,emp_type,emp_pf_contribution,emp_pf_number,emp_pf_uan,emp_esi_contribution,emp_esi_number, emp_esi_dispensary, emp_pt_contribution,emp_dept_code,emp_dept_name,emp_desi_code,emp_desi_name,emp_it_contribution,emp_pan_number):
+def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
+            emp_sex,emp_type,emp_pf_contribution,emp_pf_number,
+            emp_pf_uan,emp_esi_contribution,emp_esi_number, 
+            emp_esi_dispensary,emp_pt_contribution,emp_it_contribution,
+            emp_pan_number,emp_dept_code,emp_dept_name,emp_desi_code,
+            emp_desi_name):
   app_tables.employee.add_row(id=id,
                               emp_code=emp_code,
                               emp_name=emp_name,
@@ -53,11 +57,9 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,emp_sex,emp_type,e
                               emp_esi_dispensary=emp_esi_dispensary,
                               emp_pt_contribution=emp_pt_contribution,
                               emp_it_contribution=emp_it_contribution,
-                              emp_pan_number=emp_pan_number
+                              emp_pan_number=emp_pan_number,
+                              emp_dept_code=emp_dept_code,
+                              emp_dept_name=emp_dept_name,
+                              emp_desi_code=emp_desi_code,
+                              emp_desi_name=emp_desi_name
                              )
-                              # emp_dept_code=emp_dept_code,
-                              # emp_dept_name=emp_dept_name,
-                              # emp_desi_code=emp_desi_code,
-                              # emp_desi_name=emp_desi_name,
-                              # )
-

@@ -50,6 +50,7 @@ def desi_add(desi_id,desicode,desiname):
                           desi_name=desiname)
 
 #################### Designation Change #################################
+#################### same function is used also in emp_add #############
 @anvil.server.callable
 def desi_change_name_and_code():
   dept_details = []
