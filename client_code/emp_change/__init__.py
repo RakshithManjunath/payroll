@@ -21,84 +21,150 @@ class emp_change(emp_changeTemplate):
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
 
-    row = anvil.server.call('emp_get_details',self.emp_code)
+    self.row = anvil.server.call('emp_get_details',self.emp_code)
     
     self.text_box_1.text = self.emp_name
-    self.text_box_2.text = row['emp_hus_name']
-    emp_sex = row['emp_sex']
-    if emp_sex == "Male":
+    self.text_box_2.text = self.row['emp_hus_name']
+    self.emp_sex = self.row['emp_sex']
+    if self.emp_sex == "Male":
       self.radio_button_1.selected = True
       self.radio_button_2.selected = False
     else:
       self.radio_button_2.selected = True
       self.radio_button_1.selected = False
 
-    self.date_picker_1.date = row['emp_dob']
-    self.date_picker_2.date = row['emp_doj']
+    self.date_picker_1.date = self.row['emp_dob']
+    self.date_picker_2.date = self.row['emp_doj']
 
-    emp_type = row['emp_type']
-    if emp_type == "Staff":
+    self.emp_type = self.row['emp_type']
+    if self.emp_type == "Staff":
       self.radio_button_3.selected = True
       self.radio_button_4.selected = False
     else:
       self.radio_button_4.selected = True
       self.radio_button_3.selected = False
 
-    self.text_box_3.text = row['emp_dept_name']
+    self.text_box_3.text = self.row['emp_dept_name']
     self.drop_down_2.items = anvil.server.call('dept_change_name_and_code')
-    self.text_box_4.text = row['emp_desi_name']
+    self.text_box_4.text = self.row['emp_desi_name']
     self.drop_down_3.items = anvil.server.call('desi_change_name_and_code')
 
-    emp_pfc = row['emp_pf_contribution']
-    if emp_pfc == "Yes":
+    self.emp_pfc = self.row['emp_pf_contribution']
+    if self.emp_pfc == True:
       self.custom_1.radio_button_1.selected = True
       self.custom_1.radio_button_2.selected = False
     else:
       self.custom_1.radio_button_2.selected = True
       self.custom_1.radio_button_1.selected = False
 
-    self.custom_1.text_box_1.text = row['emp_pf_number']
-    self.custom_1.text_box_2.text = row['emp_pf_uan']
+    self.custom_1.text_box_1.text = self.row['emp_pf_number']
+    self.custom_1.text_box_2.text = self.row['emp_pf_uan']
 
-    emp_esic = row['emp_esi_contribution']
-    if emp_esic == "Yes":
+    self.emp_esic = self.row['emp_esi_contribution']
+    if self.emp_esic == True:
       self.custom_2.radio_button_1.selected = True
       self.custom_2.radio_button_2.selected = False
     else:
       self.custom_2.radio_button_2.selected = True
       self.custom_2.radio_button_1.selected = False
 
-    self.custom_2.text_box_1.text = row['emp_esi_number']
-    self.custom_2.text_box_2.text = row['emp_esi_dispensary']
+    self.custom_2.text_box_1.text = self.row['emp_esi_number']
+    self.custom_2.text_box_2.text = self.row['emp_esi_dispensary']
 
-    emp_ptc = row['emp_pt_contribution']
-    if emp_ptc == "Yes":
+    self.emp_ptc = self.row['emp_pt_contribution']
+    if self.emp_ptc == True:
       self.custom_3.radio_button_1.selected = True
       self.custom_3.radio_button_2.selected = False
     else:
       self.custom_3.radio_button_2.selected = True
       self.custom_3.radio_button_1.selected = False
 
-    emp_itc = row['emp_it_contribution']
-    if emp_itc == "Yes":
+    self.emp_itc = self.row['emp_it_contribution']
+    if self.emp_itc == True:
       self.custom_3.radio_button_3.selected = True
       self.custom_3.radio_button_4.selected = False
     else:
       self.custom_3.radio_button_4.selected = True
       self.custom_3.radio_button_3.selected = False
       
-    self.custom_3.text_box_1.text = row['emp_pan_number']
+    self.custom_3.text_box_1.text = self.row['emp_pan_number']
   
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
+    if self.radio_button_1.selected == True:
+      self.emp_sex = "Male"
+    else:
+      self.emp_sex = "Female"
+
+    if self.radio_button_3.selected == True:
+      self.emp_type = "Staff"
+    else:
+      self.emp_type = "Worker"
+
+    if self.custom_1.radio_button_1.selected == True:
+      self.emp_pfc = True
+    else:
+      self.emp_pfc = False
+
+    if self.custom_2.radio_button_1.selected == True:
+      self.emp_esic = True
+    else:
+      self.emp_esic = False
+
+    if self.custom_3.radio_button_1.selected == True:
+      self.emp_ptc = True
+    else:
+      self.emp_ptc = False
+
+    if self.custom_3.radio_button_3.selected == True:
+      self.emp_itc = True
+    else:
+      self.emp_itc = False
+
+    dept_code,dept_name,desi_code,desi_name = None,None,None,None
+    self.dept_code,self.desi_code = None,None
+    if self.drop_down_2.selected_value != None:
+      split_list_dept = self.drop_down_2.selected_value.split("|")
+      split_list_dept = [ele.strip() for ele in split_list_dept] 
+      dept_code,dept_name = split_list_dept[0],split_list_dept[1]
+
+    if self.drop_down_3.selected_value != None:
+      split_list_desi = self.drop_down_3.selected_value.split("|")
+      split_list_desi = [ele.strip() for ele in split_list_desi] 
+      desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+    
+
+    if self.row['emp_dept_code'] != dept_code:
+      self.dept_code = dept_code
+      self.text_box_3.text = dept_name
+
+    if self.row['emp_desi_code'] != desi_code:
+      self.desi_code = desi_code
+      self.text_box_4.text = desi_name
+
+
     anvil.server.call('emp_update_row', self.emp_code, 
-                                       self.text_box_1.text)
+                                       self.text_box_1.text,
+                                        self.text_box_2.text,
+                     self.date_picker_1.date,
+                     self.date_picker_2.date,
+                     self.emp_sex,
+                     self.emp_type,
+                     self.emp_pfc,
+                     self.custom_1.text_box_1.text,
+                     self.custom_1.text_box_2.text,
+                     self.emp_esic,
+                     self.custom_2.text_box_1.text,
+                     self.custom_2.text_box_2.text,
+                     self.emp_ptc,
+                     self.emp_itc,
+                     self.custom_3.text_box_1.text,
+                     self.dept_code,
+                     self.text_box_3.text,
+                     self.desi_code,
+                     self.text_box_4.text)
     
     Notification(self.text_box_1.text + " data modified successfully").show()
-
-  def date_picker_2_change(self, **event_args):
-    """This method is called when the selected date changes"""
-    pass
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
