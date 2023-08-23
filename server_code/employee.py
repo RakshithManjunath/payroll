@@ -107,3 +107,13 @@ def emp_name_and_code():
 def emp_get_details(empcode):
   row = app_tables.employee.get(emp_code=empcode)
   return row
+
+
+################ update emp earning #################
+@anvil.server.callable
+def emp_update_earn(empcode, earn1,earn2,earn3,earn4,phone_number,alt_phone_number,email_address,aadhar_number):
+  row = app_tables.employee.get(emp_code=empcode)
+  row.update(earn1=earn1,earn2=earn2,earn3=earn3,earn4=earn4,
+            phone_number=phone_number,alt_phone_number=alt_phone_number,
+            email_address=email_address,
+            aadhar_number=aadhar_number)
