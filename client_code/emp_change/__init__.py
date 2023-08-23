@@ -117,3 +117,7 @@ class emp_change(emp_changeTemplate):
     self.custom_1.visible = False
     self.custom_2.visible = False
     self.custom_3.visible = not self.custom_3.visible
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')

@@ -91,3 +91,7 @@ class emp_add(emp_addTemplate):
                      esi_contribution,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,
                      pt_contribution,it_contribution, self.custom_3.text_box_1.text,dept_code,dept_name,
                      desi_code,desi_name)
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
