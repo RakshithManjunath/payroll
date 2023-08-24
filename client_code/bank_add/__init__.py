@@ -21,3 +21,11 @@ class bank_add(bank_addTemplate):
                      self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                      self.text_box_5.text)
     self.clear_inputs()
+
+  def clear_inputs(self):
+  # Clear our three text boxes
+    self.text_box_1.text = ""
+    self.text_box_2.text = ""
+    self.text_box_3.text = ""
+    self.text_box_4.text = ""
+    self.text_box_5.text = ""
