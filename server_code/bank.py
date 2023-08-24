@@ -57,3 +57,17 @@ def bank_change_name_and_code():
   for r in app_tables.bank.search(tables.order_by("bank_code")):
     bank_details.append(r['bank_code'] + " | "  +r['bank_name'])
   return bank_details
+
+@anvil.server.callable
+def bank_get_details(bankcode):
+  row = app_tables.bank.get(bank_code=bankcode)
+  return row
+
+@anvil.server.callable
+def bank_update(bank_code, bank_addr1,bank_addr2,bank_addr3,bank_ifsc,bank_name):
+  row = app_tables.bank.get(bank_code=bank_code)
+  row.update(bank_addr1=bank_addr1,
+             bank_addr2=bank_addr2,
+             bank_addr3=bank_addr3,
+             bank_ifsc=bank_ifsc,
+             bank_name=bank_name)

@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
     spacing_below: small, background: ''}
 components:
@@ -16,7 +16,25 @@ components:
   name: label_1
   layout_properties: {grid_position: 'ANIBBD,SAUFPP'}
 - type: DropDown
-  properties: {}
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: Select bank
+    border: ''
+    enabled: true
+    foreground: ''
+    items: []
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: true
   name: drop_down_1
   layout_properties: {grid_position: 'ANIBBD,DBWQHB BZFNYN,HGTBLB'}
   event_bindings: {change: drop_down_1_change}
@@ -63,23 +81,24 @@ components:
   properties: {}
   name: text_box_4
   layout_properties: {grid_position: 'CMHGKT,YNZULN'}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_3
-  layout_properties: {grid_position: 'LUCSBV,QAQKEA'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
     underline: false, icon: ''}
   name: button_1
-  layout_properties: {grid_position: 'SDJXWB,EXEBXN'}
+  layout_properties:
+    col_widths: {}
+    grid_position: YJYQZC,RALSPK
+  event_bindings: {click: button_1_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
     underline: false, icon: ''}
   name: button_2
-  layout_properties: {grid_position: 'SDJXWB,QWEFHK'}
+  layout_properties:
+    col_widths: {}
+    grid_position: YJYQZC,QJWAXE
 is_package: true
 custom_component: true

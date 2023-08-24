@@ -18,12 +18,12 @@ class bank_add(bank_addTemplate):
     self.value= anvil.server.call('bank_get_next_string_value')
     bank_id= anvil.server.call('next_bank_id_value')
     anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
-                     self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
-                     self.text_box_5.text)
+                    self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
+                    self.text_box_5.text)
     self.clear_inputs()
-   
+    
   def clear_inputs(self):
-  # Clear our three text boxes
+    # Clear our three text boxes
     self.text_box_1.text = ""
     self.text_box_2.text = ""
     self.text_box_3.text = ""

@@ -13,6 +13,7 @@ class emp_more1(emp_more1Template):
 
     # Any code you write here will run before the form opens.
     self.drop_down_1.items = anvil.server.call('emp_name_and_code')
+    
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -35,5 +36,20 @@ class emp_more1(emp_more1Template):
     self.custom_2.visible = not self.custom_2.visible
     self.custom_1.visible = False
 
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    split_list_emp = self.drop_down_1.selected_value.split("|")
+    split_list_emp = [ele.strip() for ele in split_list_emp] 
+    self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
 
+    self.row = anvil.server.call('emp_get_details',self.emp_code)
+    
+    self.custom_1.text_box_1.text = self.row['earn1']
+    self.custom_1.text_box_2.text = self.row['earn2']
+    self.custom_1.text_box_3.text = self.row['earn3']
+    self.custom_1.text_box_4.text = self.row['earn4']
 
+    self.custom_2.text_box_1.text = self.row['phone_number']
+    self.custom_2.text_box_2.text = self.row['alt_phone_number']
+    self.custom_2.text_box_3.text = self.row['email_address']
+    self.custom_2.text_box_4.text = self.row['aadhar_number']

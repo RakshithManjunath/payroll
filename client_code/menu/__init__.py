@@ -30,3 +30,12 @@ class menu(menuTemplate):
 
   def open_desi(self, **kwargs):
     open_form('desi')
+
+  def open_comp(self, **kwargs):
+    open_form('comp_add_change')
+
+  def open_bank(self, **kwargs):
+    open_form('bank_add_change')
+
+  def open_emp_more(self, **kwargs):
+    open_form('emp_more1')
