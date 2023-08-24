@@ -18,7 +18,7 @@ import anvil.server
 ############### Add Bank ############
 ######### auto increment 'bank_id' column ###########
 @anvil.server.callable
-def dept_get_next_string_value():
+def bank_get_next_string_value():
   # Get the last row of the data table
   next_value = '0000000001'
   try:
@@ -35,10 +35,16 @@ def next_bank_id_value():
   # Get the last row of the data table
   next_value = '001'
   try:
-    dept_code_list = [(r["dept_code"]) for r in app_tables.department.search()]
-    last_row = dept_code_list[-1]
+    bank_code_list = [(r["bank_code"]) for r in app_tables.bank.search()]
+    last_row = bank_code_list[-1]
     last_string_value = last_row
     next_value = str(int(last_string_value) + 1).zfill(3)
   except IndexError:
     next_value == '001'
   return next_value
+
+@anvil.server.callable
+def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc):
+  app_tables.bank.add_row(bank_id=bank_id,bank_code=bankcode,
+                          bank_name=bankname,bank_addr1=bankadd1,bank_addr2=bankadd2,
+                         bank_addr3=bankadd3,bank_ifsc=bankifsc)
