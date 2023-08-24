@@ -17,14 +17,20 @@ class comp_add(comp_addTemplate):
     """This method is called when the button is clicked"""
     self.value= anvil.server.call('comp_get_next_string_value')
     comp_id= anvil.server.call('next_comp_id_value')
-    anvil.server.call('comp_add',self.value,comp_id, self.text_box_1.text
+    anvil.server.call('comp_add',self.value,comp_id, self.text_box_1.text,
+                      self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
+                      self.text_box_5.text,self.text_box_6.text,self.text_box_7.text
                       )
     self.clear_inputs()
     
   def clear_inputs(self):
     # Clear our three text boxes
-    self.text_box_1.text = ""
-   # self.text_box_2.text = ""
-    #self.text_box_3.text = ""
-   #self.text_box_4.text = ""
-    #self.text_box_5.text = ""
+    self.text_box_1.text = None
+    self.text_box_2.text = None
+    self.text_box_3.text = None
+    self.text_box_4.text = None
+    self.text_box_5.text = None
+    self.text_box_6.text = None
+    self.text_box_7.text = None
+
+
