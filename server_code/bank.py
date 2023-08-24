@@ -48,3 +48,12 @@ def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc):
   app_tables.bank.add_row(bank_id=bank_id,bank_code=bankcode,
                           bank_name=bankname,bank_addr1=bankadd1,bank_addr2=bankadd2,
                          bank_addr3=bankadd3,bank_ifsc=bankifsc)
+
+#################### Bank Change #################################
+#################### same function is used also in emp_bank_add #############
+@anvil.server.callable
+def bank_change_name_and_code():
+  bank_details = []
+  for r in app_tables.bank.search(tables.order_by("bank_code")):
+    bank_details.append(r['bank_code'] + " | "  +r['bank_name'])
+  return bank_details
