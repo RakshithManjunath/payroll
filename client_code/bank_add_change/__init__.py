@@ -12,6 +12,7 @@ class bank_add_change(bank_add_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.value= anvil.server.call('bank_get_next_string_value')
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
