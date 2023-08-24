@@ -33,18 +33,18 @@ def next_comp_id_value():
   return next_value
 
 @anvil.server.callable
-def comp_add(comp_id,compcode,compname,compaddr1,compaddr2,compaddr3,
-            comppfno,compesino,comppto):
+def comp_add(comp_id,compcode,compname,compaddr1,compaddr2,compaddr3,comppfno):
+             #,compesino,comppto):
   app_tables.company.add_row(comp_id=comp_id,
                              comp_code=compcode,
                               comp_name=compname,
                              comp_addr1=compaddr1,
                               comp_addr2=compaddr2,
                               comp_addr3=compaddr3,
-                             comp_pf_number=comppfno,
-                             comp_esi_number=compesino,
-                             comp_pto_circle=comppto
-                        )
+                             comp_pf_number=comppfno)
+                             #comp_esi_number=compesino,
+                             #comp_pto_circle=comppto
+                        #)
 
 ####### company select ########
 @anvil.server.callable
