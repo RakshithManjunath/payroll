@@ -59,6 +59,13 @@ def comp_get_details(compcode):
   row = app_tables.company.get(comp_code=compcode)
   return row
 
+@anvil.server.callable
+def comp_update(comp_code, comp_addr1,comp_addr2,comp_addr3):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_addr1=comp_addr1,
+             comp_addr2=comp_addr2,
+             comp_addr3=comp_addr3)
+
 ####### company select ########
 @anvil.server.callable
 def company_select_code_and_name():
