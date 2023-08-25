@@ -16,23 +16,39 @@ class comp_change(comp_changeTemplate):
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    split_list_comp = self.drop_down_1.selected_value.split("|")
-    split_list_comp = [ele.strip() for ele in split_list_comp] 
-    self.comp_code,self.comp_name = split_list_comp[0],split_list_comp[1]
-
-    self.row = anvil.server.call('comp_get_details',self.comp_code)
-
-    self.text_box_1.text = self.row['comp_addr1']
-    self.text_box_2.text = self.row['comp_addr2']
-    self.text_box_3.text = self.row['comp_addr3']
-    #self.text_box_4.text = self.row['bank_ifsc']
+    self.text_box_7.visible = True
+    if self.drop_down_1.selected_value is not None:
+      split_list_comp = self.drop_down_1.selected_value.split("|")
+      split_list_comp = [ele.strip() for ele in split_list_comp] 
+      self.comp_code,self.comp_name = split_list_comp[0],split_list_comp[1]
+  
+      self.row = anvil.server.call('comp_get_details',self.comp_code)
+  
+      self.text_box_1.text = self.row['comp_addr1']
+      self.text_box_2.text = self.row['comp_addr2']
+      self.text_box_3.text = self.row['comp_addr3']
+      self.text_box_4.text = self.row['comp_pf_number']
+      self.text_box_5.text = self.row['comp_esi_number']
+      self.text_box_6.text = self.row['comp_pto_circle']
+      self.text_box_7.text = self.comp_name
+      self.drop_down_1.visible = False
+    else:
+      self.button_1.enabled = False
    # self.text_box_5.text = self.bank_name
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('comp_update',self.comp_code,
       self.text_box_1.text, self.text_box_2.text,
-      self.text_box_3.text)
+      self.text_box_3.text,self.text_box_4.text,
+      self.text_box_5.text,self.text_box_6.text,
+      self.text_box_7.text)
+
+  def text_box_7_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.drop_down_1.visible = True
+    self.text_box_7.visible = False
+
 
 
 

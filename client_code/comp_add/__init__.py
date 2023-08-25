@@ -19,7 +19,8 @@ class comp_add(comp_addTemplate):
     comp_id= anvil.server.call('next_comp_id_value')
     anvil.server.call('comp_add',self.value,comp_id, self.text_box_1.text,
                       self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
-                      self.text_box_5.text)
+                      self.text_box_5.text,self.text_box_6.text,
+                      self.text_box_7.text)
     #,self.text_box_6.text,self.text_box_7.text
                       #)
     self.clear_inputs()
