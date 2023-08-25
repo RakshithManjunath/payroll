@@ -53,3 +53,7 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_2.text = self.row['alt_phone_number']
     self.custom_2.text_box_3.text = self.row['email_address']
     self.custom_2.text_box_4.text = self.row['aadhar_number']
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
