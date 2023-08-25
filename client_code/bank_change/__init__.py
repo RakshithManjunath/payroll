@@ -39,6 +39,19 @@ class bank_change(bank_changeTemplate):
                      self.text_box_1.text, self.text_box_2.text,
                      self.text_box_3.text, self.text_box_4.text,
                      self.text_box_5.text)
+    Notification(self.text_box_1.text + " data modified successfully").show()
+    self.clear_inputs()
 
+  def clear_inputs(self):
+    # Clear our three text boxes
+    self.text_box_1.text = None
+    self.text_box_2.text = None
+    self.text_box_3.text = None
+    self.text_box_4.text = None
+    self.text_box_5.text = None
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('bank_add_change')
 
 

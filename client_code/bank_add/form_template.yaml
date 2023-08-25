@@ -80,5 +80,6 @@ components:
   layout_properties:
     col_widths: {}
     grid_position: SNXEWI,WFPEJY
+  event_bindings: {click: button_2_click}
 is_package: true
 custom_component: true

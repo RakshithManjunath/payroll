@@ -39,6 +39,11 @@ class dept_change(dept_changeTemplate):
     
     Notification(self.text_box_1.text + " data modified successfully").show()
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('dept')
+
+
 
 
 

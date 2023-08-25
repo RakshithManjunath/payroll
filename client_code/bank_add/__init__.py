@@ -20,6 +20,7 @@ class bank_add(bank_addTemplate):
     anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
                     self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                     self.text_box_5.text)
+    Notification(self.text_box_1.text + " data added successfully").show()
     self.clear_inputs()
     
   def clear_inputs(self):
@@ -29,3 +30,7 @@ class bank_add(bank_addTemplate):
     self.text_box_3.text = ""
     self.text_box_4.text = ""
     self.text_box_5.text = ""
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('bank_add_change')

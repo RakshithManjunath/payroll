@@ -38,7 +38,15 @@ class desi_change(desi_changeTemplate):
                                        self.text_box_1.text)
     
     Notification(self.text_box_1.text + " data modified successfully").show()
+    self.clear_inputs()
 
+  def clear_inputs(self):
+    # Clear our three text boxes
+    self.text_box_1.text = None
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('desi')
 
 
 

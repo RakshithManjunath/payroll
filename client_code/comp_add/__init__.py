@@ -21,8 +21,7 @@ class comp_add(comp_addTemplate):
                       self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                       self.text_box_5.text,self.text_box_6.text,
                       self.text_box_7.text)
-    #,self.text_box_6.text,self.text_box_7.text
-                      #)
+    Notification(self.text_box_1.text + " data added successfully").show()
     self.clear_inputs()
     
   def clear_inputs(self):

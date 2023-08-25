@@ -38,5 +38,6 @@ components:
     underline: false, icon: ''}
   name: button_2
   layout_properties: {grid_position: 'DORNLW,MZUYDZ'}
+  event_bindings: {click: button_2_click}
 is_package: true
 custom_component: true

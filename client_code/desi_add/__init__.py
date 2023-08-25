@@ -18,4 +18,13 @@ class desi_add(desi_addTemplate):
     """This method is called when the button is clicked"""
     desi_id= anvil.server.call('next_desi_id_value')
     anvil.server.call('desi_add',desi_id,self.value, self.text_box_1.text)
+    Notification(self.text_box_1.text + " data added successfully").show()
+    self.clear_inputs()
 
+  def clear_inputs(self):
+    # Clear our three text boxes
+    self.text_box_1.text = None
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('desi')
