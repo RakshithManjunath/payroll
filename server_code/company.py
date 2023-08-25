@@ -39,12 +39,22 @@ def comp_add(comp_id,compcode,compname,compaddr1,compaddr2,compaddr3,comppfno):
                              comp_code=compcode,
                               comp_name=compname,
                              comp_addr1=compaddr1,
-                              comp_addr2=compaddr2,
-                              comp_addr3=compaddr3,
+                             comp_addr2=compaddr2,
+                             comp_addr3=compaddr3,
                              comp_pf_number=comppfno)
                              #comp_esi_number=compesino,
                              #comp_pto_circle=comppto
                         #)
+
+#################### Company Change #################################
+@anvil.server.callable
+def comp_change_name_and_code():
+  comp_details = []
+  for r in app_tables.company.search(tables.order_by("comp_code")):
+    comp_details.append(r['comp_code'] + " | "  +r['comp_name'])
+  return comp_details
+
+
 
 ####### company select ########
 @anvil.server.callable
