@@ -35,4 +35,9 @@ class comp_add(comp_addTemplate):
     self.text_box_6.text = None
     self.text_box_7.text = None
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('comp_add_change')
+
+
 

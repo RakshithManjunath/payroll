@@ -43,11 +43,28 @@ class comp_change(comp_changeTemplate):
       self.text_box_3.text,self.text_box_4.text,
       self.text_box_5.text,self.text_box_6.text,
       self.text_box_7.text)
+    
+    self.clear_inputs()
+
+  def clear_inputs(self):
+    self.text_box_1.text = None
+    self.text_box_2.text = None
+    self.text_box_3.text = None
+    self.text_box_4.text = None
+    self.text_box_5.text = None
+    self.text_box_6.text = None
+    self.text_box_7.text = None
+  
 
   def text_box_7_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
     self.drop_down_1.visible = True
     self.text_box_7.visible = False
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('comp_add_change')
+
 
 
 
