@@ -54,7 +54,10 @@ def comp_change_name_and_code():
     comp_details.append(r['comp_code'] + " | "  +r['comp_name'])
   return comp_details
 
-
+@anvil.server.callable
+def comp_get_details(compcode):
+  row = app_tables.company.get(comp_code=compcode)
+  return row
 
 ####### company select ########
 @anvil.server.callable
