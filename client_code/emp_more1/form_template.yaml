@@ -31,10 +31,39 @@ components:
     name: drop_down_1
     layout_properties: {grid_position: 'AOKOYW,XQAHSH'}
     event_bindings: {change: drop_down_1_change}
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_1
-    layout_properties: {grid_position: 'ZXMXDH,VCESKR'}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'BXEZHN,GWKXJZ'}
+    components:
+    - type: Label
+      properties: {}
+      name: label_2
+      layout_properties: {}
+  - type: Label
+    properties: {}
+    name: label_5
+    layout_properties: {grid_position: 'BXEZHN,XBCTVB'}
+  - type: Label
+    properties: {}
+    name: label_6
+    layout_properties: {grid_position: 'BXEZHN,FUXFJG'}
+  - type: Label
+    properties: {}
+    name: label_3
+    layout_properties: {grid_position: 'GPUANA,BBIQHT'}
+  - type: Label
+    properties: {}
+    name: label_4
+    layout_properties: {grid_position: 'GPUANA,BKXGFT'}
+  - type: Label
+    properties: {}
+    name: label_7
+    layout_properties: {grid_position: 'GPUANA,LJPFBE'}
+  - type: Label
+    properties: {}
+    name: label_8
+    layout_properties: {grid_position: 'GPUANA,KCHXRH'}
   - type: Link
     properties: {role: title, url: '', align: center, tooltip: '', border: solid,
       foreground: '', visible: true, text: Earnings, font_size: null, wrap_on: mobile,
@@ -89,6 +118,7 @@ components:
       underline: false, icon: ''}
     name: button_2
     layout_properties: {grid_position: 'CGRWIC,HNQWWC'}
+    event_bindings: {click: button_2_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links

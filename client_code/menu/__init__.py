@@ -20,7 +20,7 @@ class menu(menuTemplate):
     open_form('update_trans_date')
 
   def open_emp_add(self, **kwargs):
-    open_form('emp_add')
+    open_form('emp_mast_add')
 
   def open_emp_chg(self, **kwargs):
     open_form('emp_change')

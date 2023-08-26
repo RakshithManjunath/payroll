@@ -185,7 +185,7 @@ components:
       properties: {}
       name: custom_3
       layout_properties: {grid_position: 'FOQXLM,BUGISW'}
-    - type: form:esi_form
+    - type: form:esi_form_add
       properties: {}
       name: custom_2
       layout_properties: {grid_position: 'HBCNTM,BHLHAV'}
