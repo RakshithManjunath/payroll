@@ -85,7 +85,7 @@ components:
     properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
       placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
       font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-      min_date: '', background: '', bold: false, underline: false, format: ''}
+      min_date: '', background: '', bold: false, underline: false, format: '%d/%m/Y'}
     name: date_picker_1
     layout_properties: {grid_position: 'XNAIMK,JJLAPC'}
   - type: Label
@@ -99,7 +99,7 @@ components:
     properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
       placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
       font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-      min_date: '', background: '', bold: false, underline: false, format: ''}
+      min_date: '', background: '', bold: false, underline: false, format: '%d/%m/Y'}
     name: date_picker_2
     layout_properties: {grid_position: 'XNAIMK,RJQYVP'}
     event_bindings: {}

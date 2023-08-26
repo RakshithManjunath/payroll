@@ -95,7 +95,7 @@ components:
     name: column_panel_1
     layout_properties: {grid_position: 'ZTLGEB,CUEDPH'}
     components:
-    - type: form:emp_more_misc2
+    - type: form:emp_more_misc1
       properties: {}
       name: custom_2
       layout_properties: {grid_position: 'BLBKGZ,OEIYPO'}
@@ -103,22 +103,6 @@ components:
       properties: {}
       name: custom_1
       layout_properties: {grid_position: 'SKUZMW,VPBVIJ'}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: button_1
-    layout_properties: {grid_position: 'CGRWIC,FFVBRO'}
-    event_bindings: {click: button_1_click}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: button_2
-    layout_properties: {grid_position: 'CGRWIC,HNQWWC'}
-    event_bindings: {click: button_2_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links

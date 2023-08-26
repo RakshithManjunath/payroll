@@ -111,9 +111,14 @@ def emp_get_details(empcode):
 
 ################ update emp earning #################
 @anvil.server.callable
-def emp_update_earn(empcode, earn1,earn2,earn3,earn4,phone_number,alt_phone_number,email_address,aadhar_number):
+def emp_update_earn(empcode, earn1,earn2,earn3,earn4):
   row = app_tables.employee.get(emp_code=empcode)
-  row.update(earn1=earn1,earn2=earn2,earn3=earn3,earn4=earn4,
-            phone_number=phone_number,alt_phone_number=alt_phone_number,
+  row.update(earn1=earn1,earn2=earn2,earn3=earn3,earn4=earn4)
+
+############# update emp misc1 ################
+@anvil.server.callable
+def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_number):
+  row = app_tables.employee.get(emp_code=empcode)
+  row.update(phone_number=phone_number,alt_phone_number=alt_phone_number,
             email_address=email_address,
             aadhar_number=aadhar_number)
