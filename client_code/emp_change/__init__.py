@@ -165,6 +165,7 @@ class emp_change(emp_changeTemplate):
                      self.desi_code,
                      self.text_box_4.text)
       Notification(self.text_box_1.text + " data modified successfully").show()
+      self.drop_down_1.visible=True
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
