@@ -15,13 +15,16 @@ class bank_add(bank_addTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.value= anvil.server.call('bank_get_next_string_value')
-    bank_id= anvil.server.call('next_bank_id_value')
-    anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
+    if self.text_box_1.text == "":
+      Notification("Bank name cannot be blank").show()
+    else:
+      self.value= anvil.server.call('bank_get_next_string_value')
+      bank_id= anvil.server.call('next_bank_id_value')
+      anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
                     self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                     self.text_box_5.text)
-    Notification(self.text_box_1.text + " data added successfully").show()
-    self.clear_inputs()
+      Notification(self.text_box_1.text + " data added successfully").show()
+      self.clear_inputs()
     
   def clear_inputs(self):
     # Clear our three text boxes

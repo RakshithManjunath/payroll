@@ -41,7 +41,7 @@ components:
 - type: TextBox
   properties: {}
   name: text_box_5
-  layout_properties: {grid_position: 'ANIBBD,DBWQHB XFIRII,LOIGHZ'}
+  layout_properties: {grid_position: 'ANIBBD,DBWQHB ZOXOGO,IABADM'}
   event_bindings: {lost_focus: text_box_5_lost_focus}
 - type: Spacer
   properties: {height: 32}

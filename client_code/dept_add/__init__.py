@@ -17,10 +17,13 @@ class dept_add(dept_addTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    dept_id= anvil.server.call('next_dept_id_value')
-    anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text)
-    Notification(self.text_box_1.text + " data added successfully").show()
-    self.clear_inputs()
+    if self.text_box_1.text == "":
+      Notification("Department name cannot be blank").show()
+    else:
+      dept_id= anvil.server.call('next_dept_id_value')
+      anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text)
+      Notification(self.text_box_1.text + " data added successfully").show()
+      self.clear_inputs()
 
   def clear_inputs(self):
     # Clear our three text boxes

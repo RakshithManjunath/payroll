@@ -38,7 +38,10 @@ class comp_change(comp_changeTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('comp_update',self.comp_code,
+    if self.text_box_7.text == "":
+      Notification("Company name cannot be blank").show()
+    else:
+      anvil.server.call('comp_update',self.comp_code,
       self.text_box_1.text, self.text_box_2.text,
       self.text_box_3.text,self.text_box_4.text,
       self.text_box_5.text,self.text_box_6.text,

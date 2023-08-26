@@ -34,12 +34,15 @@ class dept_change(dept_changeTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('dept_update_row', self.cur_deptcode, 
+    if self.text_box_1.text == "":
+      Notification("Department name cannot be blank").show()
+    else:
+      anvil.server.call('dept_update_row', self.cur_deptcode, 
                                        self.text_box_1.text)
     
-    Notification(self.text_box_1.text + " data modified successfully").show()
-    self.clear_inputs()
-    self.drop_down_1.visible=True
+      Notification(self.text_box_1.text + " data modified successfully").show()
+      self.clear_inputs()
+      self.drop_down_1.visible=True
 
   def clear_inputs(self):
     # Clear our three text boxes
