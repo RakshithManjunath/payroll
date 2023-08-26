@@ -40,7 +40,9 @@ class bank_change(bank_changeTemplate):
                      self.text_box_3.text, self.text_box_4.text,
                      self.text_box_5.text)
     Notification(self.text_box_1.text + " data modified successfully").show()
+
     self.clear_inputs()
+    self.drop_down_1.visible=True
 
   def clear_inputs(self):
     # Clear our three text boxes
