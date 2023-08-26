@@ -45,6 +45,7 @@ class comp_change(comp_changeTemplate):
       self.text_box_7.text)
     
     self.clear_inputs()
+    self.drop_down_1.visible=True
 
   def clear_inputs(self):
     self.text_box_1.text = None
