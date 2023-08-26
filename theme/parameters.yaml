@@ -49,7 +49,6 @@ roles:
   components: [TextBox, TextArea, DatePicker, DropDown]
 - name: input-error
   components: [TextBox, TextArea, DatePicker, DropDown]
-- {name: form_height}
 color_scheme:
   preset_groups:
   - name: Colour Scheme

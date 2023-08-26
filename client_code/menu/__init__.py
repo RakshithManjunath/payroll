@@ -39,3 +39,6 @@ class menu(menuTemplate):
 
   def open_emp_more(self, **kwargs):
     open_form('emp_more1')
+
+  def open_stat(self, **kwargs):
+    open_form('statutary')
