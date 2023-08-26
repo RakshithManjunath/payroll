@@ -15,7 +15,7 @@ class emp_more_misc1(emp_more_misc1Template):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print(self.parent, self.parent.parent, self.parent.parent.parent)
+    #print(self.parent, self.parent.parent, self.parent.parent.parent)
     parent = self.parent.parent.get_components()
     dropdowns = [component for component in parent if isinstance(component, anvil.DropDown)]
 
@@ -25,4 +25,9 @@ class emp_more_misc1(emp_more_misc1Template):
     anvil.server.call('emp_update_misc1',emp_code,self.text_box_1.text,
                      self.text_box_2.text,self.text_box_3.text,
                      self.text_box_4.text)
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('emp_more_misc1')
+
 

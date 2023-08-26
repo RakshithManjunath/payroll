@@ -188,3 +188,8 @@ class emp_change(emp_changeTemplate):
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('emp_change')
+
