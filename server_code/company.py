@@ -74,3 +74,33 @@ def comp_update(comp_code, comp_addr1,comp_addr2,comp_addr3,comppfno,compesino,c
 def company_select_code_and_name():
   company_details = [row['comp_code'] + " | "  +row['comp_name'] for row in app_tables.company.search(tables.order_by("comp_code"))]
   return company_details
+
+
+####### statutary update pf ########
+@anvil.server.callable
+def statutary_update_pf(comp_code,comp_emp_pfrate,comp_empr_fpfrate,comp_pf_admin,comp_pf_edli,
+                    comp_mgmt_pf_lt,comp_mgmt_fpf_lt):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_emp_pfrate=comp_emp_pfrate,
+            comp_empr_fpfrate=comp_empr_fpfrate,
+            comp_pf_admin=comp_pf_admin,
+            comp_pf_edli=comp_pf_edli,
+            comp_mgmt_pf_lt=comp_mgmt_pf_lt,
+            comp_mgmt_fpf_lt=comp_mgmt_fpf_lt
+            )
+
+####### statutary update esi ########
+@anvil.server.callable
+def statutary_update_esi(comp_code,comp_esi_sal_lt):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_esi_sal_lt=comp_esi_sal_lt)
+
+####### statutary update ded ########
+@anvil.server.callable
+def statutary_update_ded(comp_code, comp_ded1,comp_ded2,comp_ded3,comp_ded4):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_ded1=comp_ded1,
+            comp_ded2=comp_ded2,
+            comp_ded3=comp_ded3,
+            comp_ded4=comp_ded4)
+

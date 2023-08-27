@@ -41,6 +41,11 @@ class statutary(statutaryTemplate):
     self.custom_3.visible = False
     self.custom_4.visible = not self.custom_4.visible
 
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+
    
 
 
