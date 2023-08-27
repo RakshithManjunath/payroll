@@ -4,20 +4,6 @@ container:
 components:
 - type: Label
   properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: Salary limit for ESI calculation, font_size: null, font: '',
-    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
-    bold: true, underline: false, icon: ''}
-  name: label_1
-  layout_properties: {grid_position: 'UZONSZ,LWAZHL'}
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: text_box_1
-  layout_properties: {grid_position: 'UZONSZ,ASLEOM'}
-- type: Label
-  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
     visible: true, text: 'Employee PF contribution  [ % ]', font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
     bold: true, underline: false, icon: ''}
@@ -60,4 +46,44 @@ components:
   properties: {}
   name: text_box_5
   layout_properties: {grid_position: 'JCTYIB,BJBLCA'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: PF misc charges, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_6
+  layout_properties: {grid_position: 'OFOWAZ,EEHFMV'}
+- type: TextBox
+  properties: {}
+  name: text_box_6
+  layout_properties: {grid_position: 'OFOWAZ,SLGJTP'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: 'Salary for management ', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_7
+  layout_properties: {grid_position: 'DPKZLW,CAFUSP'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: PF limit Rs ., font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_8
+  layout_properties: {grid_position: 'HBVQRC,GJHYQS'}
+- type: TextBox
+  properties: {}
+  name: text_box_7
+  layout_properties: {grid_position: 'HBVQRC,PVXSXI'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: FPF limit Rs., font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_9
+  layout_properties: {grid_position: 'TCBVHV,QPZAED'}
+- type: TextBox
+  properties: {}
+  name: text_box_8
+  layout_properties: {grid_position: 'TCBVHV,NLDXJG'}
 is_package: true
