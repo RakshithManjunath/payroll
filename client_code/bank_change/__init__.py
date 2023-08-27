@@ -50,6 +50,8 @@ class bank_change(bank_changeTemplate):
       Notification(self.text_box_1.text + " data modified successfully").show()
       self.clear_inputs()
       self.drop_down_1.visible=True
+      # refresh after button submit
+      self.drop_down_1.items = anvil.server.call('bank_change_name_and_code')
 
   def clear_inputs(self):
     # Clear our three text boxes

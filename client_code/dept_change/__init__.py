@@ -44,6 +44,9 @@ class dept_change(dept_changeTemplate):
       self.clear_inputs()
       self.drop_down_1.visible=True
 
+      # refresh after button submit
+      self.drop_down_1.items = anvil.server.call('dept_change_name_and_code')
+
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_1.text = None
