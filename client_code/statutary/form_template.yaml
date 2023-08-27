@@ -46,6 +46,11 @@ components:
       icon: ''}
     name: link_4
     layout_properties: {grid_position: 'IGHTBG,GGGCRF'}
+    event_bindings: {click: link_4_click}
+  - type: form:stat_ded
+    properties: {}
+    name: custom_4
+    layout_properties: {grid_position: 'UOMQWH,YLNZLA'}
   - type: form:stat_earnings
     properties: {}
     name: custom_3
