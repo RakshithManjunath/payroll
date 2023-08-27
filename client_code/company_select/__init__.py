@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
+from .. import gvarb
 
 class company_select(company_selectTemplate):
   def __init__(self, **properties):
@@ -19,12 +20,19 @@ class company_select(company_selectTemplate):
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('mode_select')
+    if self.company_select_dp.selected_value!=None:
+      split_list_comp = self.company_select_dp.selected_value.split("|")
+      split_list_comp = [ele.strip() for ele in split_list_comp] 
+      gvarb.g_comcode,gvarb.g_comname = split_list_comp[0],split_list_comp[1]
+      open_form('mode_select')
+    else:
+      Notification("Pls select company").show()
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
    # open_form('company_select')
     anvil.users.login_with_form()
+
 
 
 

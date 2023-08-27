@@ -29,9 +29,15 @@ components:
   properties:
     role: null
     columns:
-    - {id: OSMFXX, title: From, data_key: column_1, $$hashKey: 'object:45603'}
-    - {id: BVQTQV, title: To, data_key: column_2, $$hashKey: 'object:45604'}
-    - {id: KMWYDR, title: PT, data_key: column_3, $$hashKey: 'object:45605'}
+    - {id: LZWOQG, title: Comp Pts1_from, data_key: comp_pts1_from, $$hashKey: 'object:38447'}
+    - {id: BKGYOT, title: Comp Pts1_to, data_key: comp_pts1_to, $$hashKey: 'object:38448'}
+    - {id: EUZOQM, title: Comp Pts1_pt, data_key: comp_pts1_pt, $$hashKey: 'object:38449'}
+    - {id: MUBJCW, title: Comp Pts2_from, data_key: comp_pts2_from, $$hashKey: 'object:38450'}
+    - {id: UMQHRM, title: Comp Pts2_to, data_key: comp_pts2_to, $$hashKey: 'object:38451'}
+    - {id: GJDHIF, title: Comp Pts2_pt, data_key: comp_pts2_pt, $$hashKey: 'object:38452'}
+    - {id: SHZNQU, title: Comp Pts3_from, data_key: comp_pts3_from, $$hashKey: 'object:38453'}
+    - {id: TZMIWT, title: Comp Pts3_to, data_key: comp_pts3_to, $$hashKey: 'object:38454'}
+    - {id: GLJFLI, title: Comp Pts3_pt, data_key: comp_pts3_pt, $$hashKey: 'object:38455'}
     auto_header: true
     tooltip: ''
     border: ''
@@ -50,6 +56,8 @@ components:
     properties: {spacing_above: none, spacing_below: none, item_template: stat_esi_pt.RowTemplate2}
     name: repeating_panel_1
     layout_properties: {}
+    data_bindings: []
+  data_bindings: []
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
