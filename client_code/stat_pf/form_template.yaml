@@ -1,6 +1,8 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
 components:
 - type: Label
   properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
@@ -48,27 +50,9 @@ components:
   layout_properties: {grid_position: 'JCTYIB,BJBLCA'}
 - type: Label
   properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: PF misc charges, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: label_6
-  layout_properties: {grid_position: 'OFOWAZ,EEHFMV'}
-- type: TextBox
-  properties: {}
-  name: text_box_6
-  layout_properties: {grid_position: 'OFOWAZ,SLGJTP'}
-- type: Label
-  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: 'Salary for management ', font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: label_7
-  layout_properties: {grid_position: 'DPKZLW,CAFUSP'}
-- type: Label
-  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: PF limit Rs ., font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
+    visible: true, text: Salary limit for management PF limit Rs ., font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: true, underline: false, icon: ''}
   name: label_8
   layout_properties: {grid_position: 'HBVQRC,GJHYQS'}
 - type: TextBox
@@ -77,13 +61,28 @@ components:
   layout_properties: {grid_position: 'HBVQRC,PVXSXI'}
 - type: Label
   properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: FPF limit Rs., font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
+    visible: true, text: Salary limit for management FPF limit Rs., font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: true, underline: false, icon: ''}
   name: label_9
   layout_properties: {grid_position: 'TCBVHV,QPZAED'}
 - type: TextBox
   properties: {}
   name: text_box_8
   layout_properties: {grid_position: 'TCBVHV,NLDXJG'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: button_1
+  layout_properties: {grid_position: 'XCHVMX,JOATZL'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: button_2
+  layout_properties: {grid_position: 'XCHVMX,YYWSZZ'}
 is_package: true
+custom_component: true
