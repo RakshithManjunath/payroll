@@ -23,6 +23,9 @@ class comp_add_change(comp_add_changeTemplate):
     self.custom_1.visible = False
     self.custom_2.visible = not self.custom_2.visible
 
+    # after company add to check added company
+    self.custom_2.drop_down_1.items = anvil.server.call('comp_change_name_and_code')
+
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')

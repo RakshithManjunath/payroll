@@ -12,7 +12,7 @@ class comp_change(comp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_1.items = anvil.server.call('comp_change_name_and_code')
+    # self.drop_down_1.items = anvil.server.call('comp_change_name_and_code')
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -49,6 +49,9 @@ class comp_change(comp_changeTemplate):
     
     self.clear_inputs()
     self.drop_down_1.visible=True
+
+    # refresh after button submit
+    self.drop_down_1.items = anvil.server.call('comp_change_name_and_code')
 
   def clear_inputs(self):
     self.text_box_1.text = None
