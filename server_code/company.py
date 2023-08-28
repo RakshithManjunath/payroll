@@ -91,9 +91,15 @@ def statutary_update_pf(comp_code,comp_emp_pfrate,comp_empr_fpfrate,comp_pf_admi
 
 ####### statutary update esi ########
 @anvil.server.callable
-def statutary_update_esi(comp_code,comp_esi_sal_lt):
+def statutary_update_esi(comp_code,comp_esi_sal_lt,
+                         comp_pts1_from, comp_pts1_to, comp_pts1_pt,
+                        comp_pts2_from, comp_pts2_to, comp_pts2_pt,
+                        comp_pts3_from, comp_pts3_to, comp_pts3_pt):
   row = app_tables.company.get(comp_code=comp_code)
-  row.update(comp_esi_sal_lt=comp_esi_sal_lt)
+  row.update(comp_esi_sal_lt=comp_esi_sal_lt,
+            comp_pts1_from=comp_pts1_from, comp_pts1_to=comp_pts1_to, comp_pts1_pt=comp_pts1_pt,
+            comp_pts2_from=comp_pts2_from, comp_pts2_to=comp_pts2_to, comp_pts2_pt=comp_pts2_pt,
+            comp_pts3_from=comp_pts3_from,comp_pts3_to=comp_pts3_to,comp_pts3_pt=comp_pts3_pt)
 
 ####### statutary update ded ########
 @anvil.server.callable
@@ -117,4 +123,7 @@ def comp_more_update_earnhead(comp_code,comp_earnhead1,comp_earnhead2,comp_earnh
   row.update(comp_earn_head5=comp_earnhead5)
   row.update(comp_earn_head6=comp_earnhead6)                               
   row.update(comp_earn_head7=comp_earnhead7)
-  row.update(comp_earn_head8=comp_earnhead8)   
+  row.update(comp_earn_head8=comp_earnhead8)
+
+
+####### 
