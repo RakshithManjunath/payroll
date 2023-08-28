@@ -34,6 +34,9 @@ class menu(menuTemplate):
   def open_comp(self, **kwargs):
     open_form('comp_add_change')
 
+  def open_comp_more(self, **kwargs):
+    open_form('comp_more')
+
   def open_bank(self, **kwargs):
     open_form('bank_add_change')
 

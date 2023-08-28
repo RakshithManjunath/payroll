@@ -101,45 +101,48 @@ container:
       >\n            <li>\n              <a href=\"#\" class=\"droptoggle\">Master\
       \ <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\n              <ul class=\"\
       submanu\">\n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"company_add_and_change\">Company</span></a>\n<!--                   <ul\
-      \ class=\"sub-sub-menu\"> -->\n<!--                     <li><a href=\"#\" id=\"\
-      style_add\"></a></li> -->\n<!--                     <li><a href=\"#\" id=\"\
-      style_chg\">Change</a></li> -->\n<!--                   </ul> -->\n        \
-      \        </li>\n                \n<!--                 <li>\n              \
-      \    <a href=\"#\" class=\"sub-sub-drop\">Operation <span class=\"arrow-right\"\
-      >\u276f</span></a>\n                  <ul class=\"sub-sub-menu\">\n        \
-      \            <li><a href=\"#\" id=\"oper_add\">Add</a></li>\n              \
-      \      <li><a href=\"#\" id=\"oper_chg\">Change</a></li>\n                 \
-      \ </ul>\n                </li> -->\n\n                <li>\n               \
-      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"dept_add_and_change\">Department</a>\n\
-      <!--                   <ul class=\"sub-sub-menu\">\n                    <li><a\
-      \ href=\"#\" id=\"dept\">Add</a></li>\n                    <li><a href=\"#\"\
-      \ id=\"dept_chg\">Change</a></li>\n                  </ul> -->\n           \
-      \     </li>\n                \n                <li>\n                  <a href=\"\
-      #\" class=\"sub-sub-drop\" id=\"desi_add_and_change\">Designation</a>\n<!--\
-      \                   <ul class=\"sub-sub-menu\">\n                    <li><a\
-      \ href=\"#\" id=\"desi_add\">Add</a></li>\n                    <li><a href=\"\
-      #\" id=\"desi_chg\">Change</a></li>\n                  </ul> -->\n         \
-      \       </li>\n\n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"bank_add_and_change\">Bank</span></a>\n                </li>\n\
+      \ id=\"company_add_and_change\">Company</span></a>\n                </li>\n\
+      \                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"comp_more\">Statuory - 1</span></a>\n                </li>\n        \
+      \        \n                         <!--                   <ul class=\"sub-sub-menu\"\
+      > -->\n<!--                     <li><a href=\"#\" id=\"style_add\"></a></li>\
+      \ -->\n<!--                     <li><a href=\"#\" id=\"style_chg\">Change</a></li>\
+      \ -->\n<!--                   </ul> -->\n<!--                 </li>\n      \
+      \          \n<!--                 <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\">Operation <span class=\"arrow-right\">\u276f</span></a>\n   \
+      \               <ul class=\"sub-sub-menu\">\n                    <li><a href=\"\
+      #\" id=\"oper_add\">Add</a></li>\n                    <li><a href=\"#\" id=\"\
+      oper_chg\">Change</a></li>\n                  </ul>\n                </li> -->\n\
       \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"statutory\">Statutory - 2</span></a>\n                </li>\n       \
-      \         \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      >Employee <span class=\"arrow-right\">\u276f</span></a>\n                  <ul\
-      \ class=\"sub-sub-menu\">\n                    <li><a href=\"#\" id=\"emp_add\"\
-      >Add</a></li>\n                    <li><a href=\"#\" id=\"emp_chg\">Change</a></li>\n\
-      \                    <li><a href=\"#\" id=\"emp_more\">More</a></li>\n     \
-      \             </ul>\n                </li>\n                \n             \
-      \ </ul>\n\n\n            </li>\n           <li><a href=\"#\" id=\"trans_add\"\
-      >Transaction</a></li>\n<!--             <li><a href=\"#\" id=\"trans2_add\"\
-      >Transaction</a></li> -->\n            <li><a href=\"#\" id=\"update_form\"\
-      >Update</a></li>\n            <li><a href=\"#\" class=\"const_page\">Report</a></li>\n\
-      \            <li><a href=\"#\" id=\"login_page\">Logout</a></li\n          \
-      \  \n          </ul>\n        </div>\n\n        <div class=\"ser-btn\">\n  \
-      \      </div>\n\n      </div>\n\n\n\n    </div>\n  </div>\n  <div id='my-div'></div>\n\
-      \  <script>\n    \n    $('#style_add').on('click', function(e) {\n  var linkElement\
-      \ = this;\n  anvil.call(linkElement, \"open_style_add\");\n  e.preventDefault();\n\
-      });\n    $('#style_chg').on('click', function(e) {\n  var linkElement = this;\n\
+      \ id=\"dept_add_and_change\">Department</a>\n<!--                   <ul class=\"\
+      sub-sub-menu\">\n                    <li><a href=\"#\" id=\"dept\">Add</a></li>\n\
+      \                    <li><a href=\"#\" id=\"dept_chg\">Change</a></li>\n   \
+      \               </ul> -->\n                </li>\n                \n       \
+      \         <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"\
+      desi_add_and_change\">Designation</a>\n<!--                   <ul class=\"sub-sub-menu\"\
+      >\n                    <li><a href=\"#\" id=\"desi_add\">Add</a></li>\n    \
+      \                <li><a href=\"#\" id=\"desi_chg\">Change</a></li>\n       \
+      \           </ul> -->\n                </li>\n\n                <li>\n     \
+      \             <a href=\"#\" class=\"sub-sub-drop\" id=\"bank_add_and_change\"\
+      >Bank</span></a>\n                </li>\n\n                <li>\n          \
+      \        <a href=\"#\" class=\"sub-sub-drop\" id=\"statutory\">Statutory - 2</span></a>\n\
+      \                </li>\n                \n                <li>\n           \
+      \       <a href=\"#\" class=\"sub-sub-drop\">Employee <span class=\"arrow-right\"\
+      >\u276f</span></a>\n                  <ul class=\"sub-sub-menu\">\n        \
+      \            <li><a href=\"#\" id=\"emp_add\">Add</a></li>\n               \
+      \     <li><a href=\"#\" id=\"emp_chg\">Change</a></li>\n                   \
+      \ <li><a href=\"#\" id=\"emp_more\">More</a></li>\n                  </ul>\n\
+      \                </li>\n                \n              </ul>\n\n\n        \
+      \    </li>\n           <li><a href=\"#\" id=\"trans_add\">Transaction</a></li>\n\
+      <!--             <li><a href=\"#\" id=\"trans2_add\">Transaction</a></li> -->\n\
+      \            <li><a href=\"#\" id=\"update_form\">Update</a></li>\n        \
+      \    <li><a href=\"#\" class=\"const_page\">Report</a></li>\n            <li><a\
+      \ href=\"#\" id=\"login_page\">Logout</a></li\n            \n          </ul>\n\
+      \        </div>\n\n        <div class=\"ser-btn\">\n        </div>\n\n     \
+      \ </div>\n\n\n\n    </div>\n  </div>\n  <div id='my-div'></div>\n  <script>\n\
+      \    \n    $('#style_add').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_style_add\");\n  e.preventDefault();\n});\n\
+      \    $('#style_chg').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_style_chg\");\n  e.preventDefault();\n});\n\
       \    \n\n\n//     $('#oper_add').on('click', function(e) {\n//   var linkElement\
       \ = this;\n//   anvil.call(linkElement, \"open_oper_add\");\n//   e.preventDefault();\n\
@@ -151,7 +154,9 @@ container:
       \ = this;\n  anvil.call(linkElement, \"open_desi\");\n  e.preventDefault();\n\
       }); \n\n$('#company_add_and_change').on('click', function(e) {\n  var linkElement\
       \ = this;\n  anvil.call(linkElement, \"open_comp\");\n  e.preventDefault();\n\
-      }); \n\n$('#bank_add_and_change').on('click', function(e) {\n  var linkElement\
+      }); \n\n$('#comp_more').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_comp_more\");\n  e.preventDefault();\n});\
+      \     \n\n$('#bank_add_and_change').on('click', function(e) {\n  var linkElement\
       \ = this;\n  anvil.call(linkElement, \"open_bank\");\n  e.preventDefault();\n\
       }); \n    \n//     $('#dept_chg').on('click', function(e) {\n//   var linkElement\
       \ = this;\n//   anvil.call(linkElement, \"open_dept_chg\");\n//   e.preventDefault();\n\
