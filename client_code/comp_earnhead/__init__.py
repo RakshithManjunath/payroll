@@ -18,6 +18,8 @@ class comp_earnhead(comp_earnheadTemplate):
     self.text_box_3.text = comp_details['comp_earn_head2']
     self.text_box_5.text = comp_details['comp_earn_head3']
     self.text_box_7.text = comp_details['comp_earn_head4']
+    self.text_box_9.text = comp_details['comp_earn_head5']
+    self.text_box_11.text = comp_details['comp_earn_head6']
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -27,6 +29,7 @@ class comp_earnhead(comp_earnheadTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call('comp_more_update_earnhead', gvarb.g_comcode, self.text_box_1.text,
                      self.text_box_3.text,self.text_box_5.text,
-                     self.text_box_7.text)
+                     self.text_box_7.text,self.text_box_9.text,
+                     self.text_box_11.text)
 
 
