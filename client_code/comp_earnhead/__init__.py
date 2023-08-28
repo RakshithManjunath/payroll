@@ -22,6 +22,8 @@ class comp_earnhead(comp_earnheadTemplate):
     self.text_box_11.text = comp_details['comp_earn_head6']
     self.text_box_13.text = comp_details['comp_earn_head7']
     self.text_box_15.text = comp_details['comp_earn_head8']
+    self.text_box_17.text = comp_details['comp_earn_head9']
+    self.text_box_19.text = comp_details['comp_earn_head10']    
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -33,6 +35,7 @@ class comp_earnhead(comp_earnheadTemplate):
                      self.text_box_3.text,self.text_box_5.text,
                      self.text_box_7.text,self.text_box_9.text,
                      self.text_box_11.text,self.text_box_13.text,
-                     self.text_box_15.text)
+                     self.text_box_15.text,self.text_box_17.text,
+                     self.text_box_19.text)
 
 

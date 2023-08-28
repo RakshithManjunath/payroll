@@ -114,7 +114,8 @@ def statutary_update_ded(comp_code, comp_ded1,comp_ded2,comp_ded3,comp_ded4):
 ####### company more earan head  update ########
 @anvil.server.callable
 def comp_more_update_earnhead(comp_code,comp_earnhead1,comp_earnhead2,comp_earnhead3,comp_earnhead4,
-                             comp_earnhead5,comp_earnhead6,comp_earnhead7,comp_earnhead8):
+                             comp_earnhead5,comp_earnhead6,comp_earnhead7,comp_earnhead8,
+                             comp_earnhead9,comp_earnhead10):
   row = app_tables.company.get(comp_code=comp_code)
   row.update(comp_earn_head1=comp_earnhead1)
   row.update(comp_earn_head2=comp_earnhead2)
@@ -124,6 +125,8 @@ def comp_more_update_earnhead(comp_code,comp_earnhead1,comp_earnhead2,comp_earnh
   row.update(comp_earn_head6=comp_earnhead6)                               
   row.update(comp_earn_head7=comp_earnhead7)
   row.update(comp_earn_head8=comp_earnhead8)
+  row.update(comp_earn_head9=comp_earnhead9)
+  row.update(comp_earn_head10=comp_earnhead10)                               
 
 
 ####### 
