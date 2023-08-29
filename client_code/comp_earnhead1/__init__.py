@@ -25,3 +25,14 @@ class comp_earnhead1(comp_earnhead1Template):
     self.label_4.border="solid"
     self.label_5.text = comp_details['comp_earn_head5']
     self.label_5.border="solid"
+
+    self.label_6.text = comp_details['comp_earn_head6']
+    self.label_6.border="solid"
+    self.label_7.text = comp_details['comp_earn_head7']
+    self.label_7.border="solid"
+    self.label_8.text = comp_details['comp_earn_head8']
+    self.label_8.border="solid"
+    self.label_9.text = comp_details['comp_earn_head9'] 
+    self.label_9.border="solid"
+    self.label_10.text = comp_details['comp_earn_head10']
+    self.label_10.border="solid"
