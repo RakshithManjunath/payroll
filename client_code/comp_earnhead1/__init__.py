@@ -39,7 +39,7 @@ class comp_earnhead1(comp_earnhead1Template):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call(gvarb.g_comcode,self.check_box_1.text,self.check_box_2.text,self.check_box_3.text,
+    anvil.server.call('comp_earnhead1',gvarb.g_comcode,self.check_box_1.text,self.check_box_2.text,self.check_box_3.text,
                       self.check_box_4.text,self.check_box_5.text,self.check_box_6.text,self.check_box_7.text,
                       self.check_box_8.text,self.check_box_9.text,self.check_box_10.text,self.check_box_11.text,
                       self.check_box_12.text,self.check_box_13.text,self.check_box_14.text,self.check_box_15.text,
