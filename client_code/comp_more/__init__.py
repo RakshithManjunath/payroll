@@ -17,15 +17,24 @@ class comp_more(comp_moreTemplate):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
     self.custom_2.visible = False
+    self.custom_3.visible = False
 
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = False
     self.custom_2.visible = not self.custom_2.visible
+    self.custom_3.visible = False
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
+
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = False
+    self.custom_2.visible = False
+    self.custom_3.visible = not self.custom_3.visible
+
 
 
 
