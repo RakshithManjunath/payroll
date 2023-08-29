@@ -16,7 +16,12 @@ class comp_earnhead1(comp_earnhead1Template):
     # Any code you write here will run before the form opens.
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     self.label_1.text = comp_details['comp_earn_head1']
-    self.label_2.text = comp_details['comp_earn_head2']    
+    self.label_1.border="solid"
+    self.label_2.text = comp_details['comp_earn_head2']
+    self.label_2.border="solid"
     self.label_3.text = comp_details['comp_earn_head3']
-    self.label_4.text = comp_details['comp_earn_head4']   
+    self.label_3.border="solid"
+    self.label_4.text = comp_details['comp_earn_head4'] 
+    self.label_4.border="solid"
     self.label_5.text = comp_details['comp_earn_head5']
+    self.label_5.border="solid"
