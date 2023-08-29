@@ -39,17 +39,20 @@ class comp_earnhead1(comp_earnhead1Template):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('comp_earnhead1',gvarb.g_comcode,self.check_box_1.text,self.check_box_2.text,self.check_box_3.text,
-                      self.check_box_4.text,self.check_box_5.text,self.check_box_6.text,self.check_box_7.text,
-                      self.check_box_8.text,self.check_box_9.text,self.check_box_10.text,self.check_box_11.text,
-                      self.check_box_12.text,self.check_box_13.text,self.check_box_14.text,self.check_box_15.text,
-                      self.check_box_16.text,self.check_box_17.text,self.check_box_18.text,self.check_box_19.text,
-                      self.check_box_20.text,self.check_box_21.text,self.check_box_22.text,self.check_box_23.text,
-                      self.check_box_24.text,self.check_box_25.text,self.check_box_26.text,self.check_box_27.text,
-                      self.check_box_28.text,self.check_box_29.text,self.check_box_30.text,self.check_box_31.text,
-                      self.check_box_32.text,self.check_box_33.text,self.check_box_34.text,self.check_box_35.text,
-                      self.check_box_36.text,self.check_box_37.text,self.check_box_38.text,self.check_box_39.text,
-                      self.check_box_40.text,self.check_box_41.text,self.check_box_42.text,self.check_box_43.text,
-                      self.check_box_44.text,self.check_box_45.text,self.check_box_46.text,self.check_box_47.text,
-                      self.check_box_48.text,self.check_box_49.text,self.check_box_50.text)
+    anvil.server.call('comp_earnhead1',gvarb.g_comcode,self.check_box_1.checked,self.check_box_2.checked,self.check_box_3.checked,
+                      self.check_box_4.checked,self.check_box_5.checked,self.check_box_6.checked,self.check_box_7.checked,
+                      self.check_box_8.checked,self.check_box_9.checked,self.check_box_10.checked,self.check_box_11.checked,
+                      self.check_box_12.checked,self.check_box_13.checked,self.check_box_14.checked,self.check_box_15.checked,
+                      self.check_box_16.checked,self.check_box_17.checked,self.check_box_18.checked,self.check_box_19.checked,
+                      self.check_box_20.checked,self.check_box_21.checked,self.check_box_22.checked,self.check_box_23.checked,
+                      self.check_box_24.checked,self.check_box_25.checked,self.check_box_26.checked,self.check_box_27.checked,
+                      self.check_box_28.checked,self.check_box_29.checked,self.check_box_30.checked,self.check_box_31.checked,
+                      self.check_box_32.checked,self.check_box_33.checked,self.check_box_34.checked,self.check_box_35.checked,
+                      self.check_box_36.checked,self.check_box_37.checked,self.check_box_38.checked,self.check_box_39.checked,
+                      self.check_box_40.checked,self.check_box_41.checked,self.check_box_42.checked,self.check_box_43.checked,
+                      self.check_box_44.checked,self.check_box_45.checked,self.check_box_46.checked,self.check_box_47.checked,
+                      self.check_box_48.checked,self.check_box_49.checked,self.check_box_50.checked,
+                      self.check_box_51.checked,self.check_box_52.checked,self.check_box_53.checked,
+                      self.check_box_54.checked,self.check_box_55.checked,self.check_box_56.checked,self.check_box_57.checked,
+                      self.check_box_58.checked,self.check_box_59.checked,self.check_box_60.checked)
     

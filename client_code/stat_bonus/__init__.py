@@ -12,6 +12,8 @@ class stat_bonus(stat_bonusTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.drop_down_1.items = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    self.drop_down_2.items = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
