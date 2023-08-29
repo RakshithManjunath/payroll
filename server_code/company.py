@@ -111,22 +111,97 @@ def statutary_update_ded(comp_code, comp_ded1,comp_ded2,comp_ded3,comp_ded4):
             comp_ded4=comp_ded4)
 
 
-####### company more earan head  update ########
+####### company more earnhead  update ########
 @anvil.server.callable
 def comp_more_update_earnhead(comp_code,comp_earnhead1,comp_earnhead2,comp_earnhead3,comp_earnhead4,
                              comp_earnhead5,comp_earnhead6,comp_earnhead7,comp_earnhead8,
                              comp_earnhead9,comp_earnhead10):
   row = app_tables.company.get(comp_code=comp_code)
-  row.update(comp_earn_head1=comp_earnhead1)
-  row.update(comp_earn_head2=comp_earnhead2)
-  row.update(comp_earn_head3=comp_earnhead3)
-  row.update(comp_earn_head4=comp_earnhead4)
-  row.update(comp_earn_head5=comp_earnhead5)
-  row.update(comp_earn_head6=comp_earnhead6)                               
-  row.update(comp_earn_head7=comp_earnhead7)
-  row.update(comp_earn_head8=comp_earnhead8)
-  row.update(comp_earn_head9=comp_earnhead9)
-  row.update(comp_earn_head10=comp_earnhead10)                               
+  row.update(comp_earn_head1=comp_earnhead1,
+            comp_earn_head2=comp_earnhead2,
+            comp_earn_head3=comp_earnhead3,
+            comp_earn_head4=comp_earnhead4,
+            comp_earn_head5=comp_earnhead5,
+            comp_earn_head6=comp_earnhead6,
+            comp_earn_head7=comp_earnhead7,
+            comp_earn_head8=comp_earnhead8,
+            comp_earn_head9=comp_earnhead9,
+            comp_earn_head10=comp_earnhead10
+            )
+                               
 
-
-####### 
+####### company earnhead1 ########
+@anvil.server.callable
+def comp_earnhead1(comp_code,comp_earnhead1_pf,comp_earnhead2_pf,comp_earnhead3_pf,comp_earnhead4_pf,comp_earnhead5_pf,
+                  comp_earnhead6_pf,comp_earnhead7_pf,comp_earnhead8_pf,comp_earnhead9_pf,comp_earnhead10_pf,
+                  comp_earnhead1_es1,comp_earnhead2_es1,comp_earnhead3_es1,comp_earnhead4_es1,comp_earnhead5_es1,
+                  comp_earnhead6_es1,comp_earnhead7_es1,comp_earnhead8_es1,comp_earnhead9_es1,comp_earnhead10_es1,
+                  comp_earnhead1_pt,comp_earnhead2_pt,comp_earnhead3_pt,comp_earnhead4_pt,comp_earnhead5_pt,
+                  comp_earnhead6_pt,comp_earnhead7_pt,comp_earnhead8_pt,comp_earnhead9_pt,comp_earnhead10_pt,
+                  comp_earnhead1_ot,comp_earnhead2_ot,comp_earnhead3_ot,comp_earnhead4_ot,comp_earnhead5_ot,
+                  comp_earnhead6_ot,comp_earnhead7_ot,comp_earnhead8_ot,comp_earnhead9_ot,comp_earnhead10_ot,
+                  comp_earnhead1_it,comp_earnhead2_it,comp_earnhead3_it,comp_earnhead4_it,comp_earnhead5_it,
+                  comp_earnhead6_it,comp_earnhead7_it,comp_earnhead8_it,comp_earnhead9_it,comp_earnhead10_it,
+                  comp_earnhead1_bonus,comp_earnhead2_bonus,comp_earnhead3_bonus,comp_earnhead4_bonus,comp_earnhead5_bonus,
+                  comp_earnhead6_bonus,comp_earnhead7_bonus,comp_earnhead8_bonus,comp_earnhead9_bonus,comp_earnhead10_bonus):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_earnhead1_pf=comp_earnhead1_pf,
+            comp_earnhead2_pf=comp_earnhead2_pf,
+            comp_earnhead3_pf=comp_earnhead3_pf,
+            comp_earnhead4_pf=comp_earnhead4_pf,
+            comp_earnhead5_pf=comp_earnhead5_pf,
+            comp_earnhead6_pf=comp_earnhead6_pf,
+            comp_earnhead7_pf=comp_earnhead7_pf,
+            comp_earnhead8_pf=comp_earnhead8_pf,
+            comp_earnhead9_pf=comp_earnhead9_pf,
+            comp_earnhead10_pf=comp_earnhead10_pf,
+            comp_earnhead1_es1=comp_earnhead1_es1,
+            comp_earnhead2_es1=comp_earnhead2_es1,
+            comp_earnhead3_es1=comp_earnhead3_es1,
+            comp_earnhead4_es1=comp_earnhead4_es1,
+            comp_earnhead5_es1=comp_earnhead5_es1,
+            comp_earnhead6_es1=comp_earnhead6_es1,
+            comp_earnhead7_es1=comp_earnhead7_es1,
+            comp_earnhead8_es1=comp_earnhead8_es1,
+            comp_earnhead9_es1=comp_earnhead9_es1,
+            comp_earnhead10_es1=comp_earnhead10_es1,
+            comp_earnhead1_pt=comp_earnhead1_pt,
+            comp_earnhead2_pt=comp_earnhead2_pt,
+            comp_earnhead3_pt=comp_earnhead3_pt,
+            comp_earnhead4_pt=comp_earnhead4_pt,
+            comp_earnhead5_pt=comp_earnhead5_pt,
+            comp_earnhead6_pt=comp_earnhead6_pt,
+            comp_earnhead7_pt=comp_earnhead7_pt,
+            comp_earnhead8_pt=comp_earnhead8_pt,
+            comp_earnhead9_pt=comp_earnhead9_pt,
+            comp_earnhead10_pt=comp_earnhead10_pt,
+            comp_earnhead1_ot=comp_earnhead1_ot,
+            comp_earnhead2_ot=comp_earnhead2_ot,
+            comp_earnhead3_ot=comp_earnhead3_ot,
+            comp_earnhead4_ot=comp_earnhead4_ot,
+            comp_earnhead5_ot=comp_earnhead5_ot,
+            comp_earnhead6_ot=comp_earnhead6_ot,
+            comp_earnhead7_ot=comp_earnhead7_ot,
+            comp_earnhead8_ot=comp_earnhead8_ot,
+            comp_earnhead9_ot=comp_earnhead9_ot,
+            comp_earnhead10_ot=comp_earnhead10_ot,
+            comp_earnhead1_it=comp_earnhead1_it,
+            comp_earnhead2_it=comp_earnhead2_it,
+            comp_earnhead3_it=comp_earnhead3_it,
+            comp_earnhead4_it=comp_earnhead4_it,
+            comp_earnhead5_it=comp_earnhead5_it,
+            comp_earnhead6_it=comp_earnhead6_it,
+            comp_earnhead7_it=comp_earnhead7_it,
+            comp_earnhead8_it=comp_earnhead8_it,
+            comp_earnhead9_it=comp_earnhead9_it,
+            comp_earnhead10_it=comp_earnhead10_it,
+            comp_earnhead1_bonus=comp_earnhead1_bonus,
+            comp_earnhead2_bonus=comp_earnhead2_bonus,
+            comp_earnhead3_bonus=comp_earnhead3_bonus,
+            comp_earnhead4_bonus=comp_earnhead4_bonus,
+            comp_earnhead5_bonus=comp_earnhead5_bonus,
+            comp_earnhead6_bonus=comp_earnhead6_bonus,
+            comp_earnhead7_bonus=comp_earnhead7_bonus,
+            comp_earnhead8_bonus=comp_earnhead8_bonus,
+            comp_earnhead9_bonus=comp_earnhead9_bonus,
+            comp_earnhead10_bonus=comp_earnhead10_bonus)
