@@ -205,3 +205,14 @@ def comp_earnhead1(comp_code,comp_earnhead1_pf,comp_earnhead2_pf,comp_earnhead3_
             comp_earnhead8_bonus=comp_earnhead8_bonus,
             comp_earnhead9_bonus=comp_earnhead9_bonus,
             comp_earnhead10_bonus=comp_earnhead10_bonus)
+
+
+####### stat bonus update #######
+@anvil.server.callable
+def stat_bonus_update(comp_code, comp_bonus_from, comp_bonus_to, comp_bonus_percentage, comp_bonus_limit, comp_bonus_pt_included):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_bonus_from=comp_bonus_from,
+            comp_bonus_to=comp_bonus_to,
+            comp_bonus_percentage=comp_bonus_percentage,
+            comp_bonus_limit=comp_bonus_limit,
+            comp_bonus_pt_included=comp_bonus_pt_included)

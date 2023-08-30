@@ -13,7 +13,7 @@ class month_and_year_select(month_and_year_selectTemplate):
 
     cur_trans_date = anvil.server.call('cur_trans_date')
 
-    month_names_alphabets = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    month_names_alphabets = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     month_names_numeric = ["01","02","03","04","05","06","07","08","09","10","11","12"]
     year_names = ["2023", "2024", "2025", "2026"]
 

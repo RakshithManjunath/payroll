@@ -69,7 +69,10 @@ components:
   name: label_2
   layout_properties: {grid_position: 'CJRDPQ,EQBZOA'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_1
   layout_properties: {grid_position: 'CJRDPQ,MJKNGG'}
 - type: Label
@@ -80,7 +83,10 @@ components:
   name: label_3
   layout_properties: {grid_position: 'CPCDZH,BZAWNH'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_2
   layout_properties: {grid_position: 'CPCDZH,BEEISL'}
 - type: Label
@@ -111,6 +117,7 @@ components:
     underline: false, icon: ''}
   name: button_1
   layout_properties: {grid_position: 'CNJWAU,JIKSGE'}
+  event_bindings: {click: button_1_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
