@@ -206,6 +206,16 @@ def comp_earnhead1(comp_code,comp_earnhead1_pf,comp_earnhead2_pf,comp_earnhead3_
             comp_earnhead9_bonus=comp_earnhead9_bonus,
             comp_earnhead10_bonus=comp_earnhead10_bonus)
 
+####### company Misc ########
+@anvil.server.callable
+def comp_misc_leave_loan_update(comp_code, comp_leave_head1,comp_leave_head2,comp_leave_head3,
+                               comp_loan_head1,comp_loan_head2):
+  row = app_tables.company.get(comp_code=comp_code)
+  row.update(comp_leave_head1=comp_leave_head1,
+            comp_leave_head2=comp_leave_head2,
+            comp_leave_head3=comp_leave_head3,
+            comp_loan_head1=comp_loan_head1,
+            comp_loan_head2=comp_loan_head2)
 
 ####### stat bonus update #######
 @anvil.server.callable
