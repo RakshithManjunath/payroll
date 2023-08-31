@@ -1,0 +1,130 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Mandays, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'HPPYJY,ZCOMSO'}
+- type: TextBox
+  properties: {}
+  name: text_box_1
+  layout_properties: {grid_position: 'HPPYJY,GIKGMT'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Weekly Off, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'HPPYJY,AJFDEI'}
+- type: TextBox
+  properties: {}
+  name: text_box_2
+  layout_properties: {grid_position: 'HPPYJY,AIKMLK'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Paid holiday, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'ONRRKM,XSQKCP'}
+- type: TextBox
+  properties: {}
+  name: text_box_3
+  layout_properties: {grid_position: 'ONRRKM,SZKZSQ'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: LayOff, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_4
+  layout_properties: {grid_position: 'ONRRKM,MUIFOI'}
+- type: TextBox
+  properties: {}
+  name: text_box_4
+  layout_properties: {grid_position: 'ONRRKM,QIZMUQ'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Absent, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_5
+  layout_properties: {grid_position: 'TSCNVX,IDLWZO'}
+- type: TextBox
+  properties: {}
+  name: text_box_5
+  layout_properties: {grid_position: 'TSCNVX,HBQDSC'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Leave1, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_6
+  layout_properties: {grid_position: 'TSCNVX,FLNSUE'}
+- type: TextBox
+  properties: {}
+  name: text_box_6
+  layout_properties: {grid_position: 'TSCNVX,TRRSRQ'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Leave2, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_7
+  layout_properties: {grid_position: 'HFDLOM,RLAGWN'}
+- type: TextBox
+  properties: {}
+  name: text_box_7
+  layout_properties: {grid_position: 'HFDLOM,FUYXHH'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Leave3, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_8
+  layout_properties: {grid_position: 'HFDLOM,YKZALP'}
+- type: TextBox
+  properties: {}
+  name: text_box_8
+  layout_properties: {grid_position: 'HFDLOM,UYAXIT'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: OT Hrs, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_9
+  layout_properties: {grid_position: 'GLCVGY,FBNWVK'}
+- type: TextBox
+  properties: {}
+  name: text_box_9
+  layout_properties: {grid_position: 'GLCVGY,MEJMFB'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Incentive Hrs, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_10
+  layout_properties: {grid_position: 'GLCVGY,HWKHFW'}
+- type: TextBox
+  properties: {}
+  name: text_box_10
+  layout_properties: {grid_position: 'GLCVGY,QXZPUM'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: button_1
+  layout_properties: {grid_position: 'KMWOVQ,UBBLFO'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: button_2
+  layout_properties: {grid_position: 'KMWOVQ,VLWXQN'}
+is_package: true
+custom_component: true
