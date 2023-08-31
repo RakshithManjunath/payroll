@@ -14,52 +14,72 @@ class comp_earnhead1(comp_earnhead1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+
+    ## HEAD1 ######    
     self.label_1.text = comp_details['comp_earn_head1']
     self.label_1.border="solid"
+    self.check_box_1.checked = comp_details['comp_earnhead1_pf']
+    self.check_box_11.checked = comp_details['comp_earnhead1_esi']
+
+    ## HEAD2 ######    
     self.label_2.text = comp_details['comp_earn_head2']
     self.label_2.border="solid"
+    self.check_box_2.checked = comp_details['comp_earnhead2_pf']
+    self.check_box_12.checked = comp_details['comp_earnhead2_esi']
+
+    ## HEAD3 ######    
     self.label_3.text = comp_details['comp_earn_head3']
     self.label_3.border="solid"
+    self.check_box_3.checked = comp_details['comp_earnhead3_pf']
+    self.check_box_13.checked = comp_details['comp_earnhead3_esi']
+
+    ## HEAD4 ######    
     self.label_4.text = comp_details['comp_earn_head4'] 
     self.label_4.border="solid"
+    self.check_box_4.checked = comp_details['comp_earnhead4_pf']
+    self.check_box_14.checked = comp_details['comp_earnhead4_esi']
+
+    ## HEAD5 ######    
     self.label_5.text = comp_details['comp_earn_head5']
     self.label_5.border="solid"
+    self.check_box_5.checked = comp_details['comp_earnhead5_pf']
+    self.check_box_15.checked = comp_details['comp_earnhead5_esi']
 
+    ## HEAD6 ######
     self.label_6.text = comp_details['comp_earn_head6']
     self.label_6.border="solid"
+    self.check_box_6.checked = comp_details['comp_earnhead6_pf']    
+    self.check_box_16.checked = comp_details['comp_earnhead6_esi']
+    
+    ## HEAD7 ######    
     self.label_7.text = comp_details['comp_earn_head7']
     self.label_7.border="solid"
+    self.check_box_7.checked = comp_details['comp_earnhead7_pf']
+    self.check_box_17.checked = comp_details['comp_earnhead7_esi']    
+
+    ## HEAD8 ######    
     self.label_8.text = comp_details['comp_earn_head8']
     self.label_8.border="solid"
+    self.check_box_8.checked = comp_details['comp_earnhead8_pf']
+    self.check_box_18.checked = comp_details['comp_earnhead8_esi']    
+
+    ## HEAD9 ######    
     self.label_9.text = comp_details['comp_earn_head9'] 
     self.label_9.border="solid"
+    self.check_box_9.checked = comp_details['comp_earnhead9_pf']
+    self.check_box_19.checked = comp_details['comp_earnhead9_esi']
+
+    ## HEAD10 ######    
     self.label_10.text = comp_details['comp_earn_head10']
     self.label_10.border="solid"
-
-    comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
-    
-    self.check_box_1.checked = comp_details['comp_earnhead1_pf']
-    self.check_box_2.checked = comp_details['comp_earnhead2_pf']
-    self.check_box_3.checked = comp_details['comp_earnhead3_pf']
-    self.check_box_4.checked = comp_details['comp_earnhead4_pf']
-    self.check_box_5.checked = comp_details['comp_earnhead5_pf']
-    self.check_box_6.checked = comp_details['comp_earnhead6_pf']
-    self.check_box_7.checked = comp_details['comp_earnhead7_pf']
-    self.check_box_8.checked = comp_details['comp_earnhead8_pf']
-    self.check_box_9.checked = comp_details['comp_earnhead9_pf']
     self.check_box_10.checked = comp_details['comp_earnhead10_pf']
-    
-    self.check_box_11.checked = comp_details['comp_earnhead1_esi']
-    self.check_box_12.checked = comp_details['comp_earnhead2_esi']
-    self.check_box_13.checked = comp_details['comp_earnhead3_esi']
-    self.check_box_14.checked = comp_details['comp_earnhead4_esi']
-    self.check_box_15.checked = comp_details['comp_earnhead5_esi']
-    self.check_box_16.checked = comp_details['comp_earnhead6_esi']
-    self.check_box_17.checked = comp_details['comp_earnhead7_esi']
-    self.check_box_18.checked = comp_details['comp_earnhead8_esi']
-    self.check_box_19.checked = comp_details['comp_earnhead9_esi']
     self.check_box_20.checked = comp_details['comp_earnhead10_esi']
+
+
+    
+
 
     self.check_box_21.checked = comp_details['comp_earnhead1_pt']
     self.check_box_22.checked = comp_details['comp_earnhead2_pt']
