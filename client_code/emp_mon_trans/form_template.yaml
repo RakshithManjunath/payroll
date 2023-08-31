@@ -4,9 +4,134 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {}
+  properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Select employee ', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'UNZDIF,IFIENC'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select employee
+      border: ''
+      enabled: true
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down_1
+    layout_properties: {grid_position: 'UNZDIF,QEIALR'}
+    event_bindings: {change: drop_down_1_change}
+  - type: Label
+    properties: {}
+    name: label_3
+    layout_properties: {grid_position: 'CXREMX,DHPIZY'}
+  - type: Label
+    properties: {}
+    name: label_4
+    layout_properties: {grid_position: 'CXREMX,PJXTRO'}
+  - type: Label
+    properties: {}
+    name: label_9
+    layout_properties: {grid_position: 'CXREMX,PABJVT'}
+  - type: Label
+    properties: {}
+    name: label_5
+    layout_properties: {grid_position: 'RKJKGJ,RBIFZV'}
+  - type: Label
+    properties: {}
+    name: label_6
+    layout_properties: {grid_position: 'RKJKGJ,PGWQUI'}
+  - type: Label
+    properties: {}
+    name: label_7
+    layout_properties: {grid_position: 'RKJKGJ,LAJBIU'}
+  - type: Label
+    properties: {}
+    name: label_8
+    layout_properties: {grid_position: 'RKJKGJ,SXWZLU'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Worked, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_10
+    layout_properties: {grid_position: 'AEXXKH,OAKVSO'}
+  - type: TextBox
+    properties: {}
+    name: text_box_1
+    layout_properties: {grid_position: 'AEXXKH,VJSGRB'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: WO, font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_11
+    layout_properties: {grid_position: 'AEXXKH,CNLDMH'}
+  - type: TextBox
+    properties: {}
+    name: text_box_2
+    layout_properties: {grid_position: 'AEXXKH,GYCBVB'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: PH, font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_12
+    layout_properties: {grid_position: 'AEXXKH,TZCXYJ'}
+  - type: TextBox
+    properties: {}
+    name: text_box_3
+    layout_properties: {grid_position: 'AEXXKH,GSFNTP'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: LayOff, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_13
+    layout_properties: {grid_position: 'TDYUXS,QNNMGV'}
+  - type: TextBox
+    properties: {}
+    name: text_box_4
+    layout_properties: {grid_position: 'TDYUXS,UUGROJ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Absent, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_14
+    layout_properties: {grid_position: 'TDYUXS,SGPGLA'}
+  - type: TextBox
+    properties: {}
+    name: text_box_5
+    layout_properties: {grid_position: 'TDYUXS,YEKLLZ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: OT Hrs, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_15
+    layout_properties: {grid_position: 'TDYUXS,WAOZCL'}
+  - type: TextBox
+    properties: {}
+    name: text_box_6
+    layout_properties: {grid_position: 'TDYUXS,ANPTQX'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
