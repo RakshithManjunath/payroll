@@ -5,10 +5,10 @@ container:
     spacing_below: small, background: ''}
 components:
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: deduction1, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: deduction1, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
   name: label_1
   layout_properties: {grid_position: 'NPOLXS,GLPIJS'}
 - type: TextBox
@@ -16,10 +16,10 @@ components:
   name: text_box_1
   layout_properties: {grid_position: 'NPOLXS,RHTOAA'}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: deductions2, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: deductions2, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
   name: label_2
   layout_properties: {grid_position: 'NPOLXS,MWWYGT'}
 - type: TextBox
@@ -27,10 +27,10 @@ components:
   name: text_box_2
   layout_properties: {grid_position: 'NPOLXS,YFGPIR'}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: deductions3, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: deductions3, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
   name: label_3
   layout_properties: {grid_position: 'QZROAV,NTIEEV'}
 - type: TextBox
@@ -38,10 +38,10 @@ components:
   name: text_box_3
   layout_properties: {grid_position: 'QZROAV,GIVQFU'}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: deductions4, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: deductions4, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
   name: label_4
   layout_properties: {grid_position: 'QZROAV,WUCSID'}
 - type: TextBox
@@ -49,9 +49,9 @@ components:
   name: text_box_4
   layout_properties: {grid_position: 'QZROAV,QCBHEC'}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Loan1, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Loan1, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
     icon: ''}
   name: label_5
   layout_properties: {grid_position: 'OHKQBP,MNTPNO'}
@@ -60,9 +60,9 @@ components:
   name: text_box_5
   layout_properties: {grid_position: 'OHKQBP,JOKGJN'}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Loan2, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Loan2, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
     icon: ''}
   name: label_6
   layout_properties: {grid_position: 'OHKQBP,ORJCYY'}
