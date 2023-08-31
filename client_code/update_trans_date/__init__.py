@@ -69,3 +69,13 @@ class update_trans_date(update_trans_dateTemplate):
     else:
         open_form('menu')  
 
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('update_trans_date')
+
+
+
