@@ -32,3 +32,26 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.label_7.text = "Date of Joining - "+ self.row['emp_doj'].strftime("%d/%m/%Y")
     self.label_8.text = self.row['emp_dept_name']
     self.label_9.text = self.row['emp_desi_name']    
+
+  def link_1_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = not self.custom_1.visible
+    self.custom_2.visible = False
+    self.custom_3.visible = False
+
+  def link_2_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = False
+    self.custom_2.visible = not self.custom_2.visible
+    self.custom_3.visible = False
+
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = False
+    self.custom_2.visible = False
+    self.custom_3.visible = not self.custom_3.visible
+
+
+
+
+

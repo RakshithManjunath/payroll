@@ -74,6 +74,7 @@ components:
       icon: ''}
     name: link_1
     layout_properties: {grid_position: 'KTANEI,ISYYXN'}
+    event_bindings: {click: link_1_click}
   - type: Link
     properties: {role: title, url: '', align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Deductions, font_size: null, wrap_on: mobile, font: '',
@@ -82,6 +83,7 @@ components:
       icon: ''}
     name: link_2
     layout_properties: {grid_position: 'KTANEI,XVGCSP'}
+    event_bindings: {click: link_2_click}
   - type: Link
     properties: {role: title, url: '', align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: Misc, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
@@ -89,6 +91,7 @@ components:
       italic: false, background: '', bold: true, underline: false, icon: ''}
     name: link_3
     layout_properties: {grid_position: 'KTANEI,EUXSPY'}
+    event_bindings: {click: link_3_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -109,3 +112,20 @@ components:
     bold: true, underline: false, icon: ''}
   name: label_1
   layout_properties: {slot: title}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_1
+  layout_properties: {slot: default}
+  components:
+  - type: form:emp_trans_misc
+    properties: {}
+    name: custom_3
+    layout_properties: {grid_position: 'DYLRFW,LIHSMJ'}
+  - type: form:emp_trans_ded
+    properties: {}
+    name: custom_2
+    layout_properties: {grid_position: 'QJSGDN,HOEHPS'}
+  - type: form:emp_trans_attn
+    properties: {}
+    name: custom_1
+    layout_properties: {grid_position: 'TALHKM,MIPYEQ'}
