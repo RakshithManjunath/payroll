@@ -117,8 +117,10 @@ def emp_update_earn(empcode, earn1,earn2,earn3,earn4):
 
 ############# update emp misc1 ################
 @anvil.server.callable
-def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_number):
+def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_number,
+                    attn_bonus):
   row = app_tables.employee.get(emp_code=empcode)
   row.update(phone_number=phone_number,alt_phone_number=alt_phone_number,
             email_address=email_address,
-            aadhar_number=aadhar_number)
+            aadhar_number=aadhar_number,
+            attn_bonus=attn_bonus)
