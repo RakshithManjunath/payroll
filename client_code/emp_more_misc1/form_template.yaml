@@ -6,6 +6,20 @@ container:
 components:
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Attendance bonus amount, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_5
+  layout_properties: {grid_position: 'WKMBXG,IIQTXN'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: text_box_5
+  layout_properties: {grid_position: 'WKMBXG,LSNACP'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
     text: Phone number, font_size: null, font: '', spacing_above: small, icon_align: left,
     spacing_below: small, italic: false, background: '', bold: true, underline: false,
     icon: ''}
@@ -24,14 +38,14 @@ components:
     spacing_below: small, italic: false, background: '', bold: true, underline: false,
     icon: ''}
   name: label_2
-  layout_properties: {grid_position: 'JAAFYH,DYDMUI'}
+  layout_properties: {grid_position: 'QRLSNN,FICJUB'}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
     font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
     background: '', bold: false, underline: false}
   name: text_box_2
-  layout_properties: {grid_position: 'JAAFYH,YZYQEU'}
+  layout_properties: {grid_position: 'QRLSNN,WNDTPF'}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
     text: Email address, font_size: null, font: '', spacing_above: small, icon_align: left,
@@ -49,14 +63,14 @@ components:
     spacing_below: small, italic: false, background: '', bold: true, underline: false,
     icon: ''}
   name: label_4
-  layout_properties: {grid_position: 'YXNMBP,QYZYZI'}
+  layout_properties: {grid_position: 'IWGLLM,OKQXKW'}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
     font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
     background: '', bold: false, underline: false}
   name: text_box_4
-  layout_properties: {grid_position: 'YXNMBP,OQKDSM'}
+  layout_properties: {grid_position: 'IWGLLM,XLWTGH'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
