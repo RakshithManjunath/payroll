@@ -15,33 +15,60 @@ class emp_more_earn1(emp_more_earn1Template):
     # Any code you write here will run before the form opens.
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
-    ## HEAD1 ######    
-    self.label_1.text = comp_details['comp_earn_head1']
+    ## HEAD1 ######
+    if comp_details['comp_earn_head2']!="":          
+      self.label_1.text = comp_details['comp_earn_head1']
+    else:
+      self.text_box_1.enabled = False           
 
-    ## HEAD2 ######    
-    self.label_2.text = comp_details['comp_earn_head2']
-
-    ## HEAD3 ######    
-    self.label_3.text = comp_details['comp_earn_head3']
+    ## HEAD2 ######
+    if comp_details['comp_earn_head2']!="":      
+      self.label_2.text = comp_details['comp_earn_head2']
+    else:
+      self.text_box_2.enabled = False     
+      
+    ## HEAD3 ###### 
+    if comp_details['comp_earn_head3']!="":    
+      self.label_3.text = comp_details['comp_earn_head3']
+    else:
+      self.text_box_3.enabled = False     
+      
+    ## HEAD4 ######
+    if comp_details['comp_earn_head4']!="":    
+      self.label_4.text = comp_details['comp_earn_head4']
+    else:
+      self.text_box_4.enabled = False     
     
-    ## HEAD4 ######    
-    self.label_4.text = comp_details['comp_earn_head4'] 
-    
-    ## HEAD5 ######    
-    self.label_5.text = comp_details['comp_earn_head5']
-    
+    ## HEAD5 ######
+    if comp_details['comp_earn_head5']!="":    
+      self.label_5.text = comp_details['comp_earn_head5']
+    else:
+      self.text_box_5.enabled = False 
+      
     ## HEAD6 ######
-    self.label_6.text = comp_details['comp_earn_head6']
-    
-    ## HEAD7 ######    
-    self.label_7.text = comp_details['comp_earn_head7']
-    
-    ## HEAD8 ######    
-    self.label_8.text = comp_details['comp_earn_head8']
-    
-    ## HEAD9 ######    
-    self.label_9.text = comp_details['comp_earn_head9'] 
-
+    if comp_details['comp_earn_head6']!="":    
+      self.label_6.text = comp_details['comp_earn_head6']
+    else:
+      self.text_box_6.enabled = False 
+      
+    ## HEAD7 ######
+    if comp_details['comp_earn_head7']!="":    
+      self.label_7.text = comp_details['comp_earn_head7']
+    else:
+      self.text_box_7.enabled = False 
+      
+    ## HEAD8 ###### 
+    if comp_details['comp_earn_head8']!="":
+      self.label_8.text = comp_details['comp_earn_head8']
+    else:
+      self.text_box_8.enabled = False 
+      
+    ## HEAD9 ###### 
+    if comp_details['comp_earn_head9']!="":
+      self.label_9.text = comp_details['comp_earn_head9'] 
+    else:
+      self.text_box_9.enabled = False
+      
     ## HEAD10 ###### 
     if comp_details['comp_earn_head10']!="":
       self.label_10.text = comp_details['comp_earn_head10']
