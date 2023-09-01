@@ -43,10 +43,10 @@ class emp_more_earn1(emp_more_earn1Template):
     self.label_9.text = comp_details['comp_earn_head9'] 
 
     ## HEAD10 ###### 
-    #if comp_details['comp_earn_head10'].text!=None:
-    self.label_10.text = comp_details['comp_earn_head10']
-    #else:
-      #self.label_10.disable = True
+    if comp_details['comp_earn_head10']!="":
+      self.label_10.text = comp_details['comp_earn_head10']
+    else:
+      self.text_box_10.enabled = False
       
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
