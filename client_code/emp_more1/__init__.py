@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class emp_more1(emp_more1Template):
   def __init__(self, **properties):
@@ -19,14 +20,15 @@ class emp_more1(emp_more1Template):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
     self.custom_2.visible = False
+    self.refresh()
 
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_2.visible = not self.custom_2.visible
     self.custom_1.visible = False
+    self.refresh()
 
-  def drop_down_1_change(self, **event_args):
-    """This method is called when an item is selected"""
+  def refresh(self):
     split_list_emp = self.drop_down_1.selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
@@ -57,11 +59,10 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_4.text = self.row['aadhar_number']
     self.custom_2.text_box_5.text = self.row['attn_bonus']
 
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    self.refresh()
+
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
-
-  def button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('emp_more1')
-

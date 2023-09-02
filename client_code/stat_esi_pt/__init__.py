@@ -11,8 +11,11 @@ class stat_esi_pt(stat_esi_ptTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.refresh()
 
     # Any code you write here will run before the form opens.
+
+  def refresh(self):
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     self.text_box_1.text = comp_details['comp_esi_sal_lt']
     self.text_box_3.text = comp_details['comp_pts1_from']
@@ -33,6 +36,7 @@ class stat_esi_pt(stat_esi_ptTemplate):
                      self.text_box_3.text, self.text_box_4.text, self.text_box_5.text,
                      self.text_box_7.text, self.text_box_8.text, self.text_box_9.text,
                      self.text_box_11.text, self.text_box_12.text, self.text_box_13.text)
+    self.refresh()
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""

@@ -11,8 +11,10 @@ class stat_ded(stat_dedTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.refresh()
 
     # Any code you write here will run before the form opens.
+  def refresh(self):
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     self.text_box_1.text = comp_details['comp_ded1']
     self.text_box_2.text = comp_details['comp_ded2']
@@ -23,6 +25,7 @@ class stat_ded(stat_dedTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call('statutary_update_ded', gvarb.g_comcode, self.text_box_1.text,
                      self.text_box_2.text, self.text_box_3.text, self.text_box_4.text)
+    self.refresh()
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""

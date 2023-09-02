@@ -19,11 +19,15 @@ class comp_more(comp_moreTemplate):
     self.custom_2.visible = False
     self.custom_3.visible = False
 
+    self.custom_1.refresh()
+
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = False
     self.custom_2.visible = not self.custom_2.visible
     self.custom_3.visible = False
+
+    self.custom_2.refresh()
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -34,6 +38,8 @@ class comp_more(comp_moreTemplate):
     self.custom_1.visible = False
     self.custom_2.visible = False
     self.custom_3.visible = not self.custom_3.visible
+
+    self.custom_3.refresh()
 
 
 

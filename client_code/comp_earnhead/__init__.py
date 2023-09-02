@@ -11,8 +11,10 @@ class comp_earnhead(comp_earnheadTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.refresh()
 
     # Any code you write here will run before the form opens.
+  def refresh(self):
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     self.text_box_1.text = comp_details['comp_earn_head1']
     self.text_box_3.text = comp_details['comp_earn_head2']
@@ -38,6 +40,6 @@ class comp_earnhead(comp_earnheadTemplate):
                      self.text_box_15.text,self.text_box_17.text,
                      self.text_box_19.text)
 
-    self.refresh_data_bindings()
+    self.refresh()
 
 
