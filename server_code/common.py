@@ -25,3 +25,15 @@ def trans_empcode_name():
   for r in app_tables.employee.search(tables.order_by("emp_code")):
     emp_details.append(r['emp_code'] + " | "  +r['emp_name'])
   return emp_details
+
+@anvil.server.callable
+def test_dynamic_col_create():
+  old_table = app_tables.transaction
+  new_table = app_tables.employee
+  
+  # Loop through the records in the old table and copy them to the new table
+  for record in old_table.search():
+      new_table.add_row(
+          trans_deptname=record['trans_deptname']
+      )
+  
