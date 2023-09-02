@@ -38,4 +38,6 @@ class comp_earnhead(comp_earnheadTemplate):
                      self.text_box_15.text,self.text_box_17.text,
                      self.text_box_19.text)
 
+    self.refresh_data_bindings()
+
 

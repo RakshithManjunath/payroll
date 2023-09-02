@@ -215,4 +215,6 @@ class comp_earnhead1(comp_earnhead1Template):
                       self.check_box_51.checked,self.check_box_52.checked,self.check_box_53.checked,
                       self.check_box_54.checked,self.check_box_55.checked,self.check_box_56.checked,self.check_box_57.checked,
                       self.check_box_58.checked,self.check_box_59.checked,self.check_box_60.checked)
+
+    self.refresh_data_bindings()
     
