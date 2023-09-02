@@ -41,7 +41,10 @@ def trans_get_next_string_value():
 
 @anvil.server.callable
 def test_dynamic_col_create(id,trans_date,trans_empid,trans_empname,trans_father_husband,
-                           trans_empsex):
+                           trans_empsex,trans_empdob,trans_empdoj,trans_emptype,trans_deptcode,
+                           trans_deptname,trans_desicode,trans_desiname,trans_emppfc,
+                           trans_empno,trans_emp_pfuan,trans_empesic,trans_esino,
+                           trans_dispensary,trans_empptc,trans_itc,trans_emppan):
   transaction = app_tables.transaction
   transaction.add_row(
       id=id,
@@ -49,5 +52,21 @@ def test_dynamic_col_create(id,trans_date,trans_empid,trans_empname,trans_father
       trans_empid=trans_empid,
       trans_empname=trans_empname,
       trans_father_husband=trans_father_husband,
-      trans_empsex = trans_empsex
-  )
+      trans_empsex = trans_empsex,
+      trans_empdob = trans_empdob,
+      trans_empdoj = trans_empdoj,
+      trans_emptype = trans_emptype,
+      trans_deptcode = trans_deptcode,
+      trans_deptname = trans_deptname,
+      trans_desicode = trans_desicode,
+      trans_desiname = trans_desiname,
+      trans_emppfc = trans_emppfc,
+      trans_empno = trans_empno,
+      trans_emp_pfuan = trans_emp_pfuan,
+      trans_empesic = trans_empesic,
+      trans_esino = trans_esino,
+      trans_dispensary = trans_dispensary,
+      trans_ptc = trans_empptc,
+      trans_itc = trans_itc,
+      trans_emppan = trans_emppan
+      )

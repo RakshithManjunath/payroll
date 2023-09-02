@@ -30,11 +30,27 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.label_4.text = self.row['emp_sex']
     self.emp_sex = self.row['emp_sex']
     self.label_5.text = self.row['emp_type']
+    self.emptype = self.row['emp_type']
     self.label_6.text = "Date of birth - "+ self.row['emp_dob'].strftime("%d/%m/%Y")
+    self.empdob = self.row['emp_dob']
     self.label_7.text = "Date of Joining - "+ self.row['emp_doj'].strftime("%d/%m/%Y")
+    self.empdoj = self.row['emp_doj']
     self.label_8.text = self.row['emp_dept_name']
-    self.label_9.text = self.row['emp_desi_name']    
-
+    self.deptcode = self.row['emp_dept_code']
+    self.deptname = self.row['emp_dept_name']
+    self.label_9.text = self.row['emp_desi_name']
+    self.desicode = self.row['emp_desi_code']
+    self.desiname = self.row['emp_desi_name']
+    self.emppfc = self.row['emp_pf_contribution']
+    self.emppfno = self.row['emp_pf_number']
+    self.emppfuan = self.row['emp_pf_uan']
+    self.empesic = self.row['emp_esi_contribution']
+    self.empesino = self.row['emp_esi_number']
+    self.empdisp = self.row['emp_esi_dispensary']
+    self.empptc = self.row['emp_pt_contribution']
+    self.empitc = self.row['emp_it_contribution']
+    self.emppan = self.row['emp_pan_number']
+  
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
@@ -59,7 +75,11 @@ class emp_mon_trans(emp_mon_transTemplate):
     date = anvil.server.call('cur_trans_date')
     anvil.server.call('test_dynamic_col_create', transid, date[0], 
                       self.emp_code,self.emp_name,self.fat_has_na,
-                      self.emp_sex)
+                      self.emp_sex,self.empdob,self.empdoj,self.emptype,
+                     self.deptcode,self.deptname,self.desicode,self.desiname,
+                     self.emppfc,self.emppfno,self.emppfuan,self.empesic,
+                     self.empesino,self.empdisp,self.empptc,self.empitc,
+                     self.emppan)
 
 
 
