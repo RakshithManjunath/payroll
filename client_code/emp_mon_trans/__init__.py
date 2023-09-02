@@ -26,7 +26,9 @@ class emp_mon_trans(emp_mon_transTemplate):
 
     self.row = anvil.server.call('emp_get_details',self.emp_code)
     self.label_3.text = "Father / Husband name - "+self.row['emp_hus_name']
+    self.fat_has_na = self.row['emp_hus_name']
     self.label_4.text = self.row['emp_sex']
+    self.emp_sex = self.row['emp_sex']
     self.label_5.text = self.row['emp_type']
     self.label_6.text = "Date of birth - "+ self.row['emp_dob'].strftime("%d/%m/%Y")
     self.label_7.text = "Date of Joining - "+ self.row['emp_doj'].strftime("%d/%m/%Y")
@@ -55,7 +57,9 @@ class emp_mon_trans(emp_mon_transTemplate):
     """This method is called when the button is clicked"""
     transid = anvil.server.call('trans_get_next_string_value')
     date = anvil.server.call('cur_trans_date')
-    anvil.server.call('test_dynamic_col_create', transid, date[0], self.emp_code,self.emp_name)
+    anvil.server.call('test_dynamic_col_create', transid, date[0], 
+                      self.emp_code,self.emp_name,self.fat_has_na,
+                      self.emp_sex)
 
 
 
