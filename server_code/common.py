@@ -27,13 +27,25 @@ def trans_empcode_name():
   return emp_details
 
 @anvil.server.callable
-def test_dynamic_col_create():
-  old_table = app_tables.transaction
-  new_table = app_tables.employee
+def test_dynamic_col_create(id,trans_date,trans_empid,trans_empname):
+  transaction = app_tables.transaction
   
-  # Loop through the records in the old table and copy them to the new table
-  for record in old_table.search():
-      new_table.add_row(
-          trans_deptname=record['trans_deptname']
-      )
-  
+  transaction.add_row(
+      id=id,
+      trans_date=trans_date,
+      trans_empid=trans_empid,
+      trans_empname=trans_empname
+  )
+
+@anvil.server.callable
+def trans_get_next_string_value():
+  # Get the last row of the data table
+  next_value = '0000000001'
+  try:
+    bank_id_list = [(r["bank_id"]) for r in app_tables.transaction.search()]
+    last_row = bank_id_list[-1]
+    last_string_value = last_row
+    next_value = str(int(last_string_value) + 1).zfill(10)
+  except IndexError:
+    next_value == '0000000001'
+  return next_value

@@ -66,8 +66,6 @@ class update_trans_date(update_trans_dateTemplate):
         anvil.server.call('cur_trans_date_update', next_initial_date, next_days, next_num_of_sundays, next_end_date)
         anvil.users.logout()
         open_form('menu')
-
-        anvil.server.call('test_dynamic_col_create')
     else:
         open_form('menu')
 

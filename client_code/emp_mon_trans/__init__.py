@@ -51,6 +51,13 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.custom_2.visible = False
     self.custom_3.visible = not self.custom_3.visible
 
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    transid = anvil.server.call('trans_get_next_string_value')
+    date = anvil.server.call('cur_trans_date')
+    anvil.server.call('test_dynamic_col_create', transid, date[0], self.emp_code,self.emp_name)
+
+
 
 
 
