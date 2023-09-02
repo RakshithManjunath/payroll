@@ -44,11 +44,18 @@ class emp_more1(emp_more1Template):
     self.custom_1.text_box_2.text = self.row['earn2']
     self.custom_1.text_box_3.text = self.row['earn3']
     self.custom_1.text_box_4.text = self.row['earn4']
+    self.custom_1.text_box_5.text = self.row['earn5']
+    self.custom_1.text_box_6.text = self.row['earn6']
+    self.custom_1.text_box_7.text = self.row['earn7']
+    self.custom_1.text_box_8.text = self.row['earn8']
+    self.custom_1.text_box_9.text = self.row['earn9']
+    self.custom_1.text_box_10.text = self.row['earn10']
 
     self.custom_2.text_box_1.text = self.row['phone_number']
     self.custom_2.text_box_2.text = self.row['alt_phone_number']
     self.custom_2.text_box_3.text = self.row['email_address']
     self.custom_2.text_box_4.text = self.row['aadhar_number']
+    self.custom_2.text_box_5.text = self.row['attn_bonus']
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

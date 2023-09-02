@@ -50,6 +50,24 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.empptc = self.row['emp_pt_contribution']
     self.empitc = self.row['emp_it_contribution']
     self.emppan = self.row['emp_pan_number']
+
+    self.phno = self.row['phone_number']
+    self.alt_phno = self.row['alt_phone_number']
+    self.email = self.row['email_address']
+    self.aadhar_no = self.row['aadhar_number']
+    self.attn_bonus = self.row['attn_bonus']
+
+    self.earn1 = self.row['earn1']
+    self.earn2 = self.row['earn2']
+    self.earn3 = self.row['earn3']
+    self.earn4 = self.row['earn4']
+    self.earn5 = self.row['earn5']
+    self.earn6 = self.row['earn6']
+    self.earn7 = self.row['earn7']
+    self.earn8 = self.row['earn8']
+    self.earn9 = self.row['earn9']
+    self.earn10 = self.row['earn10']
+    
   
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -73,13 +91,15 @@ class emp_mon_trans(emp_mon_transTemplate):
     """This method is called when the button is clicked"""
     transid = anvil.server.call('trans_get_next_string_value')
     date = anvil.server.call('cur_trans_date')
-    anvil.server.call('test_dynamic_col_create', transid, date[0], 
+    anvil.server.call('emp_to_trans_transfer', transid, date[0], 
                       self.emp_code,self.emp_name,self.fat_has_na,
                       self.emp_sex,self.empdob,self.empdoj,self.emptype,
                      self.deptcode,self.deptname,self.desicode,self.desiname,
                      self.emppfc,self.emppfno,self.emppfuan,self.empesic,
                      self.empesino,self.empdisp,self.empptc,self.empitc,
-                     self.emppan)
+                     self.emppan,self.phno,self.alt_phno,self.email,self.aadhar_no,self.attn_bonus,
+                     self.earn1,self.earn2,self.earn3,self.earn4,self.earn5,
+                     self.earn6,self.earn7,self.earn8,self.earn9,self.earn10)
 
 
 

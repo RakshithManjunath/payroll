@@ -40,11 +40,15 @@ def trans_get_next_string_value():
   return next_value
 
 @anvil.server.callable
-def test_dynamic_col_create(id,trans_date,trans_empid,trans_empname,trans_father_husband,
+def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_husband,
                            trans_empsex,trans_empdob,trans_empdoj,trans_emptype,trans_deptcode,
                            trans_deptname,trans_desicode,trans_desiname,trans_emppfc,
                            trans_empno,trans_emp_pfuan,trans_empesic,trans_esino,
-                           trans_dispensary,trans_empptc,trans_itc,trans_emppan):
+                           trans_dispensary,trans_empptc,trans_empitc,trans_emppan,
+                           trans_phone_number,trans_alt_phone_number,trans_email_address,
+                           trans_aadhar_number,trans_attn_bonus,
+                           trans_earn1,trans_earn2,trans_earn3,trans_earn4,trans_earn5,
+                           trans_earn6,trans_earn7,trans_earn8,trans_earn9,trans_earn10):
   transaction = app_tables.transaction
   transaction.add_row(
       id=id,
@@ -66,7 +70,22 @@ def test_dynamic_col_create(id,trans_date,trans_empid,trans_empname,trans_father
       trans_empesic = trans_empesic,
       trans_esino = trans_esino,
       trans_dispensary = trans_dispensary,
-      trans_ptc = trans_empptc,
-      trans_itc = trans_itc,
-      trans_emppan = trans_emppan
+      trans_empptc = trans_empptc,
+      trans_empitc = trans_empitc,
+      trans_emppan = trans_emppan,
+      trans_phone_number = trans_phone_number,
+      trans_alt_phone_number = trans_alt_phone_number,
+      trans_email_address = trans_email_address,
+      trans_aadhar_number = trans_aadhar_number,
+      trans_attn_bonus = trans_attn_bonus,
+      trans_earn1 = trans_earn1,
+      trans_earn2 = trans_earn2,
+      trans_earn3 = trans_earn3,
+      trans_earn4 = trans_earn4,
+      trans_earn5 = trans_earn5,
+      trans_earn6 = trans_earn6,
+      trans_earn7 = trans_earn7,
+      trans_earn8 = trans_earn8,
+      trans_earn9 = trans_earn9,
+      trans_earn10 = trans_earn10
       )

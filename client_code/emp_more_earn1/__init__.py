@@ -87,7 +87,10 @@ class emp_more_earn1(emp_more_earn1Template):
     emp_code,emp_name = split_list_emp[0],split_list_emp[1]
     anvil.server.call('emp_update_earn',emp_code,self.text_box_1.text,
                      self.text_box_2.text,self.text_box_3.text,
-                     self.text_box_4.text)
+                     self.text_box_4.text,self.text_box_5.text,
+                     self.text_box_6.text,self.text_box_7.text,
+                     self.text_box_8.text,self.text_box_9.text,
+                     self.text_box_10.text)
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""

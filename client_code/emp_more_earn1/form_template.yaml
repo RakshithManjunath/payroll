@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
     spacing_below: small, background: ''}
 components:
@@ -9,7 +9,10 @@ components:
   name: label_1
   layout_properties: {grid_position: 'QMQKHX,COEUZY'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_1
   layout_properties: {grid_position: 'QMQKHX,WFMIZZ'}
 - type: Label
@@ -17,7 +20,10 @@ components:
   name: label_2
   layout_properties: {grid_position: 'QMQKHX,LEKKUO'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_2
   layout_properties: {grid_position: 'QMQKHX,YCKZZQ'}
 - type: Label
@@ -25,7 +31,10 @@ components:
   name: label_3
   layout_properties: {grid_position: 'GPTIGN,FBHNOP'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_3
   layout_properties: {grid_position: 'GPTIGN,NGCXBD'}
 - type: Label
@@ -33,7 +42,10 @@ components:
   name: label_4
   layout_properties: {grid_position: 'GPTIGN,ZLWDNW'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_4
   layout_properties: {grid_position: 'GPTIGN,IFCRSH'}
 - type: Label
@@ -41,7 +53,10 @@ components:
   name: label_5
   layout_properties: {grid_position: 'NTETYT,RBHMRY'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_5
   layout_properties: {grid_position: 'NTETYT,NHJPDU'}
 - type: Label
@@ -49,7 +64,10 @@ components:
   name: label_6
   layout_properties: {grid_position: 'NTETYT,RUUNNH'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_6
   layout_properties: {grid_position: 'NTETYT,BJTXJA'}
 - type: Label
@@ -57,7 +75,10 @@ components:
   name: label_7
   layout_properties: {grid_position: 'TARRVS,IKVDLW'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_7
   layout_properties: {grid_position: 'TARRVS,FEAISN'}
 - type: Label
@@ -65,7 +86,10 @@ components:
   name: label_8
   layout_properties: {grid_position: 'TARRVS,ADOELV'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_8
   layout_properties: {grid_position: 'TARRVS,FJFWPT'}
 - type: Label
@@ -73,7 +97,10 @@ components:
   name: label_9
   layout_properties: {grid_position: 'XIIEEP,WNNHKD'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_9
   layout_properties: {grid_position: 'XIIEEP,PIGLKX'}
 - type: Label
@@ -81,7 +108,10 @@ components:
   name: label_10
   layout_properties: {grid_position: 'XIIEEP,WPDQZD'}
 - type: TextBox
-  properties: {}
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
   name: text_box_10
   layout_properties: {grid_position: 'XIIEEP,LGGJBD'}
 - type: Button
