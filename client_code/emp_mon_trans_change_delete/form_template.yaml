@@ -92,6 +92,18 @@ components:
     name: link_3
     layout_properties: {grid_position: 'KTANEI,EUXSPY'}
     event_bindings: {click: link_3_click}
+  - type: form:emp_trans_misc_change
+    properties: {}
+    name: custom_3
+    layout_properties: {grid_position: 'WDAUAE,ALWKKD'}
+  - type: form:emp_trans_ded_change
+    properties: {}
+    name: custom_2
+    layout_properties: {grid_position: 'QFJTSK,NEQEIJ'}
+  - type: form:emp_trans_attn_change
+    properties: {}
+    name: custom_1
+    layout_properties: {grid_position: 'QDBDLN,VYIMTW'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -107,7 +119,7 @@ components:
     event_bindings: {click: outlined_button_1_click}
 - type: Label
   properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: Employee monthly transaction add, font_size: null, font: '',
+    visible: true, text: Employee monthly transaction delete, font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
     bold: true, underline: false, icon: ''}
   name: label_1
@@ -117,21 +129,9 @@ components:
   name: column_panel_1
   layout_properties: {slot: default}
   components:
-  - type: form:emp_trans_misc
-    properties: {}
-    name: custom_3
-    layout_properties: {grid_position: 'DYLRFW,LIHSMJ'}
-  - type: form:emp_trans_ded
-    properties: {}
-    name: custom_2
-    layout_properties: {grid_position: 'QJSGDN,HOEHPS'}
-  - type: form:emp_trans_attn
-    properties: {}
-    name: custom_1
-    layout_properties: {grid_position: 'TALHKM,MIPYEQ'}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      foreground: '', visible: true, text: delete, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: button_1

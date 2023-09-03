@@ -1,4 +1,4 @@
-from ._anvil_designer import emp_mon_trans_changeTemplate
+from ._anvil_designer import emp_mon_trans_change_deleteTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import gvarb
 
-class emp_mon_trans_change(emp_mon_trans_changeTemplate):
+class emp_mon_trans_change_delete(emp_mon_trans_change_deleteTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -24,7 +24,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     split_list_emp = self.drop_down_1.selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp]
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
-    
+
     self.row = anvil.server.call('trans_emp_get_details',self.emp_code)
     self.label_3.text = "Father / Husband name - "+self.row['trans_father_husband']
     self.fat_has_na = self.row['trans_father_husband']
@@ -176,7 +176,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     """This method is called when the button is clicked"""
     transid = anvil.server.call('trans_get_next_string_value')
     # date = anvil.server.call('cur_trans_date')
-    
+
     # anvil.server.call('emp_to_trans_transfer', transid, date[0],
     #                   self.emp_code,self.emp_name,self.fat_has_na,
     #                   self.emp_sex,self.empdob,self.empdoj,self.emptype,

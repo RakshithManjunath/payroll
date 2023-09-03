@@ -126,7 +126,7 @@ container:
       \ class=\"sub-sub-drop\" id=\"view_trans\">View</span></a>\n               \
       \ </li>\n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
       \ id=\"change_trans\">Change</span></a>\n                </li>\n           \
-      \     <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"del_trans\"\
+      \     <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"delete_trans\"\
       >Delete</span></a>\n                </li>\n             </ul>\n           </li>\n\
       \n            <li><a href=\"#\" id=\"update_form\">Update</a></li>\n       \
       \     <li><a href=\"#\" class=\"const_page\">Report</a></li>\n            <li><a\
@@ -161,7 +161,9 @@ container:
       \  anvil.call(linkElement, \"open_add_trans\");\n  e.preventDefault();\n});\n\
       \n  $('#change_trans').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_change_trans\");\n  e.preventDefault();\n\
-      });\n    \n  </script>\n</body>\n</html>"}
+      });\n\n  $('#delete_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_delete_trans\");\n  e.preventDefault();\n\
+      });    \n    \n  </script>\n</body>\n</html>"}
 components:
 - type: ColumnPanel
   properties: {}
