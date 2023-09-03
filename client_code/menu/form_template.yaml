@@ -163,7 +163,9 @@ container:
       \  anvil.call(linkElement, \"open_change_trans\");\n  e.preventDefault();\n\
       });\n\n  $('#delete_trans').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_delete_trans\");\n  e.preventDefault();\n\
-      });    \n    \n  </script>\n</body>\n</html>"}
+      });    \n\n  $('#view_trans').on('click', function(e) {\n  var linkElement =\
+      \ this;\n  anvil.call(linkElement, \"open_view_trans\");\n  e.preventDefault();\n\
+      });        \n    \n  </script>\n</body>\n</html>"}
 components:
 - type: ColumnPanel
   properties: {}

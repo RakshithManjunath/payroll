@@ -13,3 +13,8 @@ class emp_trans_view(emp_trans_viewTemplate):
     
     self.repeating_panel_1.items = anvil.server.call('trans_get_all_details')  
     # Any code you write here will run before the form opens.
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+

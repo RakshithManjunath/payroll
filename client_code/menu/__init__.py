@@ -54,3 +54,6 @@ class menu(menuTemplate):
 
   def open_delete_trans(self, **kwargs):
     open_form('emp_mon_trans_delete')
+
+  def open_view_trans(self, **kwargs):
+    open_form('emp_trans_view')
