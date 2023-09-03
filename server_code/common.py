@@ -162,3 +162,8 @@ def trans_emp_name_and_code():
 def trans_emp_get_details(trans_empid):
   row = app_tables.transaction.get(trans_empid=trans_empid)
   return row
+
+@anvil.server.callable
+def trans_emp_delete_row(trans_empid):
+  row = app_tables.transaction.get(trans_empid=trans_empid)
+  row.delete()

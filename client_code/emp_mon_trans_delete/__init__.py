@@ -174,60 +174,11 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    transid = anvil.server.call('trans_get_next_string_value')
-    # date = anvil.server.call('cur_trans_date')
-
-    # anvil.server.call('emp_to_trans_transfer', transid, date[0],
-    #                   self.emp_code,self.emp_name,self.fat_has_na,
-    #                   self.emp_sex,self.empdob,self.empdoj,self.emptype,
-    #                  self.deptcode,self.deptname,self.desicode,self.desiname,
-    #                  self.emppfc,self.emppfno,self.emppfuan,self.empesic,
-    #                  self.empesino,self.empdisp,self.empptc,self.empitc,
-    #                  self.emppan,self.phno,self.alt_phno,self.email,self.aadhar_no,self.attn_bonus,
-    #                  self.earn1,self.earn2,self.earn3,self.earn4,self.earn5,
-    #                  self.earn6,self.earn7,self.earn8,self.earn9,self.earn10,
-    #                  self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,self.custom_1.text_box_3.text,
-    #                  self.custom_1.text_box_4.text,self.custom_1.text_box_5.text,self.custom_1.text_box_6.text,
-    #                  self.custom_1.text_box_7.text,self.custom_1.text_box_8.text,self.custom_1.text_box_9.text,
-    #                  self.custom_1.text_box_10.text,
-    #                  self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,self.custom_2.text_box_3.text,
-    #                  self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
-    #                  self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
-    #                  self.custom_2.text_box_10.text,
-    #                  self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
-
-    anvil.server.call('trans_change_update', self.row['trans_empid'],
-                     self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,self.custom_1.text_box_3.text,
-                     self.custom_1.text_box_4.text,self.custom_1.text_box_5.text,self.custom_1.text_box_6.text,
-                     self.custom_1.text_box_7.text,self.custom_1.text_box_8.text,self.custom_1.text_box_9.text,
-                     self.custom_1.text_box_10.text,
-                     self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,self.custom_2.text_box_3.text,
-                     self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
-                     self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
-                     self.custom_2.text_box_10.text,
-                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
-
-        #if self.current_month_limit_check() == False:
-       # result = confirm(self.emp_name+" transaction data Do you want to delete ?", buttons=["Yes", "No"])
-        #  if result == "Yes":
-         #     open_form('mode_select')
-        #   else:
-        #       open_form('monsel')
-      ##else:
-      #open_form('monsel')
-
-  #def current_month_limit_check(self):
-  #  flag1=False
-   # self.trans_end_date=anvil.server.call('cur_trans_enddate')
-   # if (gvarb.trans_date > self.trans_end_date[0]):
-   #   print('Date out of range')
-    #  flag1=True     
-   # return flag1
-
-
-
-    
-    Notification(self.emp_name + " transaction data modified successfully").show()
+    result = confirm(self.emp_name+" transaction data Do you want to delete ?", buttons=["Yes", "No"])
+    if result == "Yes":
+      anvil.server.call('trans_emp_delete_row', self.row['trans_empid'])
+    else:
+      open_form('emp_mon_trans_delete')
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
