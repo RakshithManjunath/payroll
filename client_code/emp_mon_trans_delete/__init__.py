@@ -207,6 +207,20 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
                      self.custom_2.text_box_10.text,
                      self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
 
+    if self.current_month_limit_check() == False:
+      result = confirm("Transaction date "+str(gvarb.trans_date)+" Do you want to proceed?", buttons=["Yes", "No"])
+      if result == "Yes":
+        open_form('mode_select')
+      else:
+        open_form('monsel')
+    else:
+      open_form('monsel')
+
+
+
+
+
+    
     Notification(self.emp_name + " transaction data modified successfully").show()
 
   def button_2_click(self, **event_args):
