@@ -48,3 +48,6 @@ class menu(menuTemplate):
 
   def open_add_trans(self, **kwargs):
     open_form('emp_mon_trans')
+
+  def open_change_trans(self, **kwargs):
+    open_form('emp_mon_trans_change')

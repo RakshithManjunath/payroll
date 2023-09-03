@@ -157,8 +157,10 @@ container:
       \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_update_page\"\
       );\n  e.preventDefault();\n});\n\n$('#statutory').on('click', function(e) {\n\
       \  var linkElement = this;\n  anvil.call(linkElement, \"open_stat\");\n  e.preventDefault();\n\
-      });\n\n  \n  $('#add_trans').on('click', function(e) {\n  var linkElement =\
-      \ this;\n  anvil.call(linkElement, \"open_add_trans\");\n  e.preventDefault();\n\
+      });\n\n  $('#add_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_add_trans\");\n  e.preventDefault();\n});\n\
+      \n  $('#change_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_change_trans\");\n  e.preventDefault();\n\
       });\n    \n  </script>\n</body>\n</html>"}
 components:
 - type: ColumnPanel
