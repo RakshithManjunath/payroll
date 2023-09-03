@@ -207,16 +207,22 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
                      self.custom_2.text_box_10.text,
                      self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
 
-    if self.current_month_limit_check() == False:
-      result = confirm("Transaction date "+str(gvarb.trans_date)+" Do you want to proceed?", buttons=["Yes", "No"])
-      if result == "Yes":
-        open_form('mode_select')
-      else:
-        open_form('monsel')
-    else:
-      open_form('monsel')
+        #if self.current_month_limit_check() == False:
+        result = confirm(self.emp_name+" transaction data Do you want to delete ?", buttons=["Yes", "No"])
+          if result == "Yes":
+              open_form('mode_select')
+           else:
+               open_form('monsel')
+      #else:
+      #open_form('monsel')
 
-
+  def current_month_limit_check(self):
+    flag1=False
+    self.trans_end_date=anvil.server.call('cur_trans_enddate')
+    if (gvarb.trans_date > self.trans_end_date[0]):
+      print('Date out of range')
+      flag1=True     
+    return flag1
 
 
 
