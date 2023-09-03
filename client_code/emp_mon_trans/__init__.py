@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class emp_mon_trans(emp_mon_transTemplate):
   def __init__(self, **properties):
@@ -71,6 +72,18 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.link_1.visible = True
     self.link_2.visible = True
     self.link_3.visible = True
+
+    comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+    self.custom_1.label_6.text = comp_details['comp_leave_head1']
+    self.custom_1.label_7.text = comp_details['comp_leave_head2']
+    self.custom_1.label_8.text = comp_details['comp_leave_head3']
+
+    self.custom_2.label_1.text = comp_details['comp_ded1']
+    self.custom_2.label_2.text = comp_details['comp_ded2']
+    self.custom_2.label_3.text = comp_details['comp_ded3']
+    self.custom_2.label_4.text = comp_details['comp_ded4']
+    self.custom_2.label_5.text = comp_details['comp_loan_head1']
+    self.custom_2.label_6.text = comp_details['comp_loan_head2']
     
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -102,7 +115,25 @@ class emp_mon_trans(emp_mon_transTemplate):
                      self.empesino,self.empdisp,self.empptc,self.empitc,
                      self.emppan,self.phno,self.alt_phno,self.email,self.aadhar_no,self.attn_bonus,
                      self.earn1,self.earn2,self.earn3,self.earn4,self.earn5,
-                     self.earn6,self.earn7,self.earn8,self.earn9,self.earn10)
+                     self.earn6,self.earn7,self.earn8,self.earn9,self.earn10,
+                     self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,self.custom_1.text_box_3.text,
+                     self.custom_1.text_box_4.text,self.custom_1.text_box_5.text,self.custom_1.text_box_6.text,
+                     self.custom_1.text_box_7.text,self.custom_1.text_box_8.text,self.custom_1.text_box_9.text,
+                     self.custom_1.text_box_10.text,
+                     self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,self.custom_2.text_box_3.text,
+                     self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
+                     self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
+                     self.custom_2.text_box_10.text,
+                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
+
+    Notification(self.emp_name + " transaction data added successfully").show()
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('emp_mon_trans')
+
+
+  
 
 
 

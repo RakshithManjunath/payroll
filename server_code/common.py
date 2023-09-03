@@ -48,7 +48,13 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
                            trans_phone_number,trans_alt_phone_number,trans_email_address,
                            trans_aadhar_number,trans_attn_bonus,
                            trans_earn1,trans_earn2,trans_earn3,trans_earn4,trans_earn5,
-                           trans_earn6,trans_earn7,trans_earn8,trans_earn9,trans_earn10):
+                           trans_earn6,trans_earn7,trans_earn8,trans_earn9,trans_earn10,
+                           trans_mandays,trans_wo,trans_ph,trans_layoff,trans_absent,
+                           trans_leave1,trans_leave2,trans_leave3,trans_othrs,trans_inchrs,
+                           trans_ded1,trans_ded2,trans_ded3,trans_ded4,
+                           trans_loan1,trans_loan2,
+                           trans_adv,trans_tds,trans_pfvol,trans_lic,
+                           trans_arr_esipt,trans_arr_pf):
   transaction = app_tables.transaction
   transaction.add_row(
       id=id,
@@ -87,5 +93,27 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_earn7 = trans_earn7,
       trans_earn8 = trans_earn8,
       trans_earn9 = trans_earn9,
-      trans_earn10 = trans_earn10
+      trans_earn10 = trans_earn10,
+      trans_mandays=trans_mandays,
+      trans_wo=trans_wo,
+      trans_ph=trans_ph,
+      trans_layoff=trans_layoff,
+      trans_absent=trans_absent,
+      trans_leave1=trans_leave1,
+      trans_leave2=trans_leave2,
+      trans_leave3=trans_leave3,
+      trans_othrs=trans_othrs,
+      trans_inchrs=trans_inchrs,
+      trans_ded1=trans_ded1,
+      trans_ded2=trans_ded2,
+      trans_ded3=trans_ded3,
+      trans_ded4=trans_ded4,
+      trans_loan1=trans_loan1,
+      trans_loan2=trans_loan2,
+      trans_adv=trans_adv,
+      trans_tds=trans_tds,
+      trans_pfvol=trans_pfvol,
+      trans_lic=trans_lic,
+      trans_arr_esipt=trans_arr_esipt,
+      trans_arr_pf=trans_arr_pf
       )

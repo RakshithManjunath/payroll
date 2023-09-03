@@ -12,3 +12,6 @@ class emp_trans_misc(emp_trans_miscTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+
+
