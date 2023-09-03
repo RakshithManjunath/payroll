@@ -43,8 +43,8 @@ def trans_get_next_string_value():
 def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_husband,
                            trans_empsex,trans_empdob,trans_empdoj,trans_emptype,trans_deptcode,
                            trans_deptname,trans_desicode,trans_desiname,trans_emppfc,
-                           trans_empno,trans_emp_pfuan,trans_empesic,trans_esino,
-                           trans_dispensary,trans_empptc,trans_empitc,trans_emppan,
+                           trans_emppfno,trans_emp_pfuan,trans_empesic,trans_empesino,
+                           trans_empdispensary,trans_empptc,trans_empitc,trans_emppan,
                            trans_phone_number,trans_alt_phone_number,trans_email_address,
                            trans_aadhar_number,trans_attn_bonus,
                            trans_earn1,trans_earn2,trans_earn3,trans_earn4,trans_earn5,
@@ -71,11 +71,11 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_desicode = trans_desicode,
       trans_desiname = trans_desiname,
       trans_emppfc = trans_emppfc,
-      trans_empno = trans_empno,
+      trans_emppfno = trans_emppfno,
       trans_emp_pfuan = trans_emp_pfuan,
       trans_empesic = trans_empesic,
-      trans_esino = trans_esino,
-      trans_dispensary = trans_dispensary,
+      trans_empesino = trans_empesino,
+      trans_empdispensary = trans_empdispensary,
       trans_empptc = trans_empptc,
       trans_empitc = trans_empitc,
       trans_emppan = trans_emppan,
@@ -117,3 +117,48 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_arr_esipt=trans_arr_esipt,
       trans_arr_pf=trans_arr_pf
       )
+
+@anvil.server.callable
+def trans_change_update(trans_empid,trans_mandays,trans_wo,trans_ph,trans_layoff,trans_absent,
+                        trans_leave1,trans_leave2,trans_leave3,trans_othrs,trans_inchrs,
+                        trans_ded1,trans_ded2,trans_ded3,trans_ded4,
+                        trans_loan1,trans_loan2,
+                        trans_adv,trans_tds,trans_pfvol,trans_lic,
+                        trans_arr_esipt,trans_arr_pf):
+  row = app_tables.transaction.get(trans_empid=trans_empid)
+  row.update(trans_mandays=trans_mandays,
+            trans_wo=trans_wo,
+            trans_ph=trans_ph,
+            trans_layoff=trans_layoff,
+            trans_absent=trans_absent,
+            trans_leave1=trans_leave1,
+            trans_leave2=trans_leave2,
+            trans_leave3=trans_leave3,
+            trans_othrs=trans_othrs,
+            trans_inchrs=trans_inchrs,
+            trans_ded1=trans_ded1,
+            trans_ded2=trans_ded2,
+            trans_ded3=trans_ded3,
+            trans_ded4=trans_ded4,
+            trans_loan1=trans_loan1,
+            trans_loan2=trans_loan2,
+            trans_adv=trans_adv,
+            trans_tds=trans_tds,
+            trans_pfvol=trans_pfvol,
+            trans_lic=trans_lic,
+            trans_arr_esipt=trans_arr_esipt,
+            trans_arr_pf=trans_arr_pf
+            )
+
+############ trans change #############
+@anvil.server.callable
+def trans_emp_name_and_code():
+  emp_details = []
+  for r in app_tables.transaction.search(tables.order_by("trans_empid")):
+    emp_details.append(r['trans_empid'] + " | "  +r['trans_empname'])
+  return emp_details
+
+@anvil.server.callable
+def trans_emp_get_details(trans_empid):
+  row = app_tables.transaction.get(trans_empid=trans_empid)
+  return row
