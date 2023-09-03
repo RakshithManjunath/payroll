@@ -46,5 +46,5 @@ class menu(menuTemplate):
   def open_stat(self, **kwargs):
     open_form('statutary')
 
-  def open_trans(self, **kwargs):
+  def open_add_trans(self, **kwargs):
     open_form('emp_mon_trans')

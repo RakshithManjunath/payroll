@@ -12,17 +12,8 @@ class emp_more_misc1(emp_more_misc1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    # self.refresh()
 
     # Any code you write here will run before the form opens.
-  # def refresh(self):
-    comp_details = anvil.server.call('emp_get_details')
-    self.text_box_1.text = comp_details['phone_number']
-    self.text_box_2.text = comp_details['alt_phone_number']
-    self.text_box_3.text = comp_details['email_address']
-    self.text_box_4.text = comp_details['aadhar_number']
-    self.text_box_5.text = comp_details['attn_bonus']
-
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     #print(self.parent, self.parent.parent, self.parent.parent.parent)
@@ -35,7 +26,6 @@ class emp_more_misc1(emp_more_misc1Template):
     anvil.server.call('emp_update_misc1',emp_code,self.text_box_1.text,
                      self.text_box_2.text,self.text_box_3.text,
                      self.text_box_4.text,self.text_box_5.text)
-    # self.refresh()
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""

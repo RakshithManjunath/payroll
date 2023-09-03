@@ -118,7 +118,16 @@ container:
       \                    <li><a href=\"#\" id=\"emp_chg\">Change</a></li>\n    \
       \                <li><a href=\"#\" id=\"emp_more\">More</a></li>\n         \
       \         </ul>\n                </li>\n                \n              </ul>\n\
-      \n\n            </li>\n           <li><a href=\"#\" id=\"trans\">Transaction</a></li>\n\
+      \n\n            </li>\n\n           <li>\n             <a href=\"#\" class=\"\
+      droptoggle\">Transaction <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
+      \             <ul class=\"submanu\">\n                <li>\n               \
+      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"add_trans\">Add</span></a>\n \
+      \               </li>\n                <li>\n                  <a href=\"#\"\
+      \ class=\"sub-sub-drop\" id=\"view_trans\">View</span></a>\n               \
+      \ </li>\n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"change_trans\">Change</span></a>\n                </li>\n           \
+      \     <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"del_trans\"\
+      >Delete</span></a>\n                </li>\n             </ul>\n           </li>\n\
       \n            <li><a href=\"#\" id=\"update_form\">Update</a></li>\n       \
       \     <li><a href=\"#\" class=\"const_page\">Report</a></li>\n            <li><a\
       \ href=\"#\" id=\"login_page\">Logout</a></li\n            \n          </ul>\n\
@@ -148,9 +157,9 @@ container:
       \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_update_page\"\
       );\n  e.preventDefault();\n});\n\n$('#statutory').on('click', function(e) {\n\
       \  var linkElement = this;\n  anvil.call(linkElement, \"open_stat\");\n  e.preventDefault();\n\
-      });\n\n  \n  $('#trans').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_trans\");\n  e.preventDefault();\n});\n  \
-      \  \n  </script>\n</body>\n</html>"}
+      });\n\n  \n  $('#add_trans').on('click', function(e) {\n  var linkElement =\
+      \ this;\n  anvil.call(linkElement, \"open_add_trans\");\n  e.preventDefault();\n\
+      });\n    \n  </script>\n</body>\n</html>"}
 components:
 - type: ColumnPanel
   properties: {}

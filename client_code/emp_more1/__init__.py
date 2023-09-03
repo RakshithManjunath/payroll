@@ -32,6 +32,7 @@ class emp_more1(emp_more1Template):
     split_list_emp = self.drop_down_1.selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
+    gvarb.g_empcode,gvarb.g_empname = self.emp_code,self.emp_name
 
     self.row = anvil.server.call('emp_get_details',self.emp_code)
     self.label_2.text = "Father / Husband name - "+self.row['emp_hus_name']
@@ -61,7 +62,11 @@ class emp_more1(emp_more1Template):
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
+    self.link_1.visible = True
+    self.link_2.visible = True
+    self.link_3.visible = True
     self.refresh()
+    self.custom_1.refresh()
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

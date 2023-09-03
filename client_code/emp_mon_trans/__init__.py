@@ -67,8 +67,11 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.earn8 = self.row['earn8']
     self.earn9 = self.row['earn9']
     self.earn10 = self.row['earn10']
+
+    self.link_1.visible = True
+    self.link_2.visible = True
+    self.link_3.visible = True
     
-  
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible

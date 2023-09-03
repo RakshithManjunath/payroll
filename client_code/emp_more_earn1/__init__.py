@@ -11,7 +11,7 @@ class emp_more_earn1(emp_more_earn1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.refresh()
+    # self.refresh()
 
     # Any code you write here will run before the form opens.
 

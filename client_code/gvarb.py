@@ -13,3 +13,5 @@ from anvil.tables import app_tables
 
 g_comcode = ""
 g_comname = ""
+g_empcode = ""
+g_empname = ""
