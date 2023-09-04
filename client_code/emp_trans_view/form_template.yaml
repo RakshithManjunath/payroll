@@ -35,11 +35,11 @@ components:
       - {id: IDICNB, title: PF number, data_key: trans_emppfno, $$hashKey: 'object:100374',
         width: '100'}
       - {id: XBHPMI, title: PF UAN, data_key: trans_emp_pfuan, $$hashKey: 'object:100375',
-        width: '100'}
+        width: '150'}
       - {id: CHTVCM, title: ESI contribution, data_key: trans_empesic, $$hashKey: 'object:100376',
         width: '100'}
       - {id: ZGWQTX, title: SEI number, data_key: trans_empesino, $$hashKey: 'object:100377',
-        width: '100'}
+        width: '150'}
       - {id: VPQGFV, title: Dispensary, data_key: trans_empdispensary, $$hashKey: 'object:100378',
         width: '100'}
       - {id: TNBKZT, title: PT contribution, data_key: trans_empptc, $$hashKey: 'object:100379',
@@ -88,7 +88,7 @@ components:
         width: '100'}
       - {id: ELOZKE, title: LIC, data_key: trans_lic, $$hashKey: 'object:100401',
         width: '100'}
-      - {id: AKUHUO, title: Arrears ESI PT, data_key: trans_arr_esipt, $$hashKey: 'object:100402',
+      - {id: AKUHUO, title: Arr. ESI PT, data_key: trans_arr_esipt, $$hashKey: 'object:100402',
         width: '100'}
       - {id: OQMFCH, title: Arrears PF, data_key: trans_arr_pf, $$hashKey: 'object:100403',
         width: '100'}
