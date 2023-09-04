@@ -170,4 +170,4 @@ def trans_emp_delete_row(trans_empid):
 
 @anvil.server.callable
 def trans_get_all_details():
-  return app_tables.transaction.search()
+  return app_tables.transaction.search(tables.order_by("trans_empid"))
