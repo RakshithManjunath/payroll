@@ -1,0 +1,34 @@
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.server
+
+# This is a server module. It runs on the Anvil server,
+# rather than in the user's browser.
+#
+# To allow anvil.server.call() to call functions here, we mark
+# them with @anvil.server.callable.
+# Here is an example - you can replace it with your own:
+#
+# @anvil.server.callable
+# def say_hello(name):
+#   print("Hello, " + name + "!")
+#   return 42
+#
+@anvil.server.callable
+def just_test():
+  # Access the data table
+  data_table = anvil.server.tables.get_table('transaction')
+  
+  # Specify the field name you want to check for
+  field_name_to_check = 'pf_amt'
+  
+  # Get a list of all column names in the data table
+  all_column_names = data_table.get_columns()
+  
+  # Check if the field name exists in the list of column names
+  if field_name_to_check in all_column_names:
+      print(f"The field '{field_name_to_check}' exists in the data table.")
+  else:
+      print(f"The field '{field_name_to_check}' does not exist in the data table.")
