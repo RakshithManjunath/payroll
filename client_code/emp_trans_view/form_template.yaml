@@ -11,7 +11,14 @@ components:
   - type: DataGrid
     properties:
       role: wide
-      columns: []
+      columns:
+      - {id: ADMDWS, title: Trans Empid, data_key: trans_empid, $$hashKey: 'object:2792'}
+      - {id: CSSBQZ, title: Trans Empname, data_key: trans_empname, $$hashKey: 'object:2793'}
+      - {id: MTFQDB, title: Trans Empdob, data_key: trans_empdob, $$hashKey: 'object:2796'}
+      - {id: SFGTFK, title: Trans Leave2, data_key: trans_leave2, $$hashKey: 'object:2818'}
+      - {id: SGGJTO, title: Trans Leave3, data_key: trans_leave3, $$hashKey: 'object:2819'}
+      - {id: JXRUKH, title: Trans Ded2, data_key: trans_ded2, $$hashKey: 'object:2823'}
+      - {id: RWAYQD, title: Trans Ded3, data_key: trans_ded3, $$hashKey: 'object:2824'}
       auto_header: true
       tooltip: ''
       border: ''

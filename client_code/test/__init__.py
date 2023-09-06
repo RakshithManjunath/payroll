@@ -12,4 +12,4 @@ class test(testTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    anvil.server.call('just_test')
+    anvil.server.call('test_add_column')

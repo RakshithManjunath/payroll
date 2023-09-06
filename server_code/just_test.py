@@ -32,6 +32,7 @@ def just_test():
       print(col["name"])
       print(col["type"])
     else:
+      pass
     #      print("fail")
     
     # 'type': 'number' for numeric
@@ -45,5 +46,8 @@ def just_test():
     # # Get a list of all column names in the data table
     #   # all_column_names = data_table.get_columns()
     #   all_column_names = cols(0)
-    app_table = Table("MyTable")
   
+  
+@anvil.server.callable
+def test_add_column():
+  app_tables.transaction.update(columns={"age": int},all=True)
