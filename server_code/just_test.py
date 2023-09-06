@@ -40,9 +40,10 @@ def just_test():
     # 'type': 'date' for date
 
     #  # field_type = anvil.server.app_tables.transaction.TextColumnType()  # You can choose the appropriate column type (e.g., Text, Date, Number)
-      data_table.add_column(field_name, field_type)
+  #    app_tables.transaction.add_column(field_name, field_type)
   
-    # Get a list of all column names in the data table
-      # all_column_names = data_table.get_columns()
-      all_column_names = cols(0)
+    # # Get a list of all column names in the data table
+    #   # all_column_names = data_table.get_columns()
+    #   all_column_names = cols(0)
+    app_table = Table("MyTable")
   
