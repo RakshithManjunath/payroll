@@ -28,6 +28,7 @@ def just_test():
 
   for col in cols:
     if col["name"] == field_name_to_check:
+      print(col["type"])
       print("exists")
     # else:
     #  # field_type = anvil.server.app_tables.transaction.TextColumnType()  # You can choose the appropriate column type (e.g., Text, Date, Number)
