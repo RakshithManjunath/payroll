@@ -21,24 +21,28 @@ def just_test():
   # Access the data table
   cols = app_tables.transaction.list_columns()
 
-  print(cols)
+  #print(cols)
   
   # # Specify the field name you want to check for
-  field_name_to_check = 'trans_date'
+  field_name = 'xxxx'
+  field_type = 'bool'
 
   for col in cols:
-    if col["name"] == field_name_to_check:
+    if ((col["name"] == field_name) and (col["type"] == field_type)):
+      print(col["name"])
       print(col["type"])
-      print("exists")
-    # else:
+    else:
+    #      print("fail")
+    
+    # 'type': 'number' for numeric
+    # 'type': 'string' for text
+    # 'type': 'bool' for logical
+    # 'type': 'date' for date
+
     #  # field_type = anvil.server.app_tables.transaction.TextColumnType()  # You can choose the appropriate column type (e.g., Text, Date, Number)
-    #  # data_table.add_column(field_name, field_type)
+      data_table.add_column(field_name, field_type)
   
-  # # Get a list of all column names in the data table
-  # all_column_names = data_table.get_columns()
+    # Get a list of all column names in the data table
+      # all_column_names = data_table.get_columns()
+      all_column_names = cols(0)
   
-  # # Check if the field name exists in the list of column names
-  # if field_name_to_check in all_column_names:
-  #     print(f"The field '{field_name_to_check}' exists in the data table.")
-  # else:
-  #     print(f"The field '{field_name_to_check}' does not exist in the data table.")
