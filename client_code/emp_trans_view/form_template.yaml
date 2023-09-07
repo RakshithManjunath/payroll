@@ -28,11 +28,16 @@ components:
         width: '150'}
       - {id: JAFHNV, title: PF contribution, data_key: trans_emppfc, $$hashKey: 'object:1756',
         width: '100'}
-      - {id: XBMITN, title: Trans Emppfno, data_key: trans_emppfno, $$hashKey: 'object:1757'}
-      - {id: UCUZMR, title: Trans Emp_pfuan, data_key: trans_emp_pfuan, $$hashKey: 'object:1758'}
-      - {id: XVXHBR, title: Trans Empesic, data_key: trans_empesic, $$hashKey: 'object:1759'}
-      - {id: ZMAHZM, title: Trans Empesino, data_key: trans_empesino, $$hashKey: 'object:1760'}
-      - {id: HFGLCJ, title: Trans Empdispensary, data_key: trans_empdispensary, $$hashKey: 'object:1761'}
+      - {id: XBMITN, title: PF number, data_key: trans_emppfno, $$hashKey: 'object:1757',
+        width: '100'}
+      - {id: UCUZMR, title: PF UAN, data_key: trans_emp_pfuan, $$hashKey: 'object:1758',
+        width: '100'}
+      - {id: XVXHBR, title: ESI contribution, data_key: trans_empesic, $$hashKey: 'object:1759',
+        width: '100'}
+      - {id: ZMAHZM, title: ESI number, data_key: trans_empesino, $$hashKey: 'object:1760',
+        width: '100'}
+      - {id: HFGLCJ, title: ESI dispensary, data_key: trans_empdispensary, $$hashKey: 'object:1761',
+        width: '150'}
       - {id: DXIPYS, title: Trans Empptc, data_key: trans_empptc, $$hashKey: 'object:1762'}
       - {id: ARIUUS, title: Trans Empitc, data_key: trans_empitc, $$hashKey: 'object:1763'}
       - {id: JUDJIO, title: Trans Emppan, data_key: trans_emppan, $$hashKey: 'object:1764'}
