@@ -18,18 +18,18 @@ class emp_trans_view(emp_trans_viewTemplate):
     # col = self.data_grid_1.columns
     columns = self.data_grid_1.columns
     # print(columns, len(columns))
- 
-    columns[21]["title"] = gvarb.g_leave1
-    columns[22]["title"] = gvarb.g_leave2
-    columns[23]["title"] = gvarb.g_leave3   
+    comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+    columns[21]["title"] = comp_details['comp_leave_head1']
+    columns[22]["title"] = comp_details['comp_leave_head2']
+    columns[23]["title"] = comp_details['comp_leave_head3']  
 
-    columns[26]["title"] = gvarb.g_ded1 
-    columns[27]["title"] = gvarb.g_ded2      
-    columns[28]["title"] = gvarb.g_ded3     
-    columns[29]["title"] = gvarb.g_ded4   
+    columns[26]["title"] = comp_details['comp_ded1'] 
+    columns[27]["title"] =comp_details['comp_ded2']      
+    columns[28]["title"] = comp_details['comp_ded3']     
+    columns[29]["title"] = comp_details['comp_ded4']   
 
-    columns[30]["title"] = gvarb.g_loan1   
-    columns[31]["title"] = gvarb.g_loan2       
+    columns[30]["title"] = comp_details['comp_loan_head1']  
+    columns[31]["title"] = comp_details['comp_loan_head2']       
     
     # Update the Data Grid with the modified column
     self.data_grid_1.columns = columns
