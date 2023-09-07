@@ -49,8 +49,8 @@ class emp_trans_view(emp_trans_viewTemplate):
     column_index_to_change = 2
     
     # Set the new header text for the specified column
-    new_header_text = "ABCD"
-    columns[column_index_to_change]["title"] = new_header_text
+    # new_header_text = "ABCD"
+    # columns[column_index_to_change]["title"] = new_header_text
 
     new_header_text = gvarb.g_leave2
     columns[3]["title"] = new_header_text
