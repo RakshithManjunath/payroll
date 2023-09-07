@@ -54,27 +54,27 @@ components:
         width: '100'}
       - {id: VFIZBC, title: Absent, data_key: trans_absent, $$hashKey: 'object:1769',
         width: '100'}
-      - {id: ZEORCG, title: Trans Leave1, data_key: trans_leave1, $$hashKey: 'object:1770',
+      - {id: ZEORCG, title: '- * -', data_key: trans_leave1, $$hashKey: 'object:1770',
         width: '100'}
-      - {id: GNSSLZ, title: Trans Leave2, data_key: trans_leave2, $$hashKey: 'object:1771',
+      - {id: GNSSLZ, title: '- * -', data_key: trans_leave2, $$hashKey: 'object:1771',
         width: '100'}
-      - {id: GXUUUD, title: Trans Leave3, data_key: trans_leave3, $$hashKey: 'object:1772',
+      - {id: GXUUUD, title: '- * -', data_key: trans_leave3, $$hashKey: 'object:1772',
         width: '100'}
       - {id: TJIZDF, title: OT Hrs, data_key: trans_othrs, $$hashKey: 'object:1773',
         width: '100'}
       - {id: GLFFVE, title: Incentive Hrs, data_key: trans_inchrs, $$hashKey: 'object:1774',
         width: '100'}
-      - {id: OLIAAN, title: Trans Ded1, data_key: trans_ded1, $$hashKey: 'object:1775',
+      - {id: OLIAAN, title: '- * -', data_key: trans_ded1, $$hashKey: 'object:1775',
         width: '100'}
-      - {id: KYXRIR, title: Trans Ded2, data_key: trans_ded2, $$hashKey: 'object:1776',
+      - {id: KYXRIR, title: '- * -', data_key: trans_ded2, $$hashKey: 'object:1776',
         width: '100'}
-      - {id: KLDDNE, title: Trans Ded3, data_key: trans_ded3, $$hashKey: 'object:1777',
+      - {id: KLDDNE, title: '- * -', data_key: trans_ded3, $$hashKey: 'object:1777',
         width: '100'}
-      - {id: UDJIVV, title: Trans Ded4, data_key: trans_ded4, $$hashKey: 'object:1778',
+      - {id: UDJIVV, title: '- * -', data_key: trans_ded4, $$hashKey: 'object:1778',
         width: '100'}
-      - {id: GAZBKU, title: Trans Loan1, data_key: trans_loan1, $$hashKey: 'object:1779',
+      - {id: GAZBKU, title: '- * -', data_key: trans_loan1, $$hashKey: 'object:1779',
         width: '100'}
-      - {id: XMJUDX, title: Trans Loan2, data_key: trans_loan2, $$hashKey: 'object:1780',
+      - {id: XMJUDX, title: '- * -', data_key: trans_loan2, $$hashKey: 'object:1780',
         width: '100'}
       - {id: WQQLXS, title: Advance, data_key: trans_adv, $$hashKey: 'object:1781',
         width: '100'}
