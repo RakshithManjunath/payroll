@@ -38,31 +38,56 @@ components:
         width: '100'}
       - {id: HFGLCJ, title: ESI dispensary, data_key: trans_empdispensary, $$hashKey: 'object:1761',
         width: '150'}
-      - {id: DXIPYS, title: Trans Empptc, data_key: trans_empptc, $$hashKey: 'object:1762'}
-      - {id: ARIUUS, title: Trans Empitc, data_key: trans_empitc, $$hashKey: 'object:1763'}
-      - {id: JUDJIO, title: Trans Emppan, data_key: trans_emppan, $$hashKey: 'object:1764'}
-      - {id: URNPHN, title: Trans Mandays, data_key: trans_mandays, $$hashKey: 'object:1765'}
-      - {id: WHWVGB, title: Trans Wo, data_key: trans_wo, $$hashKey: 'object:1766'}
-      - {id: SJKQEG, title: Trans Ph, data_key: trans_ph, $$hashKey: 'object:1767'}
-      - {id: KPOXDE, title: Trans Layoff, data_key: trans_layoff, $$hashKey: 'object:1768'}
-      - {id: VFIZBC, title: Trans Absent, data_key: trans_absent, $$hashKey: 'object:1769'}
-      - {id: ZEORCG, title: Trans Leave1, data_key: trans_leave1, $$hashKey: 'object:1770'}
-      - {id: GNSSLZ, title: Trans Leave2, data_key: trans_leave2, $$hashKey: 'object:1771'}
-      - {id: GXUUUD, title: Trans Leave3, data_key: trans_leave3, $$hashKey: 'object:1772'}
-      - {id: TJIZDF, title: Trans Othrs, data_key: trans_othrs, $$hashKey: 'object:1773'}
-      - {id: GLFFVE, title: Trans Inchrs, data_key: trans_inchrs, $$hashKey: 'object:1774'}
-      - {id: OLIAAN, title: Trans Ded1, data_key: trans_ded1, $$hashKey: 'object:1775'}
-      - {id: KYXRIR, title: Trans Ded2, data_key: trans_ded2, $$hashKey: 'object:1776'}
-      - {id: KLDDNE, title: Trans Ded3, data_key: trans_ded3, $$hashKey: 'object:1777'}
-      - {id: UDJIVV, title: Trans Ded4, data_key: trans_ded4, $$hashKey: 'object:1778'}
-      - {id: GAZBKU, title: Trans Loan1, data_key: trans_loan1, $$hashKey: 'object:1779'}
-      - {id: XMJUDX, title: Trans Loan2, data_key: trans_loan2, $$hashKey: 'object:1780'}
-      - {id: WQQLXS, title: Trans Adv, data_key: trans_adv, $$hashKey: 'object:1781'}
-      - {id: DYFJDW, title: Trans Tds, data_key: trans_tds, $$hashKey: 'object:1782'}
-      - {id: MBQSMC, title: Trans Pfvol, data_key: trans_pfvol, $$hashKey: 'object:1783'}
-      - {id: RPOWTY, title: Trans Lic, data_key: trans_lic, $$hashKey: 'object:1784'}
-      - {id: EVHQZO, title: Trans Arr_esipt, data_key: trans_arr_esipt, $$hashKey: 'object:1785'}
-      - {id: TMVTVQ, title: Trans Arr_pf, data_key: trans_arr_pf, $$hashKey: 'object:1786'}
+      - {id: DXIPYS, title: PT contribution, data_key: trans_empptc, $$hashKey: 'object:1762',
+        width: '100'}
+      - {id: ARIUUS, title: TDS deduction, data_key: trans_empitc, $$hashKey: 'object:1763',
+        width: '100'}
+      - {id: JUDJIO, title: PAN number, data_key: trans_emppan, $$hashKey: 'object:1764',
+        width: '100'}
+      - {id: URNPHN, title: Mandays, data_key: trans_mandays, $$hashKey: 'object:1765',
+        width: '100'}
+      - {id: WHWVGB, title: Weekly Off, data_key: trans_wo, $$hashKey: 'object:1766',
+        width: '100'}
+      - {id: SJKQEG, title: Paid holiday, data_key: trans_ph, $$hashKey: 'object:1767',
+        width: '100'}
+      - {id: KPOXDE, title: Lay Off, data_key: trans_layoff, $$hashKey: 'object:1768',
+        width: '100'}
+      - {id: VFIZBC, title: Absent, data_key: trans_absent, $$hashKey: 'object:1769',
+        width: '100'}
+      - {id: ZEORCG, title: Trans Leave1, data_key: trans_leave1, $$hashKey: 'object:1770',
+        width: '100'}
+      - {id: GNSSLZ, title: Trans Leave2, data_key: trans_leave2, $$hashKey: 'object:1771',
+        width: '100'}
+      - {id: GXUUUD, title: Trans Leave3, data_key: trans_leave3, $$hashKey: 'object:1772',
+        width: '100'}
+      - {id: TJIZDF, title: OT Hrs, data_key: trans_othrs, $$hashKey: 'object:1773',
+        width: '100'}
+      - {id: GLFFVE, title: Incentive Hrs, data_key: trans_inchrs, $$hashKey: 'object:1774',
+        width: '100'}
+      - {id: OLIAAN, title: Trans Ded1, data_key: trans_ded1, $$hashKey: 'object:1775',
+        width: '100'}
+      - {id: KYXRIR, title: Trans Ded2, data_key: trans_ded2, $$hashKey: 'object:1776',
+        width: '100'}
+      - {id: KLDDNE, title: Trans Ded3, data_key: trans_ded3, $$hashKey: 'object:1777',
+        width: '100'}
+      - {id: UDJIVV, title: Trans Ded4, data_key: trans_ded4, $$hashKey: 'object:1778',
+        width: '100'}
+      - {id: GAZBKU, title: Trans Loan1, data_key: trans_loan1, $$hashKey: 'object:1779',
+        width: '100'}
+      - {id: XMJUDX, title: Trans Loan2, data_key: trans_loan2, $$hashKey: 'object:1780',
+        width: '100'}
+      - {id: WQQLXS, title: Advance, data_key: trans_adv, $$hashKey: 'object:1781',
+        width: '100'}
+      - {id: DYFJDW, title: TDS Amount, data_key: trans_tds, $$hashKey: 'object:1782',
+        width: '100'}
+      - {id: MBQSMC, title: PF voluntary, data_key: trans_pfvol, $$hashKey: 'object:1783',
+        width: '100'}
+      - {id: RPOWTY, title: LIC deduction, data_key: trans_lic, $$hashKey: 'object:1784',
+        width: '100'}
+      - {id: EVHQZO, title: 'Arrears [ ESI / PT ]', data_key: trans_arr_esipt, $$hashKey: 'object:1785',
+        width: '100'}
+      - {id: TMVTVQ, title: 'Arrears [ PT ]', data_key: trans_arr_pf, $$hashKey: 'object:1786',
+        width: '100'}
       - {id: XFCJJK, title: Trans Earn1, data_key: trans_earn1, $$hashKey: 'object:1787'}
       - {id: DSNAVA, title: Trans Earn2, data_key: trans_earn2, $$hashKey: 'object:1788'}
       - {id: DJKPJF, title: Trans Earn3, data_key: trans_earn3, $$hashKey: 'object:1789'}
