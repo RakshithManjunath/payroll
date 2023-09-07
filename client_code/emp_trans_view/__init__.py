@@ -29,7 +29,28 @@ class emp_trans_view(emp_trans_viewTemplate):
     columns[29]["title"] = comp_details['comp_ded4']   
 
     columns[30]["title"] = comp_details['comp_loan_head1']  
-    columns[31]["title"] = comp_details['comp_loan_head2']       
+    columns[31]["title"] = comp_details['comp_loan_head2']    
+
+    columns[38]["title"] = comp_details['comp_earn_head1'] 
+    columns[39]["title"] = 'Earned '+comp_details['comp_earn_head1'] 
+    columns[40]["title"] = comp_details['comp_earn_head2'] 
+    columns[41]["title"] = 'Earned '+comp_details['comp_earn_head2'] 
+    columns[42]["title"] = comp_details['comp_earn_head3'] 
+    columns[43]["title"] = 'Earned '+comp_details['comp_earn_head3'] 
+    columns[44]["title"] = comp_details['comp_earn_head4'] 
+    columns[45]["title"] = 'Earned '+comp_details['comp_earn_head4']     
+    columns[46]["title"] = comp_details['comp_earn_head5'] 
+    columns[47]["title"] = 'Earned '+comp_details['comp_earn_head5']     
+    columns[48]["title"] = comp_details['comp_earn_head6']
+    columns[49]["title"] = 'Earned '+comp_details['comp_earn_head6']        
+    columns[50]["title"] = comp_details['comp_earn_head7'] 
+    columns[51]["title"] = 'Earned '+comp_details['comp_earn_head7']        
+    columns[52]["title"] = comp_details['comp_earn_head8'] 
+    columns[53]["title"] = 'Earned '+comp_details['comp_earn_head8']        
+    columns[54]["title"] = comp_details['comp_earn_head9'] 
+    columns[55]["title"] = 'Earned '+comp_details['comp_earn_head9']         
+    columns[56]["title"] = comp_details['comp_earn_head10'] 
+    columns[57]["title"] = 'Earned '+comp_details['comp_earn_head10']         
     
     # Update the Data Grid with the modified column
     self.data_grid_1.columns = columns

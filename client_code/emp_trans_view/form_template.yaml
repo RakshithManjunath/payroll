@@ -130,30 +130,30 @@ components:
         width: '100'}
       - {id: UEIPVM, title: Attendance bonus, data_key: trans_attn_bonus, $$hashKey: 'object:1811',
         width: '100'}
-      - {id: KMICBQ, title: Fxd Earn_gross, data_key: Fxd_earn_gross, $$hashKey: 'object:1812',
+      - {id: KMICBQ, title: Fixed Gross, data_key: Fxd_earn_gross, $$hashKey: 'object:1812',
         width: '100'}
-      - {id: BLUTZQ, title: Earn Pf_salary, data_key: earn_pf_salary, $$hashKey: 'object:1813',
+      - {id: BLUTZQ, title: PF salary, data_key: earn_pf_salary, $$hashKey: 'object:1813',
         width: '100'}
-      - {id: TLATMS, title: Earn Fpf_salary, data_key: earn_fpf_salary, $$hashKey: 'object:1814',
+      - {id: TLATMS, title: FPF salary, data_key: earn_fpf_salary, $$hashKey: 'object:1814',
         width: '100'}
-      - {id: RJTUCE, title: Earn Esi_salary, data_key: earn_esi_salary, $$hashKey: 'object:1815',
+      - {id: RJTUCE, title: ESI salary, data_key: earn_esi_salary, $$hashKey: 'object:1815',
         width: '100'}
-      - {id: QJEPOE, title: Earn Pt_salary, data_key: earn_pt_salary, $$hashKey: 'object:1816',
+      - {id: QJEPOE, title: PT salary, data_key: earn_pt_salary, $$hashKey: 'object:1816',
         width: '100'}
-      - {id: XWOOHM, title: Earn Ot_salary, data_key: earn_ot_salary, $$hashKey: 'object:1817',
+      - {id: XWOOHM, title: OT salary, data_key: earn_ot_salary, $$hashKey: 'object:1817',
         width: '100'}
-      - {id: FJHEVO, title: Earn It_salary, data_key: earn_it_salary, $$hashKey: 'object:1818',
+      - {id: FJHEVO, title: IT salary, data_key: earn_it_salary, $$hashKey: 'object:1818',
         width: '100'}
-      - {id: NNUCHB, title: Earn Bonus_salary, data_key: earn_bonus_salary, $$hashKey: 'object:1819',
+      - {id: NNUCHB, title: Bonus salary, data_key: earn_bonus_salary, $$hashKey: 'object:1819',
         width: '100'}
-      - {id: UBYMRP, title: Pf Amt, data_key: pf_amt, $$hashKey: 'object:1820', width: '100'}
-      - {id: NLBOFM, title: Fpf Amt, data_key: fpf_amt, $$hashKey: 'object:1821',
+      - {id: UBYMRP, title: PF Amt, data_key: pf_amt, $$hashKey: 'object:1820', width: '100'}
+      - {id: NLBOFM, title: FPF AMT, data_key: fpf_amt, $$hashKey: 'object:1821',
         width: '100'}
-      - {id: BXYZDH, title: Esi Amt, data_key: esi_amt, $$hashKey: 'object:1822',
+      - {id: BXYZDH, title: ESI Amt, data_key: esi_amt, $$hashKey: 'object:1822',
         width: '100'}
-      - {id: OSLHWM, title: Pt Amt, data_key: pt_amt, $$hashKey: 'object:1823', width: '100'}
-      - {id: BLCMWS, title: Ot Amt, data_key: ot_amt, $$hashKey: 'object:1824', width: '100'}
-      - {id: RBRHNO, title: It Or_tds_amt, data_key: it_or_tds_amt, $$hashKey: 'object:1825',
+      - {id: OSLHWM, title: PT Amt, data_key: pt_amt, $$hashKey: 'object:1823', width: '100'}
+      - {id: BLCMWS, title: OT Amt, data_key: ot_amt, $$hashKey: 'object:1824', width: '100'}
+      - {id: RBRHNO, title: TDS Amt, data_key: it_or_tds_amt, $$hashKey: 'object:1825',
         width: '100'}
       - {id: NPNMFO, title: Bonus Amt, data_key: bonus_amt, $$hashKey: 'object:1826',
         width: '100'}
