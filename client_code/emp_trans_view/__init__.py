@@ -15,7 +15,18 @@ class emp_trans_view(emp_trans_viewTemplate):
     self.repeating_panel_1.items = anvil.server.call('trans_get_all_details')
 
   def populate_custom_data_grid(self):
-    columns = self.data_grid_1.columns
+    col = self.data_grid_1.columns
+
+    ######## Find the index value of acolumn in the DataGrid##############
+    # # Specify the field name you want to check for
+    field_name = 'Trans Leave1'
+    
+  # for col in col:
+  #   if (col["name"] == field_name):
+  #     col["name"].i
+  #     print(col["name"])
+  #   else:
+  #     pass
 
     # Specify the index of the column you want to change (e.g., column at index 2)
     #column_index_to_change = 2
