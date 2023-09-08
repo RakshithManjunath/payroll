@@ -8,11 +8,29 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_1
+    layout_properties: {grid_position: 'WHJJCJ,IXKDGK'}
   - type: Button
-    properties: {text: button_1}
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Restore data from backup, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
     name: button_1
     layout_properties: {grid_position: 'SIIRCI,FOXBVZ'}
     event_bindings: {click: button_1_click}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {grid_position: 'DJDKKS,NLIRED'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'HVOUJL,RPHKNB'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
