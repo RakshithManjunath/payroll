@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class mode_select(mode_selectTemplate):
   def __init__(self, **properties):
@@ -12,7 +13,9 @@ class mode_select(mode_selectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.label_1.text = gvarb.g_comname
 
+  
   def exit_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
