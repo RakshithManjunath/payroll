@@ -51,7 +51,7 @@ class emp_trans_view(emp_trans_viewTemplate):
     columns[55]["title"] = 'Earned '+comp_details['comp_earn_head9']         
     columns[56]["title"] = comp_details['comp_earn_head10'] 
     columns[57]["title"] = 'Earned '+comp_details['comp_earn_head10']         
-    
+
     # Update the Data Grid with the modified column
     self.data_grid_1.columns = columns
 
