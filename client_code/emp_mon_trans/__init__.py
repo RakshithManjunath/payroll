@@ -13,6 +13,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.label_10.text = gvarb.g_comname
     self.drop_down_1.items = anvil.server.call('trans_empcode_name')
 
   def outlined_button_1_click(self, **event_args):

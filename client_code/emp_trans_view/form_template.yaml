@@ -8,6 +8,17 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Label
+    properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'NICBZU,EEPOTK'}
+  - type: Spacer
+    properties: {height: 18}
+    name: spacer_1
+    layout_properties: {grid_position: 'OXUPTA,KFUCHF'}
   - type: DataGrid
     properties:
       role: wide
