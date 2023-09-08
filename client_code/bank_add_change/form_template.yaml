@@ -8,6 +8,13 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Label
+    properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'LTFZCC,ZQDTMN'}
   - type: Link
     properties: {role: title, url: '', align: center, tooltip: '', border: solid,
       foreground: '', visible: true, text: Add bank, font_size: null, wrap_on: mobile,

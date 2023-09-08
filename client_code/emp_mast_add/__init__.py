@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class emp_mast_add(emp_mast_addTemplate):
   def __init__(self, **properties):
@@ -12,6 +13,7 @@ class emp_mast_add(emp_mast_addTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.label_4.text = gvarb.g_comname
     self.drop_down_1.items = anvil.server.call('dept_change_name_and_code')
     self.drop_down_2.items = anvil.server.call('desi_change_name_and_code')
 
