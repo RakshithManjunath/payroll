@@ -14,6 +14,13 @@ class company_select(company_selectTemplate):
 
     # first open the login/signup form
     # anvil.users.login_with_form()
+    data = anvil.server.call('get_all_companies')
+    if len(list(data)) == 0:
+      print("no company")
+      open_form('comp_add_change')
+    else:
+      print("companies exist")
+    
 
     # after login, populate dropdown 
     self.company_select_dp.items = anvil.server.call('company_select_code_and_name')
