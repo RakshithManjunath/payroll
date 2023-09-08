@@ -13,7 +13,7 @@ class company_select(company_selectTemplate):
     self.init_components(**properties)
 
     # first open the login/signup form
-    anvil.users.login_with_form()
+    # anvil.users.login_with_form()
 
     # after login, populate dropdown 
     self.company_select_dp.items = anvil.server.call('company_select_code_and_name')
