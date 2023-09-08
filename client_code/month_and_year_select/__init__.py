@@ -13,8 +13,7 @@ class month_and_year_select(month_and_year_selectTemplate):
     self.init_components(**properties)
 
   # self.label_6.text = "Style [ "+gvarb.style_name+" ] Qty [ "+str(gvarb.style_qty)+" ] for the month of "+month_name+" "+str(gvarb.trans_date.year)
-    self.label_2.text = gvarb.g_comname
-
+    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode
 
     cur_trans_date = anvil.server.call('cur_trans_date')
 
