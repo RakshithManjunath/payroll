@@ -5,11 +5,16 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class month_and_year_select(month_and_year_selectTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+
+  # self.label_6.text = "Style [ "+gvarb.style_name+" ] Qty [ "+str(gvarb.style_qty)+" ] for the month of "+month_name+" "+str(gvarb.trans_date.year)
+    self.label_2.text = gvarb.g_comname
+
 
     cur_trans_date = anvil.server.call('cur_trans_date')
 
