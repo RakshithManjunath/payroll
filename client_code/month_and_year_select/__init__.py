@@ -34,25 +34,8 @@ class month_and_year_select(month_and_year_selectTemplate):
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.format_date_and_save()
     open_form('menu')
 
-  def format_date_and_save(self):
-    if self.year_select_dp.items !="" and self.month_select_dp.items !="":
-      date_str = "01" + "/" + self.encoded_month + "/" + self.year
-      date_obj = datetime.strptime(date_str, "%d/%m/%Y")
-      gvarb.trans_date = date_obj.date()
-    elif self.year !="":
-      date_str = "01" + "/" + str(self.trans_date[0].month) + "/" + self.year
-      date_obj = datetime.strptime(date_str, "%d/%m/%Y")
-      gvarb.trans_date = date_obj.date()
-    elif self.month != "":
-      date_str = "01" + "/" + self.encoded_month + "/" + str(self.trans_date[0].year)
-      date_obj = datetime.strptime(date_str, "%d/%m/%Y")
-      gvarb.trans_date = date_obj.date()
-      print("Different month")
-    else:
-      gvarb.trans_date = self.trans_date[0]
-   
+
 
     
