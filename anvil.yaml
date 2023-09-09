@@ -7,6 +7,9 @@ services:
   client_config: {allow_signup: true, enable_automatically: true, use_email: true,
     confirm_email: true}
   server_config: {user_table: users}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {file_table: files}
 startup: {type: form, module: check_company}
 package_name: Payroll
 allow_embedding: false
@@ -14,61 +17,291 @@ name: Payroll
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
 startup_form: null
 db_schema:
-  users:
+  designation:
+    title: designation
     client: none
     server: full
     columns:
-    - name: email
+    - name: desi_id
+      admin_ui: {width: 200}
       type: string
-      admin_ui: {order: 0, width: 200}
-    - name: enabled
+    - name: desi_code
+      admin_ui: {width: 200}
+      type: string
+    - name: desi_name
+      admin_ui: {width: 200}
+      type: string
+  department:
+    title: department
+    client: none
+    server: full
+    columns:
+    - name: dept_id
+      admin_ui: {width: 200}
+      type: string
+    - name: dept_code
+      admin_ui: {width: 200}
+      type: string
+    - name: dept_name
+      admin_ui: {width: 200}
+      type: string
+  transaction:
+    title: transaction
+    client: none
+    server: full
+    columns:
+    - name: id
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_date
+      admin_ui: {width: 200}
+      type: date
+    - name: trans_empid
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empname
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_father_husband
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empsex
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empdob
+      admin_ui: {width: 200}
+      type: date
+    - name: trans_empdoj
+      admin_ui: {width: 200}
+      type: date
+    - name: trans_emptype
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_deptcode
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_deptname
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_desicode
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_desiname
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_emppfc
+      admin_ui: {width: 200}
       type: bool
-      admin_ui: {order: 1, width: 200}
-    - name: last_login
-      type: datetime
-      admin_ui: {order: 2, width: 200}
-    - name: password_hash
-      type: string
-      admin_ui: {order: 3, width: 200}
-    - name: n_password_failures
+    - name: trans_emppfno
+      admin_ui: {width: 200}
       type: number
-      admin_ui: {order: 4, width: 200}
-    - name: confirmed_email
+    - name: trans_emp_pfuan
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empesic
+      admin_ui: {width: 200}
       type: bool
-      admin_ui: {order: 5, width: 200}
-    - name: signed_up
-      type: datetime
-      admin_ui: {order: 6, width: 200}
-    - name: email_confirmation_key
+    - name: trans_empesino
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_empdispensary
       admin_ui: {width: 200}
       type: string
-    title: Users
-  bank:
-    title: bank
-    client: none
-    server: full
-    columns:
-    - name: bank_id
+    - name: trans_empptc
+      admin_ui: {width: 200}
+      type: bool
+    - name: trans_empitc
+      admin_ui: {width: 200}
+      type: bool
+    - name: trans_emppan
       admin_ui: {width: 200}
       type: string
-    - name: bank_code
+    - name: trans_mandays
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_wo
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ph
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_layoff
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_absent
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_leave1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_leave2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_leave3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_othrs
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_inchrs
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded4
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_loan1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_loan2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_adv
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_tds
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_pfvol
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_lic
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_arr_esipt
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_arr_pf
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn4
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn5
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn6
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn7
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn8
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn9
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn10
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn4
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn5
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn6
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn7
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn8
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn9
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn10
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_phone_number
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_alt_phone_number
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_email_address
       admin_ui: {width: 200}
       type: string
-    - name: bank_name
+    - name: trans_aadhar_number
       admin_ui: {width: 200}
-      type: string
-    - name: bank_addr1
+      type: number
+    - name: trans_attn_bonus
       admin_ui: {width: 200}
-      type: string
-    - name: bank_addr2
+      type: number
+    - name: Fxd_earn_gross
       admin_ui: {width: 200}
-      type: string
-    - name: bank_addr3
+      type: number
+    - name: earn_pf_salary
       admin_ui: {width: 200}
-      type: string
-    - name: bank_ifsc
+      type: number
+    - name: earn_fpf_salary
       admin_ui: {width: 200}
-      type: string
+      type: number
+    - name: earn_esi_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_pt_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_ot_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_it_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_bonus_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: pf_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: fpf_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: esi_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: pt_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: ot_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: it_or_tds_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: bonus_amt
+      admin_ui: {width: 200}
+      type: number
   company:
     title: company
     client: none
@@ -404,34 +637,40 @@ db_schema:
     - name: comp_pay_date
       admin_ui: {width: 200}
       type: date
-  department:
-    title: department
+  files:
     client: none
     server: full
     columns:
-    - name: dept_id
-      admin_ui: {width: 200}
+    - name: path
       type: string
-    - name: dept_code
-      admin_ui: {width: 200}
+      admin_ui: {order: 0, width: 200}
+    - name: file
+      type: media
+      admin_ui: {order: 1, width: 200}
+    - name: file_version
       type: string
-    - name: dept_name
-      admin_ui: {width: 200}
-      type: string
-  designation:
-    title: designation
+      admin_ui: {order: 2, width: 200}
+    title: Files
+  trans_date:
+    title: trans_date
     client: none
     server: full
     columns:
-    - name: desi_id
+    - name: tr_date
       admin_ui: {width: 200}
-      type: string
-    - name: desi_code
+      type: date
+    - name: tr_days
       admin_ui: {width: 200}
-      type: string
-    - name: desi_name
+      type: number
+    - name: tr_sundays
       admin_ui: {width: 200}
-      type: string
+      type: number
+    - name: tr_end_date
+      admin_ui: {width: 200}
+      type: date
+    - name: tr_id
+      admin_ui: {width: 200}
+      type: number
   employee:
     title: employee
     client: none
@@ -545,281 +784,59 @@ db_schema:
     - name: attn_bonus
       admin_ui: {width: 200}
       type: number
-  trans_date:
-    title: trans_date
+  users:
     client: none
     server: full
     columns:
-    - name: tr_date
-      admin_ui: {width: 200}
-      type: date
-    - name: tr_days
-      admin_ui: {width: 200}
+    - name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+    - name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 200}
+    - name: last_login
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    - name: password_hash
+      type: string
+      admin_ui: {order: 3, width: 200}
+    - name: n_password_failures
       type: number
-    - name: tr_sundays
+      admin_ui: {order: 4, width: 200}
+    - name: confirmed_email
+      type: bool
+      admin_ui: {order: 5, width: 200}
+    - name: signed_up
+      type: datetime
+      admin_ui: {order: 6, width: 200}
+    - name: email_confirmation_key
       admin_ui: {width: 200}
-      type: number
-    - name: tr_end_date
-      admin_ui: {width: 200}
-      type: date
-    - name: tr_id
-      admin_ui: {width: 200}
-      type: number
-  transaction:
-    title: transaction
+      type: string
+    title: Users
+  bank:
+    title: bank
     client: none
     server: full
     columns:
-    - name: id
+    - name: bank_id
       admin_ui: {width: 200}
       type: string
-    - name: trans_date
-      admin_ui: {width: 200}
-      type: date
-    - name: trans_empid
+    - name: bank_code
       admin_ui: {width: 200}
       type: string
-    - name: trans_empname
+    - name: bank_name
       admin_ui: {width: 200}
       type: string
-    - name: trans_father_husband
+    - name: bank_addr1
       admin_ui: {width: 200}
       type: string
-    - name: trans_empsex
+    - name: bank_addr2
       admin_ui: {width: 200}
       type: string
-    - name: trans_empdob
-      admin_ui: {width: 200}
-      type: date
-    - name: trans_empdoj
-      admin_ui: {width: 200}
-      type: date
-    - name: trans_emptype
+    - name: bank_addr3
       admin_ui: {width: 200}
       type: string
-    - name: trans_deptcode
+    - name: bank_ifsc
       admin_ui: {width: 200}
       type: string
-    - name: trans_deptname
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_desicode
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_desiname
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_emppfc
-      admin_ui: {width: 200}
-      type: bool
-    - name: trans_emppfno
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_emp_pfuan
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_empesic
-      admin_ui: {width: 200}
-      type: bool
-    - name: trans_empesino
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_empdispensary
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_empptc
-      admin_ui: {width: 200}
-      type: bool
-    - name: trans_empitc
-      admin_ui: {width: 200}
-      type: bool
-    - name: trans_emppan
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_mandays
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_wo
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_ph
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_layoff
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_absent
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_leave1
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_leave2
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_leave3
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_othrs
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_inchrs
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_ded1
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_ded2
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_ded3
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_ded4
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_loan1
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_loan2
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_adv
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_tds
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_pfvol
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_lic
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_arr_esipt
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_arr_pf
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn1
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn2
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn3
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn4
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn5
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn6
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn7
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn8
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn9
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn10
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn1
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn2
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn3
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn4
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn5
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn6
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn7
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn8
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn9
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_earn_earn10
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_phone_number
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_alt_phone_number
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_email_address
-      admin_ui: {width: 200}
-      type: string
-    - name: trans_aadhar_number
-      admin_ui: {width: 200}
-      type: number
-    - name: trans_attn_bonus
-      admin_ui: {width: 200}
-      type: number
-    - name: Fxd_earn_gross
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_pf_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_fpf_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_esi_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_pt_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_ot_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_it_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: earn_bonus_salary
-      admin_ui: {width: 200}
-      type: number
-    - name: pf_amt
-      admin_ui: {width: 200}
-      type: number
-    - name: fpf_amt
-      admin_ui: {width: 200}
-      type: number
-    - name: esi_amt
-      admin_ui: {width: 200}
-      type: number
-    - name: pt_amt
-      admin_ui: {width: 200}
-      type: number
-    - name: ot_amt
-      admin_ui: {width: 200}
-      type: number
-    - name: it_or_tds_amt
-      admin_ui: {width: 200}
-      type: number
-    - name: bonus_amt
-      admin_ui: {width: 200}
-      type: number
 renamed: true
