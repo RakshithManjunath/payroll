@@ -28,3 +28,9 @@ class check_company(check_companyTemplate):
     anvil.server.call('csv_company_upload')
     Notification("company table uploaded successfully").show()
 
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('csv_trans_date_upload')
+    Notification("trans_date table uploaded successfully").show()
+
+

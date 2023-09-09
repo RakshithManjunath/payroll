@@ -325,12 +325,6 @@ db_schema:
     - name: comp_addr3
       admin_ui: {width: 200}
       type: string
-    - name: comp_pf_number
-      admin_ui: {width: 200}
-      type: string
-    - name: comp_esi_number
-      admin_ui: {width: 200}
-      type: number
     - name: comp_pto_circle
       admin_ui: {width: 200}
       type: string
@@ -637,6 +631,12 @@ db_schema:
     - name: comp_pay_date
       admin_ui: {width: 200}
       type: date
+    - name: comp_esi_number
+      admin_ui: {order: 5.5, width: 200}
+      type: string
+    - name: comp_pf_number
+      type: string
+      admin_ui: {width: 200, order: 3.5}
   files:
     client: none
     server: full

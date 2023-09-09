@@ -31,12 +31,12 @@ def csv_company_upload():
     'comp_addr2':str,  
     'comp_addr3':str,
     'comp_pf_number': str,
-    'comp_esi_number': int,
+    'comp_esi_number': str,
     'comp_pto_circle': str, 
-    'comp_emp_pfrate': float, 
-    'comp_empr_fpfrate': float, 
-    'comp_pf_admin': float, 
-    'comp_pf_edli': float, 
+    # 'comp_emp_pfrate': float, 
+    # 'comp_empr_fpfrate': float, 
+    # 'comp_pf_admin': float, 
+    # 'comp_pf_edli': float, 
     'comp_mgmt_pf_lt': int, 
     'comp_mgmt_fpf_lt': int, 
     'comp_esi_sal_lt': int, 
@@ -125,7 +125,7 @@ def csv_company_upload():
     'comp_earnhead10_bonus': bool,
     'comp_bonus_from': str, 
     'comp_bonus_to': str, 
-    'comp_bonus_percentage': int,
+    'comp_bonus_percentage': float,
     'comp_bonus_limit': int,
     'comp_bonus_pt_included': bool, 
     'comp_leave_head1': str,
@@ -134,11 +134,32 @@ def csv_company_upload():
     'comp_loan_head1': str,
     'comp_loan_head2': str
     }
-   # df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
     df['comp_pay_date'] = pd.to_datetime(df['comp_pay_date']).dt.date
+    # key_to_ignore = 'ID'
+    columns_to_ignore = ['ID','comp_emp_pfrate','comp_empr_fpfrate', 'comp_pf_admin','comp_pf_edli']
+    ignored_dict = df.drop(columns=columns_to_ignore)
+    print(ignored_dict)
+    # ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.company.add_row(**d)
+
+@anvil.server.callable
+def csv_trans_date_upload():
+  with open(data_files["trans_date.csv"], "r") as f:
+    dtype_mapping = {
+      'tr_days': int,
+      'tr_sundays': int,
+      'tr_id': int
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['tr_date'] = pd.to_datetime(df['tr_date']).dt.date
+    df['tr_end_date'] = pd.to_datetime(df['tr_end_date']).dt.date
     key_to_ignore = 'ID'
     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
     ignored_dict = pd.DataFrame(ignored_dict)
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
-      app_tables.company.add_row(**d)
+      app_tables.trans_date.add_row(**d)

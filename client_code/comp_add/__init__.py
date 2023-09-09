@@ -34,7 +34,7 @@ class comp_add(comp_addTemplate):
     self.text_box_3.text = ""
     self.text_box_4.text = ""
     self.text_box_5.text = ""
-    self.text_box_6.text = 0
+    self.text_box_6.text = ""
     self.text_box_7.text = ""
 
   def button_2_click(self, **event_args):
