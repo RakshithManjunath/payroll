@@ -54,7 +54,8 @@ def csv_company_upload():
     'comp_ded3': str, 
     'comp_ded4': str,
     'comp_earn_head1': str, 
-    'comp_earnhead1_pf': bool, 
+    'comp_earnhead1_pf': bool,
+    'comp_earnhead1_esi': bool,
     'comp_earnhead1_pt': bool, 
     'comp_earnhead1_it': bool, 
     'comp_earnhead1_ot': bool, 
@@ -67,7 +68,8 @@ def csv_company_upload():
     'comp_earnhead2_ot': bool, 
     'comp_earnhead2_bonus': bool, 
     'comp_earn_head3': str, 
-    'comp_earnhead3_pf': bool, 
+    'comp_earnhead3_pf': bool,
+    'comp_earnhead3_esi': bool, 
     'comp_earnhead3_pt': bool, 
     'comp_earnhead3_it': bool, 
     'comp_earnhead3_ot': bool, 
@@ -80,7 +82,8 @@ def csv_company_upload():
     'comp_earnhead4_ot': bool, 
     'comp_earnhead4_bonus': bool, 
     'comp_earn_head5': str, 
-    'comp_earnhead5_pf': bool, 
+    'comp_earnhead5_pf': bool,
+    'comp_earnhead5_esi': bool,
     'comp_earnhead5_pt': bool, 
     'comp_earnhead5_it': bool, 
     'comp_earnhead5_ot': bool, 
@@ -93,7 +96,8 @@ def csv_company_upload():
     'comp_earnhead6_ot': bool, 
     'comp_earnhead6_bonus': bool, 
     'comp_earn_head7': str, 
-    'comp_earnhead7_pf': bool, 
+    'comp_earnhead7_pf': bool,
+    'comp_earnhead7_esi': bool,
     'comp_earnhead7_pt': bool, 
     'comp_earnhead7_it': bool, 
     'comp_earnhead7_ot': bool, 
@@ -107,6 +111,7 @@ def csv_company_upload():
     'comp_earnhead8_bonus': bool,
     'comp_earn_head9': str, 
     'comp_earnhead9_pf': bool, 
+    'comp_earnhead9_esi': bool, 
     'comp_earnhead9_pt': bool, 
     'comp_earnhead9_it': bool, 
     'comp_earnhead9_ot': bool, 
@@ -127,10 +132,9 @@ def csv_company_upload():
     'comp_leave_head2': str,
     'comp_leave_head3': str,
     'comp_loan_head1': str,
-    'comp_loan_head2': str,
-    'comp_pay_date': ' date 
+    'comp_loan_head2': str
     }
-    df = pd.read_csv(f, dtype={"comp_code":str,"comp_earnhead5_pt": bool, "comp_earnhead3_ot":bool},keep_default_na=False)
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False,parse_dates=['comp_pay_date'])
     key_to_ignore = 'ID'
     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
     ignored_dict = pd.DataFrame(ignored_dict)
