@@ -175,3 +175,5 @@ def trans_get_all_details():
 @anvil.server.callable
 def get_all_companies():
   return app_tables.company.search()
+
+
