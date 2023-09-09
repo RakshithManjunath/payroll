@@ -134,7 +134,8 @@ def csv_company_upload():
     'comp_loan_head1': str,
     'comp_loan_head2': str
     }
-    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False,parse_dates=['comp_pay_date'])
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['comp_pay_date'] = pd.to_datetime(df['comp_pay_date']).dt.date
     key_to_ignore = 'ID'
     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
     ignored_dict = pd.DataFrame(ignored_dict)
