@@ -20,10 +20,11 @@ class comp_add(comp_addTemplate):
     else:
       id= anvil.server.call('comp_get_next_string_value')
       compcode= anvil.server.call('next_comp_id_value')
-      anvil.server.call('comp_add',id,compcode, self.text_box_1.text,
+      row = anvil.server.call('comp_add',id,compcode, self.text_box_1.text,
                         self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                         self.text_box_5.text,self.text_box_6.text,
                         self.text_box_7.text)
+      anvil.server.call('comp_default_values',row)
       Notification(self.text_box_1.text + " data added successfully").show()
       self.clear_inputs()
     

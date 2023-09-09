@@ -35,8 +35,8 @@ def next_comp_id_value():
   return next_value
 
 @anvil.server.callable
-def comp_add(comp_id,compcode,compname,compaddr1="",compaddr2="",compaddr3="",comp_pf_number="",comp_esi_number="",comp_pto_circle=""):
-  app_tables.company.add_row(comp_id=comp_id,
+def comp_add(comp_id,compcode,compname,compaddr1,compaddr2,compaddr3,comp_pf_number,comp_esi_number,comp_pto_circle):
+  return app_tables.company.add_row(comp_id=comp_id,
                              comp_code=compcode,
                              comp_name=compname,
                              comp_addr1=compaddr1,
@@ -46,6 +46,51 @@ def comp_add(comp_id,compcode,compname,compaddr1="",compaddr2="",compaddr3="",co
                              comp_esi_number=comp_esi_number,
                              comp_pto_circle=comp_pto_circle
                              )
+
+def get_default_value_for_type(column_type):
+  # Define default values based on column types (you can customize this)
+  if column_type == 'text':
+      return ''
+  elif column_type == 'number':
+      return 0
+  elif column_type == 'date':
+      return anvil.server.now_utc()  # Current UTC date and time
+  return None
+
+@anvil.server.callable
+def comp_default_values(row):
+  columns_and_types = {
+  'comp_addr1':'text',  
+  'comp_addr2':'text',  
+  'comp_addr3':'text',
+  'comp_pf_number': 'text',
+  'comp_esi_number': 'text',
+  'comp_pto_circle': 'text',
+  'comp_mgmt_pf_lt': 'number', 
+  'comp_mgmt_fpf_lt': 'number', 
+  'comp_esi_sal_lt': 'number', 
+  'comp_pts1_from': 'number', 
+  'comp_pts1_to': 'number', 
+  'comp_pts1_pt': 'number',
+  'comp_pts2_from': 'number', 
+  'comp_pts2_to': 'number', 
+  'comp_pts2_pt': 'number', 
+  'comp_pts3_from': 'number', 
+  'comp_pts3_to': 'number', 
+  'comp_pts3_pt': 'number',
+  'comp_ded1': 'text', 
+  'comp_ded2': 'text',
+  'comp_ded3': 'text', 
+  'comp_ded4': 'text'
+  'comp_earn_head1': 'text' 
+  }
+
+  for column_name, column_type in columns_and_types.items():
+    print(column_name, column_type)
+    if row[column_name] is None:
+      print(row[column_name])
+      default_value = get_default_value_for_type(column_type)
+      row[column_name] = default_value
 
 #################### Company Change #################################
 @anvil.server.callable
