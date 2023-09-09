@@ -22,3 +22,8 @@ class check_company(check_companyTemplate):
     else:
       print("companies exist")
       open_form('company_select')
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
