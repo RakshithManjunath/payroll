@@ -81,8 +81,14 @@ def comp_default_values(row):
   'comp_ded1': 'text', 
   'comp_ded2': 'text',
   'comp_ded3': 'text', 
-  'comp_ded4': 'text'
-  'comp_earn_head1': 'text' 
+  'comp_ded4': 'text',
+  'comp_earn_head1': 'text', 
+  'comp_earnhead1_pf': False,
+  'comp_earnhead1_esi': False,
+  'comp_earnhead1_pt': False, 
+  'comp_earnhead1_it': False, 
+  'comp_earnhead1_ot': False, 
+  'comp_earnhead1_bonus': False   
   }
 
   for column_name, column_type in columns_and_types.items():
