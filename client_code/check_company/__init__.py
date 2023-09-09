@@ -25,6 +25,6 @@ class check_company(check_companyTemplate):
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('csv_style_upload')
-    Notification("style table uploaded successfully").show()
+    anvil.server.call('csv_company_upload')
+    Notification("company table uploaded successfully").show()
 

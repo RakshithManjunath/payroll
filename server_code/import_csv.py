@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import pandas as pd
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -20,12 +21,119 @@ import anvil.server
 #
 
 @anvil.server.callable
-def csv_style_upload():
-  with open(data_files["style.csv"], "r") as f:
-    df = pd.read_csv(f, dtype={"style_code":"string"},keep_default_na=False)
+def csv_company_upload():
+  with open(data_files["company.csv"], "r") as f:
+    dtype_mapping = {
+    'comp_id': str,  
+    'comp_code': str,
+    'comp_name': str,
+    'comp_addr1':str,  
+    'comp_addr2':str,  
+    'comp_addr3':str,
+    'comp_pf_number': str,
+    'comp_esi_number': int,
+    'comp_pto_circle': str, 
+    'comp_emp_pfrate': float, 
+    'comp_empr_fpfrate': float, 
+    'comp_pf_admin': float, 
+    'comp_pf_edli': float, 
+    'comp_mgmt_pf_lt': int, 
+    'comp_mgmt_fpf_lt': int, 
+    'comp_esi_sal_lt': int, 
+    'comp_pts1_from': int, 
+    'comp_pts1_to': int, 
+    'comp_pts1_pt': int, 
+    'comp_pts2_from': int, 
+    'comp_pts2_to': int, 
+    'comp_pts2_pt': int, 
+    'comp_pts3_from': int, 
+    'comp_pts3_to': int, 
+    'comp_pts3_pt': int, 
+    'comp_ded1': str, 
+    'comp_ded2': str,
+    'comp_ded3': str, 
+    'comp_ded4': str,
+    'comp_earn_head1': str, 
+    'comp_earnhead1_pf': bool, 
+    'comp_earnhead1_pt': bool, 
+    'comp_earnhead1_it': bool, 
+    'comp_earnhead1_ot': bool, 
+    'comp_earnhead1_bonus': bool, 
+    'comp_earn_head2': str, 
+    'comp_earnhead2_pf': bool, 
+    'comp_earnhead2_esi': bool, 
+    'comp_earnhead2_pt': bool, 
+    'comp_earnhead2_it': bool, 
+    'comp_earnhead2_ot': bool, 
+    'comp_earnhead2_bonus': bool, 
+    'comp_earn_head3': str, 
+    'comp_earnhead3_pf': bool, 
+    'comp_earnhead3_pt': bool, 
+    'comp_earnhead3_it': bool, 
+    'comp_earnhead3_ot': bool, 
+    'comp_earnhead3_bonus': bool, 
+    'comp_earn_head4': str, 
+    'comp_earnhead4_pf': bool, 
+    'comp_earnhead4_esi': bool, 
+    'comp_earnhead4_pt': bool, 
+    'comp_earnhead4_it': bool, 
+    'comp_earnhead4_ot': bool, 
+    'comp_earnhead4_bonus': bool, 
+    'comp_earn_head5': str, 
+    'comp_earnhead5_pf': bool, 
+    'comp_earnhead5_pt': bool, 
+    'comp_earnhead5_it': bool, 
+    'comp_earnhead5_ot': bool, 
+    'comp_earnhead5_bonus': bool, 
+    'comp_earn_head6': str, 
+    'comp_earnhead6_pf': bool, 
+    'comp_earnhead6_esi': bool, 
+    'comp_earnhead6_pt': bool, 
+    'comp_earnhead6_it': bool, 
+    'comp_earnhead6_ot': bool, 
+    'comp_earnhead6_bonus': bool, 
+    'comp_earn_head7': str, 
+    'comp_earnhead7_pf': bool, 
+    'comp_earnhead7_pt': bool, 
+    'comp_earnhead7_it': bool, 
+    'comp_earnhead7_ot': bool, 
+    'comp_earnhead7_bonus': bool, 
+    'comp_earn_head8': str, 
+    'comp_earnhead8_pf': bool, 
+    'comp_earnhead8_esi': bool, 
+    'comp_earnhead8_pt': bool, 
+    'comp_earnhead8_it': bool, 
+    'comp_earnhead8_ot': bool, 
+    'comp_earnhead8_bonus': bool,
+    'comp_earn_head9': str, 
+    'comp_earnhead9_pf': bool, 
+    'comp_earnhead9_pt': bool, 
+    'comp_earnhead9_it': bool, 
+    'comp_earnhead9_ot': bool, 
+    'comp_earnhead9_bonus': bool, 
+    'comp_earn_head10': str, 
+    'comp_earnhead10_pf': bool, 
+    'comp_earnhead10_esi': bool, 
+    'comp_earnhead10_pt': bool, 
+    'comp_earnhead10_it': bool, 
+    'comp_earnhead10_ot': bool, 
+    'comp_earnhead10_bonus': bool,
+    'comp_bonus_from': str, 
+    'comp_bonus_to': str, 
+    'comp_bonus_percentage': int,
+    'comp_bonus_limit': int,
+    'comp_bonus_pt_included': bool, 
+    'comp_leave_head1': str,
+    'comp_leave_head2': str,
+    'comp_leave_head3': str,
+    'comp_loan_head1': str,
+    'comp_loan_head2': str,
+    'comp_pay_date': ' date 
+    }
+    df = pd.read_csv(f, dtype={"comp_code":str,"comp_earnhead5_pt": bool, "comp_earnhead3_ot":bool},keep_default_na=False)
     key_to_ignore = 'ID'
     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
     ignored_dict = pd.DataFrame(ignored_dict)
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
-      app_tables.style.add_row(**d)
+      app_tables.company.add_row(**d)
