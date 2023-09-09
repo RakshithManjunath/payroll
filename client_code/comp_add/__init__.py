@@ -18,9 +18,9 @@ class comp_add(comp_addTemplate):
     if self.text_box_1.text == "":
       Notification("Company name cannot be blank").show()
     else:
-      self.value= anvil.server.call('comp_get_next_string_value')
-      comp_id= anvil.server.call('next_comp_id_value')
-      anvil.server.call('comp_add',self.value,comp_id, self.text_box_1.text,
+      id= anvil.server.call('comp_get_next_string_value')
+      compcode= anvil.server.call('next_comp_id_value')
+      anvil.server.call('comp_add',id,compcode, self.text_box_1.text,
                         self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                         self.text_box_5.text,self.text_box_6.text,
                         self.text_box_7.text)
@@ -29,13 +29,13 @@ class comp_add(comp_addTemplate):
     
   def clear_inputs(self):
     # Clear our three text boxes
-    self.text_box_1.text = None
-    self.text_box_2.text = None
-    self.text_box_3.text = None
-    self.text_box_4.text = None
-    self.text_box_5.text = None
-    self.text_box_6.text = None
-    self.text_box_7.text = None
+    self.text_box_1.text = ""
+    self.text_box_2.text = ""
+    self.text_box_3.text = ""
+    self.text_box_4.text = ""
+    self.text_box_5.text = ""
+    self.text_box_6.text = 0
+    self.text_box_7.text = ""
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""

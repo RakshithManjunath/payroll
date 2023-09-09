@@ -35,16 +35,16 @@ def next_comp_id_value():
   return next_value
 
 @anvil.server.callable
-def comp_add(comp_id,compcode,compname,compaddr1,compaddr2,compaddr3,comppfno,compesino,comppto):
+def comp_add(comp_id,compcode,compname,compaddr1="",compaddr2="",compaddr3="",comp_pf_number="",comp_esi_number=2,comp_pto_circle=""):
   app_tables.company.add_row(comp_id=comp_id,
                              comp_code=compcode,
                              comp_name=compname,
                              comp_addr1=compaddr1,
                              comp_addr2=compaddr2,
                              comp_addr3=compaddr3,
-                             comp_pf_number=comppfno,
-                             comp_esi_number=compesino,
-                             comp_pto_circle=comppto,
+                             comp_pf_number=comp_pf_number,
+                             comp_esi_number=comp_esi_number,
+                             comp_pto_circle=comp_pto_circle
                              )
 
 #################### Company Change #################################
@@ -80,8 +80,8 @@ def company_select_code_and_name():
 
 ####### statutary update pf ########
 @anvil.server.callable
-def statutary_update_pf(comp_code,comp_emp_pfrate,comp_empr_fpfrate,comp_pf_admin,comp_pf_edli,
-                    comp_mgmt_pf_lt,comp_mgmt_fpf_lt):
+def statutary_update_pf(comp_code,comp_emp_pfrate=0,comp_empr_fpfrate=0,comp_pf_admin=0,comp_pf_edli=0,
+                    comp_mgmt_pf_lt=0,comp_mgmt_fpf_lt=0):
   row = app_tables.company.get(comp_code=comp_code)
   row.update(comp_emp_pfrate=comp_emp_pfrate,
             comp_empr_fpfrate=comp_empr_fpfrate,
