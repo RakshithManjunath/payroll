@@ -22,7 +22,7 @@ components:
       enabled: true
       foreground: ''
       items: []
-      visible: true
+      visible: false
       font_size: null
       font: ''
       spacing_above: small
@@ -35,10 +35,37 @@ components:
     name: company_select_dp
     layout_properties: {grid_position: 'BANIAV,HLDAVL'}
     event_bindings: {}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: false, text: Add new company, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'KZZAVA,LFTVZY'}
+    event_bindings: {click: button_2_click}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'QOLHPJ,JMFROO'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: false, text: Restore company, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: button_3
+    layout_properties: {grid_position: 'OBRIZO,THYDFE'}
   - type: Spacer
     properties: {height: 32}
     name: spacer_2
     layout_properties: {grid_position: 'SZKZFM,HCJMHZ'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: false, text: Exit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_4
+    layout_properties: {grid_position: 'QGBSZZ,KFVHAQ', column: null}
+    event_bindings: {click: button_4_click}
   - type: DataRowPanel
     properties: {}
     name: data_row_panel_1
@@ -46,7 +73,7 @@ components:
     components:
     - type: Button
       properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-        foreground: '', visible: true, text: Select, font_size: null, font: '', spacing_above: small,
+        foreground: '', visible: false, text: Select, font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
         underline: false, icon: ''}
       name: submit_btn
@@ -54,21 +81,14 @@ components:
       event_bindings: {click: submit_btn_click}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: button_1
-    layout_properties: {grid_position: 'ERKYXD,LHAPII'}
+    layout_properties: {grid_position: 'ERKYXD,LCUWDX'}
     event_bindings: {click: button_1_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
   components: []
-- type: Label
-  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: Select company, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
-  name: lbl_company_name
-  layout_properties: {grid_position: 'LKURJX,GXNRUQ', slot: title}

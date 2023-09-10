@@ -48,6 +48,12 @@ def comp_add(comp_id,compcode,compname,compaddr1,compaddr2,compaddr3,comp_pf_num
                              comp_pto_circle=comp_pto_circle
                              )
 
+@anvil.server.callable
+def new_comp_add(comp_id,compcode,compname):
+  return app_tables.company.add_row(comp_id=comp_id,
+                             comp_code=compcode,
+                             comp_name=compname)
+
 def get_default_value_for_type(column_type):
   # Define default values based on column types (you can customize this)
   if column_type == 'text':

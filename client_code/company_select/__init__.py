@@ -14,12 +14,17 @@ class company_select(company_selectTemplate):
 
     # first open the login/signup form
     # anvil.users.login_with_form()
-    # data = anvil.server.call('get_all_companies')
-    # if len(list(data)) == 0:
-    #   print("no company")
-    #   open_form('comp_add_change')
-    # else:
-    #   print("companies exist")
+    data = anvil.server.call('get_all_companies')
+    if len(list(data)) == 0:
+      self.button_2.visible = "True"
+      self.button_3.visible = "True" 
+      self.button_4.visible = "True" 
+      print("no company")
+    else:
+      self.company_select_dp.visible = "True"
+      self.submit_btn.visible = "True"
+      self.button_1.visible = "True"
+      print("companies exist")
     
 
     # after login, populate dropdown 
@@ -40,6 +45,17 @@ class company_select(company_selectTemplate):
     """This method is called when the button is clicked"""
    # open_form('company_select')
     anvil.users.login_with_form()
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.login_with_form()
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('comp_new')
+
+
+
 
 
 
