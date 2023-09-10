@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from datetime import date
 
 ############### Add Company ############
 ######### auto increment 'comp_id' column ###########
@@ -54,7 +55,7 @@ def get_default_value_for_type(column_type):
   elif column_type == 'number':
       return 0
   elif column_type == 'date':
-      return anvil.server.now_utc()  # Current UTC date and time
+      return date(2000, 1, 1)  # Current UTC date and time
   elif column_type == 'true/false':
       return False
   return None
