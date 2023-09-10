@@ -168,7 +168,7 @@ def comp_default_values(row):
     'comp_leave_head3': 'text',
     'comp_loan_head1': 'text',
     'comp_loan_head2':'text',
-    'comp_pay_date':'text'    
+    'comp_pay_date': 'date'    
   }
 
   for column_name, column_type in columns_and_types.items():
