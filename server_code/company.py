@@ -68,10 +68,10 @@ def comp_default_values(row):
   'comp_pf_number': 'text',
   'comp_esi_number': 'text',
   'comp_pto_circle': 'text',
-  'comp_emp_pfrate': float, 
-  'comp_empr_fpfrate': float, 
-  'comp_pf_admin': float, 
-  'comp_pf_edli': float,     
+  'comp_emp_pfrate': 'number',  ## Float type
+  'comp_empr_fpfrate': 'number', ## Float type
+  'comp_pf_admin': 'number', ## Float type
+  'comp_pf_edli': 'number',  ## Float type    
   'comp_mgmt_pf_lt': 'number', 
   'comp_mgmt_fpf_lt': 'number', 
   'comp_esi_sal_lt': 'number', 
@@ -160,14 +160,15 @@ def comp_default_values(row):
     'comp_earnhead10_bonus': 'true/false',
     'comp_bonus_from': 'text', 
     'comp_bonus_to': 'text',     
-    'comp_bonus_percentage': float,
+    'comp_bonus_percentage':'number',  ## Float type
     'comp_bonus_limit': 'number',
     'comp_bonus_pt_included':'true/false', 
     'comp_leave_head1': 'text',
     'comp_leave_head2': 'text',
     'comp_leave_head3': 'text',
     'comp_loan_head1': 'text',
-    'comp_loan_head2':'text'
+    'comp_loan_head2':'text',
+    'comp_pay_date':'text'    
   }
 
   for column_name, column_type in columns_and_types.items():
