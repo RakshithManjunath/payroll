@@ -28,6 +28,7 @@ class comp_new(comp_newTemplate):
       anvil.server.call('comp_default_values',row)
       Notification(self.text_box_1.text + " data added successfully").show()
       self.clear_inputs()
+      anvil.users.login_with_form()
     
   def clear_inputs(self):
     # Clear our three text boxes
