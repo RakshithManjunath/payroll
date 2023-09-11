@@ -19,9 +19,8 @@ class comp_new(comp_newTemplate):
     self.drop_down_1.items = month_names_alphabets
     self.drop_down_2.items = year_names
 
-    self.encoded_month = month_names_numeric
-    self.newyear = year_names
-    date_str = "01" + "/" + self.encoded_month + "/" + self.year
+    
+
   
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -64,22 +63,10 @@ class comp_new(comp_newTemplate):
       compcode= anvil.server.call('next_comp_id_value')
       row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
       tr_id = 1
-
       next_initial_date, next_days, next_num_of_sundays, next_end_date = self.update(self.date_picker_1.date)
       print("", next_initial_date)
-      
-
-      # anvil.server.call('new_comp_trans_date_add',tr_id,self.date_picker_1.date)
-      # anvil.server.call('comp_default_values',row)
-      # Notification(self.text_box_1.text + " data added successfully").show()
-      # self.clear_inputs()
-      # anvil.users.logout()
-      # open_form('company_select')
-      # anvil.users.login_with_form()
     
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_1.text = ""
-
-
 

@@ -52,6 +52,7 @@ components:
       include_placeholder: true
     name: drop_down_1
     layout_properties: {grid_position: 'BRGOIZ,WBXZVS'}
+    event_bindings: {}
   - type: DropDown
     properties:
       role: null
