@@ -23,6 +23,7 @@ class bank_add(bank_addTemplate):
       anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
                     self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                     self.text_box_5.text)
+      anvil.server.call('bank_default_values',row)
       Notification(self.text_box_1.text + " data added successfully").show()
       self.clear_inputs()
     

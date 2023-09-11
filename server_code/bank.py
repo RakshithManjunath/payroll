@@ -54,11 +54,12 @@ def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc):
 @anvil.server.callable
 def bank_default_values(row):
   columns_and_types = {
-  'comp_addr1':'text',  
-  'comp_emp_pfrate': 'number',  ## Float type
-  'comp_earnhead1_pf': 'true/false',
-  'comp_pay_date': 'date'    
+  'bank_addr1':'text',  
+  'bank_addr2':'text', 
+  'bank_addr3':'text', 
+  'bank_ifsc':'text',      
   }
+  
   for column_name, column_type in columns_and_types.items():
     print(column_name, column_type)
     if row[column_name] is None:

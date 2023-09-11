@@ -10,7 +10,7 @@ services:
 - source: /runtime/services/anvil/files.yml
   client_config: {}
   server_config: {file_table: files}
-startup: {type: form, module: comp_new}
+startup: {type: form, module: logform}
 package_name: Payroll
 allow_embedding: false
 name: Payroll

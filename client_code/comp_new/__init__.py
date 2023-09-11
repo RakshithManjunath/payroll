@@ -62,9 +62,12 @@ class comp_new(comp_newTemplate):
       id= anvil.server.call('comp_get_next_string_value')
       compcode= anvil.server.call('next_comp_id_value')
       row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
-      tr_id = 1
-      next_initial_date, next_days, next_num_of_sundays, next_end_date = self.update(self.date_picker_1.date)
-      print("", next_initial_date)
+      anvil.server.call('comp_default_values',row)
+      Notification(self.text_box_1.text + " data added successfully").show()
+      self.clear_inputs()
+      # tr_id = 1
+      # next_initial_date, next_days, next_num_of_sundays, next_end_date = self.update(self.date_picker_1.date)
+      # print("", next_initial_date)
     
   def clear_inputs(self):
     # Clear our three text boxes
