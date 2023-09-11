@@ -26,6 +26,7 @@ def check_username_and_password(username, password):
     print(f"User {username} exists")
     if row['password'] == password:
       print(f"Correct password for {username}")
+      open_form('company_select')
     else:
       print(f"Incorrect password for {username}")
   else:

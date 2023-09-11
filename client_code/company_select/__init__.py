@@ -13,7 +13,7 @@ class company_select(company_selectTemplate):
     self.init_components(**properties)
 
     # first open the login/signup form
-    anvil.users.login_with_form()
+    # anvil.users.login_with_form()
 
     form['']
     data = anvil.server.call('get_all_companies')
