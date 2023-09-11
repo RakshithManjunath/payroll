@@ -21,8 +21,17 @@ import anvil.server
 
 @anvil.server.callable
 def check_username_and_password(username, password):
-  password_table = app_tables.password.search()
-  db_username, db_password = password[username], password_table[password]
+  row = app_tables.password.get(username=username)
+  if row:
+    print(f"User {username} exists")
+    if row['password'] == password:
+      print(f"Correct password for {username}")
+    else:
+      print(f"Incorrect password for {username}")
+  else:
+    print(f"User {username} doesn't exist")
+  # password_table = app_tables.password.search()
+  # db_username, db_password = password[username], password_table[password]
 
 @anvil.server.callable
 def check_password_and_confirm_password(username, password):
