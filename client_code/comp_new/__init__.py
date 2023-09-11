@@ -18,7 +18,8 @@ class comp_new(comp_newTemplate):
 
     self.drop_down_1.items = month_names_alphabets
     self.drop_down_2.items = year_names
-    
+  
+  
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.login_with_form()
