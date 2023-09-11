@@ -54,6 +54,12 @@ def new_comp_add(comp_id,compcode,compname):
                              comp_code=compcode,
                              comp_name=compname)
 
+@anvil.server.callable
+def new_comp_trans_date_add(tr_id,tr_date):
+  return app_tables.trans_date.add_row(tr_id = tr_id,
+                                       tr_date=tr_date)
+  
+
 def get_default_value_for_type(column_type):
   # Define default values based on column types (you can customize this)
   if column_type == 'text':

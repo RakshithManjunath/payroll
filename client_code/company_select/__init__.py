@@ -20,12 +20,12 @@ class company_select(company_selectTemplate):
       self.button_2.visible = "True"
       self.button_3.visible = "True" 
       self.button_4.visible = "True" 
-      print("no company")
+      #print("no company")
     else:
       self.company_select_dp.visible = "True"
       self.submit_btn.visible = "True"
       self.button_1.visible = "True"
-      print("companies exist")
+      #print("companies exist")
     
 
     # after login, populate dropdown 
