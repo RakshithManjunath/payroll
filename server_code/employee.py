@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from datetime import date
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -43,7 +44,7 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
             emp_esi_dispensary,emp_pt_contribution,emp_it_contribution,
             emp_pan_number,emp_dept_code,emp_dept_name,emp_desi_code,
             emp_desi_name):
-  app_tables.employee.add_row(id=id,
+  return app_tables.employee.add_row(id=id,
                               emp_code=emp_code,
                               emp_name=emp_name,
                               emp_hus_name=emp_hus_name,
@@ -68,13 +69,39 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
 
 @anvil.server.callable
 def emp_default_values(row):
-  columns_and_types = {}
+  columns_and_types = {
+    'emp_hus_name': 'text', 
+    'emp_dob': 'date',
+    'emp_doj' : 'date',
+    'emp_sex': 'text',
+    'emp_type': 'text',
+    'emp_pf_contribution': 'true/false',
+    'emp_pf_number': 'number',
+    'emp_pf_uan': 'text',
+    'emp_esi_contribution': 'true/false',
+    'emp_esi_number': 'number',
+    'emp_esi_dispensary': 'text',
+    'emp_pt_contribution': 'true/false',
+    'emp_dept_code': 'text'
+  }
   for column_name, column_type in columns_and_types.items():
     print(column_name, column_type)
     if row[column_name] is None:
       print(row[column_name])
       default_value = get_default_value_for_type(column_type)
       row[column_name] = default_value
+
+def get_default_value_for_type(column_type):
+  # Define default values based on column types (you can customize this)
+  if column_type == 'text':
+      return ''
+  elif column_type == 'number':
+      return 0
+  elif column_type == 'date':
+      return date(2000, 1, 1)  # Current UTC date and time
+  elif column_type == 'true/false':
+      return False
+  return None
 
 ######## change employee #########
 @anvil.server.callable

@@ -47,7 +47,7 @@ def next_bank_id_value():
 
 @anvil.server.callable
 def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc):
-  app_tables.bank.add_row(bank_id=bank_id,bank_code=bankcode,
+  return app_tables.bank.add_row(bank_id=bank_id,bank_code=bankcode,
                           bank_name=bankname,bank_addr1=bankadd1,bank_addr2=bankadd2,
                          bank_addr3=bankadd3,bank_ifsc=bankifsc)
 
