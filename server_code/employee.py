@@ -66,6 +66,16 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
                               emp_desi_name=emp_desi_name
                              )
 
+@anvil.server.callable
+def emp_default_values(row):
+  columns_and_types = {}
+  for column_name, column_type in columns_and_types.items():
+    print(column_name, column_type)
+    if row[column_name] is None:
+      print(row[column_name])
+      default_value = get_default_value_for_type(column_type)
+      row[column_name] = default_value
+
 ######## change employee #########
 @anvil.server.callable
 def emp_update_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,

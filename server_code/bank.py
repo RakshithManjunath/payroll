@@ -51,39 +51,6 @@ def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc):
                           bank_name=bankname,bank_addr1=bankadd1,bank_addr2=bankadd2,
                          bank_addr3=bankadd3,bank_ifsc=bankifsc)
 
-@anvil.server.callable
-def bank_default_values(row):
-  columns_and_types = {
-  'bank_addr1':'text',  
-  'bank_addr2':'text', 
-  'bank_addr3':'text', 
-  'bank_ifsc':'text',      
-  }
-  
-  for column_name, column_type in columns_and_types.items():
-    print(column_name, column_type)
-    if row[column_name] is None:
-      print(row[column_name])
-      default_value = get_bank_default_value_for_type(column_type)
-      row[column_name] = default_value
-
-
-def get_bank_default_value_for_type(column_type):
-  # Define default values based on column types (you can customize this)
-  if column_type == 'text':
-      return ''
-  elif column_type == 'number':
-      return 0
-  elif column_type == 'date':
-      return date(2000, 1, 1)  # Current UTC date and time
-  elif column_type == 'true/false':
-      return False
-  return None
-
-
-
-
-
 #################### Bank Change #################################
 #################### same function is used also in emp_bank_add #############
 @anvil.server.callable

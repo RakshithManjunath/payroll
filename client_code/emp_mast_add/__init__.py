@@ -93,12 +93,14 @@ class emp_mast_add(emp_mast_addTemplate):
         desi_code,desi_name = split_list_desi[0],split_list_desi[1]
     
       emp_id= anvil.server.call('emp_get_next_id_value')
-      anvil.server.call('emp_add',emp_id,self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,
+      row = anvil.server.call('emp_add',emp_id,self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,
                     self.date_picker_1.date,self.date_picker_2.date,emp_sex, emp_type,
                     pf_contribution,self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,
                     esi_contribution,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,
                     pt_contribution,it_contribution, self.custom_3.text_box_1.text,dept_code,dept_name,
                     desi_code,desi_name)
+      anvil.server.call('emp_default_values',row)
+      Notification(self.text_box_1.text + " data added successfully").show()
 
 
 
