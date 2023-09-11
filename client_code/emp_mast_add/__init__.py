@@ -100,7 +100,7 @@ class emp_mast_add(emp_mast_addTemplate):
                     pt_contribution,it_contribution, self.custom_3.text_box_1.text,dept_code,dept_name,
                     desi_code,desi_name)
       anvil.server.call('emp_default_values',row)
-      Notification(self.text_box_1.text + " data added successfully").show()
+      Notification(self.text_box_2.text + " data added successfully").show()
 
 
 

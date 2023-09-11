@@ -82,7 +82,27 @@ def emp_default_values(row):
     'emp_esi_number': 'number',
     'emp_esi_dispensary': 'text',
     'emp_pt_contribution': 'true/false',
-    'emp_dept_code': 'text'
+    'emp_dept_code': 'text',
+    'emp_dept_name': 'text',
+    'emp_desi_code': 'text',
+    'emp_desi_name': 'text',
+    'emp_it_contribution': 'true/false',
+    'emp_pan_number': 'text',
+    'earn1': 'number',
+    'earn2': 'number',
+    'earn3': 'number',
+    'earn4': 'number',
+    'earn5': 'number',
+    'earn6': 'number',
+    'earn7': 'number',
+    'earn8': 'number',
+    'earn9': 'number',
+    'earn10': 'number',
+    'phone_number': 'number',
+    'alt_phone_number': 'number',
+    'email_address': 'text',
+    'aadhar_number': 'number',
+    'attn_bonus': 'number'
   }
   for column_name, column_type in columns_and_types.items():
     print(column_name, column_type)
