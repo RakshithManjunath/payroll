@@ -18,6 +18,11 @@ class comp_new(comp_newTemplate):
 
     self.drop_down_1.items = month_names_alphabets
     self.drop_down_2.items = year_names
+
+    self.newday=1
+    self.newmonth = month_names_numeric
+    self.newyear = year_names
+    self.newdate = self.newday+self.newmonth+self,self.newyear
   
   
   def button_2_click(self, **event_args):
