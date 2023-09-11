@@ -15,5 +15,7 @@ class logform(logformTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
+    value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
+    if value == True:
+      open_form('company_select')
 
