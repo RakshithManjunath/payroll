@@ -108,7 +108,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     """This method is called when the button is clicked"""
     transid = anvil.server.call('trans_get_next_string_value')
     date = anvil.server.call('cur_trans_date')
-    anvil.server.call('emp_to_trans_transfer', transid, date[0], 
+    row = anvil.server.call('emp_to_trans_transfer', transid, date[0], 
                       self.emp_code,self.emp_name,self.fat_has_na,
                       self.emp_sex,self.empdob,self.empdoj,self.emptype,
                      self.deptcode,self.deptname,self.desicode,self.desiname,
@@ -126,7 +126,7 @@ class emp_mon_trans(emp_mon_transTemplate):
                      self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
                      self.custom_2.text_box_10.text,
                      self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
-
+    anvil.server.call('trans_default_values',row)
     Notification(self.emp_name + " transaction data added successfully").show()
 
   def button_2_click(self, **event_args):

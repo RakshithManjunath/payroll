@@ -58,7 +58,7 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
                            trans_adv,trans_tds,trans_pfvol,trans_lic,
                            trans_arr_esipt,trans_arr_pf):
   transaction = app_tables.transaction
-  transaction.add_row(
+  return transaction.add_row(
       id=id,
       trans_date=trans_date,
       trans_empid=trans_empid,
@@ -119,6 +119,39 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_arr_esipt=trans_arr_esipt,
       trans_arr_pf=trans_arr_pf
       )
+                             
+def get_default_value_for_type(column_type):
+  # Define default values based on column types (you can customize this)
+  if column_type == 'text':
+      return ''
+  elif column_type == 'number':
+      return 0
+  elif column_type == 'date':
+      return date(2000, 1, 1)  # Current UTC date and time
+  elif column_type == 'true/false':
+      return False
+  return None
+  
+
+@anvil.server.callable
+def trans_default_values(row):
+  columns_and_types = {
+  'trans_mandays': 'number',
+  'trans_wo': 'number',
+  'trans_ph': 'number',
+  'trans_layoff': 'number',
+  'trans_absent': 'number',
+  'trans_leave1': 'number',
+  'trans_leave2': 'number',
+  'trans_leave3': 'number',
+  'trans_othrs': 'number',
+  'trans_inchrs': 'number',
+  'trans_ded1': 'number',
+  'trans_ded2': 'number',  
+  'trans_ded3': 'number', 
+  'trans_ded4': 'number',
+  }    
+    
 
 @anvil.server.callable
 def trans_change_update(trans_empid,trans_mandays,trans_wo,trans_ph,trans_layoff,trans_absent,
