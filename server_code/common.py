@@ -183,8 +183,14 @@ def trans_default_values(row):
   'ot_amt': 'number',
   'it_or_tds_amt': 'number',
   'bonus_amt': 'number'    
-  }    
-    
+  }
+  
+  for column_name, column_type in columns_and_types.items():
+    print(column_name, column_type)
+    if row[column_name] is None:
+      print(row[column_name])
+      default_value = get_default_value_for_type(column_type)
+      row[column_name] = default_value  
 
 @anvil.server.callable
 def trans_change_update(trans_empid,trans_mandays,trans_wo,trans_ph,trans_layoff,trans_absent,
