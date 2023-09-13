@@ -163,3 +163,4 @@ def csv_trans_date_upload():
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
       app_tables.trans_date.add_row(**d)
+
