@@ -164,3 +164,17 @@ def csv_trans_date_upload():
       print(d)
       app_tables.trans_date.add_row(**d)
 
+@anvil.server.callable
+def csv_transaction_upload():
+  with open(data_files["trans_date.csv"], "r") as f:
+    dtype_mapping = {
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['tr_date'] = pd.to_datetime(df['tr_date']).dt.date
+    df['tr_end_date'] = pd.to_datetime(df['tr_end_date']).dt.date
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.trans_date.add_row(**d)
