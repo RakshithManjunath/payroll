@@ -172,9 +172,7 @@ def csv_transaction_upload():
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
     df['trans_empdob'] = pd.to_datetime(df['trans_empdob']).dt.date
     df['trans_empdoj'] = pd.to_datetime(df['trans_empdoj']).dt.date
-   # df["trans_empptc"] = pd.
-    #df = pd.read_csv(f, dtype={"trans_empptc": bool}, keep_default_na=False)
-
+    columns_to_ignore = ['ID']
     key_to_ignore = 'ID'
     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
     ignored_dict = pd.DataFrame(ignored_dict)
