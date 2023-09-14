@@ -59,6 +59,13 @@ class company_select(company_selectTemplate):
     """This method is called when the button is clicked"""
     pass
 
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('csv_transaction_upload')
+    Notification("operation table uploaded successfully").show()
+
+
+
 
 
 
