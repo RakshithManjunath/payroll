@@ -257,8 +257,8 @@ db_schema:
     - name: trans_attn_bonus
       admin_ui: {width: 200}
       type: number
-    - name: Fxd_earn_gross
-      admin_ui: {width: 200}
+    - name: fxd_earn_gross
+      admin_ui: {order: 67, width: 200}
       type: number
     - name: earn_pf_salary
       admin_ui: {width: 200}
