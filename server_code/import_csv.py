@@ -283,7 +283,22 @@ def csv_employee_upload():
       'emp_desi_code': str,
       'emp_desi_name': str,
       'emp_it_contribution': bool,
-      emp_pan_number
+      'emp_pan_number': str,
+      'earn1': int,
+      'earn2': int,
+      'earn3': int,
+      'earn4': int,
+      'earn5': int,
+      'earn6': int,
+      'earn7': int,
+      'earn8': int,
+      'earn9': int,
+      'earn10': int,
+      'phone_number': int,
+      'alt_phone_number': int,
+      'email_address': str,
+      'aadhar_number': int,
+      'attn_bonus': int
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
     df['emp_dob'] = pd.to_datetime(df['emp_dob']).dt.date
