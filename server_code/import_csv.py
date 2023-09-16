@@ -261,3 +261,21 @@ def csv_transaction_upload():
       print(d)
       app_tables.transaction.add_row(**d)
 
+@anvil.server.callable
+def csv_employee_upload():
+  with open(data_files["employee.csv"], "r") as f:
+    dtype_mapping = {
+      'id': str,
+      'emp_code': str,
+      'emp_name': str,
+      'emp_hus_name': str
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['emp_dob'] = pd.to_datetime(df['emp_dob']).dt.date
+    df['emp_doj'] = pd.to_datetime(df['emp_doj']).dt.date
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.employee.add_row(**d)
