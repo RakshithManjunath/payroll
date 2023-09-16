@@ -37,6 +37,6 @@ def check_username_and_password(username, password):
 
 @anvil.server.callable
 def check_password_and_confirm_password(username, password):
-  pass
+  return app_tables.password.search()
 
 

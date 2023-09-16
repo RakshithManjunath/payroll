@@ -813,6 +813,17 @@ db_schema:
       admin_ui: {width: 200}
       type: string
     title: Users
+  password:
+    title: password
+    client: none
+    server: full
+    columns:
+    - name: username
+      admin_ui: {width: 200}
+      type: string
+    - name: password
+      admin_ui: {width: 200}
+      type: string
   bank:
     title: bank
     client: none
