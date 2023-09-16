@@ -250,4 +250,6 @@ def trans_get_all_details():
 def get_all_companies():
   return app_tables.company.search()
 
-
+@anvil.server.callable
+def get_all_password():
+  return app_tables.password.search()
