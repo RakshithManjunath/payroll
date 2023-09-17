@@ -6,15 +6,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-try:
-  import os  
-  path = 'C:/SALUSER/SQLDATA'
-  isExist = os.path.exists(path)
-  print(isExist)
-except Exception as e:
-  print('running in anvil')
-  
-
 class logform(logformTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -45,6 +36,6 @@ class logform(logformTemplate):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    anvil.server.call('import_all_csv')
 
 

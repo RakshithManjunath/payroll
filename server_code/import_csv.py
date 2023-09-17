@@ -6,6 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
+import file_path
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -21,8 +22,8 @@ import pandas as pd
 #
 
 @anvil.server.callable
-def csv_company_upload():
-  with open(data_files["company.csv"], "r") as f:
+def import_company_csv():
+  with open(file_path.company_path, "r") as f:
     dtype_mapping = {
     'comp_id': str,  
     'comp_code': str,
@@ -33,10 +34,10 @@ def csv_company_upload():
     'comp_pf_number': str,
     'comp_esi_number': str,
     'comp_pto_circle': str, 
-    'comp_emp_pfrate': int, 
-    'comp_empr_fpfrate': int, 
-    'comp_pf_admin': int, 
-    'comp_pf_edli': int, 
+    'comp_emp_pfrate': float, 
+    'comp_empr_fpfrate': float, 
+    'comp_pf_admin': float, 
+    'comp_pf_edli': float, 
     'comp_mgmt_pf_lt': int, 
     'comp_mgmt_fpf_lt': int, 
     'comp_esi_sal_lt': int, 
@@ -147,28 +148,10 @@ def csv_company_upload():
       app_tables.company.add_row(**d)
 
 @anvil.server.callable
-def csv_trans_date_upload():
-  with open(data_files["trans_date.csv"], "r") as f:
+def import_transaction_csv():
+  with open(file_path.transaction_path, "r") as f:
     dtype_mapping = {
-      'tr_days': int,
-      'tr_sundays': int,
-      'tr_id': int
-    }
-    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
-    df['tr_date'] = pd.to_datetime(df['tr_date']).dt.date
-    df['tr_end_date'] = pd.to_datetime(df['tr_end_date']).dt.date
-    key_to_ignore = 'ID'
-    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
-    ignored_dict = pd.DataFrame(ignored_dict)
-    for d in ignored_dict.to_dict(orient="records"):
-      print(d)
-      app_tables.trans_date.add_row(**d)
-
-@anvil.server.callable
-def csv_transaction_upload():
-  with open(data_files["transaction.csv"], "r") as f:
-    dtype_mapping = {
-      'id ': str, 
+      'id': str,
       'trans_empid': str, 
       'trans_empname': str, 
       'trans_father_husband': str, 
@@ -261,9 +244,90 @@ def csv_transaction_upload():
       print(d)
       app_tables.transaction.add_row(**d)
 
-@anvil.server.callable
-def csv_employee_upload():
-  with open(data_files["employee.csv"], "r") as f:
+
+def import_department_csv():
+  with open(file_path.department_path, "r") as f:
+    dtype_mapping = {
+      'dept_id': str,  
+    'dept_code': str,
+    'dept_name': str,
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.department.add_row(**d)
+
+def import_desi_csv():
+  with open(file_path.desi_path, "r") as f:
+    dtype_mapping = {
+      'desi_id': str,  
+    'desi_code': str,
+    'desi_name': str,
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.designation.add_row(**d)
+
+def import_bank_csv():
+  with open(file_path.bank_path, "r") as f:
+    dtype_mapping = {
+      'bank_id': str,  
+    'bank_code': str,
+    'bank_name': str,
+    'bank_addr1': str,
+    'bank_addr2': str,
+    'bank_addr3': str,
+    'bank_ifsc': str
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.bank.add_row(**d)
+
+def import_password_csv():
+  with open(file_path.password_path, "r") as f:
+    dtype_mapping = {
+      'username': str,  
+    'password': str
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.password.add_row(**d)
+
+def import_trans_date_csv():
+  with open(file_path.trans_date_path, "r") as f:
+    dtype_mapping = { 
+    'tr_days': int,
+    'tr_sundays': int,
+    'tr_id': int
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['tr_date'] = pd.to_datetime(df['tr_date']).dt.date
+    df['tr_end_date'] = pd.to_datetime(df['tr_end_date']).dt.date
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.trans_date.add_row(**d)
+
+
+def import_employee_csv():
+  with open(file_path.employee_path, "r") as f:
     dtype_mapping = {
       'id': str,
       'emp_code': str,
@@ -309,3 +373,14 @@ def csv_employee_upload():
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
       app_tables.employee.add_row(**d)
+
+@anvil.server.callable
+def import_all_csv():
+  import_department_csv()
+  import_desi_csv()
+  import_bank_csv()
+  import_password_csv()
+  import_trans_date_csv()
+  import_company_csv()
+  import_employee_csv()
+  import_transaction_csv()
