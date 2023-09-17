@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import pandas as pd
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -253,3 +254,13 @@ def get_all_companies():
 @anvil.server.callable
 def get_all_password():
   return app_tables.password.search()
+
+@anvil.server.callable
+def get_all_companies_download():
+  data,columns = app_tables.company.search(), app_tables.company.list_columns()
+  print(columns)
+  # X = pd.DataFrame(data)
+  # print(X)
+  # X.to_csv('/tmp/company.csv')
+  # X_media = anvil.media.from_file('/tmp/company.csv', 'csv', 'company.csv')
+  # return X_media

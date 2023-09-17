@@ -57,3 +57,6 @@ class menu(menuTemplate):
 
   def open_view_trans(self, **kwargs):
     open_form('emp_trans_view')
+
+  def open_data_backup(self, **kwargs):
+    open_form('data_backup')
