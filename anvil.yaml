@@ -302,6 +302,32 @@ db_schema:
     - name: bonus_amt
       admin_ui: {width: 200}
       type: number
+  test_table:
+    client: none
+    server: full
+    columns:
+    - name: Name
+      type: string
+      admin_ui: {width: 200, order: 0}
+    - name: age
+      type: number
+      admin_ui: {width: 200, order: 1}
+    - name: gender
+      type: bool
+      admin_ui: {width: 200, order: 2}
+    - name: dob
+      type: date
+      admin_ui: {width: 200, order: 3}
+    - name: Punch
+      type: datetime
+      admin_ui: {width: 200, order: 4}
+    - name: photo
+      type: media
+      admin_ui: {width: 200, order: 5}
+    - name: voice
+      type: simpleObject
+      admin_ui: {width: 200, order: 6}
+    title: test_table
   company:
     title: company
     client: none
