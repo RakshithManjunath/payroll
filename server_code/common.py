@@ -257,10 +257,66 @@ def get_all_password():
 
 @anvil.server.callable
 def get_all_companies_download():
-  data,columns = app_tables.company.search(), app_tables.company.list_columns()
-  print(columns)
-  # X = pd.DataFrame(data)
-  # print(X)
-  # X.to_csv('/tmp/company.csv')
-  # X_media = anvil.media.from_file('/tmp/company.csv', 'csv', 'company.csv')
-  # return X_media
+  data_table = app_tables.company.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = ["[496577,781197072]",row["comp_id"], row["comp_code"], row["comp_name"], row["comp_addr1"],
+              row["comp_addr2"], row["comp_pf_number"], row["comp_addr3"],row["comp_esi_number"],row["comp_pto_circle"],
+              row["comp_emp_pfrate"],row["comp_empr_fpfrate"],row["comp_pf_admin"],row["comp_pf_edli"],
+              row["comp_mgmt_pf_lt"],row["comp_mgmt_fpf_lt"],row["comp_esi_sal_lt"],row["comp_pts1_from"],
+              row["comp_pts1_to"],row["comp_pts1_pt"],row["comp_pts2_from"],row["comp_pts2_to"],row["comp_pts2_pt"],
+              row["comp_pts3_from"],row["comp_pts3_to"],row["comp_pts3_pt"],row["comp_ded1"],row["comp_ded2"],
+              row["comp_ded3"],row["comp_ded4"],row["comp_earn_head1"],row["comp_earnhead1_pf"],row["comp_earnhead1_pt"],
+              row["comp_earnhead1_it"],row["comp_earnhead1_ot"],row["comp_earnhead1_bonus"],row["comp_earn_head2"],
+              row["comp_earnhead2_pf"],row["comp_earnhead2_esi"],row["comp_earnhead2_pt"],row["comp_earnhead2_it"],
+              row["comp_earnhead2_ot"],row["comp_earnhead2_bonus"],row["comp_earn_head3"],row["comp_earnhead3_pf"],
+              row["comp_earnhead3_esi"],row["comp_earnhead3_pt"],row["comp_earnhead3_it"],row["comp_earnhead3_ot"],
+              row["comp_earnhead3_bonus"],row["comp_earn_head4"],row["comp_earnhead4_pf"],row["comp_earnhead4_esi"],
+              row["comp_earnhead4_pt"],row["comp_earnhead4_it"],row["comp_earnhead4_ot"],row["comp_earnhead4_bonus"],
+              row["comp_earn_head5"],row["comp_earnhead5_pf"],row["comp_earnhead5_esi"],row["comp_earnhead5_pt"],
+              row["comp_earnhead5_it"],row["comp_earnhead5_ot"],row["comp_earnhead5_bonus"],row["comp_earn_head6"],
+              row["comp_earnhead6_pf"],row["comp_earnhead6_esi"],row["comp_earnhead6_pt"],row["comp_earnhead6_it"],
+              row["comp_earnhead6_ot"],row["comp_earnhead6_bonus"],row["comp_earn_head7"],row["comp_earnhead7_pf"],
+              row["comp_earnhead7_esi"],row["comp_earnhead7_pt"],row["comp_earnhead7_it"],row["comp_earnhead7_ot"],
+              row["comp_earnhead7_bonus"],row["comp_earn_head8"],row["comp_earnhead8_pf"],row["comp_earnhead8_esi"],
+              row["comp_earnhead8_pt"],row["comp_earnhead8_it"],row["comp_earnhead8_ot"],row["comp_earnhead8_bonus"],
+              row["comp_earn_head9"],row["comp_earnhead9_pf"],row["comp_earnhead9_esi"],row["comp_earnhead9_pt"],
+              row["comp_earnhead9_it"],row["comp_earnhead9_ot"],row["comp_earnhead9_bonus"],row["comp_earn_head10"],
+              row["comp_earnhead10_pf"],row["comp_earnhead10_esi"],row["comp_earnhead10_pt"],row["comp_earnhead10_ot"],
+              row["comp_earnhead10_it"],row["comp_earnhead10_bonus"],row["comp_earnhead1_esi"],row["comp_bonus_from"],
+              row["comp_bonus_to"],row["comp_bonus_percentage"],row["comp_bonus_limit"],row["comp_bonus_pt_included"],
+              row["comp_leave_head1"],row["comp_leave_head2"],row["comp_leave_head3"],row["comp_loan_head1"],
+              row["comp_loan_head2"],row["comp_pay_date"]]  
+    csv_rows.append(csv_row)
+
+  df = pd.DataFrame(csv_rows, columns=["ID","comp_id","comp_code","comp_name","comp_addr1","comp_addr2",
+            "comp_pf_number","comp_addr3","comp_esi_number","comp_pto_circle",
+            "comp_emp_pfrate","comp_empr_fpfrate","comp_pf_admin","comp_pf_edli",
+            "comp_mgmt_pf_lt","comp_mgmt_fpf_lt","comp_esi_sal_lt","comp_pts1_from",
+            "comp_pts1_to","comp_pts1_pt","comp_pts2_from","comp_pts2_to","comp_pts2_pt",
+            "comp_pts3_from","comp_pts3_to","comp_pts3_pt","comp_ded1","comp_ded2",
+            "comp_ded3","comp_ded4","comp_earn_head1","comp_earnhead1_pf","comp_earnhead1_pt",
+            "comp_earnhead1_it","comp_earnhead1_ot","comp_earnhead1_bonus","comp_earn_head2",
+            "comp_earnhead2_pf","comp_earnhead2_esi","comp_earnhead2_pt","comp_earnhead2_it",
+            "comp_earnhead2_ot","comp_earnhead2_bonus","comp_earn_head3","comp_earnhead3_pf",
+            "comp_earnhead3_esi","comp_earnhead3_pt","comp_earnhead3_it","comp_earnhead3_ot",
+            "comp_earnhead3_bonus","comp_earn_head4","comp_earnhead4_pf","comp_earnhead4_esi",
+            "comp_earnhead4_pt","comp_earnhead4_it","comp_earnhead4_ot","comp_earnhead4_bonus",
+            "comp_earn_head5","comp_earnhead5_pf","comp_earnhead5_esi","comp_earnhead5_pt",
+            "comp_earnhead5_it","comp_earnhead5_ot","comp_earnhead5_bonus","comp_earn_head6",
+            "comp_earnhead6_pf","comp_earnhead6_esi","comp_earnhead6_pt","comp_earnhead6_it",
+            "comp_earnhead6_ot","comp_earnhead6_bonus","comp_earn_head7","comp_earnhead7_pf",
+            "comp_earnhead7_esi","comp_earnhead7_pt","comp_earnhead7_it","comp_earnhead7_ot",
+            "comp_earnhead7_bonus","comp_earn_head8","comp_earnhead8_pf","comp_earnhead8_esi",
+            "comp_earnhead8_pt","comp_earnhead8_it","comp_earnhead8_ot","comp_earnhead8_bonus",
+            "comp_earn_head9","comp_earnhead9_pf","comp_earnhead9_esi","comp_earnhead9_pt",
+            "comp_earnhead9_it","comp_earnhead9_ot","comp_earnhead9_bonus","comp_earn_head10",
+            "comp_earnhead10_pf","comp_earnhead10_esi","comp_earnhead10_pt","comp_earnhead10_ot",
+            "comp_earnhead10_it","comp_earnhead10_bonus","comp_earnhead1_esi","comp_bonus_from",
+            "comp_bonus_to","comp_bonus_percentage","comp_bonus_limit","comp_bonus_pt_included",
+            "comp_leave_head1","comp_leave_head2","comp_leave_head3","comp_loan_head1",
+            "comp_loan_head2","comp_pay_date"])
+  df.to_csv('/tmp/company.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/company.csv', 'csv', 'company.csv')
+  return df_media
