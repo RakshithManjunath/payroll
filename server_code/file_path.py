@@ -25,10 +25,10 @@ import anvil.server
 # bank_path = data_files['bank.csv']
 # password_path = data_files['password.csv']
 # trans_date_path = data_files['trans_date.csv']
-# company_path = data_files['company.csv']
+company_path = data_files['company.csv']
 # employee_path = data_files['employee.csv']
 # transaction_path = data_files['transaction.csv']
-test_path = data_files['test_table.csv']
+# test_path = data_files['test_table.csv']
 
 #### local file paths ####
 # department_path = "C:/SALUSER/SQLDATA/department.csv"
