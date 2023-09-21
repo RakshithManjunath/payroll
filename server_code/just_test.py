@@ -77,6 +77,7 @@ def get_all_test_columns():
   df_media = anvil.media.from_file('/tmp/test_table.csv', 'csv', 'test_table.csv')
   return df_media
 
+
 @anvil.server.callable
 def import_test_csv():
   with open(file_path.test_path, "r") as f:
