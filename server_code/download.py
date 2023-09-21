@@ -590,3 +590,19 @@ def get_all_companies_download():
   df.to_csv('/tmp/company.csv',index=False)
   df_media = anvil.media.from_file('/tmp/company.csv', 'csv', 'company.csv')
   return df_media
+
+
+@anvil.server.callable
+def get_all_password_download():
+  data_table = app_tables.password.search()
+  csv_rows = []
+  un = None
+  pw = None
+  
+  for row in data_table:
+    csv_row = [row["username"], row["password"]]
+    csv_rows.append(csv_row)
+    df = pd.DataFrame(csv_rows, columns=["username","password"])
+    df.to_csv('/tmp/password.csv',index=False)
+    df_media = anvil.media.from_file('/tmp/password.csv', 'csv', 'password.csv')
+    return df_media

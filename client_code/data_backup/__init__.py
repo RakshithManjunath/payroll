@@ -13,7 +13,9 @@ class data_backup(data_backupTemplate):
 
     # Any code you write here will run before the form opens.
     data = anvil.server.call('get_all_companies_download')
+    data = anvil.server.call('get_all_password_download')
     download(data)
+    
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
