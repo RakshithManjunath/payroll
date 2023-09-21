@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import pandas as pd
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -53,3 +54,32 @@ def just_test():
 @anvil.server.callable
 def test_add_column():
   app_tables.transaction.update(columns={"age": int},all=True)
+
+@anvil.server.callable
+def get_all_test_columns():
+  data_table = app_tables.test_table.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = ["[496577,781197072]",row['name']]  
+    csv_rows.append(csv_row)
+
+  df = pd.DataFrame(csv_rows, columns=["ID","name"])
+  df.to_csv('/tmp/test_table.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/test_table.csv', 'csv', 'test_table.csv')
+  return df_media
+
+@anvil.server.callable
+def import_test_csv():
+  print('calling test csv')
+  with open(file_path.test_path, "r") as f:
+    dtype_mapping = {
+      'name':str
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.test_table.add_row(**d)

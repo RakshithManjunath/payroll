@@ -306,9 +306,9 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: Name
+    - name: name
+      admin_ui: {order: 0, width: 200}
       type: string
-      admin_ui: {width: 200, order: 0}
     - name: age
       type: number
       admin_ui: {width: 200, order: 1}
@@ -327,6 +327,9 @@ db_schema:
     - name: voice
       type: simpleObject
       admin_ui: {width: 200, order: 6}
+    - name: salary
+      admin_ui: {order: 1.5, width: 200}
+      type: number
     title: test_table
   company:
     title: company

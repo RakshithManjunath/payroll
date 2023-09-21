@@ -320,3 +320,5 @@ def get_all_companies_download():
   df.to_csv('/tmp/company.csv',index=False)
   df_media = anvil.media.from_file('/tmp/company.csv', 'csv', 'company.csv')
   return df_media
+
+

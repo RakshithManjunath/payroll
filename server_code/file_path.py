@@ -28,6 +28,7 @@ trans_date_path = data_files['trans_date.csv']
 company_path = data_files['company.csv']
 employee_path = data_files['employee.csv']
 transaction_path = data_files['transaction.csv']
+test_path = data_files['test_table.csv']
 
 #### local file paths ####
 # department_path = "C:/SALUSER/SQLDATA/department.csv"
@@ -38,3 +39,4 @@ transaction_path = data_files['transaction.csv']
 # company_path = "C:/SALUSER/SQLDATA/company.csv"
 # employee_path = "C:/SALUSER/SQLDATA/employee.csv"
 # transaction_path = "C:/SALUSER/SQLDATA/transaction.csv"
+# test_path = "C:/"

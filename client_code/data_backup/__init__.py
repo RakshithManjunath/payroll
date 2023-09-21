@@ -12,7 +12,7 @@ class data_backup(data_backupTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    data = anvil.server.call('get_all_companies_download')
+    data = anvil.server.call('get_all_test_columns')
     download(data)
 
   def outlined_button_1_click(self, **event_args):

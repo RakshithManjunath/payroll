@@ -73,6 +73,7 @@ components:
     underline: false, icon: ''}
   name: button_4
   layout_properties: {grid_position: 'CWWSCQ,PNZPOH'}
+  event_bindings: {click: button_4_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
@@ -80,4 +81,5 @@ components:
     underline: false, icon: ''}
   name: button_5
   layout_properties: {grid_position: 'CWWSCQ,JXODRK'}
+  event_bindings: {click: button_5_click}
 is_package: true
