@@ -756,6 +756,13 @@ def get_all_companies_download():
       ehead10_bonus = 1
     elif row['comp_earnhead10_bonus'] == None:
       ehead10_bonus = 0
+
+    if row['comp_bonus_pt_included'] == False:
+      bonus_pt_included = 0
+    elif row['comp_bonus_pt_included'] == True:
+      bonus_pt_included = 1
+    elif row['comp_bonus_pt_included'] == None:
+      bonus_pt_included = 0
     
     csv_row = ["[496577,781197072]",row["comp_id"], row["comp_code"], row["comp_name"], row["comp_addr1"],
               row["comp_addr2"], row["comp_pf_number"], row["comp_addr3"],row["comp_esi_number"],row["comp_pto_circle"],
@@ -765,23 +772,23 @@ def get_all_companies_download():
               row["comp_pts3_from"],row["comp_pts3_to"],row["comp_pts3_pt"],row["comp_ded1"],row["comp_ded2"],
               row["comp_ded3"],row["comp_ded4"],row["comp_earn_head1"],ehead1_pf,ehead1_pt,
               ehead1_it,ehead1_ot,ehead1_bonus,row["comp_earn_head2"],
-              row["comp_earnhead2_pf"],row["comp_earnhead2_esi"],row["comp_earnhead2_pt"],row["comp_earnhead2_it"],
-              row["comp_earnhead2_ot"],row["comp_earnhead2_bonus"],row["comp_earn_head3"],row["comp_earnhead3_pf"],
-              row["comp_earnhead3_esi"],row["comp_earnhead3_pt"],row["comp_earnhead3_it"],row["comp_earnhead3_ot"],
-              row["comp_earnhead3_bonus"],row["comp_earn_head4"],row["comp_earnhead4_pf"],row["comp_earnhead4_esi"],
-              row["comp_earnhead4_pt"],row["comp_earnhead4_it"],row["comp_earnhead4_ot"],row["comp_earnhead4_bonus"],
-              row["comp_earn_head5"],row["comp_earnhead5_pf"],row["comp_earnhead5_esi"],row["comp_earnhead5_pt"],
-              row["comp_earnhead5_it"],row["comp_earnhead5_ot"],row["comp_earnhead5_bonus"],row["comp_earn_head6"],
-              row["comp_earnhead6_pf"],row["comp_earnhead6_esi"],row["comp_earnhead6_pt"],row["comp_earnhead6_it"],
-              row["comp_earnhead6_ot"],row["comp_earnhead6_bonus"],row["comp_earn_head7"],row["comp_earnhead7_pf"],
-              row["comp_earnhead7_esi"],row["comp_earnhead7_pt"],row["comp_earnhead7_it"],row["comp_earnhead7_ot"],
-              row["comp_earnhead7_bonus"],row["comp_earn_head8"],row["comp_earnhead8_pf"],row["comp_earnhead8_esi"],
-              row["comp_earnhead8_pt"],row["comp_earnhead8_it"],row["comp_earnhead8_ot"],row["comp_earnhead8_bonus"],
-              row["comp_earn_head9"],row["comp_earnhead9_pf"],row["comp_earnhead9_esi"],row["comp_earnhead9_pt"],
-              row["comp_earnhead9_it"],row["comp_earnhead9_ot"],row["comp_earnhead9_bonus"],row["comp_earn_head10"],
-              row["comp_earnhead10_pf"],row["comp_earnhead10_esi"],row["comp_earnhead10_pt"],row["comp_earnhead10_ot"],
-              row["comp_earnhead10_it"],row["comp_earnhead10_bonus"],ehead1_esi,row["comp_bonus_from"],
-              row["comp_bonus_to"],row["comp_bonus_percentage"],row["comp_bonus_limit"],row["comp_bonus_pt_included"],
+              ehead2_pf,ehead2_esi,ehead2_pt,ehead2_it,
+              ehead2_ot,ehead2_bonus,row["comp_earn_head3"],ehead3_pf,
+              ehead3_esi,ehead3_pt,ehead3_it,ehead3_ot,
+              ehead3_bonus,row["comp_earn_head4"],ehead4_pf,ehead4_esi,
+              ehead4_pt,ehead4_it,ehead4_ot,ehead4_bonus,
+              row["comp_earn_head5"],ehead5_pf,ehead5_esi,ehead5_pt,
+              ehead5_it,ehead5_ot,ehead5_bonus,row["comp_earn_head6"],
+              ehead6_pf,ehead6_esi,ehead6_pt,ehead6_it,
+              ehead6_ot,ehead6_bonus,row["comp_earn_head7"],ehead7_pf,
+              ehead7_esi,ehead7_pt,ehead7_it,ehead7_ot,
+              ehead7_bonus,row["comp_earn_head8"],ehead8_pf,ehead8_esi,
+              ehead8_pt,ehead8_it,ehead8_ot,ehead8_bonus,
+              row["comp_earn_head9"],ehead9_pf,ehead9_esi,ehead9_pt,
+              ehead9_it,ehead9_ot,ehead9_bonus,row["comp_earn_head10"],
+              ehead10_pf,ehead10_esi,ehead10_pt,ehead10_ot,
+              ehead10_it,ehead10_bonus,ehead1_esi,row["comp_bonus_from"],
+              row["comp_bonus_to"],row["comp_bonus_percentage"],row["comp_bonus_limit"],bonus_pt_included,
               row["comp_leave_head1"],row["comp_leave_head2"],row["comp_leave_head3"],row["comp_loan_head1"],
               row["comp_loan_head2"],row["comp_pay_date"]]  
     csv_rows.append(csv_row)
