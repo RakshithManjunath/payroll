@@ -6,6 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
+import file_path
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -61,17 +62,16 @@ def get_all_test_columns():
   csv_rows = []
   
   for row in data_table:
-    csv_row = ["[496577,781197072]",row['name']]  
+    csv_row = ["[496577,781197072]",row['name'],row['age'],row['salary']]  
     csv_rows.append(csv_row)
 
-  df = pd.DataFrame(csv_rows, columns=["ID","name"])
+  df = pd.DataFrame(csv_rows, columns=["ID","name","age","salary"])
   df.to_csv('/tmp/test_table.csv',index=False)
   df_media = anvil.media.from_file('/tmp/test_table.csv', 'csv', 'test_table.csv')
   return df_media
 
 @anvil.server.callable
 def import_test_csv():
-  print('calling test csv')
   with open(file_path.test_path, "r") as f:
     dtype_mapping = {
       'name':str
