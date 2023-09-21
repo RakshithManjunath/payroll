@@ -60,12 +60,19 @@ def test_add_column():
 def get_all_test_columns():
   data_table = app_tables.test_table.search()
   csv_rows = []
-  
+
+  gender_val = None
   for row in data_table:
-    csv_row = ["[496577,781197072]",row['name'],row['age'],row['salary']]  
+    if row['gender'] == False:
+      gender_val = 0
+    elif row['gender'] == True:
+      gender_val = 1
+    elif row['gender'] == None:
+      gender_val = 0
+    csv_row = ["[496577,781197072]",row['name'],row['age'],row['salary'],gender_val,row['dob']]  
     csv_rows.append(csv_row)
 
-  df = pd.DataFrame(csv_rows, columns=["ID","name","age","salary"])
+  df = pd.DataFrame(csv_rows, columns=["ID","name","age","salary","gender","dob"])
   df.to_csv('/tmp/test_table.csv',index=False)
   df_media = anvil.media.from_file('/tmp/test_table.csv', 'csv', 'test_table.csv')
   return df_media
@@ -74,9 +81,13 @@ def get_all_test_columns():
 def import_test_csv():
   with open(file_path.test_path, "r") as f:
     dtype_mapping = {
-      'name':str
+      'name':str,
+      'age':int,
+      'salary':float,
+      'gender':bool
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['dob'] = pd.to_datetime(df['dob']).dt.date
     key_to_ignore = 'ID'
     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
     ignored_dict = pd.DataFrame(ignored_dict)
