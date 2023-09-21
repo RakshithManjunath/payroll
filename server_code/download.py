@@ -602,7 +602,7 @@ def get_all_password_download():
   for row in data_table:
     csv_row = [row["username"], row["password"]]
     csv_rows.append(csv_row)
-    df = pd.DataFrame(csv_rows, columns=["username","password"])
-    df.to_csv('/tmp/password.csv',index=False)
-    df_media = anvil.media.from_file('/tmp/password.csv', 'csv', 'password.csv')
-    return df_media
+  df = pd.DataFrame(csv_rows, columns=["username","password"])
+  df.to_csv('/tmp/password.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/password.csv', 'csv', 'password.csv')
+  return df_media

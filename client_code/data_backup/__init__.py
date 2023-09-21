@@ -13,6 +13,7 @@ class data_backup(data_backupTemplate):
 
     # Any code you write here will run before the form opens.
     data = anvil.server.call('get_all_companies_download')
+    download(data)
     data = anvil.server.call('get_all_password_download')
     download(data)
     
