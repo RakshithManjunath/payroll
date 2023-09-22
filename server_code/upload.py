@@ -176,3 +176,138 @@ def import_trans_date_csv():
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
       app_tables.trans_date.add_row(**d)
+
+def import_department_csv():
+  with open(file_path.department_path, "r") as f:
+    dtype_mapping = { 
+    'dept_id': str,      
+    'dept_code': str,
+    'dept_name': str
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.department.add_row(**d)
+
+def import_designation_csv():
+  with open(file_path.designation_path, "r") as f:
+    dtype_mapping = { 
+    'desi_id': str,      
+    'desi_code': str,
+    'desi_name': str
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.designation.add_row(**d)
+
+def import_bank_csv():
+  with open(file_path.bank_path, "r") as f:
+    dtype_mapping = { 
+    'bank_id': str,      
+    'bank_code': str,
+    'bank_name': str,
+    'bank_addr1': str,
+    'bank_addr2': str,
+    'bank_addr3': str,
+    'bank_ifsc': str          
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.bank.add_row(**d)
+
+def import_employee_csv():
+  with open(file_path.employee_path, "r") as f:
+    dtype_mapping = { 
+    'id': str,      
+    'emp_code': str,
+    'emp_name': str,
+    'emp_hus_name': str,
+    'emp_hus_name': str,
+    'emp_sex': str, 
+    'emp_type': str,      
+    'emp_pf_contribution': bool,      
+    'emp_pf_number': int,
+    'emp_pf_uan': str,  
+    'emp_esi_contribution': bool,
+    'emp_esi_number': int,
+    'emp_esi_dispensary': str,   
+    'emp_pt_contribution': bool,
+    'emp_dept_code': str,  
+    'emp_dept_name': str, 
+    'emp_desi_code': str, 
+    'emp_desi_name': str, 
+    'emp_it_contribution': bool,
+    'emp_pan_number': str,
+    'earn1': float,
+    'earn2': float,
+    'earn3': float,
+    'earn4': float,
+    'earn5': float,  
+    'earn6': float, 
+    'earn7': float,
+    'earn8': float,
+    'earn9': float, 
+    'earn10': float,
+    'phone_number': int,
+    'alt_phone_number': int,
+    'email_address': str,
+    'aadhar_number': int,
+    'attn_bonus': float 
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['emp_dob'] = pd.to_datetime(df['emp_dob']).dt.date
+    df['emp_doj'] = pd.to_datetime(df['emp_doj']).dt.date
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.employee.add_row(**d)
+
+def import_transaction_csv():
+  with open(file_path.transaction_path, "r") as f:
+    dtype_mapping = { 
+    'id': str,      
+    'trans_empid': str,
+    'trans_empname': str,
+    'trans_father_husband': str,
+    'trans_empsex': str,
+    'trans_emptype': str,
+    'trans_deptcode': str,  
+    'trans_deptname': str,
+    'trans_desicode': str,
+    'trans_desiname': str,
+    'trans_emppfc': bool,
+    'trans_emppfno': int,
+    'trans_emp_pfuan': str,
+    'trans_empesic': bool,
+    'trans_empesino': int,
+    'trans_empdispensary': str, 
+    'trans_empptc': bool,
+    'trans_empitc': bool,
+    'trans_emppan': str,
+    'trans_mandays': float,
+      
+      
+    }
+    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+    df['trans_date'] = pd.to_datetime(df['trans_date']).dt.date 
+    df['trans_empdob'] = pd.to_datetime(df['trans_empdob']).dt.date    
+    df['trans_empdoj'] = pd.to_datetime(df['trans_empdoj']).dt.date    
+    key_to_ignore = 'ID'
+    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+    ignored_dict = pd.DataFrame(ignored_dict)
+    for d in ignored_dict.to_dict(orient="records"):
+      print(d)
+      app_tables.transaction.add_row(**d)

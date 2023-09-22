@@ -18,8 +18,8 @@ class stat_bonus(stat_bonusTemplate):
     self.drop_down_1.items = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     self.drop_down_2.items = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
-    self.drop_down_1.selected_value = comp_details['comp_bonus_from']
-    self.drop_down_2.selected_value = comp_details['comp_bonus_to']
+    # self.drop_down_1.selected_value = comp_details['comp_bonus_from']
+    # self.drop_down_2.selected_value = comp_details['comp_bonus_to']
     self.text_box_1.text = comp_details['comp_bonus_percentage']
     self.text_box_2.text = comp_details['comp_bonus_limit']
 

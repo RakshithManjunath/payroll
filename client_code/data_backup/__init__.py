@@ -18,8 +18,17 @@ class data_backup(data_backupTemplate):
     download(data)
     data = anvil.server.call('get_all_trans_date_download')
     download(data)
+    data = anvil.server.call('get_all_employee_download')
+    download(data)
+    data = anvil.server.call('get_all_department_download')
+    download(data)
+    data = anvil.server.call('get_all_designation_download')
+    download(data)
+    data = anvil.server.call('get_all_transaction_download')
+    download(data)
+    data = anvil.server.call('get_all_bank_download')
+    download(data)
     
-
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')

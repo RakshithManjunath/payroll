@@ -709,14 +709,48 @@ def get_all_transaction_download():
   data_table = app_tables.transaction.search()
   csv_rows = []
   
+  emppfc = None
+  empesic = None
+  empptc = None
+  empitc = None
+  
   for row in data_table:
+
+    if row['trans_emppfc'] == False:
+      emppfc = 0
+    elif row['trans_emppfc'] == True:
+      emppfc = 1
+    elif row['trans_emppfc'] == None:
+      emppfc = 0
+
+    if row['trans_empesic'] == False:
+      empesic = 0
+    elif row['trans_empesic'] == True:
+      empesic = 1
+    elif row['trans_empesic'] == None:
+     empesic = 0
+
+    if row['trans_empptc'] == False:
+      empptc = 0
+    elif row['trans_empptc'] == True:
+      empptc = 1
+    elif row['trans_empptc'] == None:
+     empptc = 0
+
+    if row['trans_empitc'] == False:
+      empitc = 0
+    elif row['trans_empitc'] == True:
+      empitc = 1
+    elif row['trans_empitc'] == None:
+     empitc = 0
+    
     csv_row = [row["id"], row["trans_date"], row['trans_empid'], row['trans_empname'],
               row["trans_father_husband"], row["trans_empsex"], row["trans_empdob"],
               row["trans_empdoj"], row["trans_emptype"], row["trans_deptcode"],
               row["trans_deptname"], row["trans_desicode"], row["trans_desiname"],
-              row["trans_emppfc"], row["trans_emppfno"], row["trans_emp_pfuan"],
-              row["trans_empesic"], row["trans_empesino"],row["trans_empdispensary"],
-              row["trans_empptc"], row["trans_empitc"], row["trans_emppan"],
+              emppfc, row["trans_emppfno"], row["trans_emp_pfuan"],
+              empesic, row["trans_empesino"],row["trans_empdispensary"],
+              empptc, empitc, row["trans_emppan"],
               row["trans_mandays"], row["trans_wo"], row["trans_ph"],
               row["trans_layoff"], row["trans_absent"], row["trans_leave1"],
               row["trans_leave2"], row["trans_leave3"], row["trans_othrs"],
@@ -737,7 +771,51 @@ def get_all_transaction_download():
               row["earn_bonus_salary"], row["pf_amt"], row["fpf_amt"], row["esi_amt"],
               row["pt_amt"],  row["ot_amt"], row["it_or_tds_amt"], row["bonus_amt"]]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["desi_id","desi_code","desi_name"])
+  df = pd.DataFrame(csv_rows, columns=["id", "trans_date",'trans_empid', 'trans_empname',
+              "trans_father_husband", "trans_empsex", "trans_empdob",
+              "trans_empdoj", "trans_emptype", "trans_deptcode",
+              "trans_deptname", "trans_desicode", "trans_desiname",
+              "trans_emppfc", "trans_emppfno", "trans_emp_pfuan",
+              "trans_empesic", "trans_empesino","trans_empdispensary",
+              "trans_empptc", "trans_empitc", "trans_emppan",
+              "trans_mandays", "trans_wo", "trans_ph",
+              "trans_layoff", "trans_absent", "trans_leave1",
+              "trans_leave2", "trans_leave3", "trans_othrs",
+              "trans_inchrs", "trans_ded1", "trans_ded2",
+              "trans_ded3", "trans_ded4", "trans_loan1",
+              "trans_loan2", "trans_adv", "trans_tds",
+              "trans_pfvol", "trans_lic", "trans_arr_pf",
+              "trans_earn1", "trans_earn2", "trans_earn3",
+              "trans_earn4", "trans_earn5", "trans_earn6",
+              "trans_earn7", "trans_earn8", "trans_earn9",
+              "trans_earn10", "trans_earn_earn1","trans_earn_earn2",
+              "trans_earn_earn3", "trans_earn_earn4", "trans_earn_earn5",
+              "trans_earn_earn6", "trans_earn_earn7", "trans_earn_earn8",
+              "trans_earn_earn9", "trans_earn_earn10", "trans_phone_number",
+              "trans_alt_phone_number", "trans_email_address", "trans_aadhar_number",
+              "trans_attn_bonus", "fxd_earn_gross", "earn_pf_salary", "earn_fpf_salary",
+              "earn_esi_salary", "earn_pt_salary", "earn_ot_salary", "earn_it_salary",
+              "earn_bonus_salary", "pf_amt", "fpf_amt", "esi_amt",
+              "pt_amt",  "ot_amt", "it_or_tds_amt", "bonus_amt"])
+  
   df.to_csv('/tmp/transaction.csv',index=False)
   df_media = anvil.media.from_file('/tmp/transaction.csv', 'csv', 'transaction.csv')
   return df_media
+
+
+@anvil.server.callable
+def get_all_bank_download():
+  data_table = app_tables.bank.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = [row["bank_id"], row["bank_code"], row['bank_name'],row['bank_addr1'],
+              row['bank_addr2'], row['bank_addr3'], row['bank_ifsc']]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["bank_id", "bank_code", 'bank_name','bank_addr1',
+              'bank_addr2', 'bank_addr3', 'bank_ifsc'])
+  df.to_csv('/tmp/bank.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/bank.csv', 'csv', 'bank.csv')
+  return df_media
+
+
