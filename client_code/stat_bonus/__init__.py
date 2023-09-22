@@ -22,6 +22,8 @@ class stat_bonus(stat_bonusTemplate):
     # self.drop_down_2.selected_value = comp_details['comp_bonus_to']
     self.text_box_1.text = comp_details['comp_bonus_percentage']
     self.text_box_2.text = comp_details['comp_bonus_limit']
+    self.label_6.text = comp_details['comp_bonus_from']
+    self.label_7.text = comp_details['comp_bonus_to']
 
     pt_bonus_amount_included = comp_details['comp_bonus_pt_included']
     if pt_bonus_amount_included == True:
