@@ -715,7 +715,27 @@ def get_all_transaction_download():
               row["trans_empdoj"], row["trans_emptype"], row["trans_deptcode"],
               row["trans_deptname"], row["trans_desicode"], row["trans_desiname"],
               row["trans_emppfc"], row["trans_emppfno"], row["trans_emp_pfuan"],
-              row["trans_empesic"], row["trans_empesino"],row["trans_empdispensary"]]
+              row["trans_empesic"], row["trans_empesino"],row["trans_empdispensary"],
+              row["trans_empptc"], row["trans_empitc"], row["trans_emppan"],
+              row["trans_mandays"], row["trans_wo"], row["trans_ph"],
+              row["trans_layoff"], row["trans_absent"], row["trans_leave1"],
+              row["trans_leave2"], row["trans_leave3"], row["trans_othrs"],
+              row["trans_inchrs"], row["trans_ded1"], row["trans_ded2"],
+              row["trans_ded3"], row["trans_ded4"], row["trans_loan1"],
+              row["trans_loan2"], row["trans_adv"], row["trans_tds"],
+              row["trans_pfvol"], row["trans_lic"], row["trans_arr_pf"],
+              row["trans_earn1"], row["trans_earn2"], row["trans_earn3"],
+              row["trans_earn4"], row["trans_earn5"], row["trans_earn6"],
+              row["trans_earn7"], row["trans_earn8"], row["trans_earn9"],
+              row["trans_earn10"], row["trans_earn_earn1"],row["trans_earn_earn2"],
+              row["trans_earn_earn3"], row["trans_earn_earn4"], row["trans_earn_earn5"],
+              row["trans_earn_earn6"], row["trans_earn_earn7"], row["trans_earn_earn8"],
+              row["trans_earn_earn9"], row["trans_earn_earn10"], row["trans_phone_number"],
+              row["trans_alt_phone_number"], row["trans_email_address"], row["trans_aadhar_number"],
+              row["trans_attn_bonus"], row["fxd_earn_gross"], row["earn_pf_salary"], row["earn_fpf_salary"],
+              row["earn_esi_salary"], row["earn_pt_salary"], row["earn_ot_salary"], row["earn_it_salary"],
+              row["earn_bonus_salary"], row["pf_amt"], row["fpf_amt"], row["esi_amt"],
+              row["pt_amt"],  row["ot_amt"], row["it_or_tds_amt"], row["bonus_amt"]]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["desi_id","desi_code","desi_name"])
   df.to_csv('/tmp/transaction.csv',index=False)
