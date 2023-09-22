@@ -624,14 +624,100 @@ def get_all_trans_date_download():
 def get_all_employee_download():
   data_table = app_tables.employee.search()
   csv_rows = []
-  un = None
-  pw = None
+  
+  pf_contribution  = None
+  esi_contribution  = None
+  pt_contribution  = None
+  it_contribution  = None
   
   for row in data_table:
+
+    if row['emp_pf_contribution'] == False:
+      pf_contribution = 0
+    elif row['emp_pf_contribution'] == True:
+      pf_contribution = 1
+    elif row['emp_pf_contribution'] == None:
+      pf_contribution = 0
+
+    if row['emp_esi_contribution'] == False:
+      esi_contribution_contribution = 0
+    elif row['emp_esi_contribution'] == True:
+      esi_contribution = 1
+    elif row['emp_esi_contribution'] == None:
+      esi_contribution = 0
+
+    if row['emp_pt_contribution'] == False:
+      pt_contribution_contribution = 0
+    elif row['emp_pt_contribution'] == True:
+      pt_contribution = 1
+    elif row['emp_pt_contribution'] == None:
+      pt_contribution = 0
+
+    if row['emp_it_contribution'] == False:
+      it_contribution_contribution = 0
+    elif row['emp_it_contribution'] == True:
+      it_contribution = 1
+    elif row['emp_it_contribution'] == None:
+      it_contribution = 0    
+      
     csv_row = [row["id"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
-              row["emp_dob"], row["emp_doj"],]
+              row["emp_dob"], row["emp_doj"], row["emp_sex"], row["emp_type"],
+              pf_contribution, row["emp_pf_number"],
+              row["emp_pf_uan"], esi_contribution ,
+              row["emp_esi_number"], row["emp_esi_dispensary"],
+              row["emp_esi_dispensary"], pt_contribution,
+              row["emp_dept_code"], row["emp_dept_name"],row["emp_desi_code"],
+              row["emp_desi_name"], it_contribution, row["emp_pan_number"],
+              row["earn1"], row["earn2"], row["earn3"], row["earn4"], row["earn5"],
+              row["earn6"], row["earn7"], row["earn8"], row["earn9"], row["earn10"],
+              row["phone_number"], row["alt_phone_number"],row["email_address"],
+              row["aadhar_number"],row["attn_bonus"]]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["username","password"])
   df.to_csv('/tmp/employee.csv',index=False)
   df_media = anvil.media.from_file('/tmp/employee.csv', 'csv', 'employee.csv')
+  return df_media
+
+@anvil.server.callable
+def get_all_department_download():
+  data_table = app_tables.department.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = [row["dept_id"], row["dept_code"], row['dept_name']]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["dept_id","dept_code","dept_name"])
+  df.to_csv('/tmp/department.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/department.csv', 'csv', 'department.csv')
+  return df_media
+
+@anvil.server.callable
+def get_all_designation_download():
+  data_table = app_tables.designation.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = [row["desi_id"], row["desi_code"], row['desi_name']]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["desi_id","desi_code","desi_name"])
+  df.to_csv('/tmp/designation.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/designation.csv', 'csv', 'designation.csv')
+  return df_media
+
+@anvil.server.callable
+def get_all_transaction_download():
+  data_table = app_tables.transaction.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = [row["id"], row["trans_date"], row['trans_empid'], row['trans_empname'],
+              row["trans_father_husband"], row["trans_empsex"], row["trans_empdob"],
+              row["trans_empdoj"], row["trans_emptype"], row["trans_deptcode"],
+              row["trans_deptname"], row["trans_desicode"], row["trans_desiname"],
+              row["trans_emppfc"], row["trans_emppfno"], row["trans_emp_pfuan"],
+              row["trans_empesic"], row["trans_empesino"],row["trans_empdispensary"]]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["desi_id","desi_code","desi_name"])
+  df.to_csv('/tmp/transaction.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/transaction.csv', 'csv', 'transaction.csv')
   return df_media
