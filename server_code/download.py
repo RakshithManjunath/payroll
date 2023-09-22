@@ -619,3 +619,19 @@ def get_all_trans_date_download():
   df.to_csv('/tmp/trans_date.csv',index=False)
   df_media = anvil.media.from_file('/tmp/trans_date.csv', 'csv', 'trans_date.csv')
   return df_media
+
+@anvil.server.callable
+def get_all_employee_download():
+  data_table = app_tables.employee.search()
+  csv_rows = []
+  un = None
+  pw = None
+  
+  for row in data_table:
+    csv_row = [row["id"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
+              ]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["username","password"])
+  df.to_csv('/tmp/employee.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/employee.csv', 'csv', 'employee.csv')
+  return df_media
