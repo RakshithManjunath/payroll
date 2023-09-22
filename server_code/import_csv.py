@@ -7,6 +7,7 @@ from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
 import file_path
+import upload
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -253,8 +254,8 @@ def import_all_csv():
   # import_department_csv()
   # import_desi_csv()
   # import_bank_csv()
-  import_password_csv()
-  # import_trans_date_csv()
-  import_company_csv()
+  upload.import_password_csv()
+  upload.import_trans_date_csv()
+  upload.import_company_csv()
   # import_employee_csv()
   # import_transaction_csv()

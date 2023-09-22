@@ -16,6 +16,8 @@ class data_backup(data_backupTemplate):
     download(data)
     data = anvil.server.call('get_all_password_download')
     download(data)
+    data = anvil.server.call('get_all_trans_date_download')
+    download(data)
     
 
   def outlined_button_1_click(self, **event_args):

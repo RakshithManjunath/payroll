@@ -606,3 +606,16 @@ def get_all_password_download():
   df.to_csv('/tmp/password.csv',index=False)
   df_media = anvil.media.from_file('/tmp/password.csv', 'csv', 'password.csv')
   return df_media
+
+@anvil.server.callable
+def get_all_trans_date_download():
+  data_table = app_tables.trans_date.search()
+  csv_rows = []
+  
+  for row in data_table:
+    csv_row = [row["tr_date"], row["tr_days"], row['tr_sundays'], row['tr_end_date']]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["tr_date","tr_days",'tr_sundays','tr_end_date'])
+  df.to_csv('/tmp/trans_date.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/trans_date.csv', 'csv', 'trans_date.csv')
+  return df_media

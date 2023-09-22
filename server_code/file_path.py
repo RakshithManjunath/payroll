@@ -24,7 +24,7 @@ import anvil.server
 # desi_path = data_files['designation.csv']
 # bank_path = data_files['bank.csv']
 password_path = data_files['password.csv']
-# trans_date_path = data_files['trans_date.csv']
+trans_date_path = data_files['trans_date.csv']
 company_path = data_files['company.csv']
 # employee_path = data_files['employee.csv']
 # transaction_path = data_files['transaction.csv']
