@@ -168,36 +168,36 @@ def import_bank_csv():
       print(d)
       app_tables.bank.add_row(**d)
 
-def import_password_csv():
-  with open(file_path.password_path, "r") as f:
-    dtype_mapping = {
-      'username': str,  
-    'password': str
-    }
-    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
-    key_to_ignore = 'ID'
-    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
-    ignored_dict = pd.DataFrame(ignored_dict)
-    for d in ignored_dict.to_dict(orient="records"):
-      print(d)
-      app_tables.password.add_row(**d)
+# def import_password_csv():
+#   with open(file_path.password_path, "r") as f:
+#     dtype_mapping = {
+#       'username': str,  
+#     'password': str
+#     }
+#     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+#     key_to_ignore = 'ID'
+#     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+#     ignored_dict = pd.DataFrame(ignored_dict)
+#     for d in ignored_dict.to_dict(orient="records"):
+#       print(d)
+#       app_tables.password.add_row(**d)
 
-def import_trans_date_csv():
-  with open(file_path.trans_date_path, "r") as f:
-    dtype_mapping = { 
-    'tr_days': int,
-    'tr_sundays': int,
-    'tr_id': int
-    }
-    df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
-    df['tr_date'] = pd.to_datetime(df['tr_date']).dt.date
-    df['tr_end_date'] = pd.to_datetime(df['tr_end_date']).dt.date
-    key_to_ignore = 'ID'
-    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
-    ignored_dict = pd.DataFrame(ignored_dict)
-    for d in ignored_dict.to_dict(orient="records"):
-      print(d)
-      app_tables.trans_date.add_row(**d)
+# def import_trans_date_csv():
+#   with open(file_path.trans_date_path, "r") as f:
+#     dtype_mapping = { 
+#     'tr_days': int,
+#     'tr_sundays': int,
+#     'tr_id': int
+#     }
+#     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
+#     df['tr_date'] = pd.to_datetime(df['tr_date']).dt.date
+#     df['tr_end_date'] = pd.to_datetime(df['tr_end_date']).dt.date
+#     key_to_ignore = 'ID'
+#     ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
+#     ignored_dict = pd.DataFrame(ignored_dict)
+#     for d in ignored_dict.to_dict(orient="records"):
+#       print(d)
+#       app_tables.trans_date.add_row(**d)
 
 
 def import_employee_csv():
@@ -250,11 +250,11 @@ def import_employee_csv():
 
 @anvil.server.callable
 def import_all_csv():
-  import_department_csv()
-  import_desi_csv()
-  import_bank_csv()
+  # import_department_csv()
+  # import_desi_csv()
+  # import_bank_csv()
   import_password_csv()
-  import_trans_date_csv()
+  # import_trans_date_csv()
   import_company_csv()
-  import_employee_csv()
-  import_transaction_csv()
+  # import_employee_csv()
+  # import_transaction_csv()

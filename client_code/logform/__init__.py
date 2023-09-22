@@ -36,8 +36,8 @@ class logform(logformTemplate):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    # anvil.server.call('import_all_csv')
-    anvil.server.call('import_company_csv')
+    anvil.server.call('import_all_csv')
+    #anvil.server.call('import_company_csv')
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
