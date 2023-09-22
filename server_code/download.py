@@ -629,7 +629,7 @@ def get_all_employee_download():
   
   for row in data_table:
     csv_row = [row["id"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
-              ]
+              row["emp_dob"], row["emp_doj"],]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["username","password"])
   df.to_csv('/tmp/employee.csv',index=False)
