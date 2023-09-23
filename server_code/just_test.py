@@ -8,6 +8,7 @@ import anvil.server
 import pandas as pd
 import file_path
 import io
+import base64
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -57,9 +58,10 @@ def just_test():
 def test_add_column():
   app_tables.transaction.update(columns={"age": int},all=True)
 
-def get_media_from_bytes(bytes_data):
+def get_media_from_bytes(bytes_data,filename):
   if bytes_data:
-    return anvil.BlobMedia('image/jpeg', bytes_data) 
+    media_bytes = base64.b64decode(bytes_data)
+    return anvil.BlobMedia('image/jpeg', media_bytes, name=filename + ".png")
   else:
     return None
 
@@ -76,7 +78,7 @@ def import_test_csv():
     for _, row in df.iterrows():
       print(row)
       # Create a media object from the 'photo_bytes' column
-      photo_media = get_media_from_bytes(row['photo'])  # Replace with the actual function
+      photo_media = get_media_from_bytes(row['photo'],row['name'])  # Replace with the actual function
       
       # Remove the 'photo_bytes' column from the row
       row = row.drop('photo')
@@ -103,7 +105,7 @@ def import_test_csv():
 
 def get_media_bytes(media_object):
   if media_object:
-    return media_object.get_bytes()
+    return base64.b64encode(media_object.get_bytes()).decode('utf-8')
   else:
     return None
 
