@@ -673,7 +673,20 @@ def get_all_employee_download():
               row["phone_number"], row["alt_phone_number"],row["email_address"],
               row["aadhar_number"],row["attn_bonus"]]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["username","password"])
+    
+  df = pd.DataFrame(csv_rows, columns=["id", "emp_code", "emp_name", "emp_hus_name",
+              "emp_dob", "emp_doj", "emp_sex", "emp_type",
+              pf_contribution, "emp_pf_number",
+              "emp_pf_uan", esi_contribution ,
+              "emp_esi_number", "emp_esi_dispensary",
+              "emp_esi_dispensary", pt_contribution,
+              "emp_dept_code", "emp_dept_name","emp_desi_code",
+              "emp_desi_name", it_contribution, "emp_pan_number",
+              "earn1", "earn2", "earn3", "earn4", "earn5",
+              "earn6", "earn7", "earn8", "earn9", "earn10",
+              "phone_number", "alt_phone_number","email_address",
+              "aadhar_number","attn_bonus"])
+  
   df.to_csv('/tmp/employee.csv',index=False)
   df_media = anvil.media.from_file('/tmp/employee.csv', 'csv', 'employee.csv')
   return df_media
