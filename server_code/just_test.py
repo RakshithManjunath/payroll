@@ -76,3 +76,23 @@ def import_test_csv():
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
       app_tables.test_table.add_row(**d)
+
+@anvil.server.callable
+def get_all_test_download():
+  data_table = app_tables.test_table.search()
+  csv_rows = []
+  gender = None
+  
+  for row in data_table:
+    if row['gender'] == False:
+      gender = 0
+    elif row['gender'] == True:
+      gender = 1
+    elif row['gender'] == None:
+      gender = 0 
+    csv_row = [row["name"], row["age"], row['salary'],gender,row['dob']]
+    csv_rows.append(csv_row)
+  df = pd.DataFrame(csv_rows, columns=["name","age","salary","gender","dob"])
+  df.to_csv('/tmp/test_table.csv',index=False)
+  df_media = anvil.media.from_file('/tmp/test_table.csv', 'csv', 'test_table.csv')
+  return df_media
