@@ -74,11 +74,12 @@ def import_test_csv():
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
     for _, row in df.iterrows():
+      print(row)
       # Create a media object from the 'photo_bytes' column
-      photo_media = get_media_from_bytes(row['photo_bytes'])  # Replace with the actual function
+      photo_media = get_media_from_bytes(row['photo'])  # Replace with the actual function
       
       # Remove the 'photo_bytes' column from the row
-      row = row.drop('photo_bytes')
+      row = row.drop('photo')
       
       # Convert 'dob' to a datetime.date object
       dob = pd.to_datetime(row['dob']).date()
