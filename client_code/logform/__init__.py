@@ -26,8 +26,7 @@ class logform(logformTemplate):
         self.button_1.visible = False  
         self.button_2.visible = False        
         self.button_3.visible = True
-        self.button_4.visible = True
-        self.button_5.visible = True
+        self.button_4.visible = True        
       #print("no company")
     else :
       value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
@@ -37,14 +36,18 @@ class logform(logformTemplate):
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('import_all_csv')
+    open_form('company_select')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('logform')
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    open_form('logform')
 
-  def button_5_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+
+
 
 
 

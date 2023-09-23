@@ -47,6 +47,14 @@ components:
   properties: {height: 32}
   name: spacer_2
   layout_properties: {grid_position: 'SSHFYG,DHOYXO'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: button_4
+  layout_properties: {grid_position: 'KCDQQF,GAFWZL'}
+  event_bindings: {click: button_4_click}
 - type: Spacer
   properties: {height: 32}
   name: spacer_3
@@ -66,20 +74,5 @@ components:
     underline: false, icon: ''}
   name: button_2
   layout_properties: {grid_position: 'TTMTGK,AKWGLI'}
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: false, text: Submit, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: button_4
-  layout_properties: {grid_position: 'CWWSCQ,PNZPOH'}
-  event_bindings: {click: button_4_click}
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: button_5
-  layout_properties: {grid_position: 'CWWSCQ,JXODRK'}
-  event_bindings: {click: button_5_click}
+  event_bindings: {click: button_2_click}
 is_package: true
