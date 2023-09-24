@@ -30,6 +30,12 @@ class emp_more1(emp_more1Template):
     self.custom_3.visible = False
     self.refresh()
 
+  def link_3_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = False
+    self.custom_2.visible = False
+    self.custom_3.visible = not self.custom_3.visible
+
   def refresh(self):
     split_list_emp = self.drop_down_1.selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp] 
@@ -73,3 +79,5 @@ class emp_more1(emp_more1Template):
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
+
+ 

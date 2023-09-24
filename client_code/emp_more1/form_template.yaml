@@ -90,6 +90,7 @@ components:
       icon: ''}
     name: link_3
     layout_properties: {grid_position: 'DDWODI,JYDNCZ'}
+    event_bindings: {click: link_3_click}
   - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_1
