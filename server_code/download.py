@@ -7,6 +7,8 @@ from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
 import file_path
+import io
+import base64
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -640,25 +642,28 @@ def get_all_employee_download():
       pf_contribution = 0
 
     if row['emp_esi_contribution'] == False:
-      esi_contribution_contribution = 0
+      esi_contribution = 0
     elif row['emp_esi_contribution'] == True:
       esi_contribution = 1
     elif row['emp_esi_contribution'] == None:
       esi_contribution = 0
 
     if row['emp_pt_contribution'] == False:
-      pt_contribution_contribution = 0
+      pt_contribution = 0
     elif row['emp_pt_contribution'] == True:
       pt_contribution = 1
     elif row['emp_pt_contribution'] == None:
       pt_contribution = 0
 
     if row['emp_it_contribution'] == False:
-      it_contribution_contribution = 0
+      it_contribution = 0
     elif row['emp_it_contribution'] == True:
       it_contribution = 1
     elif row['emp_it_contribution'] == None:
       it_contribution = 0    
+
+    photo_bytes = get_media_bytes(row['emp_photo'])
+    pdf_bytes = get_media_bytes(row['emp_pdf_docu1'])
       
     csv_row = [row["id"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
               row["emp_dob"], row["emp_doj"], row["emp_sex"], row["emp_type"],
@@ -671,7 +676,7 @@ def get_all_employee_download():
               row["earn1"], row["earn2"], row["earn3"], row["earn4"], row["earn5"],
               row["earn6"], row["earn7"], row["earn8"], row["earn9"], row["earn10"],
               row["phone_number"], row["alt_phone_number"],row["email_address"],
-              row["aadhar_number"],row["attn_bonus"]]
+              row["aadhar_number"],row["attn_bonus"],photo_bytes,pdf_bytes]
     csv_rows.append(csv_row)
     
   df = pd.DataFrame(csv_rows, columns=["id", "emp_code", "emp_name", "emp_hus_name",
@@ -685,7 +690,7 @@ def get_all_employee_download():
               "earn1", "earn2", "earn3", "earn4", "earn5",
               "earn6", "earn7", "earn8", "earn9", "earn10",
               "phone_number", "alt_phone_number","email_address",
-              "aadhar_number","attn_bonus"])
+              "aadhar_number","attn_bonus","emp_photo","emp_pdf_docu1"])
   
   df.to_csv('/tmp/employee.csv',index=False)
   df_media = anvil.media.from_file('/tmp/employee.csv', 'csv', 'employee.csv')
@@ -815,7 +820,6 @@ def get_all_transaction_download():
   df_media = anvil.media.from_file('/tmp/transaction.csv', 'csv', 'transaction.csv')
   return df_media
 
-
 @anvil.server.callable
 def get_all_bank_download():
   data_table = app_tables.bank.search()
@@ -831,4 +835,10 @@ def get_all_bank_download():
   df_media = anvil.media.from_file('/tmp/bank.csv', 'csv', 'bank.csv')
   return df_media
 
+
+def get_media_bytes(media_object):
+  if media_object:
+    return base64.b64encode(media_object.get_bytes()).decode('utf-8')
+  else:
+    return None
 

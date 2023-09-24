@@ -146,6 +146,7 @@ def import_company_csv():
       print(d)
       app_tables.company.add_row(**d)
 
+@anvil.server.callable
 def import_password_csv():
   with open(file_path.password_path, "r") as f:
     dtype_mapping = {
@@ -160,6 +161,7 @@ def import_password_csv():
       print(d)
       app_tables.password.add_row(**d)
 
+@anvil.server.callable
 def import_trans_date_csv():
   with open(file_path.trans_date_path, "r") as f:
     dtype_mapping = { 
@@ -177,6 +179,7 @@ def import_trans_date_csv():
       print(d)
       app_tables.trans_date.add_row(**d)
 
+@anvil.server.callable
 def import_department_csv():
   with open(file_path.department_path, "r") as f:
     dtype_mapping = { 
@@ -192,6 +195,7 @@ def import_department_csv():
       print(d)
       app_tables.department.add_row(**d)
 
+@anvil.server.callable
 def import_designation_csv():
   with open(file_path.designation_path, "r") as f:
     dtype_mapping = { 
@@ -207,6 +211,7 @@ def import_designation_csv():
       print(d)
       app_tables.designation.add_row(**d)
 
+@anvil.server.callable
 def import_bank_csv():
   with open(file_path.bank_path, "r") as f:
     dtype_mapping = { 
@@ -226,13 +231,13 @@ def import_bank_csv():
       print(d)
       app_tables.bank.add_row(**d)
 
+@anvil.server.callable
 def import_employee_csv():
   with open(file_path.employee_path, "r") as f:
     dtype_mapping = { 
     'id': str,      
     'emp_code': str,
     'emp_name': str,
-    'emp_hus_name': str,
     'emp_hus_name': str,
     'emp_sex': str, 
     'emp_type': str,      
@@ -266,15 +271,33 @@ def import_employee_csv():
     'attn_bonus': float 
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
-    df['emp_dob'] = pd.to_datetime(df['emp_dob']).dt.date
-    df['emp_doj'] = pd.to_datetime(df['emp_doj']).dt.date
-    key_to_ignore = 'ID'
-    ignored_dict = {key: value for key, value in df.items() if key != key_to_ignore}
-    ignored_dict = pd.DataFrame(ignored_dict)
-    for d in ignored_dict.to_dict(orient="records"):
-      print(d)
-      app_tables.employee.add_row(**d)
+    columns_to_exclude = ['emp_dob', 'emp_doj','emp_photo', 'emp_pdf_docu1']  # Columns to exclude
+    for _, row in df.iterrows():
+      print(row)
+      # Create a media object from the 'photo_bytes' column
+      photo_media = get_media_from_bytes_image(row['emp_photo'],row['emp_code'])  # Replace with the actual function
 
+      pdf_media = get_media_from_bytes_pdf(row['emp_pdf_docu1'],row['emp_code'])
+      
+      # Remove the 'photo_bytes' column from the row
+      row = row.drop('emp_photo')
+      row = row.drop('emp_pdf_docu1')
+      
+      emp_dob = pd.to_datetime(row['emp_dob']).date()
+      emp_doj = pd.to_datetime(row['emp_doj']).date()
+
+      data_dict = {col: row[col] for col in df.columns if col not in columns_to_exclude}
+
+      data_dict.update({
+        'emp_dob': emp_dob,
+        'emp_doj': emp_doj,
+        'emp_photo': photo_media,
+        'emp_pdf_docu1': pdf_media
+      })
+
+      app_tables.employee.add_row(**data_dict)
+      
+@anvil.server.callable
 def import_transaction_csv():
   with open(file_path.transaction_path, "r") as f:
     dtype_mapping = { 
@@ -370,3 +393,17 @@ def import_transaction_csv():
     for d in ignored_dict.to_dict(orient="records"):
       print(d)
       app_tables.transaction.add_row(**d)
+
+def get_media_from_bytes_pdf(bytes_data,filename):
+  if bytes_data:
+    media_bytes = base64.b64decode(bytes_data)
+    return anvil.BlobMedia('application/pdf', media_bytes, name=filename + ".pdf")
+  else:
+    return None
+
+def get_media_from_bytes_image(bytes_data,filename):
+  if bytes_data:
+    media_bytes = base64.b64decode(bytes_data)
+    return anvil.BlobMedia('image/jpeg', media_bytes, name=filename + ".png")
+  else:
+    return None
