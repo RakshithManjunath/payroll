@@ -327,6 +327,9 @@ db_schema:
     - name: salary
       admin_ui: {order: 1.5, width: 200}
       type: number
+    - name: pdf
+      admin_ui: {width: 200, order: 6}
+      type: media
     title: test_table
   company:
     title: company

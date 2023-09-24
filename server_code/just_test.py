@@ -58,10 +58,17 @@ def just_test():
 def test_add_column():
   app_tables.transaction.update(columns={"age": int},all=True)
 
-def get_media_from_bytes(bytes_data,filename):
+def get_media_from_bytes_image(bytes_data,filename):
   if bytes_data:
     media_bytes = base64.b64decode(bytes_data)
     return anvil.BlobMedia('image/jpeg', media_bytes, name=filename + ".png")
+  else:
+    return None
+
+def get_media_from_bytes_pdf(bytes_data,filename):
+  if bytes_data:
+    media_bytes = base64.b64decode(bytes_data)
+    return anvil.BlobMedia('application/pdf', media_bytes, name=filename + ".pdf")
   else:
     return None
 
@@ -78,10 +85,13 @@ def import_test_csv():
     for _, row in df.iterrows():
       print(row)
       # Create a media object from the 'photo_bytes' column
-      photo_media = get_media_from_bytes(row['photo'],row['name'])  # Replace with the actual function
+      photo_media = get_media_from_bytes_image(row['photo'],row['name'])  # Replace with the actual function
+
+      pdf_media = get_media_from_bytes_pdf(row['pdf'],row['name'])
       
       # Remove the 'photo_bytes' column from the row
       row = row.drop('photo')
+      row = row.drop('pdf')
       
       # Convert 'dob' to a datetime.date object
       dob = pd.to_datetime(row['dob']).date()
@@ -93,7 +103,8 @@ def import_test_csv():
           salary=row['salary'],
           gender=row['gender'],
           dob=dob,  # Use the converted 'dob'
-          photo=photo_media
+          photo=photo_media,
+          pdf=pdf_media
       )
     # df['dob'] = pd.to_datetime(df['dob']).dt.date
     # key_to_ignore = 'ID'
@@ -123,9 +134,10 @@ def get_all_test_download():
     elif row['gender'] == None:
       gender = 0
     photo_bytes = get_media_bytes(row['photo'])
-    csv_row = [row["name"], row["age"], row['salary'],gender,row['dob'],photo_bytes]
+    pdf_bytes = get_media_bytes(row['pdf'])
+    csv_row = [row["name"], row["age"], row['salary'],gender,row['dob'],photo_bytes,pdf_bytes]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["name","age","salary","gender","dob","photo"])
+  df = pd.DataFrame(csv_rows, columns=["name","age","salary","gender","dob","photo","pdf"])
   df.to_csv('/tmp/test_table.csv',index=False)
   df_media = anvil.media.from_file('/tmp/test_table.csv', 'csv', 'test_table.csv')
   return df_media
