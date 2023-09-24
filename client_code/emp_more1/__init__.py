@@ -20,12 +20,14 @@ class emp_more1(emp_more1Template):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
     self.custom_2.visible = False
+    self.custom_3.visible = False
     self.refresh()
 
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
-    self.custom_2.visible = not self.custom_2.visible
     self.custom_1.visible = False
+    self.custom_2.visible = not self.custom_2.visible
+    self.custom_3.visible = False
     self.refresh()
 
   def refresh(self):
