@@ -813,6 +813,12 @@ db_schema:
     - name: attn_bonus
       admin_ui: {width: 200}
       type: number
+    - name: emp_photo
+      admin_ui: {width: 200, order: 30}
+      type: media
+    - name: emp_pdf_docu1
+      admin_ui: {width: 200, order: 31}
+      type: media
   users:
     client: none
     server: full
