@@ -1,6 +1,8 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
 components:
 - type: FileLoader
   properties: {}
@@ -22,6 +24,7 @@ components:
     underline: false, icon: ''}
   name: button_1
   layout_properties: {grid_position: 'SWVZGT,NZERCQ'}
+  event_bindings: {click: button_1_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
@@ -30,3 +33,4 @@ components:
   name: button_2
   layout_properties: {grid_position: 'SWVZGT,TSLLTJ'}
 is_package: true
+custom_component: true

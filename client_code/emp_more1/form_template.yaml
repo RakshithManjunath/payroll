@@ -96,6 +96,10 @@ components:
     name: column_panel_1
     layout_properties: {grid_position: 'ZTLGEB,CUEDPH'}
     components:
+    - type: form:emp_more_misc2
+      properties: {}
+      name: custom_3
+      layout_properties: {grid_position: 'LBIGPF,DSSHOW'}
     - type: form:emp_more_misc1
       properties: {}
       name: custom_2

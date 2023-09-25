@@ -68,6 +68,8 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_4.text = self.row['aadhar_number']
     self.custom_2.text_box_5.text = self.row['attn_bonus']
 
+    self.custom_3.image_1.source = self.row['emp_photo']
+  
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
     self.link_1.visible = True

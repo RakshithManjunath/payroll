@@ -184,3 +184,10 @@ def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_
             email_address=email_address,
             aadhar_number=aadhar_number,
             attn_bonus=attn_bonus)
+
+
+############# update emp misc2 ################
+@anvil.server.callable
+def emp_update_misc2(empcode,emp_photo):
+  row = app_tables.employee.get(emp_code=empcode)
+  row.update(emp_photo = emp_photo)
