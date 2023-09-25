@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import gvarb
+import locale
 
 class stat_pf(stat_pfTemplate):
   def __init__(self, **properties):
@@ -36,5 +37,11 @@ class stat_pf(stat_pfTemplate):
     """This method is called when the button is clicked"""
     open_form('statutary')
 
+    def format_currency(value):
+      """Formats a value as a currency string."""
+      locale.setlocale(locale.LC_ALL, 'en_IN')
+      return locale.currencyformat(value)
 
+  # Set the `text` property of the textbox to the formatted currency string.
+  textbox.text = format_currency(self.text_box_7.text)
 
