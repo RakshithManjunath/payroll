@@ -819,6 +819,9 @@ db_schema:
     - name: emp_pdf_docu1
       admin_ui: {width: 200, order: 31}
       type: media
+    - name: emp_pdf_docu2
+      admin_ui: {width: 200, order: 32}
+      type: media
   users:
     client: none
     server: full
