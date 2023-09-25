@@ -14,7 +14,7 @@ class menu(menuTemplate):
   def open_login_page(self, **kwargs):
     anvil.users.logout()
     alert(f"You have logged out successfully...!")
-    open_form('company_select')
+    open_form('logform')
 
   def open_update_page(self, **kwargs):
     open_form('update_trans_date')
