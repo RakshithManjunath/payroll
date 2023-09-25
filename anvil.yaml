@@ -10,7 +10,7 @@ services:
 - source: /runtime/services/anvil/files.yml
   client_config: {}
   server_config: {file_table: files}
-startup: {type: form, module: logform}
+startup: {type: form, module: show_pdf}
 package_name: Payroll
 allow_embedding: false
 name: Payroll
@@ -822,6 +822,9 @@ db_schema:
     - name: emp_pdf_docu2
       admin_ui: {width: 200, order: 32}
       type: media
+    - name: emp_pdf_docu1_name
+      admin_ui: {width: 200, order: 33}
+      type: string
   users:
     client: none
     server: full
