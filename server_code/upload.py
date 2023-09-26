@@ -7,6 +7,7 @@ from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
 import file_path
+import base64
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -271,17 +272,17 @@ def import_employee_csv():
     'attn_bonus': float 
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
-    columns_to_exclude = ['emp_dob', 'emp_doj','emp_photo', 'emp_pdf_docu1']  # Columns to exclude
+    columns_to_exclude = ['emp_dob', 'emp_doj','emp_photo']  # Columns to exclude
     for _, row in df.iterrows():
-      print(row)
+      print(row, row['emp_photo'])
       # Create a media object from the 'photo_bytes' column
       photo_media = get_media_from_bytes_image(row['emp_photo'],row['emp_code'])  # Replace with the actual function
-
-      pdf_media = get_media_from_bytes_pdf(row['emp_pdf_docu1'],row['emp_code'])
+      print(photo_media)
+      # pdf_media = get_media_from_bytes_pdf(row['emp_pdf_docu1'],row['emp_code'])
       
       # Remove the 'photo_bytes' column from the row
       row = row.drop('emp_photo')
-      row = row.drop('emp_pdf_docu1')
+      # row = row.drop('emp_pdf_docu1')
       
       emp_dob = pd.to_datetime(row['emp_dob']).date()
       emp_doj = pd.to_datetime(row['emp_doj']).date()
@@ -291,8 +292,7 @@ def import_employee_csv():
       data_dict.update({
         'emp_dob': emp_dob,
         'emp_doj': emp_doj,
-        'emp_photo': photo_media,
-        'emp_pdf_docu1': pdf_media
+        'emp_photo': photo_media
       })
 
       app_tables.employee.add_row(**data_dict)
@@ -402,6 +402,14 @@ def get_media_from_bytes_pdf(bytes_data,filename):
     return None
 
 def get_media_from_bytes_image(bytes_data,filename):
+  if bytes_data:
+    media_bytes = base64.b64decode(bytes_data)
+    return anvil.BlobMedia('image/jpeg', media_bytes, name=filename + ".png")
+  else:
+    return None
+
+@anvil.server.callable
+def get_media_from_bytes_image_emp_add(bytes_data,filename):
   if bytes_data:
     media_bytes = base64.b64decode(bytes_data)
     return anvil.BlobMedia('image/jpeg', media_bytes, name=filename + ".png")

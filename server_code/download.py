@@ -663,34 +663,34 @@ def get_all_employee_download():
       it_contribution = 0    
 
     photo_bytes = get_media_bytes(row['emp_photo'])
-    pdf_bytes = get_media_bytes(row['emp_pdf_docu1'])
+    # pdf_bytes = get_media_bytes(row['emp_pdf_docu1'])
       
     csv_row = [row["id"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
               row["emp_dob"], row["emp_doj"], row["emp_sex"], row["emp_type"],
               pf_contribution, row["emp_pf_number"],
               row["emp_pf_uan"], esi_contribution ,
-              row["emp_esi_number"], row["emp_esi_dispensary"],
+              row["emp_esi_number"], 
               row["emp_esi_dispensary"], pt_contribution,
               row["emp_dept_code"], row["emp_dept_name"],row["emp_desi_code"],
               row["emp_desi_name"], it_contribution, row["emp_pan_number"],
               row["earn1"], row["earn2"], row["earn3"], row["earn4"], row["earn5"],
               row["earn6"], row["earn7"], row["earn8"], row["earn9"], row["earn10"],
               row["phone_number"], row["alt_phone_number"],row["email_address"],
-              row["aadhar_number"],row["attn_bonus"],photo_bytes,pdf_bytes]
+              row["aadhar_number"],row["attn_bonus"],photo_bytes]
     csv_rows.append(csv_row)
     
   df = pd.DataFrame(csv_rows, columns=["id", "emp_code", "emp_name", "emp_hus_name",
               "emp_dob", "emp_doj", "emp_sex", "emp_type",
-              pf_contribution, "emp_pf_number",
-              "emp_pf_uan", esi_contribution ,
-              "emp_esi_number", "emp_esi_dispensary",
-              "emp_esi_dispensary", pt_contribution,
+              "emp_pf_contribution", "emp_pf_number",
+              "emp_pf_uan", "emp_esi_contribution" ,
+              "emp_esi_number", 
+              "emp_esi_dispensary", "emp_pt_contribution",
               "emp_dept_code", "emp_dept_name","emp_desi_code",
-              "emp_desi_name", it_contribution, "emp_pan_number",
+              "emp_desi_name", "emp_it_contribution", "emp_pan_number",
               "earn1", "earn2", "earn3", "earn4", "earn5",
               "earn6", "earn7", "earn8", "earn9", "earn10",
               "phone_number", "alt_phone_number","email_address",
-              "aadhar_number","attn_bonus","emp_photo","emp_pdf_docu1"])
+              "aadhar_number","attn_bonus","emp_photo"])
   
   df.to_csv('/tmp/employee.csv',index=False)
   df_media = anvil.media.from_file('/tmp/employee.csv', 'csv', 'employee.csv')

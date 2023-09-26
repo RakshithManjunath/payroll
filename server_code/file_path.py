@@ -29,9 +29,6 @@ company_path = data_files['company.csv']
 employee_path = data_files['employee.csv']
 transaction_path = data_files['transaction.csv']
 ### Other files #######
-canon_file_path = data_files['canon.jpg']
-
-#test_path = data_files['test_table.csv']
 
 #### local file paths ####
 # department_path = "C:/SALUSER/SQLDATA/department.csv"
@@ -43,6 +40,4 @@ canon_file_path = data_files['canon.jpg']
 # employee_path = "C:/SALUSER/SQLDATA/employee.csv"
 # transaction_path = "C:/SALUSER/SQLDATA/transaction.csv"
 ### Other files #######
-# canon_file_path = "C:/SALUSER/SQLDATA/canon.jpg"
-
 # test_path = "C:/"
