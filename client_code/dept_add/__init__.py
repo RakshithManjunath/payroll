@@ -12,7 +12,7 @@ class dept_add(dept_addTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.value= anvil.server.call('dept_get_next_string_value')
+ 
 
 
   def button_1_click(self, **event_args):
@@ -20,6 +20,7 @@ class dept_add(dept_addTemplate):
     if self.text_box_1.text == "":
       Notification("Department name cannot be blank").show()
     else:
+      self.value= anvil.server.call('dept_get_next_string_value')
       dept_id= anvil.server.call('next_dept_id_value')
       anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text)
       Notification(self.text_box_1.text + " data added successfully").show()

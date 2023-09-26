@@ -102,9 +102,7 @@ class emp_mast_add(emp_mast_addTemplate):
                     desi_code,desi_name,default_photo)
       anvil.server.call('emp_default_values',row)
       Notification(self.text_box_2.text + " data added successfully").show()
-
-
-
+      open_form('emp_mast_add')
 
 
 
