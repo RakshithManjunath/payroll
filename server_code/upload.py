@@ -415,3 +415,16 @@ def get_media_from_bytes_image_emp_add(bytes_data,filename):
     return anvil.BlobMedia('image/jpeg', media_bytes, name=filename + ".png")
   else:
     return None
+
+
+
+@anvil.server.callable
+def import_all_csv():
+  upload.import_department_csv()
+  upload.import_designation_csv()
+  upload.import_bank_csv()
+  upload.import_password_csv()
+  upload.import_trans_date_csv()
+  upload.import_company_csv()
+  upload.import_employee_csv()
+  upload.import_transaction_csv()
