@@ -589,8 +589,8 @@ def get_all_companies_download():
             "comp_bonus_to","comp_bonus_percentage","comp_bonus_limit","comp_bonus_pt_included",
             "comp_leave_head1","comp_leave_head2","comp_leave_head3","comp_loan_head1",
             "comp_loan_head2","comp_pay_date"])
-  df.to_csv('/tmp/company.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/company.csv', 'csv', 'company.csv')
+  df.to_csv('company.csv',index=False)
+  df_media = anvil.media.from_file('company.csv', 'csv', 'company.csv')
   return df_media
 
 
@@ -605,8 +605,8 @@ def get_all_password_download():
     csv_row = [row["username"], row["password"]]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["username","password"])
-  df.to_csv('/tmp/password.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/password.csv', 'csv', 'password.csv')
+  df.to_csv('password.csv',index=False)
+  df_media = anvil.media.from_file('password.csv', 'csv', 'password.csv')
   return df_media
 
 @anvil.server.callable
@@ -618,8 +618,8 @@ def get_all_trans_date_download():
     csv_row = [row["tr_date"], row["tr_days"], row['tr_sundays'], row['tr_end_date']]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["tr_date","tr_days",'tr_sundays','tr_end_date'])
-  df.to_csv('/tmp/trans_date.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/trans_date.csv', 'csv', 'trans_date.csv')
+  df.to_csv('trans_date.csv',index=False)
+  df_media = anvil.media.from_file('trans_date.csv', 'csv', 'trans_date.csv')
   return df_media
 
 @anvil.server.callable
@@ -692,8 +692,8 @@ def get_all_employee_download():
               "phone_number", "alt_phone_number","email_address",
               "aadhar_number","attn_bonus","emp_photo"])
   
-  df.to_csv('/tmp/employee.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/employee.csv', 'csv', 'employee.csv')
+  df.to_csv('employee.csv',index=False)
+  df_media = anvil.media.from_file('employee.csv', 'csv', 'employee.csv')
   return df_media
 
 @anvil.server.callable
@@ -705,8 +705,8 @@ def get_all_department_download():
     csv_row = [row["dept_id"], row["dept_code"], row['dept_name']]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["dept_id","dept_code","dept_name"])
-  df.to_csv('/tmp/department.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/department.csv', 'csv', 'department.csv')
+  df.to_csv('department.csv',index=False)
+  df_media = anvil.media.from_file('department.csv', 'csv', 'department.csv')
   return df_media
 
 @anvil.server.callable
@@ -718,8 +718,8 @@ def get_all_designation_download():
     csv_row = [row["desi_id"], row["desi_code"], row['desi_name']]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["desi_id","desi_code","desi_name"])
-  df.to_csv('/tmp/designation.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/designation.csv', 'csv', 'designation.csv')
+  df.to_csv('designation.csv',index=False)
+  df_media = anvil.media.from_file('designation.csv', 'csv', 'designation.csv')
   return df_media
 
 @anvil.server.callable
@@ -816,8 +816,8 @@ def get_all_transaction_download():
               "earn_bonus_salary", "pf_amt", "fpf_amt", "esi_amt",
               "pt_amt",  "ot_amt", "it_or_tds_amt", "bonus_amt"])
   
-  df.to_csv('/tmp/transaction.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/transaction.csv', 'csv', 'transaction.csv')
+  df.to_csv('transaction.csv',index=False)
+  df_media = anvil.media.from_file('transaction.csv', 'csv', 'transaction.csv')
   return df_media
 
 @anvil.server.callable
@@ -831,8 +831,8 @@ def get_all_bank_download():
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["bank_id", "bank_code", 'bank_name','bank_addr1',
               'bank_addr2', 'bank_addr3', 'bank_ifsc'])
-  df.to_csv('/tmp/bank.csv',index=False)
-  df_media = anvil.media.from_file('/tmp/bank.csv', 'csv', 'bank.csv')
+  df.to_csv('bank.csv',index=False)
+  df_media = anvil.media.from_file('bank.csv', 'csv', 'bank.csv')
   return df_media
 
 
