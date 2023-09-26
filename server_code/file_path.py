@@ -20,24 +20,23 @@ import anvil.server
 #
 
 #### anvil file paths ####
-department_path = data_files['department.csv'] 
-designation_path = data_files['designation.csv']
-bank_path = data_files['bank.csv']
-password_path = data_files['password.csv']
-trans_date_path = data_files['trans_date.csv']
-company_path = data_files['company.csv']
-employee_path = data_files['employee.csv']
-transaction_path = data_files['transaction.csv']
+# department_path = data_files['department.csv'] 
+# designation_path = data_files['designation.csv']
+# bank_path = data_files['bank.csv']
+# password_path = data_files['password.csv']
+# trans_date_path = data_files['trans_date.csv']
+# company_path = data_files['company.csv']
+# employee_path = data_files['employee.csv']
+# transaction_path = data_files['transaction.csv']
 ### Other files #######
 
 #### local file paths ####
-# department_path = "C:/SALUSER/SQLDATA/department.csv"
-# desi_path = "C:/SALUSER/SQLDATA/designation.csv"
-# bank_path = "C:/SALUSER/SQLDATA/bank.csv"
-# password_path = "C:/SALUSER/SQLDATA/password.csv"
-# trans_date_path = "C:/SALUSER/SQLDATA/trans_date.csv"
-# company_path = "C:/SALUSER/SQLDATA/company.csv"
-# employee_path = "C:/SALUSER/SQLDATA/employee.csv"
-# transaction_path = "C:/SALUSER/SQLDATA/transaction.csv"
+department_path = "C:/SALUSER/SQLDATA/department.csv"
+designation_path = "C:/SALUSER/SQLDATA/designation.csv"
+bank_path = "C:/SALUSER/SQLDATA/bank.csv"
+password_path = "C:/SALUSER/SQLDATA/password.csv"
+trans_date_path = "C:/SALUSER/SQLDATA/trans_date.csv"
+company_path = "C:/SALUSER/SQLDATA/company.csv"
+employee_path = "C:/SALUSER/SQLDATA/employee.csv"
+transaction_path = "C:/SALUSER/SQLDATA/transaction.csv"
 ### Other files #######
-# test_path = "C:/"
