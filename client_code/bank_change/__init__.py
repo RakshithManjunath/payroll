@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class bank_change(bank_changeTemplate):
   def __init__(self, **properties):
@@ -12,8 +13,8 @@ class bank_change(bank_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_1.items = anvil.server.call('bank_change_name_and_code')
-
+    self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
+ 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
     self.text_box_5.visible =True
@@ -51,7 +52,7 @@ class bank_change(bank_changeTemplate):
       self.clear_inputs()
       self.drop_down_1.visible=True
       # refresh after button submit
-      self.drop_down_1.items = anvil.server.call('bank_change_name_and_code')
+      self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
 
   def clear_inputs(self):
     # Clear our three text boxes

@@ -14,8 +14,8 @@ class emp_mast_add(emp_mast_addTemplate):
 
     # Any code you write here will run before the form opens.
     self.label_4.text = gvarb.g_comname
-    self.drop_down_1.items = anvil.server.call('dept_change_name_and_code')
-    self.drop_down_2.items = anvil.server.call('desi_change_name_and_code')
+    self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
+    self.drop_down_2.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -99,7 +99,7 @@ class emp_mast_add(emp_mast_addTemplate):
                     pf_contribution,self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,
                     esi_contribution,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,
                     pt_contribution,it_contribution, self.custom_3.text_box_1.text,dept_code,dept_name,
-                    desi_code,desi_name,default_photo)
+                    desi_code,desi_name,default_photo,gvarb.g_comcode)
       anvil.server.call('emp_default_values',row)
       Notification(self.text_box_2.text + " data added successfully").show()
       open_form('emp_mast_add')

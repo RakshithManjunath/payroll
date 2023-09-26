@@ -43,7 +43,7 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
             emp_pf_uan,emp_esi_contribution,emp_esi_number, 
             emp_esi_dispensary,emp_pt_contribution,emp_it_contribution,
             emp_pan_number,emp_dept_code,emp_dept_name,emp_desi_code,
-            emp_desi_name,photo):
+            emp_desi_name,photo,emp_comp_code):
   return app_tables.employee.add_row(id=id,
                               emp_code=emp_code,
                               emp_name=emp_name,
@@ -65,7 +65,8 @@ def emp_add(id,emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
                               emp_dept_name=emp_dept_name,
                               emp_desi_code=emp_desi_code,
                               emp_desi_name=emp_desi_name,
-                              emp_photo=photo)
+                              emp_photo=photo,
+                              emp_comp_code=emp_comp_code)
 
 @anvil.server.callable
 def emp_default_values(row):

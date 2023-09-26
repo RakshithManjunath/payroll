@@ -822,6 +822,9 @@ db_schema:
     - name: emp_photo
       admin_ui: {width: 200, order: 30}
       type: media
+    - name: emp_comp_code
+      admin_ui: {order: 0.5, width: 200}
+      type: string
   users:
     client: none
     server: full

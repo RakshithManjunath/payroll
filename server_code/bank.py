@@ -82,9 +82,9 @@ def bank_default_values(row):
 #################### Bank Change #################################
 #################### same function is used also in emp_bank_add #############
 @anvil.server.callable
-def bank_change_name_and_code():
+def bank_change_name_and_code(bank_comp_code):
   bank_details = []
-  for r in app_tables.bank.search(tables.order_by("bank_code")):
+  for r in app_tables.bank.search(bank_comp_code=bank_comp_code):
     bank_details.append(r['bank_code'] + " | "  +r['bank_name'])
   return bank_details
 
