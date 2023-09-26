@@ -394,12 +394,12 @@ def import_transaction_csv():
       print(d)
       app_tables.transaction.add_row(**d)
 
-def get_media_from_bytes_pdf(bytes_data,filename):
-  if bytes_data:
-    media_bytes = base64.b64decode(bytes_data)
-    return anvil.BlobMedia('application/pdf', media_bytes, name=filename + ".pdf")
-  else:
-    return None
+# def get_media_from_bytes_pdf(bytes_data,filename):
+#   if bytes_data:
+#     media_bytes = base64.b64decode(bytes_data)
+#     return anvil.BlobMedia('application/pdf', media_bytes, name=filename + ".pdf")
+#   else:
+#     return None
 
 def get_media_from_bytes_image(bytes_data,filename):
   if bytes_data:
