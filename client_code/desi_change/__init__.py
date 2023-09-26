@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class desi_change(desi_changeTemplate):
   def __init__(self, **properties):
@@ -12,7 +13,7 @@ class desi_change(desi_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_1.items = anvil.server.call('desi_change_name_and_code')
+    self.drop_down_1.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
 
   def text_box_1_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
@@ -44,7 +45,7 @@ class desi_change(desi_changeTemplate):
       self.clear_inputs()
       self.drop_down_1.visible=True
       # refresh after button submit
-      self.drop_down_1.items = anvil.server.call('desi_change_name_and_code')
+      self.drop_down_1.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
 
   def clear_inputs(self):
     # Clear our three text boxes

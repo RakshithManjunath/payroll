@@ -54,11 +54,11 @@ def desi_add(desi_id,desicode,desiname,comcode):
 #################### Designation Change #################################
 #################### same function is used also in emp_add #############
 @anvil.server.callable
-def desi_change_name_and_code():
-  dept_details = []
-  for r in app_tables.designation.search(tables.order_by("desi_code")):
-    dept_details.append(r['desi_code'] + " | "  +r['desi_name'])
-  return dept_details
+def desi_change_name_and_code(desi_comp_code):
+  desi_details = []
+  for r in app_tables.designation.search(desi_comp_code=desi_comp_code):
+    desi_details.append(r['desi_code'] + " | "  +r['desi_name'])
+  return desi_details
 
 @anvil.server.callable
 def desi_update_row(desicode,desiname):
