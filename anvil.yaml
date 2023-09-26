@@ -31,6 +31,9 @@ db_schema:
     - name: desi_name
       admin_ui: {width: 200}
       type: string
+    - name: desi_comp_code
+      admin_ui: {order: 0.5, width: 200}
+      type: string
   department:
     title: department
     client: none
@@ -44,6 +47,9 @@ db_schema:
       type: string
     - name: dept_name
       admin_ui: {width: 200}
+      type: string
+    - name: dept_comp_code
+      admin_ui: {order: 0.5, width: 200}
       type: string
   transaction:
     title: transaction

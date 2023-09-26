@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class dept_add(dept_addTemplate):
   def __init__(self, **properties):
@@ -22,7 +23,7 @@ class dept_add(dept_addTemplate):
     else:
       self.value= anvil.server.call('dept_get_next_string_value')
       dept_id= anvil.server.call('next_dept_id_value')
-      anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text)
+      anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text,gvarb.g_comcode)
       Notification(self.text_box_1.text + " data added successfully").show()
       self.clear_inputs()
 

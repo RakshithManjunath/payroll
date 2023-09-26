@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class desi_add(desi_addTemplate):
   def __init__(self, **properties):
@@ -20,7 +21,7 @@ class desi_add(desi_addTemplate):
     else:
       self.value= anvil.server.call('desi_get_next_string_value')
       desi_id= anvil.server.call('next_desi_id_value')
-      anvil.server.call('desi_add',desi_id,self.value, self.text_box_1.text)
+      anvil.server.call('desi_add',desi_id,self.value, self.text_box_1.text,gvarb.g_comcode)
       Notification(self.text_box_1.text + " data added successfully").show()
       self.clear_inputs()
 

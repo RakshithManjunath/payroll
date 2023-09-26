@@ -47,9 +47,9 @@ def dept_get_next_string_value():
   return next_value
 
 @anvil.server.callable
-def dept_add(dept_id,deptcode,deptname):
+def dept_add(dept_id,deptcode,deptname,comcode):
   app_tables.department.add_row(dept_id=dept_id,dept_code=deptcode,
-                          dept_name=deptname)
+                          dept_name=deptname,dept_comp_code=comcode)
 
 #################### Department Change #################################
 #################### same function is used also in emp_add #############

@@ -47,9 +47,9 @@ def desi_get_next_string_value():
   return next_value
 
 @anvil.server.callable
-def desi_add(desi_id,desicode,desiname):
+def desi_add(desi_id,desicode,desiname,comcode):
   app_tables.designation.add_row(desi_id=desi_id,desi_code=desicode,
-                          desi_name=desiname)
+                          desi_name=desiname,desi_comp_code=comcode)
 
 #################### Designation Change #################################
 #################### same function is used also in emp_add #############
