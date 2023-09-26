@@ -46,10 +46,10 @@ def next_bank_id_value():
   return next_value
 
 @anvil.server.callable
-def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc):
+def bank_add(bank_id,bankcode,bankname,bankadd1,bankadd2,bankadd3,bankifsc,comcode):
   return app_tables.bank.add_row(bank_id=bank_id,bank_code=bankcode,
                           bank_name=bankname,bank_addr1=bankadd1,bank_addr2=bankadd2,
-                         bank_addr3=bankadd3,bank_ifsc=bankifsc)
+                         bank_addr3=bankadd3,bank_ifsc=bankifsc,bank_comp_code=comcode)
 
 def get_default_value_for_type(column_type):
   # Define default values based on column types (you can customize this)
