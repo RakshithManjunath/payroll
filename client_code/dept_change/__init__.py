@@ -13,10 +13,7 @@ class dept_change(dept_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_1.items = anvil.server.call('dept_change_name_and_code')
-    dept_comp_code = anvil.server.call('company_dept_code',gvarb.g_comcode)
-    for row in dept_comp_code:
-      print(row['dept_name'])
+    self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
 
   def text_box_1_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""

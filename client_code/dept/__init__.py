@@ -25,7 +25,7 @@ class dept(deptTemplate):
     self.custom_1.visible = False
     self.custom_2.visible = not self.custom_2.visible
     # after dept add to check added company
-    self.custom_2.drop_down_1.items = anvil.server.call('dept_change_name_and_code')
+    self.custom_2.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
 
 
   def outlined_button_1_click(self, **event_args):
