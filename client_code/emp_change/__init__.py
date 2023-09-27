@@ -15,7 +15,10 @@ class emp_change(emp_changeTemplate):
     # Any code you write here will run before the form opens.
     self.label_10.text = gvarb.g_comname
 
-    self.drop_down_1.items = anvil.server.call('emp_name_and_code',gvarb.g_comcode)
+    # self.drop_down_1.items = anvil.server.call('emp_name_and_code',gvarb.g_comcode)
+    print(type(anvil.server.call('emp_comp_code_update', gvarb.g_comcode)))
+    print(anvil.server.call('emp_comp_code_update', gvarb.g_comcode))
+    self.drop_down_1.items = anvil.server.call('emp_comp_code_update', gvarb.g_comcode)
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -165,7 +168,8 @@ class emp_change(emp_changeTemplate):
                     self.dept_code,
                     self.text_box_3.text,
                     self.desi_code,
-                    self.text_box_4.text)
+                    self.text_box_4.text,
+                    )
       Notification(self.text_box_1.text + " data modified successfully").show()
       self.drop_down_1.visible=True
 

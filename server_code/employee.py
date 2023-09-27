@@ -124,6 +124,13 @@ def get_default_value_for_type(column_type):
       return False
   return None
 
+@anvil.server.callable
+def emp_comp_code_update(emp_comp_code):
+  emp_comp_details = []
+  for r in app_tables.employee.search(emp_comp_code=emp_comp_code):
+    emp_comp_details.append(r['emp_code'])
+  return emp_comp_details
+  
 ######## change employee #########
 @anvil.server.callable
 def emp_update_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
@@ -131,7 +138,8 @@ def emp_update_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
             emp_pf_uan,emp_esi_contribution,emp_esi_number, 
             emp_esi_dispensary,emp_pt_contribution,emp_it_contribution,
             emp_pan_number,emp_dept_code,emp_dept_name,emp_desi_code,
-            emp_desi_name):
+            emp_desi_name,emp_comp_code):
+  rows = anvil.server.call('emp_change_name_and_code',emp_comp_code)
   row = app_tables.employee.get(emp_code=emp_code)
   row.update(emp_name=emp_name,
             emp_hus_name=emp_hus_name,
