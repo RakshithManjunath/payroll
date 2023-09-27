@@ -12,7 +12,7 @@ class comp_add(comp_addTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-
+  
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.text_box_1.text == "":
@@ -41,7 +41,9 @@ class comp_add(comp_addTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('comp_add_change')
+    open_form('comp_add')
 
-
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
 

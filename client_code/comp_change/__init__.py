@@ -34,7 +34,7 @@ class comp_change(comp_changeTemplate):
       self.drop_down_1.visible = False
     else:
       self.button_1.enabled = False
-   # self.text_box_5.text = self.bank_name
+      # self.text_box_5.text = self.bank_name
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -60,7 +60,7 @@ class comp_change(comp_changeTemplate):
     self.text_box_5.text = None
     self.text_box_6.text = None
     self.text_box_7.text = None
-  
+
 
   def text_box_7_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
@@ -69,9 +69,9 @@ class comp_change(comp_changeTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('comp_add_change')
+    open_form('comp_change')
 
-
-
-
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
 
