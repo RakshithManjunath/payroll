@@ -125,10 +125,10 @@ def get_default_value_for_type(column_type):
   return None
 
 @anvil.server.callable
-def emp_comp_code_update(emp_comp_code):
+def comp_wise_emp_code_and_name(emp_comp_code):
   emp_comp_details = []
   for r in app_tables.employee.search(emp_comp_code=emp_comp_code):
-    emp_comp_details.append(r['emp_code'])
+    emp_comp_details.append(r['emp_code'] + " | " + r['emp_name'])
   return emp_comp_details
   
 ######## change employee #########
