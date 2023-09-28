@@ -26,7 +26,7 @@ def trans_change_update(trans_empid,trans_mandays,trans_wo,trans_ph,trans_layoff
                         trans_ded1,trans_ded2,trans_ded3,trans_ded4,
                         trans_loan1,trans_loan2,
                         trans_adv,trans_tds,trans_pfvol,trans_lic,
-                        trans_arr_esipt,trans_arr_pf):
+                        trans_arr_esipt,trans_arr_pf,trans_paid_days):
   row = app_tables.transaction.get(trans_empid=trans_empid)
   row.update(trans_mandays=trans_mandays,
             trans_wo=trans_wo,
@@ -49,7 +49,8 @@ def trans_change_update(trans_empid,trans_mandays,trans_wo,trans_ph,trans_layoff
             trans_pfvol=trans_pfvol,
             trans_lic=trans_lic,
             trans_arr_esipt=trans_arr_esipt,
-            trans_arr_pf=trans_arr_pf
+            trans_arr_pf=trans_arr_pf,
+            trans_paid_days=trans_paid_days
             )
 
 @anvil.server.callable

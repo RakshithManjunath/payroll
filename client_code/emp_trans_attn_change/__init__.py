@@ -27,35 +27,35 @@ class emp_trans_attn_change(emp_trans_attn_changeTemplate):
 
   def text_box_1_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_2_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_3_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_4_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_5_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_6_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_7_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
   def text_box_8_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
-    sum_tb_values()
+    self.sum_tb_values()
 
 
 

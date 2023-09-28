@@ -155,6 +155,8 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     self.custom_3.text_box_1.text = self.row['trans_arr_esipt']
     self.custom_3.text_box_2.text = self.row['trans_arr_pf']
 
+    self.custom_1.text_box_11.text = self.row['trans_paid_days']
+
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
@@ -206,7 +208,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
                      self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
                      self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
                      self.custom_2.text_box_10.text,
-                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
+                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,self.custom_1.text_box_11.text)
 
     Notification(self.emp_name + " transaction data modified successfully").show()
 
