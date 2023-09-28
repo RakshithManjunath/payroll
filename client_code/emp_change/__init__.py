@@ -16,8 +16,8 @@ class emp_change(emp_changeTemplate):
     self.label_10.text = gvarb.g_comname
 
     # self.drop_down_1.items = anvil.server.call('emp_name_and_code',gvarb.g_comcode)
-    print(type(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)))
-    print(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode))
+    #print(type(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)))
+    #print(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode))
     self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
 
   def drop_down_1_change(self, **event_args):

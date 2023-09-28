@@ -19,7 +19,7 @@ class emp_more_earn1(emp_more_earn1Template):
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
     ## HEAD1 ######
-    if comp_details['comp_earn_head2']!="":          
+    if comp_details['comp_earn_head1']!="":          
       self.label_1.text = comp_details['comp_earn_head1']
     else:
       self.text_box_1.enabled = False           
