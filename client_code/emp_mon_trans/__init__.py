@@ -126,7 +126,8 @@ class emp_mon_trans(emp_mon_transTemplate):
                      self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
                      self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
                      self.custom_2.text_box_10.text,
-                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
+                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,
+                     self.custom_1.text_box_11.text)
     anvil.server.call('trans_default_values',row)
     Notification(self.emp_name + " transaction data added successfully").show()
 

@@ -381,7 +381,8 @@ def import_transaction_csv():
     'pt_amt': float,
     'ot_amt': float,
     'it_or_tds_amt': float,
-    'bonus_amt': float 
+    'bonus_amt': float,
+    'trans_paid_days': float
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
     df['trans_date'] = pd.to_datetime(df['trans_date']).dt.date 

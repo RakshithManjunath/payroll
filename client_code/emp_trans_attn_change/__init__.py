@@ -20,10 +20,10 @@ class emp_trans_attn_change(emp_trans_attn_changeTemplate):
     self.label_8.text = comp_details['comp_leave_head3']
 
   def sum_tb_values(self):
-    self.label_11.text = self.text_box_1.text + self.text_box_2.text + self.text_box_3.text 
-    self.label_11.text = self.label_11.text + self.text_box_4.text + self.text_box_5.text
-    self.label_11.text = self.label_11.text + self.text_box_6.text + self.text_box_7.text 
-    self.label_11.text = self.label_11.text + self.text_box_8.text
+    self.text_box_11.text = float(self.text_box_1.text) + float(self.text_box_2.text) + float(self.text_box_3.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_4.text) + float(self.text_box_5.text)
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_6.text) + float(self.text_box_7.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_8.text)
 
   def text_box_1_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""

@@ -4,13 +4,10 @@ container:
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
     spacing_below: small, background: ''}
 components:
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: total, font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
-  name: label_11
-  layout_properties: {grid_position: 'IDALYJ,HSPFOX'}
+- type: TextBox
+  properties: {}
+  name: text_box_11
+  layout_properties: {grid_position: 'YTIXLC,PPKRMG'}
 - type: Label
   properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
     visible: true, text: Mandays, font_size: null, font: '', spacing_above: small,

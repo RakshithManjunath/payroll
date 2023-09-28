@@ -308,6 +308,9 @@ db_schema:
     - name: bonus_amt
       admin_ui: {width: 200}
       type: number
+    - name: trans_paid_days
+      admin_ui: {width: 200, order: 80}
+      type: number
   test_table:
     client: none
     server: full
