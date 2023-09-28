@@ -14,7 +14,9 @@ class emp_mon_trans(emp_mon_transTemplate):
 
     # Any code you write here will run before the form opens.
     self.label_10.text = gvarb.g_comname
-    self.drop_down_1.items = anvil.server.call('trans_empcode_name')
+    self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
+    
+    # self.drop_down_1.items = anvil.server.call('trans_empcode_name')
     # anvil.server.call('trans_earn_earn_calculation', gvarb.g_comcode)
 
   def outlined_button_1_click(self, **event_args):
