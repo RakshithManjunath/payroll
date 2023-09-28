@@ -13,8 +13,8 @@ class comp_change(comp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.label_7.text = gvarb.g_comname
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
-    #self.row = anvil.server.call('comp_get_details',gvarb.g_comcode)
     
     self.text_box_7.text = comp_details['comp_name']
     self.text_box_1.text = comp_details['comp_addr1']
