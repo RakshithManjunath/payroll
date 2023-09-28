@@ -172,8 +172,9 @@ def emp_name_and_code():
 
 
 @anvil.server.callable
-def emp_get_details(empcode):
-  row = app_tables.employee.get(emp_code=empcode)
+def emp_get_details(empcode,emp_comp_code):
+  # row = app_tables.employee.get(emp_code=empcode)
+  row = app_tables.employee.search(emp_code=empcode,emp_comp_code=emp_comp_code)[0]
   return row
 
 

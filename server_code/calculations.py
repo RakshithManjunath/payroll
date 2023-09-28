@@ -19,3 +19,5 @@ import anvil.server
 #   return 42
 #
 
+def trans_earn_earn_calculation():
+  app_tables.employee.search
