@@ -15,36 +15,13 @@ components:
       underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'VOHRLG,IIPRRT'}
-  - type: DropDown
-    properties:
-      role: null
-      align: full
-      tooltip: ''
-      placeholder: Select company
-      border: ''
-      enabled: true
-      foreground: ''
-      items: []
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
-      spacing_below: small
-      italic: false
-      background: ''
-      bold: false
-      underline: false
-      include_placeholder: true
-    name: drop_down_1
-    layout_properties: {grid_position: 'VOHRLG,KELYLO NPHLVP,NXRKME'}
-    event_bindings: {change: drop_down_1_change}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: text_box_7
-    layout_properties: {grid_position: 'VOHRLG,KELYLO RLAIZE,GCCLEB'}
+    layout_properties: {grid_position: 'VOHRLG,KELYLO'}
     event_bindings: {lost_focus: text_box_7_lost_focus}
   - type: Spacer
     properties: {height: 32}
