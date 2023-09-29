@@ -54,9 +54,9 @@ def trans_change_update(trans_empid,trans_mandays,trans_wo,trans_ph,trans_layoff
             )
 
 @anvil.server.callable
-def trans_emp_name_and_code():
+def trans_emp_name_and_code(trans_comp_code):
   emp_details = []
-  for r in app_tables.transaction.search(tables.order_by("trans_empid")):
+  for r in app_tables.transaction.search(trans_comp_code=trans_comp_code):
     emp_details.append(r['trans_empid'] + " | "  +r['trans_empname'])
   return emp_details
 
@@ -71,8 +71,8 @@ def trans_emp_delete_row(trans_empid):
   row.delete()
 
 @anvil.server.callable
-def trans_get_all_details():
-  return app_tables.transaction.search(tables.order_by("trans_empid"))
+def trans_get_all_details(trans_comp_code):
+  return app_tables.transaction.search(trans_comp_code=trans_comp_code)
 
 @anvil.server.callable
 def get_all_companies():

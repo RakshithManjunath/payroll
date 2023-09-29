@@ -14,7 +14,7 @@ class emp_trans_view(emp_trans_viewTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.populate_custom_data_grid()
-    self.repeating_panel_1.items = anvil.server.call('trans_get_all_details')
+    self.repeating_panel_1.items = anvil.server.call('trans_get_all_details',gvarb.g_comcode)
     
     self.label_2.text = gvarb.g_comname
 
