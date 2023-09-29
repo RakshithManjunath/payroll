@@ -269,7 +269,8 @@ def import_employee_csv():
     'alt_phone_number': int,
     'email_address': str,
     'aadhar_number': int,
-    'attn_bonus': float 
+    'attn_bonus': float,
+    'total_fxd_salary': float
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
     columns_to_exclude = ['emp_dob', 'emp_doj','emp_photo']  # Columns to exclude

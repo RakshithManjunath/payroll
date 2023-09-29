@@ -59,6 +59,7 @@ class emp_more1(emp_more1Template):
     self.custom_1.text_box_8.text = self.row['earn8']
     self.custom_1.text_box_9.text = self.row['earn9']
     self.custom_1.text_box_10.text = self.row['earn10']
+    self.custom_1.text_box_11.text = self.row['total_fxd_salary']
 
     self.custom_2.text_box_1.text = self.row['phone_number']
     self.custom_2.text_box_2.text = self.row['alt_phone_number']

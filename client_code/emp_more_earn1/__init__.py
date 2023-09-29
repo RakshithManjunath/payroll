@@ -11,7 +11,7 @@ class emp_more_earn1(emp_more_earn1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    # self.refresh()
+    self.refresh()
 
     # Any code you write here will run before the form opens.
 
@@ -93,7 +93,7 @@ class emp_more_earn1(emp_more_earn1Template):
                      self.text_box_4.text,self.text_box_5.text,
                      self.text_box_6.text,self.text_box_7.text,
                      self.text_box_8.text,self.text_box_9.text,
-                     self.text_box_10.text)
+                     self.text_box_10.text,self.text_box_11.text)
     self.refresh()
 
   def button_2_click(self, **event_args):
