@@ -14,6 +14,7 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
 
     # Any code you write here will run before the form opens.
     self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code')
+    
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
