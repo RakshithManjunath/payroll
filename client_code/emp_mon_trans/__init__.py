@@ -13,7 +13,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
     self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
     
     # self.drop_down_1.items = anvil.server.call('trans_empcode_name')

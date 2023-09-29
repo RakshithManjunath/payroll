@@ -13,6 +13,7 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
     self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code',gvarb.g_comcode)
     
 
