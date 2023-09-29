@@ -108,7 +108,7 @@ db_schema:
       admin_ui: {width: 200}
       type: bool
     - name: trans_empesino
-      admin_ui: {width: 200}
+      admin_ui: {order: 11.5, width: 200}
       type: number
     - name: trans_empdispensary
       admin_ui: {width: 200}
@@ -311,6 +311,9 @@ db_schema:
     - name: trans_paid_days
       admin_ui: {order: 27.5, width: 200}
       type: number
+    - name: trans_comp_code
+      admin_ui: {order: -0.25, width: 200}
+      type: string
   test_table:
     client: none
     server: full

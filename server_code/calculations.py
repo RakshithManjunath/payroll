@@ -57,7 +57,7 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
                            trans_ded1,trans_ded2,trans_ded3,trans_ded4,
                            trans_loan1,trans_loan2,
                            trans_adv,trans_tds,trans_pfvol,trans_lic,
-                           trans_arr_esipt,trans_arr_pf,trans_paid_days):
+                           trans_arr_esipt,trans_arr_pf,trans_paid_days,trans_comp_code):
   transaction = app_tables.transaction
   return transaction.add_row(
       id=id,
@@ -119,7 +119,8 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_lic=trans_lic,
       trans_arr_esipt=trans_arr_esipt,
       trans_arr_pf=trans_arr_pf,
-      trans_paid_days=trans_paid_days)
+      trans_paid_days=trans_paid_days,
+      trans_comp_code = trans_comp_code)
                              
 def get_default_value_for_type(column_type):
   # Define default values based on column types (you can customize this)
@@ -184,7 +185,8 @@ def trans_default_values(row):
   'ot_amt': 'number',
   'it_or_tds_amt': 'number',
   'bonus_amt': 'number',  
-  'trans_paid_days': 'number'
+  'trans_paid_days': 'number',
+  'trans_comp_code': 'text'
   }
   
   for column_name, column_type in columns_and_types.items():
