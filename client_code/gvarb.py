@@ -17,5 +17,4 @@ g_empcode = ""
 g_empname = ""
 g_mode = ""
 g_transdate=""
-g_nodays = 0
-g_sundays = 0
+
