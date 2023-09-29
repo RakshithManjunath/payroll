@@ -130,7 +130,15 @@ def comp_wise_emp_code_and_name(emp_comp_code):
   for r in app_tables.employee.search(emp_comp_code=emp_comp_code):
     emp_comp_details.append(r['emp_code'] + " | " + r['emp_name'])
   return emp_comp_details
-  
+
+
+@anvil.server.callable
+def get_last_emp_code(emp_comp_code):
+  emp_list = [(r["emp_code"]) for r in app_tables.employee.search(emp_comp_code=emp_comp_code)]
+  last_row = emp_list[-1]
+  last_string_value = last_row
+  return last_string_value
+
 ######## change employee #########
 @anvil.server.callable
 def emp_update_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
