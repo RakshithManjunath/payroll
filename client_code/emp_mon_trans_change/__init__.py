@@ -211,10 +211,12 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
                      self.custom_2.text_box_10.text,
                      self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,self.custom_1.text_box_11.text)
 
-    earn1 = anvil.server.call('earn1_cal',self.row['trans_comp_code'],self.row['trans_empid'])
+    earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10 = anvil.server.call('earn1_cal',self.row['trans_comp_code'],self.row['trans_empid'])
+    print(earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
+    anvil.server.call('update_earn1',self.row['trans_comp_code'],self.row['trans_empid'],earn1,
+                     earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
 
-    anvil.server.call('update_earn1',self.row['trans_comp_code'],self.row['trans_empid'],earn1)
-
+    
     Notification(self.emp_name + " transaction data modified successfully").show()
 
   def button_2_click(self, **event_args):
