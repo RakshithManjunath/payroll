@@ -66,9 +66,9 @@ def trans_emp_get_details(trans_empid):
   return row
 
 @anvil.server.callable
-def trans_emp_delete_row(trans_empid):
-  row = app_tables.transaction.get(trans_empid=trans_empid)
-  row.delete()
+def trans_emp_delete_row(trans_empid,trans_comp_code):
+  row = app_tables.transaction.search(trans_empid=trans_empid,trans_comp_code=trans_comp_code)
+  row[0].delete()
 
 @anvil.server.callable
 def trans_get_all_details(trans_comp_code):

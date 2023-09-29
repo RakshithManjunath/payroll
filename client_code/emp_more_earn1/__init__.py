@@ -100,4 +100,59 @@ class emp_more_earn1(emp_more_earn1Template):
     """This method is called when the button is clicked"""
     open_form('emp_more_earn1')
 
+  def sum_tb_values(self):
+    self.text_box_11.text = float(self.text_box_1.text) + float(self.text_box_2.text) + float(self.text_box_3.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_4.text) + float(self.text_box_5.text)
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_6.text) + float(self.text_box_7.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_8.text)+ float(self.text_box_9.text)
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_10.text)
+    
+  def text_box_1_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_2_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_3_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_4_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_5_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_6_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_7_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_8_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_9_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_10_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+
+
+
+
+
+
+
+
 
