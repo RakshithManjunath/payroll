@@ -64,3 +64,18 @@ def update_earn1(trans_comp_code,trans_empid,trans_earn_earn1,trans_earn_earn2,t
   row.update(trans_earn_earn8=trans_earn_earn8)
   row.update(trans_earn_earn9=trans_earn_earn9)
   row.update(trans_earn_earn10=trans_earn_earn10)
+
+  #################################
+  #### Attendeance Bonus ##########
+  #################################
+@anvil.server.callable
+def attn_bonus(trans_comp_code,trans_empid):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  fxd_attn_bonus = row['trans_attn_bonus']
+  mandays = row['trans_mandays']
+  weekly_off = row['trans_wo']
+  paid_holiday = row['trans_ph']
+  layoff = row['trans_layoff']
+  absent = row['trans_absent']
+  tot_leave = row['trans_leave1']+row['trans_leave2']+row['trans_leave3']
+
