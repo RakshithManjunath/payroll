@@ -216,8 +216,8 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     anvil.server.call('update_earn1',self.row['trans_comp_code'],self.row['trans_empid'],earn1,
                      earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
     
-    # fxd_attn_bonus,mandays,weekly_off,paid_holiday,layoff,absent,leave1,leave2,leave3 = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
-    # print(fxd_attn_bonus,mandays,weekly_off,paid_holiday,layoff,absent,leave1,leave2,leave3)
+    eattn_bonus = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
+    print(eattn_bonus)
    
     
     Notification(self.emp_name + " transaction data modified successfully").show()

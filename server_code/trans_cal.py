@@ -84,7 +84,7 @@ def attn_bonus(trans_comp_code,trans_empid):
 
   row_trans_date = app_tables.trans_date.search()[0]
   no_of_days_in_month = row_trans_date['tr_days']
-  sundays = row['tr_sundays']
+  sundays = row_trans_date['tr_sundays']
   
   if (mandays + paid_holiday) >= (no_of_days_in_month - weekly_off) :
     ebonus = fxd_attn_bonus
