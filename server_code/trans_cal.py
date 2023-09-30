@@ -106,3 +106,62 @@ def update_earn_att_bonus(trans_comp_code,trans_empid,trans_earn_attn_bonus):
   ##############################################################################
   ################################ End Attendeance Bonus #######################
   ##############################################################################
+
+  ##############################################################################
+  ################################ PF Calculation Start #######################
+  ##############################################################################
+@anvil.server.callable
+def pf_calculaton(comp_code,trans_empid):
+  row = app_tables.company.get(comp_code=comp_code,)
+  eh1_pf = row['comp_earnhead1_pf']
+  eh2_pf = row['comp_earnhead2_pf']
+  eh3_pf = row['comp_earnhead3_pf']
+  eh4_pf = row['comp_earnhead4_pf']
+  eh5_pf = row['comp_earnhead5_pf']
+  eh6_pf = row['comp_earnhead6_pf']
+  eh7_pf = row['comp_earnhead7_pf']
+  eh8_pf = row['comp_earnhead8_pf']
+  eh9_pf = row['comp_earnhead9_pf']
+  eh10_pf = row['comp_earnhead10_pf']
+  row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  pfsal = 0
+  fxd_pfsal = 0
+  if eh1_pf == True:
+    pfsal = row['trans_earn_earn1']
+    fxd_pfsal  = row['trans_earn1']
+  if eh2_pf == True:
+    pfsal = pfsal + row['trans_earn_earn2']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn2']
+  if eh3_pf == True:
+    pfsal = pfsal + row['trans_earn_earn3']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn3']
+  if eh4_pf == True:
+    pfsal = pfsal + row['trans_earn_earn4']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn4']
+  if eh5_pf == True:
+    pfsal = pfsal + row['trans_earn_earn5']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn5']
+  if eh6_pf == True:
+    pfsal = pfsal + row['trans_earn_earn6']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn6']
+  if eh7_pf == True:
+    pfsal = pfsal + row['trans_earn_earn7']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn7']
+  if eh8_pf == True:
+    pfsal = pfsal + row['trans_earn_earn8']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn8']
+  if eh9_pf == True:
+    pfsal = pfsal + row['trans_earn_earn9']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn9']
+  if eh10_pf == True:
+    pfsal = pfsal + row['trans_earn_earn10']
+    fxd_pfsal  = fxd_pfsal + row['trans_earn10']
+
+  #return pfsal
+  print(pfsal,fxd_pfsal)
+  
+     
+
+  ##############################################################################
+  ################################ PF Calculation End    #######################
+  ##############################################################################

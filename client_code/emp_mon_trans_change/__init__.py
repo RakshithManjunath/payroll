@@ -217,7 +217,8 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     
     eattn_bonus = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
     anvil.server.call('update_earn_att_bonus',self.row['trans_comp_code'],self.row['trans_empid'],eattn_bonus)
-    print(eattn_bonus)
+   
+    pfsal = anvil.server.call('pf_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
    
     
     Notification(self.emp_name + " transaction data modified successfully").show()
