@@ -13,12 +13,12 @@ class emp_change(emp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
 
     # self.drop_down_1.items = anvil.server.call('emp_name_and_code',gvarb.g_comcode)
-    print(type(anvil.server.call('emp_comp_code_update', gvarb.g_comcode)))
-    print(anvil.server.call('emp_comp_code_update', gvarb.g_comcode))
-    self.drop_down_1.items = anvil.server.call('emp_comp_code_update', gvarb.g_comcode)
+    #print(type(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)))
+    #print(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode))
+    self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -26,7 +26,7 @@ class emp_change(emp_changeTemplate):
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
 
-    self.row = anvil.server.call('emp_get_details',self.emp_code)
+    self.row = anvil.server.call('emp_get_details',self.emp_code,gvarb.g_comcode)
     
     self.text_box_1.text = self.emp_name
     self.text_box_2.text = self.row['emp_hus_name']

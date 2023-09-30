@@ -18,3 +18,49 @@ class emp_trans_attn_change(emp_trans_attn_changeTemplate):
     self.label_6.text = comp_details['comp_leave_head1']
     self.label_7.text = comp_details['comp_leave_head2']
     self.label_8.text = comp_details['comp_leave_head3']
+
+  def sum_tb_values(self):
+    self.text_box_11.text = float(self.text_box_1.text) + float(self.text_box_2.text) + float(self.text_box_3.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_4.text) + float(self.text_box_5.text)
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_6.text) + float(self.text_box_7.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_8.text)
+
+  def text_box_1_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_2_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_3_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_4_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_5_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_6_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_7_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_8_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+
+
+
+
+
+
+

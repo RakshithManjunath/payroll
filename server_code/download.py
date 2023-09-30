@@ -676,7 +676,7 @@ def get_all_employee_download():
               row["earn1"], row["earn2"], row["earn3"], row["earn4"], row["earn5"],
               row["earn6"], row["earn7"], row["earn8"], row["earn9"], row["earn10"],
               row["phone_number"], row["alt_phone_number"],row["email_address"],
-              row["aadhar_number"],row["attn_bonus"],photo_bytes]
+              row["aadhar_number"],row["attn_bonus"],photo_bytes,row["total_fxd_salary"]]
     csv_rows.append(csv_row)
     
   df = pd.DataFrame(csv_rows, columns=["id", "emp_code", "emp_name", "emp_hus_name",
@@ -690,7 +690,7 @@ def get_all_employee_download():
               "earn1", "earn2", "earn3", "earn4", "earn5",
               "earn6", "earn7", "earn8", "earn9", "earn10",
               "phone_number", "alt_phone_number","email_address",
-              "aadhar_number","attn_bonus","emp_photo"])
+              "aadhar_number","attn_bonus","emp_photo","total_fxd_salary"])
   
   df.to_csv('employee.csv',index=False)
   df_media = anvil.media.from_file('employee.csv', 'csv', 'employee.csv')
@@ -787,7 +787,8 @@ def get_all_transaction_download():
               row["trans_attn_bonus"], row["fxd_earn_gross"], row["earn_pf_salary"], row["earn_fpf_salary"],
               row["earn_esi_salary"], row["earn_pt_salary"], row["earn_ot_salary"], row["earn_it_salary"],
               row["earn_bonus_salary"], row["pf_amt"], row["fpf_amt"], row["esi_amt"],
-              row["pt_amt"],  row["ot_amt"], row["it_or_tds_amt"], row["bonus_amt"]]
+              row["pt_amt"],  row["ot_amt"], row["it_or_tds_amt"], row["bonus_amt"], row["trans_paid_days"],
+              row["trans_comp_code"],row["trans_earn_attn_bonus"]]
     csv_rows.append(csv_row)
   df = pd.DataFrame(csv_rows, columns=["id", "trans_date",'trans_empid', 'trans_empname',
               "trans_father_husband", "trans_empsex", "trans_empdob",
@@ -814,7 +815,8 @@ def get_all_transaction_download():
               "trans_attn_bonus", "fxd_earn_gross", "earn_pf_salary", "earn_fpf_salary",
               "earn_esi_salary", "earn_pt_salary", "earn_ot_salary", "earn_it_salary",
               "earn_bonus_salary", "pf_amt", "fpf_amt", "esi_amt",
-              "pt_amt",  "ot_amt", "it_or_tds_amt", "bonus_amt"])
+              "pt_amt",  "ot_amt", "it_or_tds_amt", "bonus_amt","trans_paid_days",
+              "trans_comp_code","trans_earn_attn_bonus"])
   
   df.to_csv('transaction.csv',index=False)
   df_media = anvil.media.from_file('transaction.csv', 'csv', 'transaction.csv')

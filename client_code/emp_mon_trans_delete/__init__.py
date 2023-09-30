@@ -13,7 +13,9 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code')
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
+    self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code',gvarb.g_comcode)
+    
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -176,7 +178,7 @@ class emp_mon_trans_delete(emp_mon_trans_deleteTemplate):
     """This method is called when the button is clicked"""
     result = confirm(self.emp_name+" transaction data Do you want to delete ?", buttons=["Yes", "No"])
     if result == "Yes":
-      anvil.server.call('trans_emp_delete_row', self.row['trans_empid'])
+      anvil.server.call('trans_emp_delete_row', self.row['trans_empid'],gvarb.g_comcode)
     else:
       open_form('emp_mon_trans_delete')
 

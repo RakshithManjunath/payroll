@@ -13,8 +13,9 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname
-    self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code')
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
+    self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code',gvarb.g_comcode)
+
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -155,6 +156,8 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     self.custom_3.text_box_1.text = self.row['trans_arr_esipt']
     self.custom_3.text_box_2.text = self.row['trans_arr_pf']
 
+    self.custom_1.text_box_11.text = self.row['trans_paid_days']
+
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
@@ -206,8 +209,18 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
                      self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
                      self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
                      self.custom_2.text_box_10.text,
-                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
+                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,self.custom_1.text_box_11.text)
 
+    earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10 = anvil.server.call('earn1_cal',self.row['trans_comp_code'],self.row['trans_empid'])
+    #print(earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
+    anvil.server.call('update_earn1',self.row['trans_comp_code'],self.row['trans_empid'],earn1,
+                     earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
+    
+    eattn_bonus = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
+    anvil.server.call('update_earn_att_bonus',self.row['trans_comp_code'],self.row['trans_empid'],eattn_bonus)
+    print(eattn_bonus)
+   
+    
     Notification(self.emp_name + " transaction data modified successfully").show()
 
   def button_2_click(self, **event_args):

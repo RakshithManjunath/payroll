@@ -11,7 +11,7 @@ class emp_more_earn1(emp_more_earn1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    # self.refresh()
+    self.refresh()
 
     # Any code you write here will run before the form opens.
 
@@ -19,7 +19,7 @@ class emp_more_earn1(emp_more_earn1Template):
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
     ## HEAD1 ######
-    if comp_details['comp_earn_head2']!="":          
+    if comp_details['comp_earn_head1']!="":          
       self.label_1.text = comp_details['comp_earn_head1']
     else:
       self.text_box_1.enabled = False           
@@ -93,11 +93,66 @@ class emp_more_earn1(emp_more_earn1Template):
                      self.text_box_4.text,self.text_box_5.text,
                      self.text_box_6.text,self.text_box_7.text,
                      self.text_box_8.text,self.text_box_9.text,
-                     self.text_box_10.text)
+                     self.text_box_10.text,self.text_box_11.text)
     self.refresh()
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('emp_more_earn1')
+
+  def sum_tb_values(self):
+    self.text_box_11.text = float(self.text_box_1.text) + float(self.text_box_2.text) + float(self.text_box_3.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_4.text) + float(self.text_box_5.text)
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_6.text) + float(self.text_box_7.text) 
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_8.text)+ float(self.text_box_9.text)
+    self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_10.text)
+    
+  def text_box_1_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_2_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_3_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_4_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_5_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_6_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_7_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_8_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_9_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+  def text_box_10_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    self.sum_tb_values()
+
+
+
+
+
+
+
+
 
 

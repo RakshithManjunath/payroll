@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class data_backup(data_backupTemplate):
   def __init__(self, **properties):
@@ -12,6 +13,9 @@ class data_backup(data_backupTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+    self.label_3.text = gvarb.g_comname+' '+gvarb.g_mode
+    
     data = anvil.server.call('get_all_companies_download')
     download(data)
     data = anvil.server.call('get_all_password_download')

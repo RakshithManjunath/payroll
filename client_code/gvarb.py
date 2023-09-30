@@ -17,3 +17,4 @@ g_empcode = ""
 g_empname = ""
 g_mode = ""
 g_transdate=""
+

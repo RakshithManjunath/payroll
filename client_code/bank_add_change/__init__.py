@@ -13,7 +13,7 @@ class bank_add_change(bank_add_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_2.text = gvarb.g_comname
+    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode
        
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
