@@ -188,28 +188,31 @@ def esi_calculaton(comp_code,trans_empid):
   eh9_esi = row['comp_earnhead9_esi']
   eh10_esi = row['comp_earnhead10_esi']
   row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
-  esisal = 0
-  if eh1_esi == True:
-    esisal = row['trans_earn_earn1']
-  if eh2_esi == True:
-    esisal = esisal + row['trans_earn_earn2']
-  if eh3_esi == True:
-    esisal = esisal + row['trans_earn_earn3']
-  if eh4_esi == True:
-    esisal = esisal + row['trans_earn_earn4']
-  if eh5_esi == True:
-    esisal = esisal + row['trans_earn_earn5']    
-  if eh6_esi == True:
-    esisal = esisal + row['trans_earn_earn6']
-  if eh7_esi == True:
-    esisal = esisal + row['trans_earn_earn7']
-  if eh8_esi == True:
-    esisal = esisal + row['trans_earn_earn8']
-  if eh9_esi == True:
-    esisal = esisal + row['trans_earn_earn9']
-  if eh10_esi == True:
-    esisal = esisal + row['trans_earn_earn10']    
-
+  if row['trans_empesic'] == True:
+    esisal = 0
+    if eh1_esi == True:
+      esisal = row['trans_earn_earn1']
+    if eh2_esi == True:
+      esisal = esisal + row['trans_earn_earn2']
+    if eh3_esi == True:
+      esisal = esisal + row['trans_earn_earn3']
+    if eh4_esi == True:
+      esisal = esisal + row['trans_earn_earn4']
+    if eh5_esi == True:
+      esisal = esisal + row['trans_earn_earn5']    
+    if eh6_esi == True:
+      esisal = esisal + row['trans_earn_earn6']
+    if eh7_esi == True:
+      esisal = esisal + row['trans_earn_earn7']
+    if eh8_esi == True:
+      esisal = esisal + row['trans_earn_earn8']
+    if eh9_esi == True:
+      esisal = esisal + row['trans_earn_earn9']
+    if eh10_esi == True:
+      esisal = esisal + row['trans_earn_earn10']    
+  else:
+    esisal = 0
+    
   return esisal
 
 @anvil.server.callable
@@ -218,4 +221,15 @@ def update_esisalary(trans_comp_code,trans_empid,earn_esi_salary):
   row.update(earn_esi_salary = earn_esi_salary)
   ##############################################################################
   ################################ ESI Calculation End    #######################
+  ##############################################################################
+
+  ##############################################################################
+  ################################ PT Calculation Start #######################
+  ##############################################################################
+
+
+
+
+ ##############################################################################
+  ################################ PT Calculation END #######################
   ##############################################################################
