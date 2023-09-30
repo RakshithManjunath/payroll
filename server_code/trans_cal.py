@@ -73,6 +73,7 @@ def attn_bonus(trans_comp_code,trans_empid):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
   fxd_attn_bonus = row['trans_attn_bonus']
   mandays = row['trans_mandays']
+
   weekly_off = row['trans_wo']
   paid_holiday = row['trans_ph']
   layoff = row['trans_layoff']
@@ -83,12 +84,19 @@ def attn_bonus(trans_comp_code,trans_empid):
 
   row_trans_date = app_tables.trans_date.search()[0]
   no_of_days_in_month = row_trans_date['tr_days']
+  sundays = row['tr_sundays']
   
-  if (mandays + weekly_off + paid_holiday) >= no_of_days_in_month :
+  if (mandays + paid_holiday) >= (no_of_days_in_month - weekly_off) :
     ebonus = fxd_attn_bonus
   else:
     ebonus = 0
 
+  if ((leave1 + leave2 + leave3) > 0) : ## applied leave
+    ebonus = 0 
+
+  if (absent) : ## absent days are there
+    ebonus = 0 
+  
   return ebonus
   #######################################
   #### End Attendeance Bonus ##########
