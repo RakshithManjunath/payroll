@@ -222,7 +222,10 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     anvil.server.call('update_pfsalary',self.row['trans_comp_code'],self.row['trans_empid'],pfsal)   
 
     esisal = anvil.server.call('esi_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_esisalary',self.row['trans_comp_code'],self.row['trans_empid'],esisal)   
+    anvil.server.call('update_esisalary',self.row['trans_comp_code'],self.row['trans_empid'],esisal)  
+
+    ptsal = anvil.server.call('pt_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+    anvil.server.call('update_ptsalary',self.row['trans_comp_code'],self.row['trans_empid'],ptsal) 
     
     Notification(self.emp_name + " transaction data modified successfully").show()
 

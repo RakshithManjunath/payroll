@@ -226,10 +226,51 @@ def update_esisalary(trans_comp_code,trans_empid,earn_esi_salary):
   ##############################################################################
   ################################ PT Calculation Start #######################
   ##############################################################################
+@anvil.server.callable
+def pt_calculaton(comp_code,trans_empid):
+  row = app_tables.company.get(comp_code=comp_code,)
+  eh1_pt = row['comp_earnhead1_pt']
+  eh2_pt = row['comp_earnhead2_pt']
+  eh3_pt = row['comp_earnhead3_pt']
+  eh4_pt = row['comp_earnhead4_pt']
+  eh5_pt = row['comp_earnhead5_pt']
+  eh6_pt = row['comp_earnhead6_pt']
+  eh7_pt = row['comp_earnhead7_pt']
+  eh8_pt = row['comp_earnhead8_pt']
+  eh9_pt = row['comp_earnhead9_pt']
+  eh10_pt = row['comp_earnhead10_pt']
+  row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  if row['trans_empptc'] == True:
+    ptsal = 0
+    if eh1_pt == True:
+      ptsal = row['trans_earn_earn1']
+    if eh2_pt == True:
+      ptsal = ptsal + row['trans_earn_earn2']
+    if eh3_pt == True:
+      ptsal = ptsal + row['trans_earn_earn3']
+    if eh4_pt == True:
+      ptsal = ptsal + row['trans_earn_earn4']
+    if eh5_pt == True:
+      ptsal = ptsal + row['trans_earn_earn5']
+    if eh6_pt == True:
+      ptsal = ptsal + row['trans_earn_earn6']
+    if eh7_pt == True:
+      ptsal = ptsal + row['trans_earn_earn7']
+    if eh8_pt == True:
+      ptsal = ptsal + row['trans_earn_earn8']
+    if eh9_pt == True:
+      ptsal = ptsal + row['trans_earn_earn9']
+    if eh10_pt == True:
+      ptsal = ptsal + row['trans_earn_earn10']
+  else:
+    ptsal = 0
+    
+  return ptsal  
 
-
-
-
+@anvil.server.callable
+def update_ptsalary(trans_comp_code,trans_empid,earn_pt_salary):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  row.update(earn_pt_salary = earn_pt_salary)
  ##############################################################################
   ################################ PT Calculation END #######################
   ##############################################################################
