@@ -65,9 +65,9 @@ def update_earn1(trans_comp_code,trans_empid,trans_earn_earn1,trans_earn_earn2,t
   row.update(trans_earn_earn9=trans_earn_earn9)
   row.update(trans_earn_earn10=trans_earn_earn10)
 
-  #################################
-  #### Attendeance Bonus ##########
-  #################################
+  #######################################
+  #### Start Attendeance Bonus ##########
+  #######################################
 @anvil.server.callable
 def attn_bonus(trans_comp_code,trans_empid):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
@@ -83,3 +83,13 @@ def attn_bonus(trans_comp_code,trans_empid):
 
   row_trans_date = app_tables.trans_date.search()[0]
   no_of_days_in_month = row_trans_date['tr_days']
+  
+  if (mandays + weekly_off + paid_holiday) >= no_of_days_in_month :
+    ebonus = fxd_attn_bonus
+  else:
+    ebonus = 0
+
+  return ebonus
+  #######################################
+  #### End Attendeance Bonus ##########
+  #######################################
