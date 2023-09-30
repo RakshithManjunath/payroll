@@ -77,5 +77,9 @@ def attn_bonus(trans_comp_code,trans_empid):
   paid_holiday = row['trans_ph']
   layoff = row['trans_layoff']
   absent = row['trans_absent']
-  tot_leave = row['trans_leave1']+row['trans_leave2']+row['trans_leave3']
+  leave1 = row['trans_leave1']
+  leave2 = row['trans_leave2']
+  leave3 = row['trans_leave3']
 
+  row_trans_date = app_tables.trans_date.search()[0]
+  no_of_days_in_month = row_trans_date['tr_days']
