@@ -217,6 +217,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
                      earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
     
     eattn_bonus = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
+    anvil.server.call('update_earn_att_bonus',self.row['trans_comp_code'],self.row['trans_empid'],eattn_bonus)
     print(eattn_bonus)
    
     
