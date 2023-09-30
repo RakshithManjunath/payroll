@@ -13,8 +13,11 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname
-    self.drop_down_1.items = anvil.server.call('trans_empcode_name')
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
+    self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
+    
+    # self.drop_down_1.items = anvil.server.call('trans_empcode_name')
+    # anvil.server.call('trans_earn_earn_calculation', gvarb.g_comcode)
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -26,7 +29,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
 
-    self.row = anvil.server.call('emp_get_details',self.emp_code)
+    self.row = anvil.server.call('emp_get_details',self.emp_code,gvarb.g_comcode)
     self.label_3.text = "Father / Husband name - "+self.row['emp_hus_name']
     self.fat_has_na = self.row['emp_hus_name']
     self.label_4.text = self.row['emp_sex']
@@ -125,7 +128,8 @@ class emp_mon_trans(emp_mon_transTemplate):
                      self.custom_2.text_box_4.text,self.custom_2.text_box_5.text,self.custom_2.text_box_6.text,
                      self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
                      self.custom_2.text_box_10.text,
-                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
+                     self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,
+                     self.custom_1.text_box_11.text,gvarb.g_comcode)
     anvil.server.call('trans_default_values',row)
     Notification(self.emp_name + " transaction data added successfully").show()
 

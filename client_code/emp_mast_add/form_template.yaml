@@ -19,6 +19,13 @@ components:
     properties: {height: 19}
     name: spacer_1
     layout_properties: {grid_position: 'FOCZOQ,FBPZHZ'}
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: 'theme:Error',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'ZQUMXA,NHNHVV'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: New employee code,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
