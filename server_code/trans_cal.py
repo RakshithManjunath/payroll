@@ -124,44 +124,98 @@ def pf_calculaton(comp_code,trans_empid):
   eh9_pf = row['comp_earnhead9_pf']
   eh10_pf = row['comp_earnhead10_pf']
   row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
-  pfsal = 0
-  fxd_pfsal = 0
-  if eh1_pf == True:
-    pfsal = row['trans_earn_earn1']
-    fxd_pfsal  = row['trans_earn1']
-  if eh2_pf == True:
-    pfsal = pfsal + row['trans_earn_earn2']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn2']
-  if eh3_pf == True:
-    pfsal = pfsal + row['trans_earn_earn3']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn3']
-  if eh4_pf == True:
-    pfsal = pfsal + row['trans_earn_earn4']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn4']
-  if eh5_pf == True:
-    pfsal = pfsal + row['trans_earn_earn5']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn5']
-  if eh6_pf == True:
-    pfsal = pfsal + row['trans_earn_earn6']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn6']
-  if eh7_pf == True:
-    pfsal = pfsal + row['trans_earn_earn7']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn7']
-  if eh8_pf == True:
-    pfsal = pfsal + row['trans_earn_earn8']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn8']
-  if eh9_pf == True:
-    pfsal = pfsal + row['trans_earn_earn9']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn9']
-  if eh10_pf == True:
-    pfsal = pfsal + row['trans_earn_earn10']
-    fxd_pfsal  = fxd_pfsal + row['trans_earn10']
+  if row['trans_emppfc'] == True:
+    pfsal = 0
+    fxd_pfsal = 0
+    if eh1_pf == True:
+      pfsal = row['trans_earn_earn1']
+      fxd_pfsal  = row['trans_earn1']
+    if eh2_pf == True:
+      pfsal = pfsal + row['trans_earn_earn2']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn2']
+    if eh3_pf == True:
+      pfsal = pfsal + row['trans_earn_earn3']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn3']
+    if eh4_pf == True:
+      pfsal = pfsal + row['trans_earn_earn4']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn4']
+    if eh5_pf == True:
+      pfsal = pfsal + row['trans_earn_earn5']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn5']
+    if eh6_pf == True:
+      pfsal = pfsal + row['trans_earn_earn6']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn6']
+    if eh7_pf == True:
+      pfsal = pfsal + row['trans_earn_earn7']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn7']
+    if eh8_pf == True:
+      pfsal = pfsal + row['trans_earn_earn8']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn8']
+    if eh9_pf == True:
+      pfsal = pfsal + row['trans_earn_earn9']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn9']
+    if eh10_pf == True:
+      pfsal = pfsal + row['trans_earn_earn10']
+      fxd_pfsal  = fxd_pfsal + row['trans_earn10']
+  else:
+    pfsal = 0
+    
+  return pfsal
 
-  #return pfsal
-  print(pfsal,fxd_pfsal)
-  
-     
-
+@anvil.server.callable
+def update_pfsalary(trans_comp_code,trans_empid,earn_pf_salary):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  row.update(earn_pf_salary = earn_pf_salary)
   ##############################################################################
   ################################ PF Calculation End    #######################
+  ##############################################################################
+
+
+  ##############################################################################
+  ################################ ESI Calculation Start #######################
+  ##############################################################################
+@anvil.server.callable
+def esi_calculaton(comp_code,trans_empid):
+  row = app_tables.company.get(comp_code=comp_code,)
+  eh1_esi = row['comp_earnhead1_esi']
+  eh2_esi = row['comp_earnhead2_esi']
+  eh3_esi = row['comp_earnhead3_esi']
+  eh4_esi = row['comp_earnhead4_esi']
+  eh5_esi = row['comp_earnhead5_esi']
+  eh6_esi = row['comp_earnhead6_esi']
+  eh7_esi = row['comp_earnhead7_esi']
+  eh8_esi = row['comp_earnhead8_esi']
+  eh9_esi = row['comp_earnhead9_esi']
+  eh10_esi = row['comp_earnhead10_esi']
+  row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  esisal = 0
+  if eh1_esi == True:
+    esisal = row['trans_earn_earn1']
+  if eh2_esi == True:
+    esisal = esisal + row['trans_earn_earn2']
+  if eh3_esi == True:
+    esisal = esisal + row['trans_earn_earn3']
+  if eh4_esi == True:
+    esisal = esisal + row['trans_earn_earn4']
+  if eh5_esi == True:
+    esisal = esisal + row['trans_earn_earn5']    
+  if eh6_esi == True:
+    esisal = esisal + row['trans_earn_earn6']
+  if eh7_esi == True:
+    esisal = esisal + row['trans_earn_earn7']
+  if eh8_esi == True:
+    esisal = esisal + row['trans_earn_earn8']
+  if eh9_esi == True:
+    esisal = esisal + row['trans_earn_earn9']
+  if eh10_esi == True:
+    esisal = esisal + row['trans_earn_earn10']    
+
+  return esisal
+
+@anvil.server.callable
+def update_esisalary(trans_comp_code,trans_empid,earn_esi_salary):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  row.update(earn_esi_salary = earn_esi_salary)
+  ##############################################################################
+  ################################ ESI Calculation End    #######################
   ##############################################################################

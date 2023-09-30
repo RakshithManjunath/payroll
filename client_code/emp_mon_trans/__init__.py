@@ -61,6 +61,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.email = self.row['email_address']
     self.aadhar_no = self.row['aadhar_number']
     self.attn_bonus = self.row['attn_bonus']
+    
 
     self.earn1 = self.row['earn1']
     self.earn2 = self.row['earn2']
@@ -88,9 +89,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     self.custom_2.label_4.text = comp_details['comp_ded4']
     self.custom_2.label_5.text = comp_details['comp_loan_head1']
     self.custom_2.label_6.text = comp_details['comp_loan_head2']
-
-    self.trans_earn_attn_bonus = self.row['attn_bonus']
-    
+      
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
@@ -113,6 +112,7 @@ class emp_mon_trans(emp_mon_transTemplate):
     """This method is called when the button is clicked"""
     self.transid = anvil.server.call('trans_get_next_string_value')
     date = anvil.server.call('cur_trans_date')
+    # trans_row = anvil.server.call('trans_get_all_details',gvarb.g_comcode)[0]
     row = anvil.server.call('emp_to_trans_transfer', self.transid, date[0], 
                       self.emp_code,self.emp_name,self.fat_has_na,
                       self.emp_sex,self.empdob,self.empdoj,self.emptype,
@@ -131,17 +131,21 @@ class emp_mon_trans(emp_mon_transTemplate):
                      self.custom_2.text_box_7.text,self.custom_2.text_box_8.text,self.custom_2.text_box_9.text,
                      self.custom_2.text_box_10.text,
                      self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,
-                     self.custom_1.text_box_11.text,gvarb.g_comcode,self.trans_earn_attn_bonus)
+                     self.custom_1.text_box_11.text,gvarb.g_comcode)
     anvil.server.call('trans_default_values',row)
-    print(gvarb.g_comcode,self.emp_code)
-    earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10 = anvil.server.call('earn_cal',gvarb.g_comcode,self.emp_code)
-    anvil.server.call('update_earn',gvarb.g_comcode,self.emp_code,earn1,
-                     earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
+    # print(gvarb.g_comcode,self.emp_code)
+    # earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10 = anvil.server.call('earn_cal',gvarb.g_comcode,self.emp_code)
+    # anvil.server.call('update_earn',gvarb.g_comcode,self.emp_code,earn1,
+    #                  earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
     
-    eattn_bonus = anvil.server.call('attn_bonus',gvarb.g_comcode,self.emp_code)
-    anvil.server.call('update_earn_att_bonus',gvarb.g_comcode,self.emp_code,eattn_bonus)
+    # eattn_bonus = anvil.server.call('attn_bonus',gvarb.g_comcode,self.emp_code)
+    # anvil.server.call('update_earn_att_bonus',gvarb.g_comcode,self.emp_code,eattn_bonus)
  
-    pfsal = anvil.server.call('pf_calculaton',gvarb.g_comcode,self.emp_code)
+    # pfsal = anvil.server.call('pf_calculaton',gvarb.g_comcode,self.emp_code)
+    # anvil.server.call('update_pfsalary',gvarb.g_comcode,self.emp_code,pfsal)
+
+    # esisal = anvil.server.call('esi_calculaton',gvarb.g_comcode,self.emp_code)
+    # anvil.server.call('update_esisalary',gvarb.g_comcode,self.emp_code,esisal)
     
     Notification(self.emp_name + " transaction data added successfully").show()
 
