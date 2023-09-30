@@ -20,7 +20,7 @@ import anvil.server
 #
 
 @anvil.server.callable
-def earn1_cal(trans_comp_code,trans_empid):
+def earn_cal(trans_comp_code,trans_empid):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
   paid_days = row['trans_paid_days']
   row_trans_date = app_tables.trans_date.search()[0]
@@ -50,7 +50,7 @@ def earn1_cal(trans_comp_code,trans_empid):
   return ee1,ee2,ee3,ee4,ee5,ee6,ee7,ee8,ee9,ee10
 
 @anvil.server.callable
-def update_earn1(trans_comp_code,trans_empid,trans_earn_earn1,trans_earn_earn2,trans_earn_earn3,
+def update_earn(trans_comp_code,trans_empid,trans_earn_earn1,trans_earn_earn2,trans_earn_earn3,
                 trans_earn_earn4,trans_earn_earn5,trans_earn_earn6,trans_earn_earn7,trans_earn_earn8,
                 trans_earn_earn9,trans_earn_earn10):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
