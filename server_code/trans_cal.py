@@ -71,9 +71,9 @@ def update_earn(trans_comp_code,trans_empid,trans_earn_earn1,trans_earn_earn2,tr
 @anvil.server.callable
 def attn_bonus(trans_comp_code,trans_empid):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  staff_worker = row['trans_emptype']
   fxd_attn_bonus = row['trans_attn_bonus']
   mandays = row['trans_mandays']
-
   weekly_off = row['trans_wo']
   paid_holiday = row['trans_ph']
   layoff = row['trans_layoff']
@@ -85,11 +85,14 @@ def attn_bonus(trans_comp_code,trans_empid):
   row_trans_date = app_tables.trans_date.search()[0]
   no_of_days_in_month = row_trans_date['tr_days']
   sundays = row_trans_date['tr_sundays']
+  if (staff_worker == "Worker") :   ## only workers are eligible for attn bonus
   
-  if (mandays + paid_holiday) >= (no_of_days_in_month - weekly_off) :
-    ebonus = fxd_attn_bonus
-  else:
-    ebonus = 0
+    if (mandays + paid_holiday) >= (no_of_days_in_month - weekly_off) :
+      ebonus = fxd_attn_bonus
+    else:
+      ebonus = 0
+  else :
+      ebonus = 0
 
   if ((leave1 + leave2 + leave3) > 0) : ## applied leave
     ebonus = 0 
