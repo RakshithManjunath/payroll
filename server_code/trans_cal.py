@@ -126,10 +126,16 @@ def pf_calculaton(comp_code,trans_empid):
   eh8_pf = row['comp_earnhead8_pf']
   eh9_pf = row['comp_earnhead9_pf']
   eh10_pf = row['comp_earnhead10_pf']
+  pf_percentage = row['comp_emp_pfrate']
+  fpf_percentage = row['comp_empr_fpfrate']
+  comp_pf_limit = row['comp_mgmt_pf_lt']
+  comp_fpf_limit = row['comp_mgmt_fpf_lt']
   row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
   if row['trans_emppfc'] == True:
     pfsal = 0
     fxd_pfsal = 0
+    pfamt = 0
+    fpfamt = 0
     if eh1_pf == True:
       pfsal = row['trans_earn_earn1']
       fxd_pfsal  = row['trans_earn1']
@@ -162,13 +168,20 @@ def pf_calculaton(comp_code,trans_empid):
       fxd_pfsal  = fxd_pfsal + row['trans_earn10']
   else:
     pfsal = 0
-    
-  return pfsal
+
+  pfamt = pfsal * (pf_percentage/100)
+  fpfamt = pfsal * (fpf_percentage/100)
+
+  print(pfsal,pfamt,fpfamt)
+  
+  return pfsal,pfamt,fpfamt
 
 @anvil.server.callable
-def update_pfsalary(trans_comp_code,trans_empid,earn_pf_salary):
+def update_pfsalary(trans_comp_code,trans_empid,earn_pf_salary,pf_amt,fpf_amt):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
   row.update(earn_pf_salary = earn_pf_salary)
+  row.update(pf_amt = pf_amt)
+  row.update(fpf_amt = fpf_amt)
   ##############################################################################
   ################################ PF Calculation End    #######################
   ##############################################################################

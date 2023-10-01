@@ -145,8 +145,8 @@ class emp_mon_trans(emp_mon_transTemplate):
     eattn_bonus = anvil.server.call('attn_bonus',gvarb.g_comcode,self.emp_code)
     anvil.server.call('update_earn_att_bonus',gvarb.g_comcode,self.emp_code,eattn_bonus)
  
-    pfsal = anvil.server.call('pf_calculaton',gvarb.g_comcode,self.emp_code)
-    anvil.server.call('update_pfsalary',gvarb.g_comcode,self.emp_code,pfsal)
+    pfsal,pfamt,fpfamt = anvil.server.call('pf_calculaton',gvarb.g_comcode,self.emp_code)
+    anvil.server.call('update_pfsalary',gvarb.g_comcode,self.emp_code,pfsal,pfamt,fpfamt)
 
     esisal = anvil.server.call('esi_calculaton',gvarb.g_comcode,self.emp_code)
     anvil.server.call('update_esisalary',gvarb.g_comcode,self.emp_code,esisal)
