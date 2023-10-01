@@ -154,14 +154,14 @@ class emp_mon_trans(emp_mon_transTemplate):
     ptsal = anvil.server.call('pt_calculaton',gvarb.g_comcode,self.emp_code)
     anvil.server.call('update_ptsalary',gvarb.g_comcode,self.emp_code,ptsal) 
 
-    otsal = anvil.server.call('ot_calculaton',gvarb.g_comcode,self.emp_code)
-    anvil.server.call('update_otsalary',gvarb.g_comcode,self.emp_code,otsal) 
+    otsal,ot_amt = anvil.server.call('ot_calculaton',gvarb.g_comcode,self.emp_code)
+    anvil.server.call('update_otsalary',gvarb.g_comcode,self.emp_code,otsal,ot_amt) 
 
-    itsal = anvil.server.call('ot_calculaton',gvarb.g_comcode,self.emp_code)
+    itsal = anvil.server.call('it_calculaton',gvarb.g_comcode,self.emp_code)
     anvil.server.call('update_itsalary',gvarb.g_comcode,self.emp_code,itsal) 
 
-    bns_sal = anvil.server.call('bonus_calculaton',gvarb.g_comcode,self.emp_code)
-    anvil.server.call('update_bonus_salary',gvarb.g_comcode,self.emp_code,bns_sal)
+    bns_sal,bonus_amt = anvil.server.call('bonus_calculaton',gvarb.g_comcode,self.emp_code)
+    anvil.server.call('update_bonus_salary',gvarb.g_comcode,self.emp_code,bns_sal,bonus_amt)
     
     Notification(self.emp_name + " transaction data added successfully").show()
 

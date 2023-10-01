@@ -291,7 +291,13 @@ def ot_calculaton(comp_code,trans_empid):
   eh8_ot = row['comp_earnhead8_ot']
   eh9_ot = row['comp_earnhead9_ot']
   eh10_ot = row['comp_earnhead10_ot']
+  
+  row_trans_date = app_tables.trans_date.search()[0]
+  no_of_days_in_month = row_trans_date['tr_days']
+  
   row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  othrs = row['trans_othrs']
+  otrate = 2.0
   otsal = 0
   if eh1_ot == True:
     otsal = row['trans_earn_earn1']
@@ -313,13 +319,16 @@ def ot_calculaton(comp_code,trans_empid):
     otsal = otsal + row['trans_earn_earn9']
   if eh10_ot == True:
     otsal = otsal + row['trans_earn_earn10']
+
+  ot_amt = round((((otsal/no_of_days_in_month) * othrs) *  otrate),0)
   
-  return otsal  
+  return otsal,ot_amt  
 
 @anvil.server.callable
-def update_otsalary(trans_comp_code,trans_empid,earn_ot_salary):
+def update_otsalary(trans_comp_code,trans_empid,earn_ot_salary,ot_amt):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
   row.update(earn_ot_salary = earn_ot_salary)
+  row.update(ot_amt = ot_amt)
   ##############################################################################
   ###################### OverTime [OT] Calculation End   #######################
   ##############################################################################
