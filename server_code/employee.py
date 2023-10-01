@@ -171,6 +171,33 @@ def emp_update_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
             emp_desi_code=emp_desi_code,
             emp_desi_name=emp_desi_name)
 
+@anvil.server.callable
+def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
+            emp_sex,emp_type,emp_pf_contribution,emp_pf_number,
+            emp_pf_uan,emp_esi_contribution,emp_esi_number, 
+            emp_esi_dispensary,emp_pt_contribution,emp_it_contribution,
+            emp_pan_number,emp_dept_code,emp_dept_name,emp_desi_code,
+            emp_desi_name):
+  # rows = anvil.server.call('emp_change_name_and_code',emp_comp_code)
+  row = app_tables.employee.get(emp_code=emp_code)
+  name_flag = False
+  hus_flag = False
+
+  app_tables.transaction.call('')
+  if row['emp_name'] != emp_name:
+    name_flag = True
+  if row['emp_hus_name'] != emp_hus_name:
+    hus_flag = True
+
+  if name_flag == True:
+    row.update(emp_name=emp_name)
+
+  if hus_flag == True:
+    
+
+  
+    
+
 
 ####### concatenating emp name and code #########
 @anvil.server.callable

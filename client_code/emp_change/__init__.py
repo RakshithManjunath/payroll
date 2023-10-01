@@ -149,7 +149,29 @@ class emp_change(emp_changeTemplate):
         self.desi_code = desi_code
         self.text_box_4.text = desi_name
 
-      anvil.server.call('emp_update_row', self.emp_code, 
+      # anvil.server.call('emp_update_row', self.emp_code, 
+      #                                 self.text_box_1.text,
+      #                                 self.text_box_2.text,
+      #               self.date_picker_1.date,
+      #               self.date_picker_2.date,
+      #               self.emp_sex,
+      #               self.emp_type,
+      #               self.emp_pfc,
+      #               self.custom_1.text_box_1.text,
+      #               self.custom_1.text_box_2.text,
+      #               self.emp_esic,
+      #               self.custom_2.text_box_1.text,
+      #               self.custom_2.text_box_2.text,
+      #               self.emp_ptc,
+      #               self.emp_itc,
+      #               self.custom_3.text_box_1.text,
+      #               self.dept_code,
+      #               self.text_box_3.text,
+      #               self.desi_code,
+      #               self.text_box_4.text,
+      #               )
+
+      anvil.server.call('emp_update2_row', self.emp_code, 
                                       self.text_box_1.text,
                                       self.text_box_2.text,
                     self.date_picker_1.date,
@@ -170,6 +192,8 @@ class emp_change(emp_changeTemplate):
                     self.desi_code,
                     self.text_box_4.text,
                     )
+
+      
       Notification(self.text_box_1.text + " data modified successfully").show()
       self.drop_down_1.visible=True
 
