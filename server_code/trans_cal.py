@@ -392,6 +392,7 @@ def bonus_calculaton(comp_code,trans_empid):
   eh8_bns = row['comp_earnhead8_bonus']
   eh9_bns = row['comp_earnhead9_bonus']
   eh10_bns = row['comp_earnhead10_bonus']
+  bns_percentage = row['comp_bonus_percentage']
   row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
   bns_sal = 0
   if eh1_bns == True:
@@ -414,13 +415,16 @@ def bonus_calculaton(comp_code,trans_empid):
      bns_sal =  bns_sal + row['trans_earn_earn9']
   if eh10_bns == True:
      bns_sal =  bns_sal + row['trans_earn_earn10']
+
+  bonus_amount = round(((bns_percentage/100) * bns_sal),0)
   
-  return bns_sal
+  return bns_sal,bonus_amount
 
 @anvil.server.callable
-def update_bonus_salary(trans_comp_code,trans_empid,bns_sal):
+def update_bonus_salary(trans_comp_code,trans_empid,bns_sal,bonus_amt):
   row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
-  row.update(earn_bonus_salary = bns_sal) 
+  row.update(earn_bonus_salary = bns_sal)
+  row.update(bonus_amt = bonus_amt)
   ##############################################################################
   ####################   Bonus [Annual] Calculation End  #######################
   ##############################################################################
