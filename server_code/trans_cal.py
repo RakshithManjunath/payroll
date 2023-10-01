@@ -415,8 +415,12 @@ def bonus_calculaton(comp_code,trans_empid):
   if eh10_bns == True:
      bns_sal =  bns_sal + row['trans_earn_earn10']
   
-  return bns_sal  
+  return bns_sal
 
+@anvil.server.callable
+def update_bonus_salary(trans_comp_code,trans_empid,bns_sal):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  row.update(earn_bonus_salary = bns_sal) 
   ##############################################################################
   ####################   Bonus [Annual] Calculation End  #######################
   ##############################################################################
