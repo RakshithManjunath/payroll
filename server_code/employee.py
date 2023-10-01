@@ -189,6 +189,10 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
   emptype_flag = False
   dept_flag = False
   desi_flag = False
+
+  pfc_flag = False
+  pfno_flag = False
+  pfuan_flag = False
               
   if row['emp_name'] != emp_name:
     name_flag = True
@@ -207,6 +211,8 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
   if row['emp_desi_code'] != emp_desi_code:
     desi_flag = True 
 
+  if row['emp_pf_contribution'] != emp_pf_contribution:
+    pfc_flag = True               
 
 
               
