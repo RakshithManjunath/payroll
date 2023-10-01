@@ -274,3 +274,45 @@ def update_ptsalary(trans_comp_code,trans_empid,earn_pt_salary):
  ##############################################################################
   ################################ PT Calculation END #######################
   ##############################################################################
+
+  ##############################################################################
+  ###################### OverTime [OT] Calculation Start #######################
+  ##############################################################################
+@anvil.server.callable
+def ot_calculaton(comp_code,trans_empid):
+  row = app_tables.company.get(comp_code=comp_code,)
+  eh1_ot = row['comp_earnhead1_ot']
+  eh2_ot = row['comp_earnhead2_ot']
+  eh3_ot = row['comp_earnhead3_ot']
+  eh4_ot = row['comp_earnhead4_ot']
+  eh5_ot = row['comp_earnhead5_ot']
+  eh6_ot = row['comp_earnhead6_ot']
+  eh7_ot = row['comp_earnhead7_ot']
+  eh8_ot = row['comp_earnhead8_ot']
+  eh9_ot = row['comp_earnhead9_ot']
+  eh10_ot = row['comp_earnhead10_ot']
+  row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  otsal = 0
+  if eh1_ot == True:
+    otsal = row['trans_earn_earn1']
+  if eh2_ot == True:
+    otsal = otsal + row['trans_earn_earn2']
+  if eh3_ot == True:
+    otsal = otsal + row['trans_earn_earn3']
+  if eh4_ot == True:
+    otsal = otsal + row['trans_earn_earn4']
+  if eh5_ot == True:
+    otsal = otsal + row['trans_earn_earn5']
+  if eh6_ot == True:
+    otsal = otsal + row['trans_earn_earn6']
+  if eh7_ot == True:
+    otsal = otsal + row['trans_earn_earn7']
+  if eh8_ot == True:
+    otsal = otsal + row['trans_earn_earn8']
+  if eh9_ot == True:
+    otsal = otsal + row['trans_earn_earn9']
+  if eh10_ot == True:
+    otsal = otsal + row['trans_earn_earn10']
+  ##############################################################################
+  ###################### OverTime [OT] Calculation End   #######################
+  ##############################################################################
