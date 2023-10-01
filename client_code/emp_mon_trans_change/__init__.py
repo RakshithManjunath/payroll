@@ -226,6 +226,15 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
 
     ptsal = anvil.server.call('pt_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
     anvil.server.call('update_ptsalary',self.row['trans_comp_code'],self.row['trans_empid'],ptsal) 
+
+    otsal = anvil.server.call('ot_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+    anvil.server.call('update_otsalary',self.row['trans_comp_code'],self.row['trans_empid'],otsal) 
+
+    itsal = anvil.server.call('ot_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+    anvil.server.call('update_itsalary',self.row['trans_comp_code'],self.row['trans_empid'],itsal) 
+
+    bns_sal = anvil.server.call('bonus_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+    anvil.server.call('update_bonus_salary',self.row['trans_comp_code'],self.row['trans_empid'],bns_sal) 
     
     Notification(self.emp_name + " transaction data modified successfully").show()
 

@@ -313,6 +313,110 @@ def ot_calculaton(comp_code,trans_empid):
     otsal = otsal + row['trans_earn_earn9']
   if eh10_ot == True:
     otsal = otsal + row['trans_earn_earn10']
+  
+  return otsal  
+
+@anvil.server.callable
+def update_otsalary(trans_comp_code,trans_empid,earn_ot_salary):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  row.update(earn_ot_salary = earn_ot_salary)
   ##############################################################################
   ###################### OverTime [OT] Calculation End   #######################
+  ##############################################################################
+
+  ##############################################################################
+  #################### Income Tax [IT] Calculation Start #######################
+  ##############################################################################
+@anvil.server.callable
+def it_calculaton(comp_code,trans_empid):
+  row = app_tables.company.get(comp_code=comp_code,)
+  eh1_it = row['comp_earnhead1_it']
+  eh2_it = row['comp_earnhead2_it']
+  eh3_it = row['comp_earnhead3_it']
+  eh4_it = row['comp_earnhead4_it']
+  eh5_it = row['comp_earnhead5_it']
+  eh6_it = row['comp_earnhead6_it']
+  eh7_it = row['comp_earnhead7_it']
+  eh8_it = row['comp_earnhead8_it']
+  eh9_it = row['comp_earnhead9_it']
+  eh10_it = row['comp_earnhead10_it']
+  row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  if row['trans_empitc'] == True:
+    itsal = 0
+    if eh1_it == True:
+      itsal = row['trans_earn_earn1']
+    if eh2_it == True:
+      itsal = itsal + row['trans_earn_earn2']
+    if eh3_it == True:
+      itsal = itsal + row['trans_earn_earn3']
+    if eh4_it == True:
+      itsal = itsal + row['trans_earn_earn4']
+    if eh5_it == True:
+      itsal = itsal + row['trans_earn_earn5']
+    if eh6_it == True:
+      itsal = itsal + row['trans_earn_earn6']
+    if eh7_it == True:
+      itsal = itsal + row['trans_earn_earn7']
+    if eh8_it == True:
+      itsal = itsal + row['trans_earn_earn8']
+    if eh9_it == True:
+      itsal = itsal + row['trans_earn_earn9']
+    if eh10_it == True:
+      itsal = itsal + row['trans_earn_earn10']
+  else:
+    itsal = 0
+    
+  return itsal
+
+@anvil.server.callable
+def update_itsalary(trans_comp_code,trans_empid,earn_it_salary):
+  row = app_tables.transaction.search(trans_comp_code=trans_comp_code,trans_empid=trans_empid)[0]
+  row.update(earn_it_salary = earn_it_salary)  
+  ##############################################################################
+  ####################  Income Tax [IT] Calculation End  #######################
+  ##############################################################################
+
+  ##############################################################################
+  ####################  Bonus [Annual] Calculation Start #######################
+  ##############################################################################
+@anvil.server.callable
+def bonus_calculaton(comp_code,trans_empid):
+  row = app_tables.company.get(comp_code=comp_code,)
+  eh1_bns = row['comp_earnhead1_bonus']
+  eh2_bns = row['comp_earnhead2_bonus']
+  eh3_bns = row['comp_earnhead3_bonus']
+  eh4_bns = row['comp_earnhead4_bonus']
+  eh5_bns = row['comp_earnhead5_bonus']
+  eh6_bns = row['comp_earnhead6_bonus']
+  eh7_bns = row['comp_earnhead7_bonus']
+  eh8_bns = row['comp_earnhead8_bonus']
+  eh9_bns = row['comp_earnhead9_bonus']
+  eh10_bns = row['comp_earnhead10_bonus']
+  row = app_tables.transaction.search(trans_comp_code=comp_code,trans_empid=trans_empid)[0]
+  bns_sal = 0
+  if eh1_bns == True:
+     bns_sal = row['trans_earn_earn1']
+  if eh2_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn2']
+  if eh3_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn3']
+  if eh4_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn4']
+  if eh5_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn5']
+  if eh6_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn6']
+  if eh7_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn7']
+  if eh8_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn8']
+  if eh9_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn9']
+  if eh10_bns == True:
+     bns_sal =  bns_sal + row['trans_earn_earn10']
+  
+  return bns_sal  
+
+  ##############################################################################
+  ####################   Bonus [Annual] Calculation End  #######################
   ##############################################################################
