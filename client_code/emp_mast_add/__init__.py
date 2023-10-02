@@ -102,6 +102,7 @@ class emp_mast_add(emp_mast_addTemplate):
                     pt_contribution,it_contribution, self.custom_3.text_box_1.text,dept_code,dept_name,
                     desi_code,desi_name,default_photo,gvarb.g_comcode)
       anvil.server.call('emp_default_values',row)
+      anvil.server.call('emp_to_trans_transfer', )
       Notification(self.text_box_2.text + " data added successfully").show()
       open_form('emp_mast_add')
 

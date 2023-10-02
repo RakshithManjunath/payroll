@@ -181,77 +181,90 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
   # rows = anvil.server.call('emp_change_name_and_code',emp_comp_code)
   row = app_tables.employee.get(emp_code=emp_code)
   trans_row = app_tables.transaction.get(trans_empid=emp_code)
-  name_flag = False
-  hus_flag = False
-  gender_flag = False
-  dob_flag = False
-  doj_flag = False
-  emptype_flag = False
-  dept_flag = False
-  desi_flag = False
-
-  pfc_flag = False
-  pfno_flag = False
-  pfuan_flag = False
-              
-  if row['emp_name'] != emp_name:
-    name_flag = True
-  if row['emp_hus_name'] != emp_hus_name:
-    hus_flag = True
-  if row['emp_sex'] != emp_sex:
-    gender_flag = True
-  if row['emp_dob'] != emp_dob:
-    dob_flag = True
-  if row['emp_doj'] != emp_doj:
-    doj_flag = True
-  if row['emp_type'] != emp_type:
-    emptype_flag = True 
-  if row['emp_dept_code'] != emp_dept_code:
-    dept_flag = True 
-  if row['emp_desi_code'] != emp_desi_code:
-    desi_flag = True 
-
-  if row['emp_pf_contribution'] != emp_pf_contribution:
-    pfc_flag = True               
-
-
-              
-
-  if name_flag == True:
-    row.update(emp_name=emp_name)
-    trans_row.update(trans_empname=emp_name)
-
-  if hus_flag == True:
-    row.update(emp_hus_name=emp_hus_name)
-    trans_row.update(trans_father_husband=emp_hus_name)
-
-  if gender_flag == True:
-    row.update(emp_sex=emp_sex)
-    trans_row.update(trans_empsex=emp_sex)
-
-  if dob_flag == True:
-    row.update(emp_dob=emp_dob)
-    trans_row.update(trans_empdob=emp_dob)    
-    
-  if doj_flag == True:
-    row.update(emp_doj=emp_doj)
-    trans_row.update(trans_empdoj=emp_doj)  
-
-  if emptype_flag == True:
-    row.update(emp_type=emp_typej)
-    trans_row.update(trans_emptype=emp_typej)  
-    
-  if dept_flag == True:
-    row.update(emp_dept_code=emp_dept_code)
-    row.update(emp_dept_name=emp_dept_name)    
-    trans_row.update(trans_deptcode=emp_dept_code)
-    trans_row.update(trans_deptname=emp_dept_name) 
-
-  if desi_flag == True:
-    row.update(emp_desi_code=emp_desi_code)
-    row.update(emp_desi_name=emp_desi_name)    
-    trans_row.update(trans_desicode=emp_desi_code) 
-    trans_row.update(trans_desiname=emp_desi_name) 
+  if trans_row != None:
+    name_flag = False
+    hus_flag = False
+    gender_flag = False
+    dob_flag = False
+    doj_flag = False
+    emptype_flag = False
+    dept_flag = False
+    desi_flag = False
+  
+    pfc_flag = False
+    pfno_flag = False
+    pfuan_flag = False
+                
+    if row['emp_name'] != emp_name:
+      name_flag = True
+    if row['emp_hus_name'] != emp_hus_name:
+      hus_flag = True
+    if row['emp_sex'] != emp_sex:
+      gender_flag = True
+    if row['emp_dob'] != emp_dob:
+      dob_flag = True
+    if row['emp_doj'] != emp_doj:
+      doj_flag = True
+    if row['emp_type'] != emp_type:
+      emptype_flag = True 
+    if row['emp_dept_code'] != emp_dept_code:
+      dept_flag = True 
+    if row['emp_desi_code'] != emp_desi_code:
+      desi_flag = True 
+  
+    if row['emp_pf_contribution'] != emp_pf_contribution:
+      pfc_flag = True               
+    if row['emp_pf_number'] != emp_pf_number:
+      pfno_flag = True  
+    if row['emp_pf_uan'] != emp_pf_uan:
+      pfuan_flag = True  
+                
+  
+    if name_flag == True:
+      row.update(emp_name=emp_name)
+      trans_row.update(trans_empname=emp_name)
+  
+    if hus_flag == True:
+      row.update(emp_hus_name=emp_hus_name)
+      trans_row.update(trans_father_husband=emp_hus_name)
+  
+    if gender_flag == True:
+      row.update(emp_sex=emp_sex)
+      trans_row.update(trans_empsex=emp_sex)
+  
+    if dob_flag == True:
+      row.update(emp_dob=emp_dob)
+      trans_row.update(trans_empdob=emp_dob)    
+      
+    if doj_flag == True:
+      row.update(emp_doj=emp_doj)
+      trans_row.update(trans_empdoj=emp_doj)  
+  
+    if emptype_flag == True:
+      row.update(emp_type=emp_typej)
+      trans_row.update(trans_emptype=emp_typej)  
+      
+    if dept_flag == True:
+      row.update(emp_dept_code=emp_dept_code)
+      row.update(emp_dept_name=emp_dept_name)    
+      trans_row.update(trans_deptcode=emp_dept_code)
+      trans_row.update(trans_deptname=emp_dept_name) 
+  
+    if desi_flag == True:
+      row.update(emp_desi_code=emp_desi_code)
+      row.update(emp_desi_name=emp_desi_name)    
+      trans_row.update(trans_desicode=emp_desi_code) 
+      trans_row.update(trans_desiname=emp_desi_name) 
+  
+    if pfc_flag == True:
+      row.update(emp_pf_contribution=emp_pf_contribution)
+      trans_row.update(trans_emppfc=emp_pf_contribution)  
+    if pfno_flag == True:
+      row.update(emp_pf_number=emp_pf_number)
+      trans_row.update(trans_emppfno=emp_pf_number)
+    if pfuan_flag == True:
+      row.update(emp_pf_uan=emp_pf_uan)
+      trans_row.update(trans_emp_pfuan=emp_pf_uan)
 
 ####### concatenating emp name and code #########
 @anvil.server.callable
