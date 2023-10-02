@@ -84,7 +84,7 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_emppan = trans_emppan)
 
 @anvil.server.callable
-def emp_more_update(trans_phone_number,trans_alt_phone_number,trans_email_address,
+def emp_more_update(trans_empid,trans_phone_number,trans_alt_phone_number,trans_email_address,
                            trans_aadhar_number,trans_attn_bonus,
                            trans_earn1,trans_earn2,trans_earn3,trans_earn4,trans_earn5,
                            trans_earn6,trans_earn7,trans_earn8,trans_earn9,trans_earn10,
@@ -95,28 +95,8 @@ def emp_more_update(trans_phone_number,trans_alt_phone_number,trans_email_addres
                            trans_adv,trans_tds,trans_pfvol,trans_lic,
                            trans_arr_esipt,trans_arr_pf,trans_paid_days,trans_comp_code):
 
-  row = app_tables.transaction.get(emp_code=emp_code)
-  row.update(emp_name=emp_name,
-            emp_hus_name=emp_hus_name,
-            emp_dob=emp_dob,
-            emp_doj=emp_doj,
-            emp_sex=emp_sex,
-            emp_type=emp_type,
-            emp_pf_contribution=emp_pf_contribution,
-            emp_pf_number=emp_pf_number,
-            emp_pf_uan=emp_pf_uan,
-            emp_esi_contribution=emp_esi_contribution,
-            emp_esi_number=emp_esi_number,
-            emp_esi_dispensary=emp_esi_dispensary,
-            emp_pt_contribution=emp_pt_contribution,
-            emp_it_contribution=emp_it_contribution,
-            emp_pan_number=emp_pan_number,
-            emp_dept_code=emp_dept_code,
-            emp_dept_name=emp_dept_name,
-            emp_desi_code=emp_desi_code,
-            emp_desi_name=emp_desi_name)
-
-  trans_phone_number = trans_phone_number,
+  row = app_tables.transaction.get(trans_empid=trans_empid)
+  row.update(trans_phone_number = trans_phone_number,
   trans_alt_phone_number = trans_alt_phone_number,
   trans_email_address = trans_email_address,
   trans_aadhar_number = trans_aadhar_number,
@@ -154,7 +134,10 @@ def emp_more_update(trans_phone_number,trans_alt_phone_number,trans_email_addres
   trans_arr_esipt=trans_arr_esipt,
   trans_arr_pf=trans_arr_pf,
   trans_paid_days=trans_paid_days,
-  trans_comp_code = trans_comp_code
+  trans_comp_code = trans_comp_code)
+            
+
+  
     
                              
 def get_default_value_for_type(column_type):
