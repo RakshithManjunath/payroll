@@ -124,32 +124,28 @@ container:
       \n\n            </li>\n\n           <li>\n             <a href=\"#\" class=\"\
       droptoggle\">Transaction <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
       \             <ul class=\"submanu\">\n                <li>\n               \
-      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"add_trans\">Add</span></a>\n \
-      \               </li>\n                <li>\n                  <a href=\"#\"\
+      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"change_trans\">Transaction</span></a>\n\
+      \                </li>\n                <li>\n                  <a href=\"#\"\
       \ class=\"sub-sub-drop\" id=\"view_trans\">View</span></a>\n               \
-      \ </li>\n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"change_trans\">Change</span></a>\n                </li>\n           \
-      \     <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"delete_trans\"\
-      >Delete</span></a>\n                </li>\n             </ul>\n           </li>\n\
-      \n            <li><a href=\"#\" id=\"update_form\">Update</a></li>\n       \
-      \     <li><a href=\"#\" class=\"const_page\">Report</a></li>\n\n           \
-      \  <li>\n             <a href=\"#\" class=\"droptoggle\">Utilities <span class=\"\
-      down-arrow\">\ud83e\udc93</span></a>\n             <ul class=\"submanu\">\n\
-      \                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"data_backup\">Data Backup</span></a>\n                </li>\n       \
-      \         <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"\
-      recalculate\">Recalculate</span></a>\n                </li>\n              \
-      \  <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"password\"\
-      >Password</span></a>\n                </li>\n               </ul>\n        \
-      \   </li>\n            <li><a href=\"#\" id=\"login_page\">Logout</a></li\n\
-      \            \n          </ul>\n        </div>\n\n        <div class=\"ser-btn\"\
-      >\n        </div>\n\n      </div>\n\n\n\n    </div>\n  </div>\n  <div id='my-div'></div>\n\
-      \  <script>\n    \n    \n   $('#dept_add_and_change').on('click', function(e)\
-      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\");\n\
-      \  e.preventDefault();   \n}); \n\n$('#desi_add_and_change').on('click', function(e)\
-      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_desi\");\n\
-      \  e.preventDefault();\n}); \n\n$('#comp_add').on('click', function(e) {\n \
-      \ var linkElement = this;\n  anvil.call(linkElement, \"open_comp\");\n  e.preventDefault();\n\
+      \ </li>\n              </ul>\n           </li>\n\n            <li><a href=\"\
+      #\" id=\"update_form\">Update</a></li>\n            <li><a href=\"#\" class=\"\
+      const_page\">Report</a></li>\n\n             <li>\n             <a href=\"#\"\
+      \ class=\"droptoggle\">Utilities <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
+      \             <ul class=\"submanu\">\n                <li>\n               \
+      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"data_backup\">Data Backup</span></a>\n\
+      \                </li>\n                <li>\n                  <a href=\"#\"\
+      \ class=\"sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n       \
+      \         </li>\n                <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\" id=\"password\">Password</span></a>\n                </li>\n\
+      \               </ul>\n           </li>\n            <li><a href=\"#\" id=\"\
+      login_page\">Logout</a></li\n            \n          </ul>\n        </div>\n\
+      \n        <div class=\"ser-btn\">\n        </div>\n\n      </div>\n\n\n\n  \
+      \  </div>\n  </div>\n  <div id='my-div'></div>\n  <script>\n    \n    \n   $('#dept_add_and_change').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\"\
+      );\n  e.preventDefault();   \n}); \n\n$('#desi_add_and_change').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_desi\"\
+      );\n  e.preventDefault();\n}); \n\n$('#comp_add').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_comp\");\n  e.preventDefault();\n\
       }); \n\n$('#comp_change').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_comp_change\");\n  e.preventDefault();\n});\
       \ \n\n$('#comp_more').on('click', function(e) {\n  var linkElement = this;\n\
@@ -170,15 +166,11 @@ container:
       \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_update_page\"\
       );\n  e.preventDefault();\n});\n\n$('#statutory').on('click', function(e) {\n\
       \  var linkElement = this;\n  anvil.call(linkElement, \"open_stat\");\n  e.preventDefault();\n\
-      });\n\n  $('#add_trans').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_add_trans\");\n  e.preventDefault();\n});\n\
-      \n  $('#change_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      });\n\n  $('#change_trans').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_change_trans\");\n  e.preventDefault();\n\
-      });\n\n  $('#delete_trans').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_delete_trans\");\n  e.preventDefault();\n\
-      });    \n\n  $('#view_trans').on('click', function(e) {\n  var linkElement =\
-      \ this;\n  anvil.call(linkElement, \"open_view_trans\");\n  e.preventDefault();\n\
-      });        \n\n    $('#data_backup').on('click', function(e) {\n  var linkElement\
+      });\n\n\n  $('#view_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_view_trans\");\n  e.preventDefault();\n});\
+      \        \n\n    $('#data_backup').on('click', function(e) {\n  var linkElement\
       \ = this;\n  anvil.call(linkElement, \"open_data_backup\");\n  e.preventDefault();\n\
       }); \n    \n  </script>\n</body>\n</html>"}
 components:

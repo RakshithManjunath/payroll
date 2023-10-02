@@ -49,14 +49,8 @@ class menu(menuTemplate):
   def open_stat(self, **kwargs):
     open_form('statutary')
 
-  def open_add_trans(self, **kwargs):
-    open_form('emp_mon_trans')
-
   def open_change_trans(self, **kwargs):
     open_form('emp_mon_trans_change')
-
-  def open_delete_trans(self, **kwargs):
-    open_form('emp_mon_trans_delete')
 
   def open_view_trans(self, **kwargs):
     open_form('emp_trans_view')
