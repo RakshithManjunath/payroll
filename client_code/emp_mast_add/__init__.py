@@ -112,7 +112,7 @@ class emp_mast_add(emp_mast_addTemplate):
                        self.date_picker_1.date,self.date_picker_2.date,emp_type,dept_code,dept_name,desi_code,desi_name,
                        pf_contribution,self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,
                        esi_contribution,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,
-                       pt_contribution,it_contribution, self.custom_3.text_box_1.text)
+                       pt_contribution,it_contribution, self.custom_3.text_box_1.text,gvarb.g_comcode)
 
       Notification(self.text_box_2.text + " data added successfully").show()
       open_form('emp_mast_add')
