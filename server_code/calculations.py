@@ -47,7 +47,7 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
                            trans_empsex,trans_empdob,trans_empdoj,trans_emptype,trans_deptcode,
                            trans_deptname,trans_desicode,trans_desiname,trans_emppfc,
                            trans_emppfno,trans_emp_pfuan,trans_empesic,trans_empesino,
-                           trans_empdispensary,trans_empptc,trans_empitc,trans_emppan,trans_comp_code):
+                           trans_empdispensary,trans_empptc,trans_empitc,trans_emppan,trans_comp_code,emp_photo):
   transaction = app_tables.transaction
   return transaction.add_row(
       id=id,
@@ -72,7 +72,8 @@ def emp_to_trans_transfer(id,trans_date,trans_empid,trans_empname,trans_father_h
       trans_empptc = trans_empptc,
       trans_empitc = trans_empitc,
       trans_emppan = trans_emppan,
-      trans_comp_code=trans_comp_code)
+      trans_comp_code=trans_comp_code,
+      emp_photo=emp_photo)
 
 @anvil.server.callable
 def emp_more_update(trans_empid,trans_phone_number,trans_alt_phone_number,trans_email_address,

@@ -317,6 +317,9 @@ db_schema:
     - name: trans_earn_attn_bonus
       admin_ui: {order: 66.5, width: 200}
       type: number
+    - name: emp_photo
+      admin_ui: {width: 200, order: 80}
+      type: media
   test_table:
     client: none
     server: full
