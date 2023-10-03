@@ -136,7 +136,7 @@ container:
       \                </li>\n                <li>\n                  <a href=\"#\"\
       \ class=\"sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n       \
       \         </li>\n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"password\">Password</span></a>\n                </li>\n\
+      sub-sub-drop\" id=\"pass_add\">Password</span></a>\n                </li>\n\
       \               </ul>\n           </li>\n            <li><a href=\"#\" id=\"\
       login_page\">Logout</a></li\n            \n          </ul>\n        </div>\n\
       \n        <div class=\"ser-btn\">\n        </div>\n\n      </div>\n\n\n\n  \
@@ -172,7 +172,9 @@ container:
       \  anvil.call(linkElement, \"open_view_trans\");\n  e.preventDefault();\n});\
       \        \n\n    $('#data_backup').on('click', function(e) {\n  var linkElement\
       \ = this;\n  anvil.call(linkElement, \"open_data_backup\");\n  e.preventDefault();\n\
-      }); \n    \n  </script>\n</body>\n</html>"}
+      }); \n\n    $('#pass_add').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_pass_add\");\n  e.preventDefault();\n}); \n\
+      \    \n  </script>\n</body>\n</html>"}
 components:
 - type: ColumnPanel
   properties: {}

@@ -57,3 +57,6 @@ class menu(menuTemplate):
 
   def open_data_backup(self, **kwargs):
     open_form('data_backup')
+
+  def open_pass_add(self, **kwargs):
+    open_form('pass_add')
