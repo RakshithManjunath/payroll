@@ -16,7 +16,7 @@ class emp_mast_add(emp_mast_addTemplate):
     self.label_4.text = gvarb.g_comname+' '+gvarb.g_mode
     self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
     self.drop_down_2.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
-    self.label_5.text = anvil.server.call('get_last_emp_code',gvarb.g_comcode)
+    #self.label_5.text = anvil.server.call('get_last_emp_code',gvarb.g_comcode)
     
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
