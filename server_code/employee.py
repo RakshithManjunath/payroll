@@ -139,6 +139,7 @@ def get_last_emp_code(emp_comp_code):
   emp_list = [(r["emp_code"]) for r in app_tables.employee.search(emp_comp_code=emp_comp_code)]
   last_row = emp_list[-1]
   last_string_value = last_row
+  if last_row 
   return last_string_value
 
 ######## change employee #########
