@@ -33,5 +33,10 @@ class dept(deptTemplate):
     """This method is called when the button is clicked"""
     open_form('menu')
 
+  def convert_numbers_to_months(self, month_in_number):
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]   
+    numbers = list(range(1,13))
+    return months[numbers.index(month_in_number)]
+
 
   
