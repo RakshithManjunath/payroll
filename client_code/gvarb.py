@@ -16,6 +16,7 @@ g_comname = ""
 g_empcode = ""
 g_empname = ""
 g_mode = ""
-g_transdate=""
+g_transdate=datetime.date(2023, 5, 1)
+
 
 
