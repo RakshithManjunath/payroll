@@ -29,9 +29,9 @@ class logform(logformTemplate):
         self.button_4.visible = True        
       #print("no company")
     else :
-      value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
-      if value == True:
-        open_form('company_select')
+       value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
+       if value == True:
+          open_form('company_select')
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -45,6 +45,24 @@ class logform(logformTemplate):
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('logform')
+
+  def text_box_2_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    if ((self.text_box_1.text == '') and (self.text_box_2.text == '')):
+      self.button_1.enabled = False  
+    else:
+      self.button_1.enabled = True  
+
+  def text_box_1_lost_focus(self, **event_args):
+    """This method is called when the TextBox loses focus"""
+    if ((self.text_box_1.text == '') and (self.text_box_2.text == '')):
+      self.button_1.enabled = False  
+    else:
+      self.button_1.enabled = True  
+
+
+
+
 
 
 
