@@ -26,8 +26,8 @@ class logform(logformTemplate):
         self.button_1.visible = False  
         self.button_2.visible = False        
         self.button_3.visible = True
-        self.button_4.visible = True        
-      #print("no company")
+        self.button_4.visible = True    
+        self.button_5.visible = True        
     else :
        value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
        if value == True:
@@ -59,6 +59,12 @@ class logform(logformTemplate):
       self.button_1.enabled = True   
     else:
       self.button_1.enabled = False  
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('comp_new')
+
+
 
 
 
