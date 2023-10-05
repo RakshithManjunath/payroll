@@ -30,6 +30,16 @@ class company_select(company_selectTemplate):
    # open_form('company_select')
     anvil.users.login_with_form()
 
+  def company_select_dp_change(self, **event_args):
+    """This method is called when an item is selected"""
+    if self.company_select_dp.selected_value!=None:
+      self.submit_btn.enabled = False
+    else:
+      self.submit_btn.enabled = True
+    
+      
+
+
 
 
 
