@@ -25,9 +25,11 @@ class comp_add(comp_addTemplate):
                         self.text_box_5.text,self.text_box_6.text,
                         self.text_box_7.text)
       anvil.server.call('comp_default_values',row)
-      Notification(self.text_box_1.text + " data added successfully").show()
-      self.clear_inputs()
-      open_form('logform')
+      result = confirm(self.text_box_1.text+" added successfully ! continue to login  ?", buttons=["Yes"])
+      if result == "Yes":
+        #Notification(self.text_box_1.text + " data added successfully").show()
+        self.clear_inputs()
+        open_form('logform')
     
   def clear_inputs(self):
     # Clear our three text boxes
