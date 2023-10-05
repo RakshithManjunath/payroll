@@ -27,7 +27,7 @@ class logform(logformTemplate):
         self.button_2.visible = False        
         self.button_3.visible = True
         self.button_4.visible = True    
-        self.button_5.visible = True        
+        # self.button_5.visible = True        
     else :
        value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
        if value == True:
