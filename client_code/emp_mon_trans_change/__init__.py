@@ -129,7 +129,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     self.custom_2.label_4.text = comp_details['comp_ded4']
     self.custom_2.label_5.text = comp_details['comp_loan_head1']
     self.custom_2.label_6.text = comp_details['comp_loan_head2']
-
+ 
     self.custom_1.text_box_1.text = self.row['trans_mandays']
     self.custom_1.text_box_2.text = self.row['trans_wo']
     self.custom_1.text_box_3.text = self.row['trans_ph']
