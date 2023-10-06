@@ -19,6 +19,9 @@ class emp_trans_attn_change(emp_trans_attn_changeTemplate):
     self.label_7.text = comp_details['comp_leave_head2']
     self.label_8.text = comp_details['comp_leave_head3']
 
+    self.text_box_1.text = self.text_box_2.text = self.text_box_3.text = self.text_box_4.text = self.text_box_5.text = \
+    self.text_box_6.text = self.text_box_7.text = self.text_box_8.text = 0.0
+
   def sum_tb_values(self):
     self.text_box_11.text = float(self.text_box_1.text) + float(self.text_box_2.text) + float(self.text_box_3.text) 
     self.text_box_11.text = float(self.text_box_11.text) + float(self.text_box_4.text) + float(self.text_box_5.text)
