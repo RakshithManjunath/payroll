@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import gvarb
+from datetime import datetime
 
 class comp_change(comp_changeTemplate):
   def __init__(self, **properties):
@@ -13,7 +14,8 @@ class comp_change(comp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_7.text = gvarb.g_comname+' '+gvarb.g_mode
+    formatted_date = gvarb.g_transdate.strftime("%d-%m-%y")
+    self.label_7.text = gvarb.g_comname+' '+gvarb.g_mode+formatted_date
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     
     self.text_box_7.text = comp_details['comp_name']
@@ -35,4 +37,14 @@ class comp_change(comp_changeTemplate):
       self.text_box_1.text, self.text_box_2.text,
       self.text_box_3.text,self.text_box_4.text,
       self.text_box_5.text,self.text_box_6.text,self.text_box_7.text)
-      Notification("Company name cannot be blank").show()
+      Notification(self.text_box_7.text+" modified successfully").show()
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('comp_change')
+
+
