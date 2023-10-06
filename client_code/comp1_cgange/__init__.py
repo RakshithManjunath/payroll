@@ -1,4 +1,4 @@
-from ._anvil_designer import comp_changeTemplate
+from ._anvil_designer import comp1_cgangeTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import gvarb
 
-class comp_change(comp_changeTemplate):
+class comp1_cgange(comp1_cgangeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -23,8 +23,10 @@ class comp_change(comp_changeTemplate):
     self.text_box_4.text = comp_details['comp_pf_number']
     self.text_box_5.text = comp_details['comp_esi_number']
     self.text_box_6.text = comp_details['comp_pto_circle']
-  
-  #self.drop_down_1.items = anvil.server.call('comp_change_name_and_code')
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -36,3 +38,5 @@ class comp_change(comp_changeTemplate):
       self.text_box_3.text,self.text_box_4.text
       self.text_box_5.text,self.text_box_6.text
       Notification("Company name cannot be blank").show()
+
+
