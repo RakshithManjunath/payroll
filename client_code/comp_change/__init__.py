@@ -31,8 +31,8 @@ class comp_change(comp_changeTemplate):
     if self.text_box_7.text == "":
       Notification("Company name cannot be blank").show()
     else:
-      anvil.server.call('comp_update',self.comp_code)
-      self.text_box_1.text, self.text_box_2.text
-      self.text_box_3.text,self.text_box_4.text
-      self.text_box_5.text,self.text_box_6.text
+      anvil.server.call('comp_update',gvarb.g_comcode,
+      self.text_box_1.text, self.text_box_2.text,
+      self.text_box_3.text,self.text_box_4.text,
+      self.text_box_5.text,self.text_box_6.text,self.text_box_7.text)
       Notification("Company name cannot be blank").show()
