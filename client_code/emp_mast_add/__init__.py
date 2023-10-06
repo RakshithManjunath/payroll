@@ -108,11 +108,13 @@ class emp_mast_add(emp_mast_addTemplate):
                        pf_contribution,self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,
                        esi_contribution,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,
                        pt_contribution,it_contribution, self.custom_3.text_box_1.text)
-      anvil.server.call('emp_to_trans_transfer',emp_id,date[0],self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,emp_sex,
+      trans_row = anvil.server.call('emp_to_trans_transfer',emp_id,date[0],self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,emp_sex,
                        self.date_picker_1.date,self.date_picker_2.date,emp_type,dept_code,dept_name,desi_code,desi_name,
                        pf_contribution,self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,
                        esi_contribution,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text,
                        pt_contribution,it_contribution, self.custom_3.text_box_1.text,gvarb.g_comcode,default_photo)
+
+      anvil.server.call('trans_default_values',trans_row)
 
       Notification(self.text_box_2.text + " data added successfully").show()
       open_form('emp_mast_add')

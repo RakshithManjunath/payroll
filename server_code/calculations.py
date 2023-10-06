@@ -197,7 +197,13 @@ def trans_default_values(row):
   'bonus_amt': 'number',  
   'trans_paid_days': 'number',
   'trans_comp_code': 'text',
-  'trans_earn_attn_bonus': 'number'
+  'trans_earn_attn_bonus': 'number',
+  'trans_empdob': 'date',
+  'trans_empdoj': 'date',
+  'trans_deptcode': 'text',
+  'trans_deptname': 'text',
+  'trans_desicode': 'text',
+  'trans_desiname': 'text',
   }
   
   for column_name, column_type in columns_and_types.items():
@@ -242,3 +248,5 @@ def trans_earn_earn_calculation(comp_code,trans_empid):
     
     # trans_row = app_tables.transaction.get(trans_empid=trans_empid)
     # trans_row['trans_mandays']
+
+
