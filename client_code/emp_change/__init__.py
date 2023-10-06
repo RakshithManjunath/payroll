@@ -13,7 +13,7 @@ class emp_change(emp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode
+    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
     # self.drop_down_1.items = anvil.server.call('emp_name_and_code',gvarb.g_comcode)
     #print(type(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)))

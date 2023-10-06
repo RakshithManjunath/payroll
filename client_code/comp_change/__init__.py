@@ -14,8 +14,7 @@ class comp_change(comp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    formatted_date = gvarb.g_transdate.strftime("%d-%m-%y")
-    self.label_7.text = gvarb.g_comname+' '+gvarb.g_mode+formatted_date
+    self.label_7.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     
     self.text_box_7.text = comp_details['comp_name']

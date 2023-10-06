@@ -13,8 +13,7 @@ class dept(deptTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    month_name = self.convert_numbers_to_months(gvarb.g_transdate.date)    
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+"for the month of "+month_name
+    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
