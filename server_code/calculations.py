@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from datetime import date
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -204,7 +205,23 @@ def trans_default_values(row):
   'trans_deptname': 'text',
   'trans_desicode': 'text',
   'trans_desiname': 'text',
-  }
+  'trans_empesino': 'number',
+  'trans_emppfno': 'number',
+  'trans_earn1': 'number',
+  'trans_earn2': 'number',
+  'trans_earn3': 'number',
+  'trans_earn4': 'number',
+  'trans_earn5': 'number',
+  'trans_earn6': 'number',
+  'trans_earn7': 'number',
+  'trans_earn8': 'number',
+  'trans_earn9': 'number',
+  'trans_earn10': 'number',
+  'trans_phone_number': 'number',
+  'trans_alt_phone_number': 'number',
+  'trans_email_address': 'text',
+  'trans_aadhar_number': 'number',
+  'trans_attn_bonus': 'number'}
   
   for column_name, column_type in columns_and_types.items():
     print(column_name, column_type)
