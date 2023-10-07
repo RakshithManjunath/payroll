@@ -366,7 +366,7 @@ def import_transaction_csv():
     'trans_phone_number': int,
     'trans_alt_phone_number': int,
     'trans_email_address': str,
-    'trans_aadhar_number': str,
+    'trans_aadhar_number': int,
     'trans_attn_bonus': float,
     'fxd_earn_gross': float,
     'earn_pf_salary': float,
