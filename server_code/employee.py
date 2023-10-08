@@ -315,6 +315,9 @@ def emp_update_misc2(empcode,emp_photo):
 @anvil.server.callable
 def get_last_emp_code(emp_comp_code):
   emp_list = [(r["emp_code"]) for r in app_tables.employee.search(emp_comp_code=emp_comp_code)]
-  last_row = emp_list[-1]
-  last_string_value = last_row
+  if len(emp_list) > 0:
+    last_row = emp_list[-1]
+    last_string_value = last_row
+  else:
+    last_string_value = "Start"
   return last_string_value
