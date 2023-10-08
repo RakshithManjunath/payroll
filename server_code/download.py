@@ -615,9 +615,9 @@ def get_all_trans_date_download():
   csv_rows = []
   
   for row in data_table:
-    csv_row = [row["tr_date"], row["tr_days"], row['tr_sundays'], row['tr_end_date']]
+    csv_row = [row["tr_date"], row["tr_days"], row['tr_sundays'], row['tr_end_date'], row['tr_id']]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["tr_date","tr_days",'tr_sundays','tr_end_date'])
+  df = pd.DataFrame(csv_rows, columns=["tr_date","tr_days",'tr_sundays','tr_end_date','tr_id'])
   df.to_csv('trans_date.csv',index=False)
   df_media = anvil.media.from_file('trans_date.csv', 'csv', 'trans_date.csv')
   return df_media
