@@ -151,6 +151,8 @@ def import_company_csv():
 def import_password_csv():
   with open(file_path.password_path, "r") as f:
     dtype_mapping = {
+    'pass_id': str,
+    'pass_code': str,
     'pass_comp_code': str,
     'username': str,  
     'password': str

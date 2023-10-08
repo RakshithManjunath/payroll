@@ -602,9 +602,9 @@ def get_all_password_download():
   pw = None
   
   for row in data_table:
-    csv_row = [row["pass_comp_code"], row["username"], row["password"]]
+    csv_row = [row["pass_id"],row["pass_code"], row["pass_comp_code"], row["username"], row["password"]]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["pass_comp_code","username","password"])
+  df = pd.DataFrame(csv_rows, columns=["pass_id","pass_code","pass_comp_code","username","password"])
   df.to_csv('password.csv',index=False)
   df_media = anvil.media.from_file('password.csv', 'csv', 'password.csv')
   return df_media
