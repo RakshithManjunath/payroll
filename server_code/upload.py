@@ -184,7 +184,8 @@ def import_trans_date_csv():
 def import_department_csv():
   with open(file_path.department_path, "r") as f:
     dtype_mapping = { 
-    'dept_id': str,      
+    'dept_id': str, 
+    'dept_comp_code': str,
     'dept_code': str,
     'dept_name': str
     }
@@ -200,7 +201,8 @@ def import_department_csv():
 def import_designation_csv():
   with open(file_path.designation_path, "r") as f:
     dtype_mapping = { 
-    'desi_id': str,      
+    'desi_id': str, 
+    'desi_comp_code': str,
     'desi_code': str,
     'desi_name': str
     }
@@ -216,7 +218,8 @@ def import_designation_csv():
 def import_bank_csv():
   with open(file_path.bank_path, "r") as f:
     dtype_mapping = { 
-    'bank_id': str,      
+    'bank_id': str, 
+    'bank_comp_code': str, 
     'bank_code': str,
     'bank_name': str,
     'bank_addr1': str,
@@ -236,7 +239,8 @@ def import_bank_csv():
 def import_employee_csv():
   with open(file_path.employee_path, "r") as f:
     dtype_mapping = { 
-    'id': str,      
+    'id': str, 
+    'emp_comp_code': str,
     'emp_code': str,
     'emp_name': str,
     'emp_hus_name': str,
@@ -302,7 +306,8 @@ def import_employee_csv():
 def import_transaction_csv():
   with open(file_path.transaction_path, "r") as f:
     dtype_mapping = { 
-    'id': str,      
+    'id': str,     
+    'trans_comp_code': str,
     'trans_empid': str,
     'trans_empname': str,
     'trans_father_husband': str,

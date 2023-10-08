@@ -665,7 +665,7 @@ def get_all_employee_download():
     photo_bytes = get_media_bytes(row['emp_photo'])
     # pdf_bytes = get_media_bytes(row['emp_pdf_docu1'])
       
-    csv_row = [row["id"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
+    csv_row = [row["id"], row["emp_comp_code"], row["emp_code"], row["emp_name"], row["emp_hus_name"],
               row["emp_dob"], row["emp_doj"], row["emp_sex"], row["emp_type"],
               pf_contribution, row["emp_pf_number"],
               row["emp_pf_uan"], esi_contribution ,
@@ -679,7 +679,7 @@ def get_all_employee_download():
               row["aadhar_number"],row["attn_bonus"],photo_bytes,row["total_fxd_salary"]]
     csv_rows.append(csv_row)
     
-  df = pd.DataFrame(csv_rows, columns=["id", "emp_code", "emp_name", "emp_hus_name",
+  df = pd.DataFrame(csv_rows, columns=["id", "emp_comp_code", "emp_code", "emp_name", "emp_hus_name",
               "emp_dob", "emp_doj", "emp_sex", "emp_type",
               "emp_pf_contribution", "emp_pf_number",
               "emp_pf_uan", "emp_esi_contribution" ,
@@ -702,9 +702,9 @@ def get_all_department_download():
   csv_rows = []
   
   for row in data_table:
-    csv_row = [row["dept_id"], row["dept_code"], row['dept_name']]
+    csv_row = [row["dept_id"], row["dept_code"], row["dept_comp_code"], row['dept_name']]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["dept_id","dept_code","dept_name"])
+  df = pd.DataFrame(csv_rows, columns=["dept_id","dept_comp_code","dept_code","dept_name"])
   df.to_csv('department.csv',index=False)
   df_media = anvil.media.from_file('department.csv', 'csv', 'department.csv')
   return df_media
@@ -715,9 +715,9 @@ def get_all_designation_download():
   csv_rows = []
   
   for row in data_table:
-    csv_row = [row["desi_id"], row["desi_code"], row['desi_name']]
+    csv_row = [row["desi_id"], row["desi_comp_code"], row["desi_code"], row['desi_name']]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["desi_id","desi_code","desi_name"])
+  df = pd.DataFrame(csv_rows, columns=["desi_id","desi_comp_code","desi_code","desi_name"])
   df.to_csv('designation.csv',index=False)
   df_media = anvil.media.from_file('designation.csv', 'csv', 'designation.csv')
   return df_media
@@ -762,7 +762,7 @@ def get_all_transaction_download():
     elif row['trans_empitc'] == None:
      empitc = 0
     
-    csv_row = [row["id"], row["trans_date"], row['trans_empid'], row['trans_empname'],
+    csv_row = [row["id"], row["trans_date"], row["trans_comp_code"], row['trans_empid'], row['trans_empname'],
               row["trans_father_husband"], row["trans_empsex"], row["trans_empdob"],
               row["trans_empdoj"], row["trans_emptype"], row["trans_deptcode"],
               row["trans_deptname"], row["trans_desicode"], row["trans_desiname"],
@@ -790,7 +790,7 @@ def get_all_transaction_download():
               row["pt_amt"],  row["ot_amt"], row["it_or_tds_amt"], row["bonus_amt"], row["trans_paid_days"],
               row["trans_comp_code"],row["trans_earn_attn_bonus"]]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["id", "trans_date",'trans_empid', 'trans_empname',
+  df = pd.DataFrame(csv_rows, columns=["id", "trans_date","trans_comp_code",'trans_empid', 'trans_empname',
               "trans_father_husband", "trans_empsex", "trans_empdob",
               "trans_empdoj", "trans_emptype", "trans_deptcode",
               "trans_deptname", "trans_desicode", "trans_desiname",
@@ -828,10 +828,10 @@ def get_all_bank_download():
   csv_rows = []
   
   for row in data_table:
-    csv_row = [row["bank_id"], row["bank_code"], row['bank_name'],row['bank_addr1'],
+    csv_row = [row["bank_id"],row["bank_comp_code"], row["bank_code"], row['bank_name'],row['bank_addr1'],
               row['bank_addr2'], row['bank_addr3'], row['bank_ifsc']]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["bank_id", "bank_code", 'bank_name','bank_addr1',
+  df = pd.DataFrame(csv_rows, columns=["bank_id","bank_comp_code", "bank_code", 'bank_name','bank_addr1',
               'bank_addr2', 'bank_addr3', 'bank_ifsc'])
   df.to_csv('bank.csv',index=False)
   df_media = anvil.media.from_file('bank.csv', 'csv', 'bank.csv')
