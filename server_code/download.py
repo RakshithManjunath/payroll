@@ -602,9 +602,9 @@ def get_all_password_download():
   pw = None
   
   for row in data_table:
-    csv_row = [row["username"], row["password"]]
+    csv_row = [row["pass_comp_code"], row["username"], row["password"]]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["username","password"])
+  df = pd.DataFrame(csv_rows, columns=["pass_comp_code","username","password"])
   df.to_csv('password.csv',index=False)
   df_media = anvil.media.from_file('password.csv', 'csv', 'password.csv')
   return df_media
@@ -615,9 +615,9 @@ def get_all_trans_date_download():
   csv_rows = []
   
   for row in data_table:
-    csv_row = [row["tr_date"], row["tr_days"], row['tr_sundays'], row['tr_end_date'], row['tr_id']]
+    csv_row = [row["trdate_comp_code"], row["tr_date"], row["tr_days"], row['tr_sundays'], row['tr_end_date'], row['tr_id']]
     csv_rows.append(csv_row)
-  df = pd.DataFrame(csv_rows, columns=["tr_date","tr_days",'tr_sundays','tr_end_date','tr_id'])
+  df = pd.DataFrame(csv_rows, columns=["trdate_comp_code","tr_date","tr_days",'tr_sundays','tr_end_date','tr_id'])
   df.to_csv('trans_date.csv',index=False)
   df_media = anvil.media.from_file('trans_date.csv', 'csv', 'trans_date.csv')
   return df_media

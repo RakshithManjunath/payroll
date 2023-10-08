@@ -151,6 +151,7 @@ def import_company_csv():
 def import_password_csv():
   with open(file_path.password_path, "r") as f:
     dtype_mapping = {
+    'pass_comp_code': str,
     'username': str,  
     'password': str
     }
@@ -166,6 +167,7 @@ def import_password_csv():
 def import_trans_date_csv():
   with open(file_path.trans_date_path, "r") as f:
     dtype_mapping = { 
+    'trdate_comp_code': str,
     'tr_days': int,
     'tr_sundays': int,
     'tr_id': int
