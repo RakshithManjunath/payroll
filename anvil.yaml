@@ -886,6 +886,12 @@ db_schema:
     - name: pass_comp_code
       admin_ui: {order: -1, width: 200}
       type: string
+    - name: pass_id
+      admin_ui: {order: -2, width: 200}
+      type: string
+    - name: pass_code
+      admin_ui: {order: -1.5, width: 200}
+      type: string
   bank:
     title: bank
     client: none
