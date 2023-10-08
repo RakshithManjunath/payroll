@@ -233,8 +233,8 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
       trans_row.update(trans_empdoj=emp_doj)  
   
     if emptype_flag == True:
-      row.update(emp_type=emp_typej)
-      trans_row.update(trans_emptype=emp_typej)  
+      row.update(emp_type=emp_type)
+      trans_row.update(trans_emptype=emp_type)  
       
     if dept_flag == True:
       row.update(emp_dept_code=emp_dept_code)
