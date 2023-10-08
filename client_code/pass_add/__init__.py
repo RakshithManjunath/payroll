@@ -33,7 +33,10 @@ class pass_add(pass_addTemplate):
       row = anvil.server.call('pass_add',id,passcode, self.text_box_1.text,
                         self.text_box_2.text,gvarb.g_comcode)
       #anvil.server.call('comp_default_values',row)
-      Notification(self.text_box_1.text + " User added successfully").show()
+      result = confirm(self.text_box_1.text+" user successfully added ! continue to login  ?", buttons=["Yes"])
+      if result == "Yes":
+        self.clear_inputs()
+        open_form('logform')
     
   def clear_inputs(self):
     # Clear our three text boxes
