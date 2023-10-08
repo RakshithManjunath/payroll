@@ -389,7 +389,6 @@ def import_transaction_csv():
     'it_or_tds_amt': float,
     'bonus_amt': float,
     'trans_paid_days': float,
-    'trans_comp_code': str,
     'trans_earn_attn_bonus': float
     }
     df = pd.read_csv(f, dtype=dtype_mapping,keep_default_na=False)
