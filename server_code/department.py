@@ -64,3 +64,12 @@ def dept_change_name_and_code(dept_comp_code):
 def dept_update_row(deptcode,deptname):
   row = app_tables.department.get(dept_code=deptcode)
   row.update(dept_name=deptname)
+
+
+@anvil.server.callable
+def dept_name_exists(dept_name):
+  dept_name_list = [(r["dept_name"]) for r in app_tables.department.search()]
+  if dept_name in dept_name_list:
+    return True
+  else:
+    return False

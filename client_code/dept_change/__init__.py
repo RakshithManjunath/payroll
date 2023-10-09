@@ -38,15 +38,18 @@ class dept_change(dept_changeTemplate):
     if self.text_box_1.text == "":
       Notification("Department name cannot be blank").show()
     else:
-      anvil.server.call('dept_update_row', self.cur_deptcode, 
+      dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text)
+      if not  dept_name_exists:
+        anvil.server.call('dept_update_row', self.cur_deptcode, 
                                        self.text_box_1.text)
-    
-      Notification(self.text_box_1.text + " data modified successfully").show()
-      self.clear_inputs()
-      self.drop_down_1.visible=True
-
-      # refresh after button submit
-      self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
+        Notification(self.text_box_1.text + " data modified successfully").show()
+        self.clear_inputs()
+        self.drop_down_1.visible=True
+        # refresh after button submit
+        self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
+        opin_for
+      else:
+        alert(f"{self.text_box_1.text} already exists,data not saved ")
 
   def clear_inputs(self):
     # Clear our three text boxes
