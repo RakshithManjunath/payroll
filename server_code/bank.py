@@ -101,3 +101,12 @@ def bank_update(bank_code, bank_addr1,bank_addr2,bank_addr3,bank_ifsc,bank_name)
              bank_addr3=bank_addr3,
              bank_ifsc=bank_ifsc,
              bank_name=bank_name)
+
+
+@anvil.server.callable
+def bank_ifsc_exists(bank_ifsc):
+  bank_ifsc_list = [(r["bank_ifsc"]) for r in app_tables.bank.search()]
+  if bank_ifsc in bank_ifsc_list:
+    return True
+  else:
+    return False
