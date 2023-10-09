@@ -47,9 +47,9 @@ class dept_change(dept_changeTemplate):
         self.drop_down_1.visible=True
         # refresh after button submit
         self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
-        opin_for
       else:
         alert(f"{self.text_box_1.text} already exists,data not saved ")
+        open_form('dept')
 
   def clear_inputs(self):
     # Clear our three text boxes
