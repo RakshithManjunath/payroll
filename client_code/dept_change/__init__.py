@@ -47,6 +47,7 @@ class dept_change(dept_changeTemplate):
         self.drop_down_1.visible=True
         # refresh after button submit
         self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
+        self.button_1.enabled = False
       else:
         alert(f"{self.text_box_1.text} already exists,data not saved ")
         open_form('dept')
@@ -58,6 +59,15 @@ class dept_change(dept_changeTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('dept')
+
+  def text_box_1_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if (self.text_box_1.text):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
+
 
 
 
