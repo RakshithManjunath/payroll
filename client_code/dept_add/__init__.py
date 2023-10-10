@@ -19,7 +19,7 @@ class dept_add(dept_addTemplate):
     if self.text_box_1.text == "":
       Notification("Department name cannot be blank").show()
     else:
-      dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text)
+      dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text,gvarb.g_comcode)
       if not  dept_name_exists:
         self.value= anvil.server.call('dept_get_next_string_value')
         dept_id= anvil.server.call('next_dept_id_value')
