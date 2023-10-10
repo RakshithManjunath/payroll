@@ -44,16 +44,20 @@ class bank_change(bank_changeTemplate):
     if self.text_box_5.text == "":
       Notification("Bank name cannot be blank").show()
     else:
-      anvil.server.call('bank_update', self.bank_code,
+      bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_1.text,gvarb.g_comcode)
+      if not bank_name_exists:
+        anvil.server.call('bank_update', self.bank_code,
                      self.text_box_1.text, self.text_box_2.text,
                      self.text_box_3.text, self.text_box_4.text,
                      self.text_box_5.text)
-      Notification(self.text_box_1.text + " data modified successfully").show()
-      self.clear_inputs()
-      self.drop_down_1.visible=True
-      # refresh after button submit
-      self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
-
+        Notification(self.text_box_1.text + " data modified successfully").show()
+        self.clear_inputs()
+        self.drop_down_1.visible=True
+        self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
+      else:
+        alert(f"{self.text_box_1.text} already exists,data not saved ")
+        open_form('bank_add_change')
+        
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_1.text = ""
@@ -65,5 +69,13 @@ class bank_change(bank_changeTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('bank_add_change')
+
+  def text_box_5_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if (self.text_box_5.text):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
 
 

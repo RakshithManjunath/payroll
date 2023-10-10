@@ -19,19 +19,24 @@ class bank_add(bank_addTemplate):
     if self.text_box_1.text == "":
       Notification("Bank name cannot be blank").show()
     else:
-      bank_ifsc_exists = anvil.server.call('bank_ifsc_exists', self.text_box_5.text)
-      if not bank_ifsc_exists:
-        self.value= anvil.server.call('bank_get_next_string_value')
-        bank_id= anvil.server.call('next_bank_id_value')
-        row = anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
+      bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_1.text,gvarb.g_comcode)
+      if not bank_name_exists:
+        bank_ifsc_exists = anvil.server.call('bank_ifsc_exists', self.text_box_5.text)
+        if not bank_ifsc_exists:
+          self.value= anvil.server.call('bank_get_next_string_value')
+          bank_id= anvil.server.call('next_bank_id_value')
+          row = anvil.server.call('bank_add',self.value,bank_id, self.text_box_1.text,
                     self.text_box_2.text,self.text_box_3.text,self.text_box_4.text,
                     self.text_box_5.text,gvarb.g_comcode)
-        anvil.server.call('bank_default_values',row)
-        Notification(self.text_box_1.text + " data added successfully").show()
-        self.clear_inputs()
+          anvil.server.call('bank_default_values',row)
+          Notification(self.text_box_1.text + " data added successfully").show()
+          self.clear_inputs()
+        else:
+          alert(f"{self.text_box_5.text} ifsc code already exists,data not saved ")
       else:
-        alert(f"{self.text_box_5.text} ifsc code already exists,data not saved ")
-      
+        alert(f"{self.text_box_1.text} already exists,data not saved ")
+        open_form('bank_add_change')
+        
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_1.text = ""
@@ -43,3 +48,11 @@ class bank_add(bank_addTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('bank_add_change')
+
+  def text_box_1_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if (self.text_box_1.text):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+

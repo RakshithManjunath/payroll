@@ -21,12 +21,12 @@ class dept_add(dept_addTemplate):
     else:
       dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text,gvarb.g_comcode)
       if not  dept_name_exists:
-        self.value= anvil.server.call('dept_get_next_string_value')
-        dept_id= anvil.server.call('next_dept_id_value')
-        anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text,gvarb.g_comcode)
-        Notification(self.text_box_1.text + " data added successfully").show()
-        self.button_1.enabled = False
-        self.clear_inputs()
+          self.value= anvil.server.call('dept_get_next_string_value')
+          dept_id= anvil.server.call('next_dept_id_value')
+          anvil.server.call('dept_add',dept_id,self.value, self.text_box_1.text,gvarb.g_comcode)
+          Notification(self.text_box_1.text + " data added successfully").show()
+          self.button_1.enabled = False
+          self.clear_inputs()
       else:
         alert(f"{self.text_box_1.text} already exists,data not saved ")
         open_form('dept')
