@@ -33,7 +33,7 @@ components:
       background: '', bold: false, underline: false}
     name: text_box_7
     layout_properties: {grid_position: 'VOHRLG,KELYLO'}
-    event_bindings: {lost_focus: text_box_7_lost_focus}
+    event_bindings: {lost_focus: text_box_7_lost_focus, change: text_box_7_change}
   - type: Spacer
     properties: {height: 32}
     name: spacer_1
@@ -100,7 +100,7 @@ components:
     name: spacer_3
     layout_properties: {grid_position: 'NIIBHD,UBSHSQ'}
   - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
       foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}

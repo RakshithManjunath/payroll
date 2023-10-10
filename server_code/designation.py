@@ -64,3 +64,14 @@ def desi_change_name_and_code(desi_comp_code):
 def desi_update_row(desicode,desiname):
   row = app_tables.designation.get(desi_code=desicode)
   row.update(desi_name=desiname)
+
+
+
+@anvil.server.callable
+def desi_name_exists(desi_name,desi_comp_code):
+  row = app_tables.designation.search(desi_name=desi_name,desi_comp_code=desi_comp_code)
+  print(row['desi_com_code'])
+  if row[0] in None:
+    return True
+  else:
+    return False

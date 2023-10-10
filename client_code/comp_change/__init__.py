@@ -46,4 +46,12 @@ class comp_change(comp_changeTemplate):
     """This method is called when the button is clicked"""
     open_form('comp_change')
 
+  def text_box_7_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if (self.text_box_7.text):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
+
 
