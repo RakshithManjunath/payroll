@@ -38,7 +38,7 @@ class dept_change(dept_changeTemplate):
     if self.text_box_1.text == "":
       Notification("Department name cannot be blank").show()
     else:
-      dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text)
+      dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text,gvarb.g_comcode)
       if not  dept_name_exists:
         anvil.server.call('dept_update_row', self.cur_deptcode, 
                                        self.text_box_1.text)
