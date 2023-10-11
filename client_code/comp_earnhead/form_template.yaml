@@ -154,6 +154,10 @@ components:
   properties: {}
   name: text_box_20
   layout_properties: {grid_position: 'XODETX,KSZKZU'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'PHWSYA,WVXNWL'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,

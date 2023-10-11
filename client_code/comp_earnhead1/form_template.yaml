@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+  properties: {role: null, tooltip: '', border: dotted, foreground: '', visible: false,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
     spacing_below: small, background: ''}
 components:
@@ -494,6 +494,10 @@ components:
     bold: false, checked: false, underline: false}
   name: check_box_60
   layout_properties: {grid_position: 'VRDDJL,KMYKRS'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_2
+  layout_properties: {grid_position: 'PJGFMR,MWYWXK'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
@@ -509,5 +513,9 @@ components:
     underline: false, icon: ''}
   name: button_2
   layout_properties: {grid_position: 'XQXDUE,RSHWTL'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'KIWBKV,DPAPUX'}
 is_package: true
 custom_component: true
