@@ -117,6 +117,8 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     self.link_1.visible = True
     self.link_2.visible = True
     self.link_3.visible = True
+    self.button_1.visible = True
+    self.button_2.visible = True
 
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     self.custom_1.label_6.text = comp_details['comp_leave_head1']
@@ -236,7 +238,9 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     anvil.server.call('update_bonus_salary',self.row['trans_comp_code'],self.row['trans_empid'],bns_sal,bonus_amt) 
     
     Notification(self.emp_name + " transaction data modified successfully").show()
-
+    
+    open_form()
+  
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('emp_mon_trans_change')
