@@ -1,9 +1,13 @@
 container:
   type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: ''}
+  properties: {role: null, tooltip: '', border: dotted, foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"NZERCQ":30,"TSLLTJ":30}',
+    spacing_below: small, background: '#e1e5ed'}
 components:
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_3
+  layout_properties: {grid_position: 'PDTKDF,MICEAZ'}
 - type: FileLoader
   properties:
     role: filled-button
@@ -32,10 +36,18 @@ components:
   name: file_loader_1
   layout_properties: {grid_position: 'JBQMDR,TQAHSX'}
   event_bindings: {change: file_loader_1_change}
+- type: Spacer
+  properties: {height: 14}
+  name: spacer_4
+  layout_properties: {grid_position: 'WIKDVG,DBLOYP'}
 - type: Image
   properties: {}
   name: image_1
   layout_properties: {grid_position: 'BBWOUR,UXJHTE'}
+- type: Spacer
+  properties: {height: 22}
+  name: spacer_2
+  layout_properties: {grid_position: 'TBYUAE,EHUSUC'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
@@ -51,5 +63,9 @@ components:
     underline: false, icon: ''}
   name: button_2
   layout_properties: {grid_position: 'SWVZGT,TSLLTJ'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'XIHQRP,AMRTHD'}
 is_package: true
 custom_component: true
