@@ -21,14 +21,6 @@ class stat_ded(stat_dedTemplate):
     self.text_box_3.text = comp_details['comp_ded3']
     self.text_box_4.text = comp_details['comp_ded4']
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.server.call('statutary_update_ded', gvarb.g_comcode, self.text_box_1.text,
-                     self.text_box_2.text, self.text_box_3.text, self.text_box_4.text)
-    self.refresh()
 
-  def button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('statutary')
 
 

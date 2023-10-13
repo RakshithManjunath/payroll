@@ -30,17 +30,6 @@ class stat_esi_pt(stat_esi_ptTemplate):
     self.text_box_12.text = comp_details['comp_pts3_to']
     self.text_box_13.text = comp_details['comp_pts3_pt']
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.server.call('statutary_update_esi', gvarb.g_comcode, self.text_box_1.text,
-                     self.text_box_3.text, self.text_box_4.text, self.text_box_5.text,
-                     self.text_box_7.text, self.text_box_8.text, self.text_box_9.text,
-                     self.text_box_11.text, self.text_box_12.text, self.text_box_13.text)
-    self.refresh()
-
-  def button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('statutary')
 
 
 

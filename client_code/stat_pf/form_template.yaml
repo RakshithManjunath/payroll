@@ -92,13 +92,5 @@ components:
     background: '', bold: false, underline: false}
   name: text_box_8
   layout_properties: {grid_position: 'TCBVHV,NLDXJG'}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_2
-  layout_properties: {grid_position: 'OHOMFY,IGMHWZ'}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_3
-  layout_properties: {grid_position: 'YFKKFH,SNYVXJ'}
 is_package: true
 custom_component: true

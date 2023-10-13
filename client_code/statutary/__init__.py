@@ -21,6 +21,8 @@ class statutary(statutaryTemplate):
     self.custom_2.visible = False
     self.custom_3.visible = False
     self.custom_4.visible = False
+    self.button_1.enabled = True
+    self.button_2.enabled = True
 
     self.custom_1.refresh()
 
@@ -30,6 +32,8 @@ class statutary(statutaryTemplate):
     self.custom_2.visible = not self.custom_2.visible
     self.custom_3.visible = False
     self.custom_4.visible = False
+    self.button_1.enabled = True
+    self.button_2.enabled = True
 
     self.custom_2.refresh()
 
@@ -39,6 +43,8 @@ class statutary(statutaryTemplate):
     self.custom_2.visible = False
     self.custom_3.visible = not self.custom_3.visible
     self.custom_4.visible = False
+    self.button_1.enabled = True
+    self.button_2.enabled = True
 
     self.custom_3.refresh()
     
@@ -48,6 +54,8 @@ class statutary(statutaryTemplate):
     self.custom_2.visible = False
     self.custom_3.visible = False
     self.custom_4.visible = not self.custom_4.visible
+    self.button_1.enabled = True
+    self.button_2.enabled = True
 
     self.custom_4.refresh()
 
