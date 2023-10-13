@@ -22,6 +22,7 @@ class emp_change(emp_changeTemplate):
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
+    self.start_afresh()
     split_list_emp = self.drop_down_1.selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
@@ -196,6 +197,7 @@ class emp_change(emp_changeTemplate):
       
       Notification(self.text_box_1.text + " data modified successfully").show()
       self.drop_down_1.visible=True
+      open_form('emp_change')
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -223,7 +225,7 @@ class emp_change(emp_changeTemplate):
     """This method is called when the button is clicked"""
     open_form('emp_change')
 
-  def start_fresh(self):
+  def start_afresh(self):
       self.text_box_1.enabled = True
       self.text_box_2.enabled = True   
       self.radio_button_1.enabled = True
