@@ -58,12 +58,42 @@ class statutary(statutaryTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('statutary_update_pf', gvarb.g_comcode, 
-                      self.text_box_2.text,
-                      self.text_box_3.text, 
-                      self.text_box_4.text,
-                      self.text_box_5.text, 
-                      self.text_box_7.text,
-                      self.text_box_8.text)
+                      self.custom_1.text_box_2.text,
+                      self.custom_1.text_box_3.text, 
+                      self.custom_1.text_box_4.text,
+                      self.custom_1.text_box_5.text, 
+                      self.custom_1.text_box_7.text,
+                      self.custom_1.text_box_8.text)
+
+    anvil.server.call('statutary_update_esi', gvarb.g_comcode, 
+                      self.custom_2.text_box_1.text,
+                      self.custom_2.text_box_3.text, 
+                      self.custom_2.text_box_4.text,
+                      self.custom_2.text_box_5.text,
+                      self.custom_2.text_box_7.text, 
+                      self.custom_2.text_box_8.text,
+                      self.custom_2.text_box_9.text,
+                      self.custom_2.text_box_11.text,
+                      self.custom_2.text_box_12.text,
+                      self.custom_2.text_box_13.text)
+
+    if self.custom_3.radio_button_1.selected == True:
+      pt_bonus_amount_included = True
+    else:
+      pt_bonus_amount_included = False
+      
+    anvil.server.call('stat_bonus_update', gvarb.g_comcode, 
+                      self.custom_3.drop_down_1.selected_value,
+                      self.custom_3.drop_down_2.selected_value, 
+                      self.custom_3.text_box_1.text, 
+                      self.custom_3.text_box_2.text,
+                      pt_bonus_amount_included)
+
+    anvil.server.call('statutary_update_ded', gvarb.g_comcode, 
+                      self.custom_4.text_box_1.text,
+                      self.custom_4.text_box_2.text, 
+                      self.custom_4.text_box_3.text, 
+                      self.custom_4.text_box_4.text)
 
 
 
