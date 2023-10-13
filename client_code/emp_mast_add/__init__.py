@@ -121,11 +121,76 @@ class emp_mast_add(emp_mast_addTemplate):
 
   def text_box_1_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    pass
+    if ((self.text_box_1.text) and (self.text_box_2.text )):
+      self.text_box_3.enabled = True
+      self.radio_button_1.enabled = True
+      self.radio_button_2.enabled = True
+      self.date_picker_1.enabled = True
+      self.date_picker_2.enabled = True
+      self.radio_button_3.enabled = True
+      self.radio_button_4.enabled = True
+      self.drop_down_1.enabled = True
+      self.drop_down_2.enabled = True
+      self.link_1.visible = True
+      self.link_2.visible = True
+      self.link_3.visible = True
+      self.button_1.enabled = True
+      self.button_2.enabled = True
+    else:
+      self.text_box_3.enabled = False
+      self.radio_button_1.enabled = False
+      self.radio_button_2.enabled = False
+      self.date_picker_1.enabled = False
+      self.date_picker_2.enabled = False
+      self.radio_button_3.enabled = False
+      self.radio_button_4.enabled = False
+      self.drop_down_1.enabled = False
+      self.drop_down_2.enabled = False
+      self.link_1.visible = False
+      self.link_2.visible = False
+      self.link_3.visible = False
+      self.button_1.enabled = False
+      self.button_2.enabled = False
 
-  def text_box_1_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass
+  def text_box_2_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if ((self.text_box_1.text) and (self.text_box_2.text )):
+      self.text_box_3.enabled = True
+      self.radio_button_1.enabled = True
+      self.radio_button_2.enabled = True
+      self.date_picker_1.enabled = True
+      self.date_picker_2.enabled = True
+      self.radio_button_3.enabled = True
+      self.radio_button_4.enabled = True
+      self.drop_down_1.enabled = True
+      self.drop_down_2.enabled = True
+      self.link_1.visible = True
+      self.link_2.visible = True
+      self.link_3.visible = True
+      self.button_1.enabled = True
+      self.button_2.enabled = True
+    else:
+      self.text_box_3.enabled = False
+      self.radio_button_1.enabled = False
+      self.radio_button_2.enabled = False
+      self.date_picker_1.enabled = False
+      self.date_picker_2.enabled = False
+      self.radio_button_3.enabled = False
+      self.radio_button_4.enabled = False
+      self.drop_down_1.enabled = False
+      self.drop_down_2.enabled = False
+      self.link_1.visible = False
+      self.link_2.visible = False
+      self.link_3.visible = False
+      self.button_1.enabled = False
+      self.button_2.enabled = False
+
+      
+    
+    
+    
+    
+
 
 
 
