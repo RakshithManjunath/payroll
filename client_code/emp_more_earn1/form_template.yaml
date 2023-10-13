@@ -165,25 +165,5 @@ components:
   name: text_box_10
   layout_properties: {grid_position: 'XIIEEP,LGGJBD'}
   event_bindings: {lost_focus: text_box_10_lost_focus}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_2
-  layout_properties: {grid_position: 'NPOAGC,SNGRFU'}
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: button_1
-  layout_properties: {grid_position: 'ONSKGT,ZCDLTV'}
-  event_bindings: {click: button_1_click}
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: button_2
-  layout_properties: {grid_position: 'ONSKGT,NHTYNQ'}
-  event_bindings: {click: button_2_click}
 is_package: true
 custom_component: true

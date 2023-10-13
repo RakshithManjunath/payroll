@@ -69,6 +69,8 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_5.text = self.row['attn_bonus']
 
     self.custom_3.image_1.source = self.row['emp_photo']
+    self.button_1.enabled = True
+    self.button_2.enabled = True
   
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -82,4 +84,29 @@ class emp_more1(emp_more1Template):
     """This method is called when the button is clicked"""
     open_form('menu')
 
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    split_list_emp = self.drop_down_1.selected_value.split("|")
+    split_list_emp = [ele.strip() for ele in split_list_emp] 
+    self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
+
+    anvil.server.call('emp_update_earn',self.emp_code,self.custom_1.text_box_1.text,
+                      self.custom_1.text_box_2.text,
+                      self.custom_1.text_box_3.text,
+                      self.custom_1.text_box_4.text,
+                      self.custom_1.text_box_5.text,
+                      self.custom_1.text_box_6.text,
+                      self.custom_1.text_box_7.text,
+                      self.custom_1.text_box_8.text,
+                      self.custom_1.text_box_9.text,
+                      self.custom_1.text_box_10.text,
+                      self.custom_1.text_box_11.text)
+
+    anvil.server.call('emp_update_misc1',self.emp_code,self.custom_2.text_box_1.text,
+                      self.custom_2.text_box_2.text,
+                      self.custom_2.text_box_3.text,
+                      self.custom_2.text_box_4.text,
+                      self.custom_2.text_box_5.text)
+
+    anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source) 
  
