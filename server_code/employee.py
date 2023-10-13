@@ -308,8 +308,12 @@ def emp_update_misc2(empcode,emp_photo):
   row = app_tables.employee.get(emp_code=empcode)
   row.update(emp_photo = emp_photo)
 
-  trans_row = app_tables.transaction.get(trans_empid=empcode)
-  trans_row.update(emp_photo=emp_photo)
+############# update emp misc2b ################
+@anvil.server.callable
+def emp_update_misc2b(empcode,emp_photo):
+  row = app_tables.transaction.get(trans_empid=empcode)
+  row.update(emp_photo = emp_photo)
+
 
 #### Find Last record in employee table ###########
 @anvil.server.callable
