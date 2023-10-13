@@ -223,3 +223,19 @@ class emp_change(emp_changeTemplate):
     """This method is called when the button is clicked"""
     open_form('emp_change')
 
+  def start_fresh(self):
+      self.text_box_1.enabled = True
+      self.text_box_2.enabled = True   
+      self.radio_button_1.enabled = True
+      self.radio_button_2.enabled = True
+      self.date_picker_1.enabled = True
+      self.date_picker_2.enabled = True
+      self.radio_button_3.enabled = True
+      self.radio_button_4.enabled = True
+      self.drop_down_1.enabled = True
+      self.drop_down_2.enabled = True
+      self.link_1.visible = True
+      self.link_2.visible = True
+      self.link_3.visible = True
+      self.button_1.enabled = True
+      self.button_2.enabled = True
