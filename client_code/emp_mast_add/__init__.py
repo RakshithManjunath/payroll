@@ -119,6 +119,16 @@ class emp_mast_add(emp_mast_addTemplate):
       Notification(self.text_box_2.text + " data added successfully").show()
       open_form('emp_mast_add')
 
+  def text_box_1_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    pass
+
+  def text_box_1_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+
+
+
 
 
 
