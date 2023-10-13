@@ -74,6 +74,20 @@ components:
       properties: {}
       name: custom_1
       layout_properties: {grid_position: 'TINWNH,ZBDBCA'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'PKQASG,AANMYV'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'PKQASG,ZJKLHZ'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
