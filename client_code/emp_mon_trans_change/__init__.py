@@ -239,8 +239,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     
     Notification(self.emp_name + " transaction data modified successfully").show()
     
-    open_form()
-  
+   
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('emp_mon_trans_change')
