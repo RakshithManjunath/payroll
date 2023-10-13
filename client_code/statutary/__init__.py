@@ -55,6 +55,17 @@ class statutary(statutaryTemplate):
     """This method is called when the button is clicked"""
     open_form('menu')
 
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('statutary_update_pf', gvarb.g_comcode, 
+                      self.text_box_2.text,
+                      self.text_box_3.text, 
+                      self.text_box_4.text,
+                      self.text_box_5.text, 
+                      self.text_box_7.text,
+                      self.text_box_8.text)
+
+
 
    
 
