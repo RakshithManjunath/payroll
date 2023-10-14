@@ -191,9 +191,12 @@ class emp_change(emp_changeTemplate):
                     self.dept_code,
                     self.text_box_3.text,
                     self.desi_code,
-                    self.text_box_4.text,
+                    self.text_box_4.text
                     )
 
+      print(self.dept_code,self.text_box_3.text)
+      print(self.desi_code,self.text_box_4.text)
+      
       Notification(self.text_box_1.text+' [ '+self.emp_code+' ]' + " data saved successfully").show()
       self.drop_down_1.visible=True
       open_form('emp_change')
@@ -240,3 +243,17 @@ class emp_change(emp_changeTemplate):
       self.link_3.visible = True
       self.button_1.enabled = True
       self.button_2.enabled = True
+      self.button_3.visible = True
+      self.drop_down_2.visible = False
+      self.button_4.visible = True
+      self.drop_down_3.visible = False
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.button_3.visible = False
+    self.drop_down_2.visible = True
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.button_4.visible = False
+    self.drop_down_3.visible = True
