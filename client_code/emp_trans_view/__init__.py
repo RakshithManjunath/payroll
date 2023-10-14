@@ -22,6 +22,7 @@ class emp_trans_view(emp_trans_viewTemplate):
     columns = self.data_grid_1.columns
     # print(columns, len(columns))
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+
     columns[21]["title"] = comp_details['comp_leave_head1']
     columns[22]["title"] = comp_details['comp_leave_head2']
     columns[23]["title"] = comp_details['comp_leave_head3']  
@@ -58,8 +59,6 @@ class emp_trans_view(emp_trans_viewTemplate):
     # Update the Data Grid with the modified column
     self.data_grid_1.columns = columns
 
-
-    
     
     ######## Find the index value of acolumn in the DataGrid##############
     # # Specify the field name you want to check for
