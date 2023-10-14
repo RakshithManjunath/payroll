@@ -194,8 +194,7 @@ class emp_change(emp_changeTemplate):
                     self.text_box_4.text,
                     )
 
-      
-      Notification(self.text_box_1.text + " data modified successfully").show()
+      Notification(self.text_box_1.text+' [ '+self.emp_code+' ]' + " data saved successfully").show()
       self.drop_down_1.visible=True
       open_form('emp_change')
 
@@ -234,8 +233,8 @@ class emp_change(emp_changeTemplate):
       self.date_picker_2.enabled = True
       self.radio_button_3.enabled = True
       self.radio_button_4.enabled = True
-      self.drop_down_1.enabled = True
       self.drop_down_2.enabled = True
+      self.drop_down_3.enabled = True
       self.link_1.visible = True
       self.link_2.visible = True
       self.link_3.visible = True

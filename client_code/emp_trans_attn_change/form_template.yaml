@@ -1,14 +1,18 @@
 container:
   type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"YGBCIM":35,"PPKRMG":7}',
     spacing_below: small, background: ''}
 components:
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'YTIXLC,YGBCIM'}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
     font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
+    background: '', bold: true, underline: false}
   name: text_box_11
   layout_properties: {grid_position: 'YTIXLC,PPKRMG'}
 - type: Label

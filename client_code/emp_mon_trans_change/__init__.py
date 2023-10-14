@@ -237,7 +237,9 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     bns_sal,bonus_amt = anvil.server.call('bonus_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
     anvil.server.call('update_bonus_salary',self.row['trans_comp_code'],self.row['trans_empid'],bns_sal,bonus_amt) 
     
-    Notification(self.emp_name + " transaction data modified successfully").show()
+    #Notification(self.emp_name + " transaction data modified successfully").show()
+    Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
+
     
    
   def button_2_click(self, **event_args):
