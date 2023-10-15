@@ -186,6 +186,14 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
     pfc_flag = False
     pfno_flag = False
     pfuan_flag = False
+
+    esic_flag = False
+    esino_flag = False
+    esidisp_flag = False
+
+    ptc_flag = False
+    itc_flag = False
+    itpan_flag = False
                 
     if row['emp_name'] != emp_name:
       name_flag = True
@@ -202,15 +210,28 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
     if row['emp_dept_code'] != emp_dept_code:
       dept_flag = True 
     if row['emp_desi_code'] != emp_desi_code:
-      desi_flag = True 
+      esidisp_flag = True 
   
     if row['emp_pf_contribution'] != emp_pf_contribution:
       pfc_flag = True               
     if row['emp_pf_number'] != emp_pf_number:
       pfno_flag = True  
     if row['emp_pf_uan'] != emp_pf_uan:
-      pfuan_flag = True  
-                
+      pfuan_flag = True 
+
+    if row['emp_esi_contribution'] != emp_esi_contribution:
+      esic_flag = True 
+    if row['emp_esi_number'] != emp_esi_number:
+      esino_flag = True  
+    if row['emp_esi_dispensary'] != emp_esi_dispensary:
+       esidisp_flag = True  
+
+    if row['emp_pt_contribution'] != emp_pt_contribution:
+      ptc_flag = True     
+    if row['emp_it_contribution'] != emp_it_contribution:
+      itc_flag = True  
+    if row['emp_pan_number'] != emp_pan_number:
+      itpan_flag = True 
   
     if name_flag == True:
       row.update(emp_name=emp_name)
@@ -257,6 +278,26 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
     if pfuan_flag == True:
       row.update(emp_pf_uan=emp_pf_uan)
       trans_row.update(trans_emp_pfuan=emp_pf_uan)
+
+    if esic_flag == True:
+      row.update(emp_esi_contribution=emp_esi_contribution)
+      trans_row.update(trans_empesic=emp_esi_contribution)  
+    if  esino_flag == True:
+      row.update(emp_esi_number=emp_esi_number)
+      trans_row.update(trans_empesino=emp_esi_number)  
+    if esidisp_flag == True:
+      row.update(emp_esi_dispensary=emp_esi_dispensary)
+      trans_row.update(trans_empdispensary=emp_esi_dispensary)  
+
+    if ptc_flag == True:
+      row.update(emp_pt_contribution=emp_pt_contribution)
+      trans_row.update(trans_empptc=emp_pt_contribution) 
+    if itc_flag == True:
+      row.update(emp_it_contribution=emp_it_contribution)
+      trans_row.update(trans_empitc=emp_it_contribution) 
+    if itpan_flag == True:
+      row.update(emp_pan_number=emp_pan_number)
+      trans_row.update(trans_emppan=emp_pan_number)  
 
 ####### concatenating emp name and code #########
 @anvil.server.callable
