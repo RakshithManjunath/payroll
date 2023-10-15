@@ -74,8 +74,8 @@ class emp_change(emp_changeTemplate):
       self.custom_2.radio_button_2.selected = True
       self.custom_2.radio_button_1.selected = False
 
-    self.custom_2.text_box_1.text = self.row['emp_esi_number']
-    self.custom_2.text_box_2.text = self.row['emp_esi_dispensary']
+    self.custom_2.text_box_2.text = self.row['emp_esi_number']
+    self.custom_2.text_box_1.text = self.row['emp_esi_dispensary']
 
     self.emp_ptc = self.row['emp_pt_contribution']
     if self.emp_ptc == True:
@@ -187,8 +187,8 @@ class emp_change(emp_changeTemplate):
                     self.custom_1.text_box_1.text,
                     self.custom_1.text_box_2.text,
                     self.emp_esic,
-                    self.custom_2.text_box_1.text,
                     self.custom_2.text_box_2.text,
+                    self.custom_2.text_box_1.text,
                     self.emp_ptc,
                     self.emp_itc,
                     self.custom_3.text_box_1.text,
@@ -200,7 +200,8 @@ class emp_change(emp_changeTemplate):
 
       print(self.dept_code,self.text_box_3.text)
       print(self.desi_code,self.text_box_4.text)
-      
+      print(self.emp_esic,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text)
+            
       Notification(self.text_box_1.text+' [ '+self.emp_code+' ]' + " data saved successfully").show()
       self.drop_down_1.visible=True
       open_form('emp_change')
