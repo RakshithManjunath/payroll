@@ -130,19 +130,17 @@ class emp_change(emp_changeTemplate):
       else:
         self.emp_itc = False
 
-      # dept_code,dept_name,desi_code,desi_name = None,None,None,None
-      # self.dept_code,self.desi_code = None,None
-      # if self.drop_down_2.selected_value != None:
-      #   split_list_dept = self.drop_down_2.selected_value.split("|")
-      #   split_list_dept = [ele.strip() for ele in split_list_dept] 
-      #   dept_code,dept_name = split_list_dept[0],split_list_dept[1]
+      dept_code,dept_name,desi_code,desi_name = None,None,None,None
+      self.dept_code,self.desi_code = None,None
+      if self.drop_down_2.selected_value != None:
+        split_list_dept = self.drop_down_2.selected_value.split("|")
+        split_list_dept = [ele.strip() for ele in split_list_dept] 
+        dept_code,dept_name = split_list_dept[0],split_list_dept[1]
 
-
-
-      # if self.drop_down_3.selected_value != None:
-      #   split_list_desi = self.drop_down_3.selected_value.split("|")
-      #   split_list_desi = [ele.strip() for ele in split_list_desi] 
-      #   desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+      if self.drop_down_3.selected_value != None:
+        split_list_desi = self.drop_down_3.selected_value.split("|")
+        split_list_desi = [ele.strip() for ele in split_list_desi] 
+        desi_code,desi_name = split_list_desi[0],split_list_desi[1]
 
 
 
@@ -254,24 +252,24 @@ class emp_change(emp_changeTemplate):
       self.button_4.enabled = True
       self.drop_down_3.visible = False
 
-  def button_3_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.button_3.visible = False
-    self.drop_down_2.visible = True
-    dept_code,dept_name,desi_code,desi_name = None,None,None,None
-    self.dept_code,self.desi_code = None,None
-    if self.drop_down_2.selected_value != None:
-      split_list_dept = self.drop_down_2.selected_value.split("|")
-      split_list_dept = [ele.strip() for ele in split_list_dept] 
-      dept_code,dept_name = split_list_dept[0],split_list_dept[1]
+  # def button_3_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   self.button_3.visible = False
+  #   self.drop_down_2.visible = True
+  #   dept_code,dept_name,desi_code,desi_name = None,None,None,None
+  #   self.dept_code,self.desi_code = None,None
+  #   if self.drop_down_2.selected_value != None:
+  #     split_list_dept = self.drop_down_2.selected_value.split("|")
+  #     split_list_dept = [ele.strip() for ele in split_list_dept] 
+  #     dept_code,dept_name = split_list_dept[0],split_list_dept[1]
 
-  def button_4_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.button_4.visible = False
-    self.drop_down_3.visible = True
-    if self.drop_down_3.selected_value != None:
-      split_list_desi = self.drop_down_3.selected_value.split("|")
-      split_list_desi = [ele.strip() for ele in split_list_desi] 
-      desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+  # def button_4_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   self.button_4.visible = False
+  #   self.drop_down_3.visible = True
+  #   if self.drop_down_3.selected_value != None:
+  #     split_list_desi = self.drop_down_3.selected_value.split("|")
+  #     split_list_desi = [ele.strip() for ele in split_list_desi] 
+  #     desi_code,desi_name = split_list_desi[0],split_list_desi[1]
 
 
