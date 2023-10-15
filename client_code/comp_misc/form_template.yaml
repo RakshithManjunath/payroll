@@ -80,5 +80,9 @@ components:
     min_date: '', background: '', bold: false, underline: false, format: '%d/%m/Y'}
   name: date_picker_1
   layout_properties: {grid_position: 'MBXHNY,CDPQWO'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'YCMZXF,RRQJLT'}
 is_package: true
 custom_component: true

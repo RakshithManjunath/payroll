@@ -498,5 +498,9 @@ components:
     bold: false, checked: false, underline: false}
   name: check_box_60
   layout_properties: {grid_position: 'VRDDJL,KMYKRS'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'KWSRLK,EFUSEX'}
 is_package: true
 custom_component: true

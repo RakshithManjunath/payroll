@@ -57,20 +57,20 @@ class month_and_year_select(month_and_year_selectTemplate):
       date_str = "01" + "/" + self.encoded_month + "/" + self.year
       date_obj = datetime.strptime(date_str, "%d/%m/%Y")
       gvarb.g_transdate = date_obj.date()
-      print(gvarb.g_transdate)
+      #print(gvarb.g_transdate)
     elif self.year !="":
       date_str = "01" + "/" + str(self.cur_trans_date[0].month) + "/" + self.year
       date_obj = datetime.strptime(date_str, "%d/%m/%Y")
       gvarb.g_transdate = date_obj.date()
-      print(gvarb.g_transdate)
+      #print(gvarb.g_transdate)
     elif self.month != "":
       date_str = "01" + "/" + self.encoded_month + "/" + str(self.cur_trans_date[0].year)
       date_obj = datetime.strptime(date_str, "%d/%m/%Y")
       gvarb.g_transdate = date_obj.date()
-      print(gvarb.g_transdate)
+      #print(gvarb.g_transdate)
     else:
       gvarb.g_transdate = self.cur_trans_date[0]
-      print(gvarb.g_transdate)
+      #print(gvarb.g_transdate)
 
 
 

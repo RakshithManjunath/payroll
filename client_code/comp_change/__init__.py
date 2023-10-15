@@ -36,8 +36,10 @@ class comp_change(comp_changeTemplate):
       self.text_box_1.text, self.text_box_2.text,
       self.text_box_3.text,self.text_box_4.text,
       self.text_box_5.text,self.text_box_6.text,self.text_box_7.text)
-      Notification(self.text_box_7.text+" modified successfully").show()
-
+      result = confirm(self.text_box_7.text+" modified successfully ! to continue relogin  ?", buttons=["Yes"])
+      if result == "Yes":
+         open_form('logform')
+      
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
@@ -52,6 +54,7 @@ class comp_change(comp_changeTemplate):
       self.button_1.enabled = True 
     else:
       self.button_1.enabled = False  
+
 
 
 
