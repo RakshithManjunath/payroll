@@ -20,7 +20,7 @@ class desi_add(desi_addTemplate):
       Notification("Designation name cannot be blank").show()
     else:
       desi_name_exists = anvil.server.call('desi_name_exists', self.text_box_1.text,gvarb.g_comcode)
-      if not  dept_name_exists:
+      if desi_name_exists:
         self.value= anvil.server.call('desi_get_next_string_value')
         desi_id= anvil.server.call('next_desi_id_value')
         anvil.server.call('desi_add',desi_id,self.value, self.text_box_1.text,gvarb.g_comcode)

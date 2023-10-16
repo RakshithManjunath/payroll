@@ -20,7 +20,7 @@ class bank_add(bank_addTemplate):
       Notification("Bank name cannot be blank").show()
     else:
       bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_1.text,gvarb.g_comcode)
-      if not bank_name_exists:
+      if bank_name_exists:
         bank_ifsc_exists = anvil.server.call('bank_ifsc_exists', self.text_box_5.text)
         if not bank_ifsc_exists:
           self.value= anvil.server.call('bank_get_next_string_value')
@@ -30,6 +30,7 @@ class bank_add(bank_addTemplate):
                     self.text_box_5.text,gvarb.g_comcode)
           anvil.server.call('bank_default_values',row)
           Notification(self.text_box_1.text + " data added successfully").show()
+          self.button_1.enabled = False
           self.clear_inputs()
         else:
           alert(f"{self.text_box_5.text} ifsc code already exists,data not saved ")

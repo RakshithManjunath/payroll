@@ -65,15 +65,11 @@ def dept_update_row(deptcode,deptname):
   row = app_tables.department.get(dept_code=deptcode)
   row.update(dept_name=deptname)
 
-
 @anvil.server.callable
 def dept_name_exists(dept_name,dept_comp_code):
-  #dept_name_list = [(r["dept_name"]) for r in app_tables.department.search()]
   row = app_tables.department.search(dept_name=dept_name,dept_comp_code=dept_comp_code)
   if any(row):
-    print(f'{dept_name} already exists for this {dept_comp_code}')
     return False
   else:
-    print(f'{dept_name} doesnt exist for this {dept_comp_code}')
     return True
   

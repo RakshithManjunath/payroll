@@ -45,7 +45,6 @@ class dept_change(dept_changeTemplate):
         Notification(self.text_box_1.text + " data modified successfully").show()
         self.clear_inputs()
         self.drop_down_1.visible=True
-        # refresh after button submit
         self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
         self.button_1.enabled = False
       else:

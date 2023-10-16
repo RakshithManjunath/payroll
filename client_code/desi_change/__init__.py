@@ -38,15 +38,19 @@ class desi_change(desi_changeTemplate):
     if self.text_box_1.text == "":
       Notification("Designation name cannot be blank").show()
     else:
-      anvil.server.call('desi_update_row', self.cur_desicode, 
+      desi_name_exists = anvil.server.call('desi_name_exists', self.text_box_1.text,gvarb.g_comcode)
+      if desi_name_exists:
+        anvil.server.call('desi_update_row', self.cur_desicode, 
                                        self.text_box_1.text)
-    
-      Notification(self.text_box_1.text + " data modified successfully").show()
-      self.clear_inputs()
-      self.drop_down_1.visible=True
-      # refresh after button submit
-      self.drop_down_1.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
-
+        Notification(self.text_box_1.text + " data modified successfully").show()
+        self.clear_inputs()
+        self.drop_down_1.visible=True
+        self.drop_down_1.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
+        self.button_1.enabled = False
+      else:
+        alert(f"{self.text_box_1.text} already exists,data not saved ")
+        open_form('desi')
+        
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_1.text = None

@@ -110,3 +110,11 @@ def bank_ifsc_exists(bank_ifsc):
     return True
   else:
     return False
+
+@anvil.server.callable
+def bank_name_exists(bank_name,bank_comp_code):
+  row = app_tables.bank.search(bank_name=bank_name,bank_comp_code=bank_comp_code)
+  if any(row):
+    return False
+  else:
+    return True
