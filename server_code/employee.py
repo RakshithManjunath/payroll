@@ -210,7 +210,7 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
     if row['emp_dept_code'] != emp_dept_code:
       dept_flag = True 
     if row['emp_desi_code'] != emp_desi_code:
-      esidisp_flag = True 
+      desi_flag = True 
   
     if row['emp_pf_contribution'] != emp_pf_contribution:
       pfc_flag = True               

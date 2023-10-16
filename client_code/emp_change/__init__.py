@@ -50,9 +50,9 @@ class emp_change(emp_changeTemplate):
       self.radio_button_4.selected = True
       self.radio_button_3.selected = False
 
-    self.text_box_3.text = self.row['emp_dept_name'] + " | " + self.row['']
+    self.text_box_3.text = self.row['emp_dept_name'] + " | " + self.row['emp_dept_code']
     self.drop_down_2.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
-    self.text_box_4.text = self.row['emp_desi_name']
+    self.text_box_4.text = self.row['emp_desi_name'] + " | " + self.row['emp_desi_code']
     self.drop_down_3.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
 
     self.emp_pfc = self.row['emp_pf_contribution']
