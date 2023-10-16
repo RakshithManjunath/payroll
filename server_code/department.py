@@ -70,8 +70,10 @@ def dept_update_row(deptcode,deptname):
 def dept_name_exists(dept_name,dept_comp_code):
   #dept_name_list = [(r["dept_name"]) for r in app_tables.department.search()]
   row = app_tables.department.search(dept_name=dept_name,dept_comp_code=dept_comp_code)
-  print(row['dept_com_code'])
-  if row[0] in None:
-    return True
-  else:
+  if any(row):
+    print(f'{dept_name} already exists for this {dept_comp_code}')
     return False
+  else:
+    print(f'{dept_name} doesnt exist for this {dept_comp_code}')
+    return True
+  
