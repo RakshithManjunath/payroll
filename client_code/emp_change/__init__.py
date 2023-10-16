@@ -50,7 +50,7 @@ class emp_change(emp_changeTemplate):
       self.radio_button_4.selected = True
       self.radio_button_3.selected = False
 
-    self.text_box_3.text = self.row['emp_dept_name']
+    self.text_box_3.text = self.row['emp_dept_name'] + " | " + self.row['']
     self.drop_down_2.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
     self.text_box_4.text = self.row['emp_desi_name']
     self.drop_down_3.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
@@ -130,8 +130,19 @@ class emp_change(emp_changeTemplate):
       else:
         self.emp_itc = False
 
-      dept_code,dept_name,desi_code,desi_name = None,None,None,None
-      self.dept_code,self.desi_code = None,None
+      # dept_code,dept_name,desi_code,desi_name = None,None,None,None
+      # self.dept_code,self.desi_code = None,None
+      tb3_text = self.text_box_3.text
+      tb4_text = self.text_box_4.text
+
+      split_list_dept = tb3_text.split("|")
+      split_list_dept = [ele.strip() for ele in split_list_dept] 
+      dept_code,dept_name = split_list_dept[0],split_list_dept[1]
+
+      split_list_desi = tb4_text.split("|")
+      split_list_desi = [ele.strip() for ele in split_list_desi] 
+      desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+      
       if self.drop_down_2.selected_value != None:
         split_list_dept = self.drop_down_2.selected_value.split("|")
         split_list_dept = [ele.strip() for ele in split_list_dept] 
@@ -248,10 +259,6 @@ class emp_change(emp_changeTemplate):
       self.link_3.visible = True
       self.button_1.enabled = True
       self.button_2.enabled = True
-      self.button_3.enabled = True
-      self.drop_down_2.visible = False
-      self.button_4.enabled = True
-      self.drop_down_3.visible = False
 
   # def button_3_click(self, **event_args):
   #   """This method is called when the button is clicked"""
@@ -272,5 +279,20 @@ class emp_change(emp_changeTemplate):
   #     split_list_desi = self.drop_down_3.selected_value.split("|")
   #     split_list_desi = [ele.strip() for ele in split_list_desi] 
   #     desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+  def drop_down_2_change(self, **event_args):
+    """This method is called when an item is selected"""
+    self.text_box_3.text = self.drop_down_2.selected_value
+
+  def drop_down_3_change(self, **event_args):
+    """This method is called when an item is selected"""
+    self.text_box_4.text = self.drop_down_3.selected_value
+
+
+
 
 

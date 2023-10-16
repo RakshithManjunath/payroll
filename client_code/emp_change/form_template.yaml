@@ -155,14 +155,6 @@ components:
       background: '', bold: false, underline: false}
     name: text_box_3
     layout_properties: {grid_position: 'SQINTE,RKVGSG'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: false,
-      foreground: 'theme:Error', visible: true, text: Change department, font_size: null,
-      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: button_3
-    layout_properties: {grid_position: 'SQINTE,GQGMSC UKNQOW,NGGEWA'}
-    event_bindings: {click: button_3_click}
   - type: DropDown
     properties:
       role: null
@@ -173,7 +165,7 @@ components:
       enabled: false
       foreground: ''
       items: []
-      visible: false
+      visible: true
       font_size: null
       font: ''
       spacing_above: small
@@ -184,7 +176,8 @@ components:
       underline: false
       include_placeholder: true
     name: drop_down_2
-    layout_properties: {grid_position: 'SQINTE,GQGMSC BVZFOA,TZYRVL'}
+    layout_properties: {grid_position: 'SQINTE,GQGMSC'}
+    event_bindings: {change: drop_down_2_change}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Designation, font_size: null, font: '', spacing_above: small,
@@ -199,14 +192,6 @@ components:
       background: '', bold: false, underline: false}
     name: text_box_4
     layout_properties: {grid_position: 'GJGCFD,EQEMTJ'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: false,
-      foreground: 'theme:Error', visible: true, text: Change designation, font_size: null,
-      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: button_4
-    layout_properties: {grid_position: 'GJGCFD,FAMWSB DHUFYR,GCQOMA'}
-    event_bindings: {click: button_4_click}
   - type: DropDown
     properties:
       role: null
@@ -217,7 +202,7 @@ components:
       enabled: false
       foreground: ''
       items: []
-      visible: false
+      visible: true
       font_size: null
       font: ''
       spacing_above: small
@@ -228,7 +213,8 @@ components:
       underline: false
       include_placeholder: true
     name: drop_down_3
-    layout_properties: {grid_position: 'GJGCFD,FAMWSB DSTKDZ,JXRTNW'}
+    layout_properties: {grid_position: 'GJGCFD,FAMWSB'}
+    event_bindings: {change: drop_down_3_change}
   - type: Link
     properties: {role: title, url: '', align: center, tooltip: '', border: solid,
       foreground: '', visible: false, text: Provident Fund, font_size: null, wrap_on: mobile,
