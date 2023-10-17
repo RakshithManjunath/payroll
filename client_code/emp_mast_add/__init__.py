@@ -59,16 +59,29 @@ class emp_mast_add(emp_mast_addTemplate):
       else:
         emp_type = "Worker"
 
+      #######################
+      ###      PF Tab     ###
+      #######################
       if self.custom_1.radio_button_1.selected == True:
         pf_contribution = True
+        self.custom_1.text_box_1.enabled = True
+        self.custom_1.text_box_2.enabled = True
       else:
         pf_contribution = False
+        self.custom_1.text_box_1.enabled = False
+        self.custom_1.text_box_2.enabled = False
 
+      #######################
+      ###     ESI Tab     ###
+      #######################
       if self.custom_2.radio_button_1.selected == True:
         esi_contribution = True
       else:
         esi_contribution = False
 
+      #######################
+      ###  PT & IT Tab    ###
+      #######################
       if self.custom_3.radio_button_1.selected == True:
         pt_contribution = True
       else:

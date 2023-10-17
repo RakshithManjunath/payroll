@@ -12,3 +12,15 @@ class pf_form_add1(pf_form_add1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  # def radio_button_1_clicked(self, **event_args):
+  #   """This method is called when this radio button is selected"""
+  #   self.text_box_1.enabled = True
+  #   self.text_box_2.enabled = True
+
+  # def radio_button_2_clicked(self, **event_args):
+  #   """This method is called when this radio button is selected"""
+  #   self.text_box_1.enabled = False
+  #   self.text_box_2.enabled = False
+
+
