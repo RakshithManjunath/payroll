@@ -74,14 +74,18 @@ def trans_emp_delete_row(trans_empid,trans_comp_code):
 @anvil.server.callable
 def trans_get_all_details(trans_comp_code):
   trans_all_data = app_tables.transaction.search(trans_comp_code=trans_comp_code)
+  print(type(trans_all_data))
+  transaction_columns = app_tables.transaction.list_columns()
+  print(type(transaction_columns))
+  trans_dataframe = pd.DataFrame(trans_all_data, columns=transaction_columns)
+  print(trans_dataframe)
+  modified_dob = []
   for record in trans_all_data:
     print("In db: ",record['trans_empdob'])
     formatted_date_str = record['trans_empdob'].strftime('%yyyy/%mm/%dd')
     print("Formatted date string: ", formatted_date_str)
-    formatted_date = datetime.strptime(formatted_date_str, '%yyyy/%mm/%dd').strftime("%dd/%mm/%yyyy")
-    print("formatted date: ", formatted_date)
-    formatted_date = formatted_date
-    record['trans_empdob'] = formatted_date
+    modified_dob.append(formatted_date_str)
+    
   return trans_all_data
   # return app_tables.transaction.search(trans_comp_code=trans_comp_code)
 
