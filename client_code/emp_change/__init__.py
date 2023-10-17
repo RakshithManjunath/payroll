@@ -50,9 +50,9 @@ class emp_change(emp_changeTemplate):
       self.radio_button_4.selected = True
       self.radio_button_3.selected = False
 
-    self.text_box_3.text = self.row['emp_dept_name'] + " | " + self.row['emp_dept_code']
+    self.text_box_3.text =  self.row['emp_dept_code']+ " | " +self.row['emp_dept_name'] 
     self.drop_down_2.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
-    self.text_box_4.text = self.row['emp_desi_name'] + " | " + self.row['emp_desi_code']
+    self.text_box_4.text = self.row['emp_desi_code']+ " | " +self.row['emp_desi_name'] 
     self.drop_down_3.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
 
     self.emp_pfc = self.row['emp_pf_contribution']
@@ -130,18 +130,18 @@ class emp_change(emp_changeTemplate):
       else:
         self.emp_itc = False
 
-      # dept_code,dept_name,desi_code,desi_name = None,None,None,None
-      # self.dept_code,self.desi_code = None,None
       tb3_text = self.text_box_3.text
       tb4_text = self.text_box_4.text
 
       split_list_dept = tb3_text.split("|")
       split_list_dept = [ele.strip() for ele in split_list_dept] 
       dept_code,dept_name = split_list_dept[0],split_list_dept[1]
+      self.dept_code = dept_code
 
       split_list_desi = tb4_text.split("|")
       split_list_desi = [ele.strip() for ele in split_list_desi] 
       desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+      self.desi_code = desi_code
       
       if self.drop_down_2.selected_value != None:
         split_list_dept = self.drop_down_2.selected_value.split("|")
@@ -164,28 +164,6 @@ class emp_change(emp_changeTemplate):
       if self.row['emp_desi_code'] != desi_code:
         self.desi_code = desi_code
         self.text_box_4.text = desi_name
-
-      # anvil.server.call('emp_update_row', self.emp_code, 
-      #                                 self.text_box_1.text,
-      #                                 self.text_box_2.text,
-      #               self.date_picker_1.date,
-      #               self.date_picker_2.date,
-      #               self.emp_sex,
-      #               self.emp_type,
-      #               self.emp_pfc,
-      #               self.custom_1.text_box_1.text,
-      #               self.custom_1.text_box_2.text,
-      #               self.emp_esic,
-      #               self.custom_2.text_box_1.text,
-      #               self.custom_2.text_box_2.text,
-      #               self.emp_ptc,
-      #               self.emp_itc,
-      #               self.custom_3.text_box_1.text,
-      #               self.dept_code,
-      #               self.text_box_3.text,
-      #               self.desi_code,
-      #               self.text_box_4.text,
-      #               )
 
       anvil.server.call('emp_update2_row', self.emp_code, 
                                       self.text_box_1.text,
@@ -259,26 +237,6 @@ class emp_change(emp_changeTemplate):
       self.link_3.visible = True
       self.button_1.enabled = True
       self.button_2.enabled = True
-
-  # def button_3_click(self, **event_args):
-  #   """This method is called when the button is clicked"""
-  #   self.button_3.visible = False
-  #   self.drop_down_2.visible = True
-  #   dept_code,dept_name,desi_code,desi_name = None,None,None,None
-  #   self.dept_code,self.desi_code = None,None
-  #   if self.drop_down_2.selected_value != None:
-  #     split_list_dept = self.drop_down_2.selected_value.split("|")
-  #     split_list_dept = [ele.strip() for ele in split_list_dept] 
-  #     dept_code,dept_name = split_list_dept[0],split_list_dept[1]
-
-  # def button_4_click(self, **event_args):
-  #   """This method is called when the button is clicked"""
-  #   self.button_4.visible = False
-  #   self.drop_down_3.visible = True
-  #   if self.drop_down_3.selected_value != None:
-  #     split_list_desi = self.drop_down_3.selected_value.split("|")
-  #     split_list_desi = [ele.strip() for ele in split_list_desi] 
-  #     desi_code,desi_name = split_list_desi[0],split_list_desi[1]
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
