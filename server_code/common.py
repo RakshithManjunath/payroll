@@ -6,6 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
+from datetime import datetime,date
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -72,7 +73,17 @@ def trans_emp_delete_row(trans_empid,trans_comp_code):
 
 @anvil.server.callable
 def trans_get_all_details(trans_comp_code):
-  return app_tables.transaction.search(trans_comp_code=trans_comp_code)
+  trans_all_data = app_tables.transaction.search(trans_comp_code=trans_comp_code)
+  for record in trans_all_data:
+    print("In db: ",record['trans_empdob'])
+    formatted_date_str = record['trans_empdob'].strftime('%yyyy/%mm/%dd')
+    print("Formatted date string: ", formatted_date_str)
+    formatted_date = datetime.strptime(formatted_date_str, '%yyyy/%mm/%dd').strftime("%dd/%mm/%yyyy")
+    print("formatted date: ", formatted_date)
+    formatted_date = formatted_date
+    record['trans_empdob'] = formatted_date
+  return trans_all_data
+  # return app_tables.transaction.search(trans_comp_code=trans_comp_code)
 
 @anvil.server.callable
 def get_all_companies():

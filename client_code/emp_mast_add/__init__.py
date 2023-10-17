@@ -64,12 +64,12 @@ class emp_mast_add(emp_mast_addTemplate):
       #######################
       if self.custom_1.radio_button_1.selected == True:
         pf_contribution = True
-        self.custom_1.text_box_1.enabled = True
-        self.custom_1.text_box_2.enabled = True
+        # self.custom_1.text_box_1.enabled = True
+        # self.custom_1.text_box_2.enabled = True
       else:
         pf_contribution = False
-        self.custom_1.text_box_1.enabled = False
-        self.custom_1.text_box_2.enabled = False
+        # self.custom_1.text_box_1.enabled = False
+        # self.custom_1.text_box_2.enabled = False
 
       #######################
       ###     ESI Tab     ###
