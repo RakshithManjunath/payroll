@@ -15,6 +15,6 @@ class report1(report1Template):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    media_object = anvil.server.call('create_zaphod_pdf')
-    anvil.media.download(media_object)
+    media_object = anvil.server.call('get_reportlab_pdf')
+    download(media_object)
 

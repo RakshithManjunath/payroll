@@ -7,6 +7,11 @@ from anvil.tables import app_tables
 import anvil.server
 import pandas as pd
 from datetime import datetime,date
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter, A4
+from temp_invoice import my_temp # import the template
+from invoice_data import *  # get all data required for invoice
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -98,5 +103,12 @@ def get_all_companies():
 def get_all_password():
   return app_tables.password.search()
 
-
+@anvil.server.callable
+def get_reportlab_pdf():
+  my_path='my_pdf.pdf' 
+  c = canvas.Canvas(my_path,pagesize=letter)
+  c=my_temp(c) # run the template
+  c.save()
+  pdf_media = anvil.media.from_file(my_path, 'application/pdf', 'my_pdf.pdf')
+  return pdf_media
 
