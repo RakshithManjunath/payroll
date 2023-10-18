@@ -28,13 +28,15 @@ class emp_trans_view(emp_trans_viewTemplate):
     self.repeating_panel_1.items = anvil.server.call('trans_get_all_details',gvarb.g_comcode)
     
     
-    # self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
   def populate_custom_data_grid(self):
     # col = self.data_grid_1.columns
     columns = self.data_grid_1.columns
+    print(columns)
     # print(columns, len(columns))
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+    print(comp_details)
     
     columns[21]["title"] = comp_details['comp_leave_head1']
     columns[22]["title"] = comp_details['comp_leave_head2']
@@ -98,4 +100,13 @@ class emp_trans_view(emp_trans_viewTemplate):
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    media_object = anvil.server.call('create_zaphod_pdf')
+    anvil.media.download(media_object)
+
+
+
+
 

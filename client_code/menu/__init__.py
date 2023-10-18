@@ -60,3 +60,6 @@ class menu(menuTemplate):
 
   def open_pass_add(self, **kwargs):
     open_form('pass_add')
+
+  def open_report1_page(self, **kwargs):
+    open_form('report1')
