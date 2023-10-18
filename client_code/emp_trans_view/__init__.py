@@ -14,16 +14,21 @@ class emp_trans_view(emp_trans_viewTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.populate_custom_data_grid()
+    ################ tried to convert date to indian format, not happening
+    # modified_df = anvil.server.call('trans_get_all_details',gvarb.g_comcode)
+    # for _, row in df.iterrows():
+    #   # Create a dictionary to store the data for each row
+    #   row_data = {}
+    #   for column in df.columns:
+    #       # Add data for each column dynamically
+    #       row_data[column] = row[column]
+  
+    #   # Append the row_data dictionary to the RepeatingPanel
+    #   self.repeating_panel.items.append(row_data)
     self.repeating_panel_1.items = anvil.server.call('trans_get_all_details',gvarb.g_comcode)
     
-    # trans_all_data = anvil.server.call('trans_get_all_details',gvarb.g_comcode)
-    # for row in trans_all_data:
-    #   print(row['trans_empdob'])
-    #   original_date = row['trans_empdob']
-    #   # original_date = datetime.strptime(original_date_str, '%Y/%m/%d')
-    #   formatted_date_str = original_date.strftime('%d/%m/%Y')
-    #   row['trans_empdob'] = formatted_date_str
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    
+    # self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
   def populate_custom_data_grid(self):
     # col = self.data_grid_1.columns

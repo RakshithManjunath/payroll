@@ -74,20 +74,21 @@ def trans_emp_delete_row(trans_empid,trans_comp_code):
 @anvil.server.callable
 def trans_get_all_details(trans_comp_code):
   trans_all_data = app_tables.transaction.search(trans_comp_code=trans_comp_code)
-  print(type(trans_all_data))
-  transaction_columns = app_tables.transaction.list_columns()
-  print(type(transaction_columns))
-  trans_dataframe = pd.DataFrame(trans_all_data, columns=transaction_columns)
-  print(trans_dataframe)
-  modified_dob = []
-  for record in trans_all_data:
-    print("In db: ",record['trans_empdob'])
-    formatted_date_str = record['trans_empdob'].strftime('%yyyy/%mm/%dd')
-    print("Formatted date string: ", formatted_date_str)
-    modified_dob.append(formatted_date_str)
-    
-  return trans_all_data
-  # return app_tables.transaction.search(trans_comp_code=trans_comp_code)
+  # df = pd.DataFrame(trans_all_data)
+  # columns_and_type = app_tables.transaction.list_columns()
+  # column_names = []
+  # for column in columns_and_type:
+  #   column_names.append(column['name'])
+  # df.columns = column_names
+  # formatted_date_column = []
+  # for record in trans_all_data:
+  #   formatted_date = record['trans_empdob'].strftime('%d/%m/%Y')
+  #   formatted_date_column.append(formatted_date)
+  # df['trans_empdob'] = formatted_date_column
+  # print(df, type(trans_all_data))
+  # data = df.to_dict(orient='records')
+  # return data
+  return app_tables.transaction.search(trans_comp_code=trans_comp_code)
 
 @anvil.server.callable
 def get_all_companies():
