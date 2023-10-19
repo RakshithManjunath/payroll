@@ -27,7 +27,169 @@ components:
   layout_properties: {grid_position: 'PEZGXH,EEBJXG'}
   event_bindings: {click: button_2_click}
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: "\n<!DOCTYPE html>\n\
+      <html lang=\"en\" >\n<head>\n  <meta charset=\"UTF-8\">\n  <title>CodePen -\
+      \ Salary Slip</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n\n\
+      </head>\n<body>\n<!-- partial:index.partial.html -->\n<div class=\"salary-slip\"\
+      \ >\n            <table class=\"empDetail\">\n              <tr height=\"100px\"\
+      \ style='background-color: #c2d69b'>\n                <td colspan='4'>\n   \
+      \               <img height=\"90px\" src='https://organisationmedia.toggleflow.com/demo/logo.png'\
+      \ /></td>\n                <td colspan='4' class=\"companyName\"> Co-Operative\
+      \ Bank Ltd.</td>\n              </tr>\n              <tr>\n                <th>\n\
+      \                  Name\n      </th>\n                <td>\n               \
+      \   Example\n      </td>\n                <td></td>\n                <th>\n\
+      \                  Bank Code\n      </th>\n                <td>\n          \
+      \        ABC123\n      </td>\n                <td></td>\n                <th>\n\
+      \                  Branch Name\n      </th>\n                <td>\n        \
+      \          ABC123\n      </td>\n              </tr>\n              <tr>\n  \
+      \              <th>\n                  Employee Code\n      </th>\n        \
+      \        <td>\n                  XXXXXXXXXXX\n      </td>\n                <td></td>\n\
+      \                <th>\n                  Bank Name\n      </th>\n          \
+      \      <td>\n                  XXXXXXXXXXX\n      </td>\n                <td></td>\n\
+      \                <th>\n                  Payslip no.\n      </th>\n        \
+      \        <td>\n                  XXXXXXXXXX\n      </td>\n              </tr>\n\
+      \              <tr>\n                <th>\n                  Cost Centre\n \
+      \     </th>\n                <td>\n                  XXXXXXXXXXX\n      </td><td></td>\n\
+      \                <th>\n                  Bank Branch\n      </th>\n        \
+      \        <td>\n                  XXXXXXXXXX\n      </td><td></td>\n        \
+      \        <th>\n                  Pay Period\n      </th>\n                <td>\n\
+      \                  XXXXXXXXXXX\n      </td>\n              </tr>\n         \
+      \     <tr>\n                <th>\n                  CC Description:\n      </th>\n\
+      \                <td>\n                  XXXXXXXXXXX\n      </td><td></td>\n\
+      \                <th>\n                  Bank A/C no.\n      </th>\n       \
+      \         <td>\n                  XXXXXXXXXX\n      </td><td></td>\n       \
+      \         <th>\n                  Personel Area\n      </th>\n             \
+      \   <td>\n                  XXXXXXXXXX\n      </td>\n              </tr>\n \
+      \             <tr>\n                <th>\n                  Grade:\n      </th>\n\
+      \                <td>\n                  18\n      </td><td></td>\n        \
+      \        <th>\n                  Employee Group\n      </th>\n             \
+      \   <td>\n                  Sales Manager\n      </td><td></td>\n          \
+      \      <th>\n                  PAN No:\n      </th>\n                <td>\n\
+      \                  MOP72182E\n      </td>\n              </tr>\n           \
+      \   <tr class=\"myBackground\">\n                <th colspan=\"2\">\n      \
+      \            Payments\n      </th>\n                <th >\n                \
+      \  Particular\n      </th>\n                <th class=\"table-border-right\"\
+      >\n                  Amount (Rs.)\n      </th>\n                <th colspan=\"\
+      2\">\n                  Deductions\n      </th>\n                <th >\n   \
+      \               Particular\n      </th>\n                <th >\n           \
+      \       Amount (Rs.)\n      </th>\n              </tr>\n              <tr>\n\
+      \                <th colspan=\"2\">\n                  Basic Salary\n      </th>\n\
+      \                <td></td>\n                <td class=\"myAlign\">\n       \
+      \           4935.00\n      </td>\n                <th colspan=\"2\" >\n    \
+      \              Provident Fund\n      </th >\n                <td></td>\n\n \
+      \               <td class=\"myAlign\">\n                  00.00\n      </td>\n\
+      \              </tr >\n              <tr>\n                <th colspan=\"2\"\
+      >\n                  Fixed Dearness Allowance\n      </th>\n               \
+      \ <td></td>\n\n                <td class=\"myAlign\">\n                  00.00\n\
+      \      </td>\n                <th colspan=\"2\" >\n                  LIC\n \
+      \     </th >\n                <td></td>\n\n                <td class=\"myAlign\"\
+      >\n                  00.00\n      </td>\n              </tr >\n            \
+      \  <tr>\n                <th colspan=\"2\">\n                  Variable Dearness\
+      \ Allowance\n      </th>\n                <td></td>\n\n                <td class=\"\
+      myAlign\">\n                  00.00\n      </td>\n                <th colspan=\"\
+      2\" >\n                  Loan\n      </th >\n                <td></td>\n\n \
+      \               <td class=\"myAlign\">\n                  00.00\n      </td>\n\
+      \              </tr >\n              <tr>\n                <th colspan=\"2\"\
+      >\n                  House Rent Allowance\n      </th>\n                <td></td>\n\
+      \                <td class=\"myAlign\">\n                  00.00\n      </td>\n\
+      \                <th colspan=\"2\" >\n                  Professional Tax\n \
+      \     </th >\n                <td></td>\n                <td class=\"myAlign\"\
+      >\n                  00.00\n      </td>\n              </tr >\n            \
+      \  <tr>\n                <th colspan=\"2\">\n                  Graduation Allowance\n\
+      \      </th>\n                <td></td>\n\n                <td class=\"myAlign\"\
+      >\n                  00.00\n      </td>\n                <th colspan=\"2\" >\n\
+      \                  Security Deposite(SD)\n      </th >\n                <td></td>\n\
+      \n                <td class=\"myAlign\">\n                  00.00\n      </td>\n\
+      \              </tr >\n              <tr>\n                <th colspan=\"2\"\
+      >\n                  Conveyance Allowance\n      </th> <td></td>\n         \
+      \       <td class=\"myAlign\">\n                  00.00\n      </td>\n     \
+      \           <th colspan=\"2\" >\n                  Staff Benefit(SB)\n     \
+      \ </th >\n                <td></td>\n                <td class=\"myAlign\">\n\
+      \                  00.00\n      </td>\n              </tr >\n              <tr>\n\
+      \                <th colspan=\"2\">\n                  Post Allowance\n    \
+      \  </th>\n                <td></td>\n                <td class=\"myAlign\">\n\
+      \                  00.00\n      </td>\n                <th colspan=\"2\" >\n\
+      \                  Labour Welfare Fund\n      </th >\n                <td></td>\n\
+      \                <td class=\"myAlign\">\n                  00.00\n      </td>\n\
+      \              </tr >\n              <tr>\n                <th colspan=\"2\"\
+      >\n                  Special Allowance\n      </th>\n                <td></td>\n\
+      \                <td class=\"myAlign\">\n                  00.00\n      </td>\n\
+      \                <th colspan=\"2\" >\n                  NSC\n      </th >\n\
+      \                <td></td>\n                <td class=\"myAlign\">\n       \
+      \           00.00\n      </td>\n              </tr >\n              <tr>\n \
+      \               <td colspan=\"4\" class=\"table-border-right\"></td>\n     \
+      \           <th colspan=\"2\" >\n                  Union Thanco Officer(UTO)\n\
+      \      </th >\n                <td></td>\n                <td class=\"myAlign\"\
+      >\n                  00.00\n      </td>\n              </tr >\n            \
+      \  <tr>\n                <td colspan=\"4\" class=\"table-border-right\"></td>\n\
+      \                <th colspan=\"2\" >\n                  Advance\n      </th\
+      \ >\n                <td></td>\n                <td class=\"myAlign\">\n   \
+      \               00.00\n      </td>\n              </tr >\n              <tr>\n\
+      \                <td colspan=\"4\" class=\"table-border-right\"></td>\n    \
+      \            <th colspan=\"2\" >\n                  Income Tax\n      </th >\
+      \ <td></td>\n                <td class=\"myAlign\">\n                  00.00\n\
+      \      </td>\n              </tr >\n              <tr class=\"myBackground\"\
+      >\n                <th colspan=\"3\">\n                  Total Payments\n  \
+      \    </th>\n                <td class=\"myAlign\">\n                  10000\n\
+      \      </td>\n                <th colspan=\"3\" >\n                  Total Deductions\n\
+      \      </th >\n                <td class=\"myAlign\">\n                  1000\n\
+      \      </td>\n              </tr >\n              <tr height=\"40px\">\n   \
+      \             <th colspan=\"2\">\n                  Projection for Financial\
+      \ Year:\n                </th>\n                <th>\n                </th>\n\
+      \                <td class=\"table-border-right\">\n                </td>\n\
+      \                <th colspan=\"2\" class=\"table-border-bottom\" >\n       \
+      \           Net Salary\n                </th >\n                <td >\n    \
+      \            </td>\n                <td >\n                  XXXXXXXXXX\n  \
+      \              </td>\n              </tr >\n              <tr>\n           \
+      \     <td colspan=\"2\">\n                  Gross Salary\n                </td>\
+      \ <td></td>\n                <td class=\"myAlign\">\n                  00.00\n\
+      \      </td><td colspan=\"4\"></td>\n              </tr >\n              <tr>\n\
+      \                <td colspan=\"2\">\n                  Aggr. Dedu - P.Tax &\
+      \ Std Ded\n      </td> <td></td>\n                <td class=\"myAlign\">\n \
+      \                 00.00\n      </td>\n                <th colspan=\"2\" >\n\
+      \                  Cumulative\n      </th >\n                <td colspan=\"\
+      2\"></td>\n              </tr >\n              <tr>\n                <td colspan=\"\
+      2\">\n                  Gross Total Income\n      </td> <td></td>\n        \
+      \        <td class=\"myAlign\">\n                  00.00\n      </td>\n    \
+      \            <td colspan=\"2\" >\n                  Empl PF Contribution\n \
+      \     </td > <td></td>\n                <td class=\"myAlign\">\n           \
+      \       00.00\n      </td>\n              </tr >\n              <tr>\n     \
+      \           <td colspan=\"2\">\n                  Aggr of Chapter \"PF\"\n \
+      \     </td> <td></td>\n                <td class=\"myAlign\">\n            \
+      \      00.00\n      </td><td colspan=\"4\"></td>\n              </tr >\n   \
+      \           <tr>\n                <td colspan=\"2\">\n                  Total\
+      \ Income\n      </td> <td></td>\n                <td class=\"myAlign\">\n  \
+      \                00.00\n      </td>\n                <td colspan=\"4\"></td>\n\
+      \              </tr >\n              <tbody class=\"border-center\">\n     \
+      \           <tr>\n                  <th>\n                    Attend/ Absence\n\
+      \      </th>\n                  <th>\n                    Days in Month\n  \
+      \    </th>\n                  <th>\n                    Days Paid\n      </th>\n\
+      \                  <th>\n                    Days Not Paid\n      </th>\n  \
+      \                <th>\n                    Leave Position\n      </th>\n   \
+      \               <th>\n                    Privilege Leave\n      </th>\n   \
+      \               <th>\n                    Sick Leave\n      </th>\n        \
+      \          <th>\n                    Casual Leave\n      </th>\n           \
+      \     </tr>\n                <tr>\n                  <td ></td>\n          \
+      \        <td ></td>\n                  <td ></td>\n                  <td ></td>\n\
+      \                  <td>Yrly Open Balance</td>\n                  <td>0.0</td>\
+      \ <td>0.0</td>\n                  <td>0.0</td>\n                </tr >\n   \
+      \             <tr>\n                  <th >Current Month</th>\n            \
+      \      <td >31.0</td>\n                  <td >31.0</td>\n                  <td\
+      \ >31.0</td>\n                  <td>Availed</td>\n                  <td>0.0</td>\
+      \ <td>0.0</td>\n                  <td>0.0</td>\n                </tr >\n   \
+      \             <tr>\n                  <td colspan=\"4\"></td>\n            \
+      \      <td>Closing Balance</td>\n                  <td>0.0</td> <td>0.0</td>\n\
+      \                  <td>0.0</td>\n                </tr >\n                <tr>\n\
+      \                  <td colspan=\"4\"> &nbsp; </td>\n                  <td >\
+      \ </td>\n                  <td > </td>\n                  <td > </td>\n    \
+      \              <td > </td>\n                </tr >\n                <tr>\n \
+      \                 <td colspan=\"4\"></td>\n                  <td>Company Pool\
+      \ Leave Balance</td>\n                  <td>1500</td>\n                  <td\
+      \ ></td>\n                  <td ></td>\n                </tr >\n           \
+      \   </tbody>\n            </table >\n\n          </div >\n<!-- partial -->\n\
+      \  \n</body>\n</html>\n", font: '', spacing_above: small, spacing_below: small,
+    data: null, background: '', format: restricted_html}
   name: rich_text_1
-  layout_properties: {grid_position: 'NTRFAK,ZACHVP'}
+  layout_properties: {grid_position: 'NTRFAK,ZACHVP', full_width_row: false}
 is_package: true
