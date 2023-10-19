@@ -18,3 +18,8 @@ class report1(report1Template):
     media_object = anvil.server.call('get_reportlab_pdf')
     download(media_object)
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+
