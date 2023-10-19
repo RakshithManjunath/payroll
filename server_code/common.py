@@ -108,6 +108,20 @@ def get_reportlab_pdf():
   my_path='my_pdf.pdf' 
   c = canvas.Canvas(my_path,pagesize=letter)
   c=my_temp(c) # run the template
+  
+  c.setFillColorRGB(0,0,1) # font colour
+  c.setFont("Helvetica", 20)
+  row_gap=0.6 # gap between each row
+  line_y=7.9 # location of fist Y position 
+  total=0
+  employee_data = app_tables.employee.search()
+  for row in employee_data:
+    c.drawString(0.1*inch,line_y*inch,row['emp_code']) # p Name
+    c.drawRightString(3*inch,line_y*inch,row['emp_name']) # p Price
+    # c.drawRightString(6.7*inch,line_y*inch,str(my_sale[items])) # p Qunt 
+    line_y=line_y-row_gap
+  
+  c.showPage()
   c.save()
   pdf_media = anvil.media.from_file(my_path, 'application/pdf', 'my_pdf.pdf')
   return pdf_media
