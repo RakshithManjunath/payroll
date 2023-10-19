@@ -117,7 +117,7 @@ def get_reportlab_pdf():
   employee_data = app_tables.employee.search()
   for row in employee_data:
     c.drawString(0.1*inch,line_y*inch,row['emp_code']) # p Name
-    c.drawRightString(3*inch,line_y*inch,row['emp_name']) # p Price
+    c.drawRightString(2.9*inch,line_y*inch,row['emp_name']) # p Price
     # c.drawRightString(6.7*inch,line_y*inch,str(my_sale[items])) # p Qunt 
     line_y=line_y-row_gap
   
