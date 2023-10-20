@@ -1,7 +1,15 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"XHPLBQ":30}'}
+  properties: {col_widths: '{}'}
 components:
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Generate Preview, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
+  name: button_5
+  layout_properties: {grid_position: 'GSBOEC,WZSPVD'}
+  event_bindings: {click: button_5_click}
 - type: Spacer
   properties: {height: 32}
   name: spacer_2
@@ -26,27 +34,4 @@ components:
   name: button_2
   layout_properties: {grid_position: 'PEZGXH,EEBJXG'}
   event_bindings: {click: button_2_click}
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: '-', font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
-  name: button_4
-  layout_properties: {grid_position: 'ITTMND,XHPLBQ'}
-- type: Button
-  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: +, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
-  name: button_3
-  layout_properties: {grid_position: 'RODJCT,JSTLXL', full_width_row: false}
-  event_bindings: {click: button_3_click}
-- type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Generate Preview, font_size: null, font: '',
-    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
-    bold: false, underline: false, icon: ''}
-  name: button_5
-  layout_properties: {grid_position: 'JAMPKX,AIDOVW'}
-  event_bindings: {click: button_5_click}
 is_package: true
