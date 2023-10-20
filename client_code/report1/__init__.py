@@ -52,9 +52,9 @@ class report1(report1Template):
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
     all_components = self.get_components()
-    print(all_components)
-    status = [component.checked for component in all_components]
-    print(status)
+    print("All: ",all_components)
+    status = [component.checked for component in all_components if isinstance(component, anvil.CheckBox)]
+    print("Only checkbox:", status)
 
 
 
