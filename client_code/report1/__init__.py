@@ -51,7 +51,10 @@ class report1(report1Template):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    all_components = self.get_components()
+    print(all_components)
+    status = [component.checked for component in all_components]
+    print(status)
 
 
 
