@@ -52,9 +52,14 @@ class report1(report1Template):
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
     all_components = self.get_components()
-    print(all_components)
-    status = [component.checked for component in all_components]
-    print(status)
+    only_checkboxes = [component for component in all_components if isinstance(component, anvil.CheckBox)]
+    selected_boxes = []
+    for checkbox in only_checkboxes:
+      if checkbox.checked:
+        selected_boxes.append(checkbox.text)
+    selected_trans_record = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes)
+    print(selected_trans_record)
+    # print("Selected checkboxes:", selected_boxes)
 
 
 

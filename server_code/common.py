@@ -136,3 +136,15 @@ def get_transaction_columns(comp_details):
   return column_names
   # for key, value in kwargs.items():
   #   print(f"Keyword: {key}, Value: {value}")
+
+@anvil.server.callable
+def get_only_selected_trans_values(trans_comp_code,selected_list):
+  update_dict = {}
+  for key in selected_list:
+    update_dict[key] = key
+  trans_records = app_tables.transaction.search()
+  selected_rows = []
+  for val in selected_list:
+    selected_rows.append(trans_records[val])
+    print('recieved element', val)
+  return selected_rows
