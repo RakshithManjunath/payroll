@@ -126,3 +126,12 @@ def get_reportlab_pdf():
   pdf_media = anvil.media.from_file(my_path, 'application/pdf', 'my_pdf.pdf')
   return pdf_media
 
+@anvil.server.callable
+def get_transaction_columns_based_on_selected(**kwargs):
+  # columns_and_type = app_tables.transaction.list_columns()
+  # column_names = []
+  # for column in columns_and_type:
+  #   column_names.append(column['name'])
+  # return column_names
+  for key, value in kwargs.items():
+    print(f"Keyword: {key}, Value: {value}")
