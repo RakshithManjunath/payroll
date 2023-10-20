@@ -139,12 +139,21 @@ def get_transaction_columns(comp_details):
 
 @anvil.server.callable
 def get_only_selected_trans_values(trans_comp_code,selected_list):
-  update_dict = {}
-  for key in selected_list:
-    update_dict[key] = key
-  trans_records = app_tables.transaction.search()
-  selected_rows = []
-  for val in selected_list:
-    selected_rows.append(trans_records[val])
-    print('recieved element', val)
-  return selected_rows
+  trans_records = app_tables.transaction.search(trans_comp_code=trans_comp_code)
+  final_filter_records = []
+  for record in trans_records:
+    filtered_row = {}
+    for selected_col in selected_list:
+      filtered_row[selected_col] = record[selected_col]
+    final_filter_records.append(filtered_row)
+
+  final_filtered_cols = []
+  for selected_col in selected_list:
+    filtered_col = {}
+    filtered_col['id'] =  selected_col
+    filtered_col['title'] = selected_col.capitalize()
+    filtered_col['data_key'] = selected_col
+    final_filtered_cols.append(filtered_col)
+  print(final_filtered_cols)
+  
+  return final_filter_records,final_filtered_cols

@@ -20,13 +20,17 @@ class report1(report1Template):
     for column in columns:
 
       if column == 'trans_empid' or column == 'trans_empname' or column == 'earn_pf_salary' or column == 'pf_amt':
-        print(column)
+        # print(column)
         self.column = anvil.CheckBox(text=column,checked=True)
         self.add_component(self.column)
       else:
         self.column = anvil.CheckBox(text=column)
         self.column.checked = False
         self.add_component(self.column)
+
+    
+
+  
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -57,9 +61,16 @@ class report1(report1Template):
     for checkbox in only_checkboxes:
       if checkbox.checked:
         selected_boxes.append(checkbox.text)
-    selected_trans_record = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes)
-    print(selected_trans_record)
-    # print("Selected checkboxes:", selected_boxes)
+    grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes)
+
+    grid = anvil.DataGrid()
+    self.add_component(grid)
+    grid.columns = grid_cols
+
+    rp = anvil.RepeatingPanel(item_template=anvil.DataRowPanel)
+    rp.items = grid_rows
+    # Add the repeating panel to your data grid
+    grid.add_component(rp)
 
 
 
