@@ -11,10 +11,22 @@ class report1(report1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.drop_down_1.items = anvil.server.call('get_transaction_columns')
 
     # Any code you write here will run before the form opens.
-    self.repeating_panel_1.items = anvil.server.call('trans_get_all_details','002')
+    # self.repeating_panel_1.items = anvil.server.call('trans_get_all_details','002')
+
+    comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+    columns = anvil.server.call('get_transaction_columns', comp_details)
+    for column in columns:
+
+      if column == 'trans_empid' or column == 'trans_empname' or column == 'earn_pf_salary' or column == 'pf_amt':
+        print(column)
+        self.column = anvil.CheckBox(text=column,checked=True)
+        self.add_component(self.column)
+      else:
+        self.column = anvil.CheckBox(text=column)
+        self.column.checked = False
+        self.add_component(self.column)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -36,6 +48,11 @@ class report1(report1Template):
     """This method is called when an item is selected"""
     # self.drop_down_1.items = anvil.server.call('get_transaction_columns')
     pass
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
 
 
 

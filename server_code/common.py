@@ -127,11 +127,12 @@ def get_reportlab_pdf():
   return pdf_media
 
 @anvil.server.callable
-def get_transaction_columns_based_on_selected(**kwargs):
-  # columns_and_type = app_tables.transaction.list_columns()
-  # column_names = []
-  # for column in columns_and_type:
-  #   column_names.append(column['name'])
-  # return column_names
-  for key, value in kwargs.items():
-    print(f"Keyword: {key}, Value: {value}")
+def get_transaction_columns(comp_details):
+  columns_and_type = app_tables.transaction.list_columns()
+  column_names = []
+  for column in columns_and_type:
+    if column['name'] != 'id':
+      column_names.append(column['name'])
+  return column_names
+  # for key, value in kwargs.items():
+  #   print(f"Keyword: {key}, Value: {value}")
