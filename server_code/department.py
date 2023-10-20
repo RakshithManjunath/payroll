@@ -1,3 +1,5 @@
+import anvil.files
+from anvil.files import data_files
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -45,16 +47,16 @@ def dept_get_next_string_value():
   return next_value
 
 @anvil.server.callable
-def dept_add(dept_id,deptcode,deptname):
+def dept_add(dept_id,deptcode,deptname,comcode):
   app_tables.department.add_row(dept_id=dept_id,dept_code=deptcode,
-                          dept_name=deptname)
+                          dept_name=deptname,dept_comp_code=comcode)
 
 #################### Department Change #################################
 #################### same function is used also in emp_add #############
 @anvil.server.callable
-def dept_change_name_and_code():
+def dept_change_name_and_code(dept_comp_code):
   dept_details = []
-  for r in app_tables.department.search(tables.order_by("dept_code")):
+  for r in app_tables.department.search(dept_comp_code=dept_comp_code):
     dept_details.append(r['dept_code'] + " | "  +r['dept_name'])
   return dept_details
 
@@ -62,3 +64,12 @@ def dept_change_name_and_code():
 def dept_update_row(deptcode,deptname):
   row = app_tables.department.get(dept_code=deptcode)
   row.update(dept_name=deptname)
+
+@anvil.server.callable
+def dept_name_exists(dept_name,dept_comp_code):
+  row = app_tables.department.search(dept_name=dept_name,dept_comp_code=dept_comp_code)
+  if any(row):
+    return False
+  else:
+    return True
+  

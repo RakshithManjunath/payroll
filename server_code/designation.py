@@ -1,3 +1,5 @@
+import anvil.files
+from anvil.files import data_files
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -45,20 +47,28 @@ def desi_get_next_string_value():
   return next_value
 
 @anvil.server.callable
-def desi_add(desi_id,desicode,desiname):
+def desi_add(desi_id,desicode,desiname,comcode):
   app_tables.designation.add_row(desi_id=desi_id,desi_code=desicode,
-                          desi_name=desiname)
+                          desi_name=desiname,desi_comp_code=comcode)
 
 #################### Designation Change #################################
 #################### same function is used also in emp_add #############
 @anvil.server.callable
-def desi_change_name_and_code():
-  dept_details = []
-  for r in app_tables.designation.search(tables.order_by("desi_code")):
-    dept_details.append(r['desi_code'] + " | "  +r['desi_name'])
-  return dept_details
+def desi_change_name_and_code(desi_comp_code):
+  desi_details = []
+  for r in app_tables.designation.search(desi_comp_code=desi_comp_code):
+    desi_details.append(r['desi_code'] + " | "  +r['desi_name'])
+  return desi_details
 
 @anvil.server.callable
 def desi_update_row(desicode,desiname):
   row = app_tables.designation.get(desi_code=desicode)
   row.update(desi_name=desiname)
+
+@anvil.server.callable
+def desi_name_exists(desi_name,desi_comp_code):
+  row = app_tables.designation.search(desi_name=desi_name,desi_comp_code=desi_comp_code)
+  if any(row):
+    return False
+  else:
+    return True

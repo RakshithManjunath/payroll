@@ -14,7 +14,7 @@ class menu(menuTemplate):
   def open_login_page(self, **kwargs):
     anvil.users.logout()
     alert(f"You have logged out successfully...!")
-    open_form('company_select')
+    open_form('logform')
 
   def open_update_page(self, **kwargs):
     open_form('update_trans_date')
@@ -32,7 +32,13 @@ class menu(menuTemplate):
     open_form('desi')
 
   def open_comp(self, **kwargs):
-    open_form('comp_add_change')
+    open_form('comp_add')
+
+  def open_comp_change(self, **kwargs):
+    open_form('comp_change')
+  
+  def open_comp_more(self, **kwargs):
+    open_form('comp_more')
 
   def open_bank(self, **kwargs):
     open_form('bank_add_change')
@@ -42,3 +48,18 @@ class menu(menuTemplate):
 
   def open_stat(self, **kwargs):
     open_form('statutary')
+
+  def open_change_trans(self, **kwargs):
+    open_form('emp_mon_trans_change')
+
+  def open_view_trans(self, **kwargs):
+    open_form('emp_trans_view')
+
+  def open_data_backup(self, **kwargs):
+    open_form('data_backup')
+
+  def open_pass_add(self, **kwargs):
+    open_form('pass_add')
+
+  def open_report1_page(self, **kwargs):
+    open_form('report1')

@@ -1,11 +1,19 @@
+.anvil-role-wide .data-grid-child-panel {
+  overflow-x: auto;
+}
+.anvil-role-wide .anvil-data-row-panel {
+  flex-wrap: nowrap;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+.anvil-role-wide .anvil-panel-section-gutter {
+  flex-wrap: wrap;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
 /**
  This CSS implements the Material Design 3 look and feel for Anvil apps.
  **/
-
-.anvil-role-form_height {
-    height: 300px;
-}
-
 /* Stop panel-cols cutting off drop shadows */
 .anvil-panel-col {
   padding-bottom: 10px;

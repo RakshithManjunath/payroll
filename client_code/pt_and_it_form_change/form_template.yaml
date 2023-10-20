@@ -1,8 +1,8 @@
 container:
   type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+  properties: {role: null, tooltip: '', border: dotted, foreground: '', visible: false,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: ''}
+    spacing_below: small, background: '#e1e5ed'}
 components:
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,

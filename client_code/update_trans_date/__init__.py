@@ -14,6 +14,7 @@ class update_trans_date(update_trans_dateTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
     cur_trans_date = anvil.server.call('cur_trans_date')
 
@@ -67,5 +68,15 @@ class update_trans_date(update_trans_dateTemplate):
         anvil.users.logout()
         open_form('menu')
     else:
-        open_form('menu')  
+        open_form('menu')
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('update_trans_date')
+
+
 
