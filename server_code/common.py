@@ -129,14 +129,36 @@ def get_reportlab_pdf():
 @anvil.server.callable
 def get_transaction_columns(comp_details):
   columns_and_type = app_tables.transaction.list_columns()
+  company_data = app_tables.company.search(comp_code='002')
+  company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
+                                'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
+                               'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
+                                'comp_leave_head1','comp_leave_head2','comp_leave_head3',
+                               'comp_loan_head1','comp_loan_head2']
+  selected_company_col_data = ['trans_earn1', 'trans_earn2', 'trans_earn3', 'trans_earn4', 'trans_earn5',
+                              'trans_earn6', 'trans_earn7', 'trans_earn8', 'trans_earn9', 'trans_earn10',
+                              'trans_ded1','trans_ded2','trans_ded3','trans_ded4',
+                              'trans_leave1','trans_leave2','trans_leave3',
+                              'trans_loan1','trans_loan2']
+  final_selected_records = []
+  for record in company_data:
+    filtered_row = {}
+    for row,columns_to_include in enumerate(company_columns_to_include):
+      filtered_row[selected_company_col_data[row]] = record[columns_to_include]
+    final_selected_records.append(filtered_row)
+  print(final_selected_records)
+  
   column_names = []
   columns_to_exclude = ['id','trans_date', 'trans_comp_code', 'trans_deptcode', 'trans_desicode']
   for column in columns_and_type:
     if column['name'] not in columns_to_exclude:
       column_names.append(column['name'])
+  print(column_names)
+  for key,val in final_selected_records[0].items():
+    pos = column_names.index(key)
+    column_names[pos] = val
+  print(column_names)
   return column_names
-  # for key, value in kwargs.items():
-  #   print(f"Keyword: {key}, Value: {value}")
 
 @anvil.server.callable
 def get_only_selected_trans_values(trans_comp_code,selected_list):
@@ -157,7 +179,6 @@ def get_only_selected_trans_values(trans_comp_code,selected_list):
     filtered_col['width'] = 150
     
     final_filtered_cols.append(filtered_col)
-  print(final_filtered_cols)
   
   return final_filter_records,final_filtered_cols
 
