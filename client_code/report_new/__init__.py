@@ -14,15 +14,17 @@ class report_new(report_newTemplate):
 
     # Any code you write here will run before the form opens.
     comp_details = anvil.server.call('comp_get_details', '002')
-    columns = anvil.server.call('get_transaction_columns', comp_details)
+    self.columns,self.unmodified_cols = anvil.server.call('get_transaction_columns', comp_details)
+    print("Original cols: ", self.unmodified_cols)
+    print("Modified cols: ", self.columns)
 
     flow_panel = anvil.FlowPanel()
-    for i in range(len(columns)):
-      if columns[i] == 'trans_empid' or columns[i] == 'trans_empname':
-        checkbox = CheckBox(text=columns[i], checked=True)  
+    for i in range(len(self.columns)):
+      if self.columns[i] == 'trans_empid' or self.columns[i] == 'trans_empname':
+        checkbox = CheckBox(text=self.columns[i], checked=True)  
         flow_panel.add_component(checkbox)
       else:
-        checkbox = CheckBox(text=columns[i], checked=False)  
+        checkbox = CheckBox(text=self.columns[i], checked=False)  
         flow_panel.add_component(checkbox)
     self.add_component(flow_panel)
 
@@ -44,7 +46,12 @@ class report_new(report_newTemplate):
     only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
     selected_boxes = []
     for checkbox in only_checkboxes:
-      if checkbox.checked:
+      if checkbox.checked and checkbox.text not in self.unmodified_cols:
+        print("Selected and not in og list: ",checkbox.text)
+        pos = self.columns.index(checkbox.text)
+        print("corresponding unmodified value ",self.unmodified_cols[pos])
+        selected_boxes.append(self.unmodified_cols[pos])
+      elif checkbox.checked and checkbox.text in self.unmodified_cols:
         selected_boxes.append(checkbox.text)
     grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes)
 

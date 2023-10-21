@@ -153,12 +153,11 @@ def get_transaction_columns(comp_details):
   for column in columns_and_type:
     if column['name'] not in columns_to_exclude:
       column_names.append(column['name'])
-  print(column_names)
+  unmodified_cols = column_names.copy()
   for key,val in final_selected_records[0].items():
     pos = column_names.index(key)
     column_names[pos] = val
-  print(column_names)
-  return column_names
+  return column_names, unmodified_cols
 
 @anvil.server.callable
 def get_only_selected_trans_values(trans_comp_code,selected_list):
