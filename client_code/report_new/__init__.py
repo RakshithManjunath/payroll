@@ -24,14 +24,17 @@ class report_new(report_newTemplate):
       else:
         checkbox = CheckBox(text=columns[i], checked=False)  
         flow_panel.add_component(checkbox)
-    self.add_component(flow_panel)  
+    self.add_component(flow_panel)
 
-  def outlined_button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('menu')
+    # Dynamically create a button
+    button = anvil.Button(text="Preview")
+    button.role = 'filled-button'
+    self.add_component(button)
+    button.set_event_handler('click', self.dynamic_button_click)
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
+  # Attach a click listener
+  def dynamic_button_click(self, **event_args):
+    # Your code to be executed when the button is clicked
     all_components = self.get_components()
     if isinstance(all_components[-1], anvil.DataGrid):
       all_components[-1].remove_from_parent()
@@ -55,6 +58,37 @@ class report_new(report_newTemplate):
     # Add the repeating panel to your data grid
     grid.add_component(rp)
     all_components = self.get_components()
-    print(all_components)
+    print(all_components)    
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+  # def button_1_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   all_components = self.get_components()
+  #   if isinstance(all_components[-1], anvil.DataGrid):
+  #     all_components[-1].remove_from_parent()
+  #   print(all_components)
+  #   all_flow_components = [component for component in all_components if isinstance(component, anvil.FlowPanel)]
+  #   flow_component_with_checkboxes = all_flow_components[-1].get_components()
+  #   only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
+  #   selected_boxes = []
+  #   for checkbox in only_checkboxes:
+  #     if checkbox.checked:
+  #       selected_boxes.append(checkbox.text)
+  #   grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes)
+
+  #   grid = anvil.DataGrid()
+  #   grid.role = 'wide'
+  #   self.add_component(grid)
+  #   grid.columns = grid_cols
+
+  #   rp = anvil.RepeatingPanel(item_template=anvil.DataRowPanel)
+  #   rp.items = grid_rows
+  #   # Add the repeating panel to your data grid
+  #   grid.add_component(rp)
+  #   all_components = self.get_components()
+  #   print(all_components)
 
 
