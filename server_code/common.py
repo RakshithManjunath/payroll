@@ -130,8 +130,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details):
   columns_and_type = app_tables.transaction.list_columns()
   column_names = []
+  columns_to_exclude = ['id','trans_date', 'trans_comp_code', 'trans_deptcode', 'trans_desicode']
   for column in columns_and_type:
-    if column['name'] != 'id':
+    if column['name'] not in columns_to_exclude:
       column_names.append(column['name'])
   return column_names
   # for key, value in kwargs.items():
@@ -153,7 +154,10 @@ def get_only_selected_trans_values(trans_comp_code,selected_list):
     filtered_col['id'] =  selected_col
     filtered_col['title'] = selected_col.capitalize()
     filtered_col['data_key'] = selected_col
+    filtered_col['width'] = 150
+    
     final_filtered_cols.append(filtered_col)
   print(final_filtered_cols)
   
   return final_filter_records,final_filtered_cols
+
