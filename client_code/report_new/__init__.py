@@ -37,7 +37,7 @@ class report_new(report_newTemplate):
     button.set_event_handler('click', self.dynamic_button_click)
 
     # Dynamically create clear all button
-    button_clear = anvil.Button(text="Clear all")
+    button_clear = anvil.Button(text="Clear all sellection")
     button_clear.role = 'filled-button'
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
@@ -58,20 +58,25 @@ class report_new(report_newTemplate):
     flow_component_with_checkboxes = all_flow_components[-1].get_components()
     only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
     selected_boxes = []
+    modified_col_names = []
     for checkbox in only_checkboxes:
       if checkbox.checked and checkbox.text not in self.unmodified_cols:
         print("Selected and not in og list: ",checkbox.text)
         pos = self.columns.index(checkbox.text)
         print("corresponding unmodified value ",self.unmodified_cols[pos])
         selected_boxes.append(self.unmodified_cols[pos])
+        modified_col_names.append(checkbox.text)
       elif checkbox.checked and checkbox.text in self.unmodified_cols:
         selected_boxes.append(checkbox.text)
-    grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes)
-
+        modified_col_names.append(checkbox.text)
+    grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
+    print(type(grid_cols), grid_cols)
+    print(type(selected_boxes), selected_boxes)
     grid = anvil.DataGrid()
     grid.role = 'wide'
     self.add_component(grid)
     grid.columns = grid_cols
+    # grid.columns = selected_boxes
 
     rp = anvil.RepeatingPanel(item_template=anvil.DataRowPanel)
     rp.items = grid_rows

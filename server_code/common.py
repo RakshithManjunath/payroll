@@ -168,7 +168,7 @@ def get_transaction_columns(comp_details):
   return column_names, unmodified_cols
 
 @anvil.server.callable
-def get_only_selected_trans_values(trans_comp_code,selected_list):
+def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_names):
   trans_records = app_tables.transaction.search(trans_comp_code=trans_comp_code)
   final_filter_records = []
   for record in trans_records:
@@ -184,8 +184,24 @@ def get_only_selected_trans_values(trans_comp_code,selected_list):
     filtered_col['title'] = selected_col.capitalize()
     filtered_col['data_key'] = selected_col
     filtered_col['width'] = 150
-    
     final_filtered_cols.append(filtered_col)
+
+  print("final filtered cols: ", final_filtered_cols)
   
-  return final_filter_records,final_filtered_cols
+  final_filtered_cols_modified = []
+  for selected_col in selected_list:
+    index = selected_list.index(selected_col)
+    print(index, selected_col)
+    print(index, modified_col_names[index])
+    filtered_col = {}
+    filtered_col['id'] =  selected_col
+    filtered_col['title'] = modified_col_names[index].capitalize()
+    filtered_col['data_key'] = selected_col
+    filtered_col['width'] = 150
+    final_filtered_cols_modified.append(filtered_col)
+
+  print("final filtered cols modified: ", final_filtered_cols_modified)
+  
+  # return final_filter_records,final_filtered_cols
+  return final_filter_records,final_filtered_cols_modified
 
