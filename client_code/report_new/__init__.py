@@ -13,6 +13,8 @@ class report_new(report_newTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    #self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+
     comp_details = anvil.server.call('comp_get_details', '002')
     self.columns,self.unmodified_cols = anvil.server.call('get_transaction_columns', comp_details)
     print("Original cols: ", self.unmodified_cols)
@@ -28,11 +30,22 @@ class report_new(report_newTemplate):
         flow_panel.add_component(checkbox)
     self.add_component(flow_panel)
 
-    # Dynamically create a button
+    # Dynamically create sellect button
     button = anvil.Button(text="Preview")
     button.role = 'filled-button'
     self.add_component(button)
     button.set_event_handler('click', self.dynamic_button_click)
+
+    # Dynamically create clear all button
+    button_clear = anvil.button_clear(text="Clear all")
+    button_clear.role = 'filled-button'
+    self.add_component(button_clear)
+    button_clear.set_event_handler('click', self.dynamic_button_clear_click)
+
+  # Attach a click listener
+  def dynamic_button_clear_click(self, **event_args):
+    open_form('report_new')
+
 
   # Attach a click listener
   def dynamic_button_click(self, **event_args):

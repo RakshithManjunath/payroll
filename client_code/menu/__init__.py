@@ -62,4 +62,4 @@ class menu(menuTemplate):
     open_form('pass_add')
 
   def open_report1_page(self, **kwargs):
-    open_form('report1')
+    open_form('report_new')

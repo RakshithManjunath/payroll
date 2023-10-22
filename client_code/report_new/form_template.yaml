@@ -23,3 +23,10 @@ components:
     underline: false, icon: ''}
   name: label_1
   layout_properties: {slot: title}
+- type: Label
+  properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: xxx, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {slot: default}
