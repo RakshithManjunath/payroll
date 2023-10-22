@@ -50,8 +50,16 @@ class report_new(report_newTemplate):
 
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
-    pass
-  
+    all_components = self.get_components()
+    print(all_components)
+    all_flow_components = [component for component in all_components if isinstance(component, anvil.FlowPanel)]
+    flow_component_with_checkboxes = all_flow_components[-1].get_components()
+    only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
+    print(only_checkboxes)
+    for checkbox in only_checkboxes:
+      print(checkbox)
+      checkbox.checked = True
+
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
     open_form('report_new')
