@@ -155,8 +155,16 @@ def get_transaction_columns(comp_details):
       column_names.append(column['name'])
   unmodified_cols = column_names.copy()
   for key,val in final_selected_records[0].items():
-    pos = column_names.index(key)
-    column_names[pos] = val
+    if val == "":
+      new_val = key.split('_')[-1]
+      pos = column_names.index(key)
+      del key
+      column_names[pos] = new_val
+    else:
+      pos = column_names.index(key)
+      column_names[pos] = val
+    # print(key,val,pos,column_names[pos])
+
   return column_names, unmodified_cols
 
 @anvil.server.callable

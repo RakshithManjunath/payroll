@@ -37,7 +37,7 @@ class report_new(report_newTemplate):
     button.set_event_handler('click', self.dynamic_button_click)
 
     # Dynamically create clear all button
-    button_clear = anvil.button_clear(text="Clear all")
+    button_clear = anvil.Button(text="Clear all")
     button_clear.role = 'filled-button'
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
