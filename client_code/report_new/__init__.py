@@ -36,12 +36,22 @@ class report_new(report_newTemplate):
     self.add_component(button)
     button.set_event_handler('click', self.dynamic_button_click)
 
+    # Dynamically create set all button
+    button_set = anvil.Button(text="set all sellection")
+    button_set.role = 'filled-button'
+    self.add_component(button_set)
+    button_set.set_event_handler('click', self.dynamic_button_set_click)
+    
     # Dynamically create clear all button
     button_clear = anvil.Button(text="Clear all sellection")
     button_clear.role = 'filled-button'
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
 
+  # Attach a click listener
+  def dynamic_button_set_click(self, **event_args):
+    pass
+  
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
     open_form('report_new')
@@ -116,4 +126,5 @@ class report_new(report_newTemplate):
   #   all_components = self.get_components()
   #   print(all_components)
 
+ 
 
