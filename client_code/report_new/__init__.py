@@ -36,11 +36,29 @@ class report_new(report_newTemplate):
     self.add_component(button)
     button.set_event_handler('click', self.dynamic_button_click)
 
+    # Dynamically create set all button
+    button_set = anvil.Button(text="set all sellection")
+    button_set.role = 'filled-button'
+    self.add_component(button_set)
+    button_set.set_event_handler('click', self.dynamic_button_set_click)
+    
     # Dynamically create clear all button
     button_clear = anvil.Button(text="Clear all sellection")
     button_clear.role = 'filled-button'
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
+
+  # Attach a click listener
+  def dynamic_button_set_click(self, **event_args):
+    all_components = self.get_components()
+    print(all_components)
+    all_flow_components = [component for component in all_components if isinstance(component, anvil.FlowPanel)]
+    flow_component_with_checkboxes = all_flow_components[-1].get_components()
+    only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
+    print(only_checkboxes)
+    for checkbox in only_checkboxes:
+      print(checkbox)
+      checkbox.checked = True
 
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
@@ -116,4 +134,5 @@ class report_new(report_newTemplate):
   #   all_components = self.get_components()
   #   print(all_components)
 
+ 
 
