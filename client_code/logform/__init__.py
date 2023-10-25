@@ -49,7 +49,7 @@ class logform(logformTemplate):
   def text_box_1_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
     if ((self.text_box_1.text) and (self.text_box_2.text )):
-      self.button_1.enabled = True 
+      self.button_1.enabled = True
     else:
       self.button_1.enabled = False  
 
